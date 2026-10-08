@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jurye-st-mary-eye.mcg2023mcg.chatgpt.site/sitemap.xml
