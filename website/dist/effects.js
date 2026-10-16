@@ -1,4 +1,4 @@
-﻿(() => {
+(() => {
  'use strict';
  const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
  const easing='cubic-bezier(0.22, 1, 0.36, 1)';
@@ -112,7 +112,6 @@
   hero.querySelectorAll('[data-slide]').forEach(b=>b.addEventListener('click',()=>show(Number(b.dataset.slide))));
   hero.querySelector('[data-hero-prev]').addEventListener('click',()=>show(current-1));
   hero.querySelector('[data-hero-next]').addEventListener('click',()=>show(current+1));
-  play.addEventListener('click',()=>{if(!motion.matches){userPaused=!userPaused;schedule();}});
   hero.addEventListener('mouseenter',()=>{hovered=true;schedule();});
   hero.addEventListener('mouseleave',()=>{hovered=false;schedule();});
   hero.addEventListener('focusin',()=>{focused=true;schedule();});
@@ -135,34 +134,116 @@
   schedule();cleanups.push(stop);
  }
  function initDoctors(){
-  const track=document.getElementById('doctor-track'),controls=document.querySelector('.doctor-controls');
-  if(!track||!controls)return;
-  const cards=[...track.querySelectorAll('.doctor-card')],prev=controls.querySelector('[data-doctor="-1"]'),next=controls.querySelector('[data-doctor="1"]');
-  let selected=0,scrollTimer=null;
-  function update(index){
-   selected=Math.max(0,Math.min(cards.length-1,index));
-   document.getElementById('doctor-position').textContent=(selected+1)+' / '+cards.length;
-   prev.disabled=selected===0;next.disabled=selected===cards.length-1;
+  const root=document.getElementById('doctors'),track=document.getElementById('doctor-track');
+  if(!root||!track)return;
+  const cards=[...track.querySelectorAll('.doctor-card')];if(!cards.length)return;
+  root.querySelector('.doctor-controls')?.remove();
+  cards.forEach(card=>{
+   const meta=card.querySelector('.doctor-meta');
+   if(!meta||meta.querySelector('.doctor-more'))return;
+   const more=document.createElement('div');more.className='doctor-more';
+   more.textContent='의료진 자세히 보기';meta.appendChild(more);
+  });
+  cards.forEach(card=>{
+   if(card.querySelector('.doctor-watermark'))return;
+   const logo=document.createElement('img');logo.className='doctor-watermark';
+   logo.src='assets/favicon.svg';logo.alt='';logo.setAttribute('aria-hidden','true');card.appendChild(logo);
+  });
+  const nav=document.createElement('div');nav.className='lifecare-tabs';nav.setAttribute('role','tablist');nav.setAttribute('aria-label','의료진 진료 분야');
+  const labels=['이정헌 대표원장','망막·녹내장','소아안과'];
+  const tabs=cards.map((card,i)=>{
+   const button=document.createElement('button');button.type='button';button.id='doctor-tab-'+i;button.setAttribute('role','tab');button.innerHTML='<span class="eyebrow">SPECIALIST 0'+(i+1)+'</span><span>'+labels[i]+'</span>';
+   card.id='doctor-panel-'+i;button.setAttribute('aria-controls',card.id);nav.appendChild(button);return button;
+  });
+  const bar=document.createElement('div');bar.className='lifecare-progress';bar.setAttribute('aria-hidden','true');bar.innerHTML='<span class="lifecare-fill"></span><span class="lifecare-thumb"></span>';
+  track.before(nav,bar);root.classList.add('lifecare-ready');
+  let selected=0,frame=null,start=null,elapsed=0,hovered=false,lastAnimation=null,doctorInView=false;
+  const mobile=matchMedia('(max-width:1024px)'),fill=bar.firstElementChild,thumb=bar.lastElementChild;
+  function paint(progress){const value=(selected+progress)/cards.length*100;fill.style.width=value+'%';thumb.style.left=value+'%';}
+  function stop(){if(frame!==null)cancelAnimationFrame(frame);frame=null;start=null;}
+  function blocked(){return hovered||document.hidden||motion.matches;}
+  function tick(time){
+   frame=null;if(blocked())return;
+   if(start===null)start=time;
+   const delta=time-start;start=time;elapsed+=delta;
+   const progress=Math.min(1,elapsed/(mobile.matches?5000:8000));paint(progress);
+   if(progress===1){select((selected+1)%cards.length);return;}
+   frame=requestAnimationFrame(tick);
   }
-  function move(index){
-   update(index);
-   const target=cards[selected].offsetLeft-cards[0].offsetLeft;
-   track.scrollTo({left:target,behavior:motion.matches?'instant':'smooth'});
+  function resume(){stop();if(motion.matches){paint(1);return;}if(!blocked())frame=requestAnimationFrame(tick);}
+  function select(index,focus=false){
+   stop();cards.forEach(card=>card.classList.remove('light-active'));selected=(index+cards.length)%cards.length;elapsed=0;lastAnimation?.cancel();
+   cards.forEach((card,i)=>{card.hidden=i!==selected;card.classList.remove('reveal-pending');});
+   tabs.forEach((tab,i)=>{tab.setAttribute('aria-selected',String(i===selected));tab.tabIndex=i===selected?0:-1;});
+   track.setAttribute('aria-labelledby',tabs[selected].id);track.setAttribute('role','tabpanel');
+   root.dataset.activeDoctor=String(selected);nav.style.setProperty('--active-tab',String(selected));paint(0);
+   if(doctorInView)lastAnimation=animate(cards[selected],[{opacity:0},{opacity:1}],{duration:1100,easing:'cubic-bezier(.25,.1,.25,1)'});
+   if(focus)tabs[selected].focus({preventScroll:true});resume();
   }
-  controls.hidden=false;track.classList.add('carousel-ready');
-  track.setAttribute('role','group');track.setAttribute('aria-roledescription','캐러셀');track.tabIndex=0;
-  cards.forEach((card,i)=>{card.setAttribute('aria-label',(i+1)+' / '+cards.length+' · '+card.querySelector('h3').textContent);});
-  prev.addEventListener('click',()=>move(selected-1));next.addEventListener('click',()=>move(selected+1));
-  track.addEventListener('keydown',e=>{if(e.target!==track)return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();move(selected+(e.key==='ArrowRight'?1:-1));}});
-  track.addEventListener('scroll',()=>{clearTimeout(scrollTimer);scrollTimer=setTimeout(()=>{
-   const width=cards[0].getBoundingClientRect().width+20;if(width>20)update(Math.round(track.scrollLeft/width));
-  },100);},{passive:true});
-  window.addEventListener('resize',()=>{if(window.innerWidth>640)update(0);});
-  update(0);
+  tabs.forEach((tab,i)=>{
+   tab.addEventListener('click',()=>select(i));
+   tab.addEventListener('keydown',e=>{
+    let target;if(e.key==='ArrowRight')target=selected+1;else if(e.key==='ArrowLeft')target=selected-1;else if(e.key==='Home')target=0;else if(e.key==='End')target=cards.length-1;else return;
+    e.preventDefault();select(target,true);
+   });
+  });
+  track.addEventListener('mouseenter',()=>{hovered=true;resume();});track.addEventListener('mouseleave',()=>{hovered=false;resume();});
+  document.addEventListener('visibilitychange',resume);
+  motion.addEventListener?.('change',()=>{lastAnimation?.cancel();resume();});
+  const finePointer=matchMedia('(hover:hover) and (pointer:fine)');
+  let lightFrame=null,lightPoint=null;
+  track.addEventListener('pointermove',event=>{
+   if(motion.matches||!finePointer.matches)return;
+   const card=cards[selected],rect=card.getBoundingClientRect();
+   lightPoint={card,x:event.clientX-rect.left,y:event.clientY-rect.top};
+   if(lightFrame!==null)return;
+   lightFrame=requestAnimationFrame(()=>{
+    lightFrame=null;if(!lightPoint)return;
+    lightPoint.card.style.setProperty('--light-x',lightPoint.x+'px');
+    lightPoint.card.style.setProperty('--light-y',lightPoint.y+'px');
+    lightPoint.card.classList.add('light-active');
+   });
+  },{passive:true});
+  function clearLight(){
+   if(lightFrame!==null)cancelAnimationFrame(lightFrame);lightFrame=null;lightPoint=null;
+   cards.forEach(card=>card.classList.remove('light-active'));
+  }
+  track.addEventListener('pointerleave',clearLight);
+  motion.addEventListener?.('change',clearLight);
+  cleanups.push(clearLight);
+  addSwipe(track,dir=>select(selected+dir));
+  root.classList.add('doctor-entry-pending');
+  const entryObserver=new IntersectionObserver(entries=>{
+   entries.forEach(entry=>{
+    if(entry.isIntersecting&&entry.intersectionRect.height>=Math.min(entry.boundingClientRect.height,window.innerHeight-100)*.7&&!doctorInView){
+     doctorInView=true;
+     root.classList.remove('doctor-entry-pending');
+    }else if(!entry.isIntersecting){
+     doctorInView=false;
+     lastAnimation?.cancel();
+     root.classList.add('doctor-entry-pending');
+    }
+   });
+  },{threshold:Array.from({length:21},(_,i)=>i/20),rootMargin:'-100px 0px 0px 0px'});
+  entryObserver.observe(track);
+  select(0);
+  cleanups.push(()=>{entryObserver.disconnect();root.classList.remove('doctor-entry-pending');stop();lastAnimation?.cancel();});
  }
  function initHeader(){
   const header=document.querySelector('.header'),menu=document.getElementById('mega'),nav=document.getElementById('nav'),toggle=document.getElementById('menu-toggle');
   if(!header||!menu||!nav||!toggle)return;
+  function alignMenu(){
+   if(!matchMedia('(min-width:901px)').matches)return;
+   const headerBox=header.getBoundingClientRect(),navBox=nav.getBoundingClientRect();
+   menu.style.setProperty('--menu-left',Math.max(0,navBox.left-headerBox.left)+'px');
+   menu.style.setProperty('--menu-right',Math.max(0,headerBox.right-navBox.right)+'px');
+  }
+  alignMenu();
+  const menuResize=typeof ResizeObserver==='function'?new ResizeObserver(alignMenu):null;
+  menuResize?.observe(header);menuResize?.observe(nav);
+  document.fonts?.ready.then(alignMenu);
+  window.addEventListener('resize',alignMenu,{passive:true});
+  cleanups.push(()=>{menuResize?.disconnect();window.removeEventListener('resize',alignMenu);});
   function open(){menu.hidden=false;toggle.setAttribute('aria-expanded','true');toggle.setAttribute('aria-label','전체 메뉴 닫기');}
   function close(){menu.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','전체 메뉴 열기');}
   nav.addEventListener('focusin',open);
@@ -173,7 +254,7 @@
   window.addEventListener('scroll',()=>{if(frame===null)frame=requestAnimationFrame(update);},{passive:true});update();
  }
  function initReveal(){
-  const targets=[...document.querySelectorAll('.section-head .eyebrow,.section-head h2,.section-head>p,.doctor-card,.content-tabs,.feature-item,.mission-copy>h2,.mission-copy>p,.promise-grid>div,.mission-photo,.space-grid>a,.visit-grid>div,.content-layout>div,.profile-detail,.profile-pending,.history-list,.promise-detail article,.facility-gallery article,.greeting p')];
+  const targets=[...document.querySelectorAll('.section-head .eyebrow,.section-head h2,.section-head>p,.doctor-card,.content-tabs,.feature-item,.mission-copy>h2,.mission-copy>p,.promise-grid>div,.mission-photo,.space-grid>a,.visit-grid>div,.content-layout>div,.profile-pending,.history-list,.promise-detail article,.facility-gallery article,.greeting p')];
   if(motion.matches||typeof IntersectionObserver==='undefined')return;
   let observer=null,idle=null,safety=null,receivedCallbacks=false;
   function reveal(el){el.classList.remove('reveal-pending');el.classList.add('is-revealed');observer?.unobserve(el);}
@@ -198,20 +279,62 @@
  }
  function initCount(){
   const count=document.querySelector('[data-count]');if(!count)return;
-  const goal=Number(count.dataset.count);let frame=null,observer=null,played=false;
-  function finish(){if(frame!==null)cancelAnimationFrame(frame);frame=null;count.textContent=String(goal);observer?.disconnect();}
+  const section=count.closest('section'),goal=Number(count.dataset.count);
+  let frame=null,observer=null,played=false,digitAnimation=null;
+  function stop(){if(frame!==null)cancelAnimationFrame(frame);frame=null;digitAnimation?.cancel();}
+  function finish(){stop();count.textContent=String(goal);}
   function start(){
    if(played)return;played=true;
    if(motion.matches){finish();return;}
-   let begin=null;
-   function tick(time){if(begin===null)begin=time;const p=Math.min(1,(time-begin)/1200);count.textContent=String(Math.round(goal*(1-Math.pow(1-p,3))));if(p<1)frame=requestAnimationFrame(tick);else finish();}
+   stop();count.textContent='1';let begin=null,last=1;
+   function tick(time){
+    if(begin===null)begin=time;
+    const progress=Math.min(1,(time-begin)/3000);
+    const value=1+Math.floor(progress*(goal-1));
+    if(value!==last){
+     last=value;count.textContent=String(value);digitAnimation?.cancel();
+     digitAnimation=animate(count,[{opacity:.55,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}],{duration:180,easing:'ease-out'});
+    }
+    if(progress<1)frame=requestAnimationFrame(tick);else frame=null;
+   }
    frame=requestAnimationFrame(tick);
   }
-  if(!motion.matches&&typeof IntersectionObserver!=='undefined'){observer=new IntersectionObserver(entries=>{if(entries[0].isIntersecting)start();},{threshold:.15});observer.observe(count);}else finish();
-  motion.addEventListener?.('change',()=>{if(motion.matches)finish();});
-  window.addEventListener('pagehide',finish);
+  if(!motion.matches&&typeof IntersectionObserver!=='undefined'){
+   observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+     if(entry.isIntersecting&&entry.intersectionRatio>=.45)start();
+     else if(!entry.isIntersecting){stop();played=false;count.textContent='1';}
+    });
+   },{threshold:[0,.45]});observer.observe(section||count);
+  }else finish();
+  motion.addEventListener?.('change',()=>{if(motion.matches){observer?.disconnect();finish();}});
+  cleanups.push(()=>{observer?.disconnect();finish();});
  }
- function safe(fn){try{return fn();}catch(error){console.error('홈페이지 인터랙션 초기화 실패',error);return null;}}
+ function initDoctorDetailMotion(){
+  const profile=document.querySelector('.profile-detail');
+  if(!profile||motion.matches||typeof IntersectionObserver==='undefined')return;
+  let observer=null,animation=null,inView=false;
+  function show(){
+   if(inView)return;inView=true;animation?.cancel();
+   profile.style.opacity='1';
+   animation=animate(profile,[{opacity:0},{opacity:1}],{duration:750,easing:'ease-out'});
+  }
+  function hide(){inView=false;animation?.cancel();profile.style.opacity='0';}
+  profile.classList.remove('detail-fade-pending','detail-fade-visible','reveal-pending','is-revealed');
+  try{
+   hide();
+   observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+     if(entry.isIntersecting)show();
+     else if(entry.boundingClientRect.bottom<=0||entry.boundingClientRect.top>=window.innerHeight)hide();
+    });
+   },{threshold:0,rootMargin:'0px 0px -50px 0px'});
+   observer.observe(profile);
+   profile.addEventListener('focusin',show);
+   motion.addEventListener?.('change',()=>{if(motion.matches){observer?.disconnect();animation?.cancel();profile.style.opacity='1';}});
+   cleanups.push(()=>{observer?.disconnect();animation?.cancel();profile.style.opacity='1';});
+  }catch{profile.style.opacity='1';}
+ } function safe(fn){try{return fn();}catch(error){console.error('홈페이지 인터랙션 초기화 실패',error);return null;}}
  safe(initHeader);safe(initHero);
  document.querySelectorAll('[data-tabs]').forEach(root=>{
   const api=safe(()=>initTabs(root));
@@ -220,7 +343,20 @@
    document.querySelectorAll('[data-equipment]').forEach(b=>b.addEventListener('click',()=>api.select((api.index()+Number(b.dataset.equipment)+api.length)%api.length,{scroll:true})));
   }
  });
- safe(initDoctors);safe(initReveal);safe(initCount);
+ function initHistoryMotion(){
+  const section=document.getElementById('history');
+  if(!section||motion.matches||typeof IntersectionObserver!=='function')return;
+  section.classList.add('history-motion-ready');
+  const observer=new IntersectionObserver(entries=>{
+   entries.forEach(entry=>{
+    if(entry.isIntersecting&&entry.intersectionRatio>=.45)section.classList.add('history-in-view');
+    else if(!entry.isIntersecting)section.classList.remove('history-in-view');
+   });
+  },{threshold:[0,.45]});
+  observer.observe(section);
+  cleanups.push(()=>{observer.disconnect();section.classList.remove('history-motion-ready','history-in-view');});
+ }
+ safe(initDoctors);safe(initReveal);safe(initCount);safe(initDoctorDetailMotion);safe(initHistoryMotion);
  window.addEventListener('pagehide',()=>cleanups.forEach(fn=>fn()));
 })();
 

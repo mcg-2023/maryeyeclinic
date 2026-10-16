@@ -8,3 +8,12 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 .photo-crop{display:block;overflow:hidden;border-radius:24px;width:100%;height:100%}.photo-crop img{width:100%;height:125%;max-width:none;object-fit:cover;transform:translateY(-20%)}.care-card .photo-crop{height:245px}.page-hero .photo-crop{height:345px}.hero-visual img[src$="image7.png"]{height:125%;transform:translateY(-20%)}@media(max-width:900px){.care-card .photo-crop{height:185px}.page-hero .photo-crop{height:300px}}@media(max-width:640px){.care-card .photo-crop,.page-hero .photo-crop{height:245px}}
 
+
+/* Official clinic logos */
+.brand .brand-logo{display:block;object-fit:contain;height:auto;flex-shrink:0}
+.header .brand{flex-shrink:0}
+.header .brand-logo{width:280px}
+.footer .brand-logo{width:180px}
+@media(max-width:1200px){.header .brand-logo{width:230px}}
+@media(max-width:600px){.header .brand-logo{width:200px}.footer .brand-logo{width:155px}}
+@media(max-width:360px){.header .brand-logo{width:175px}}

@@ -3,4 +3,7 @@
 node_modules/
 *.tar
 *.tar.gz
+.env
+.env.*
+!.env.example
 
