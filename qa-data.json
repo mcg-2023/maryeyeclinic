@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "qa-1",
+      "question": "주례 성모안과 진료시간",
+      "answer": "오전 10시부터 오후 6시",
+      "source": "qa.txt",
+      "line": 1
+    }
+  ]
+}
