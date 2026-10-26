@@ -61,6 +61,7 @@
   });
  }
  function initHero(){
+  if(document.getElementById('hero-video')){initHeroVideo();return;}
   const hero=document.querySelector('.hero'),image=document.getElementById('hero-image');
   if(!hero||!image)return;
   const slides=[
@@ -132,6 +133,28 @@
   if(slides.length<2)hero.querySelector('.hero-controls').hidden=true;
   zoom=animate(image,[{transform:'translateY(0%) scale(1.04)'},{transform:'translateY(0%) scale(1)'}],{duration:6000,fill:'forwards'});
   schedule();cleanups.push(stop);
+ }
+ function initHeroVideo(){
+  const video=document.getElementById('hero-video'),hero=video.closest('.hero');
+  const button=hero.querySelector('[data-video-play]'),label=button.querySelector('[data-video-label]'),icon=button.querySelector('[data-video-icon]');
+  let userPaused=false,visible=true,failed=false;
+  video.muted=true;video.defaultMuted=true;button.hidden=false;
+  function paint(){
+   const paused=video.paused;button.setAttribute('aria-pressed',String(paused));
+   button.setAttribute('aria-label',paused?'소개 영상 재생':'소개 영상 일시정지');
+   label.textContent=paused?'재생':'일시정지';icon.textContent=paused?'▶':'Ⅱ';
+   hero.dataset.autoplay=paused?'paused':'playing';
+  }
+  function sync(){
+   if(failed||userPaused||motion.matches||document.hidden||!visible){video.pause();paint();return;}
+   video.play()?.catch(paint);
+  }
+  button.addEventListener('click',()=>{userPaused=!video.paused;if(userPaused)video.pause();else video.play()?.catch(paint);paint();});
+  video.addEventListener('play',paint);video.addEventListener('pause',paint);
+  video.addEventListener('error',()=>{failed=true;video.pause();button.hidden=true;hero.classList.add('video-unavailable');});
+  document.addEventListener('visibilitychange',sync);motion.addEventListener?.('change',sync);
+  if(typeof IntersectionObserver==='function')new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;sync();},{threshold:.1}).observe(hero);
+  cleanups.push(()=>video.pause());sync();paint();
  }
  function initDoctors(){
   const root=document.getElementById('doctors'),track=document.getElementById('doctor-track');
