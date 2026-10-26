@@ -1,0 +1,35 @@
+/* Full-width clinic film. Keep the complete frame visible on narrow screens. */
+.hero.hero-video{position:relative;isolation:isolate;display:flex;align-items:center;width:100%;max-width:none;margin:0;min-height:620px;height:calc(100svh - 100px);max-height:960px;padding:72px max(7vw,32px);overflow:hidden;background:#282c2b;color:#fff;box-sizing:border-box}
+.hero.hero-video .hero-visual{position:absolute;inset:0;width:100%;height:100%;max-height:none;border-radius:0;overflow:hidden;margin:0;background:url('assets/clinic-hero-poster.jpg') center/cover no-repeat;z-index:-2}
+.hero-video video{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero.hero-video::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,24,23,.72),rgba(12,24,23,.4) 36%,rgba(12,24,23,.06) 72%),linear-gradient(0deg,rgba(0,0,0,.3),transparent 28%);pointer-events:none}
+.hero-video .hero-copy{max-width:600px;text-shadow:0 2px 24px #0003}
+.hero.hero-video .eyebrow{color:#f2e3c8;letter-spacing:.2em;margin-bottom:28px}
+.hero.hero-video h1{font-size:clamp(50px,4.7vw,84px);line-height:1.28;color:#fff;letter-spacing:-.05em}
+.hero.hero-video .hero-intro{font-size:clamp(18px,1.6vw,25px);line-height:1.75;margin:26px 0;color:#fffffff0}
+.hero.hero-video .button{color:#fff;background:#ffffff12;border:1px solid #ffffff8c;backdrop-filter:blur(8px);gap:38px;box-shadow:none}
+.hero.hero-video .button:hover{background:#ffffff30}
+.hero.hero-video .hero-footnote{color:#ffffffd9;font-size:15px;margin-top:28px}
+.hero-video-toolbar{position:absolute;bottom:30px;left:max(7vw,32px);right:max(7vw,32px);display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:11px;letter-spacing:.16em}
+.hero-video-toolbar button{display:flex;align-items:center;gap:10px;min-height:44px;padding:10px 18px;border:1px solid #ffffff8c;border-radius:30px;background:#14201f66;color:#fff;font-size:13px;letter-spacing:0;backdrop-filter:blur(8px)}
+.hero-video-toolbar button:focus-visible{outline:3px solid #f2e3c8;outline-offset:4px}
+.hero-video.video-unavailable video{visibility:hidden}
+@media(max-width:900px){.hero.hero-video{height:680px;min-height:580px;padding:48px 38px}.hero-video-toolbar{left:38px;right:80px}.hero.hero-video::after{background:linear-gradient(90deg,#0c1817bf,#0c181759 65%,#0c18171a)}}
+@media(max-width:640px){
+ .hero.hero-video{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;height:auto;min-height:0;max-height:none;padding:calc(56.25vw + 32px) 26px 28px;background:linear-gradient(145deg,#faf8f4,#f1ede6);color:var(--espresso)}
+ .hero.hero-video .hero-visual{bottom:auto;height:56.25vw;background-size:cover;border-radius:0 0 22px 22px}
+ .hero-video video{object-fit:contain}
+ .hero.hero-video::after{display:none}
+ .hero-video .hero-copy{max-width:none;text-shadow:none}
+ .hero.hero-video .eyebrow{font-size:10px;letter-spacing:.18em;color:#917548;margin-bottom:18px;line-height:1.6}
+ .hero.hero-video h1{font-size:clamp(36px,9vw,52px);line-height:1.24;font-weight:500;letter-spacing:-.055em;color:var(--espresso)}
+ .hero.hero-video .hero-intro{font-size:16px;line-height:1.85;margin:20px 0 24px;color:#746b60;letter-spacing:-.025em}
+ .hero.hero-video .hero-intro strong{font-weight:600;color:var(--espresso)}
+ .hero.hero-video .button{min-height:48px;padding:13px 21px;gap:38px;font-size:14px;font-weight:500;color:var(--espresso);background:#fff9;border:1px solid #d7cbb9;border-radius:999px;backdrop-filter:none;box-shadow:0 4px 14px #3e2f2305}
+ .hero.hero-video .button:hover{background:#fff;border-color:#a88b61}
+ .hero.hero-video .hero-footnote{font-size:11px;line-height:1.8;letter-spacing:-.015em;color:#8b7f70;margin-top:22px}
+ .hero-video-toolbar{position:static;display:flex;margin-top:26px;padding-top:18px;border-top:1px solid #ded6ca;gap:16px;letter-spacing:.12em}
+ .hero-video-toolbar>span{max-width:190px;line-height:1.7;font-size:8px;color:#99886f}
+ .hero-video-toolbar button{flex-shrink:0;min-height:40px;padding:8px 13px;gap:7px;border-color:#d7cbb9;background:transparent;color:#6d5943;backdrop-filter:none;font-size:11px}
+ .hero-video-toolbar button:focus-visible{outline-color:#917548}
+}

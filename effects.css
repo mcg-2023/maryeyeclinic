@@ -10,16 +10,16 @@
 .hero-image-outgoing{position:absolute;inset:0;z-index:2;pointer-events:none;transform:translateY(var(--photo-offset,0%))}
 .hero-visual>span{z-index:3;pointer-events:none}
 .hero-controls{gap:14px;flex-wrap:wrap;min-height:44px}
-.hero-controls>button{opacity:1;min-width:36px;height:44px;font-family:Pretendard,sans-serif;font-size:23px;border:1px solid var(--line);border-radius:50%;padding:0}
-.hero-controls>button[data-hero-play]{min-width:80px;font-size:13px;border-radius:30px;padding:0 14px}
+.hero-controls>button{opacity:1;min-width:36px;height:44px;font-family:Pretendard,sans-serif;font-size:24.38px;border:1px solid var(--line);border-radius:50%;padding:0}
+.hero-controls>button[data-hero-play]{min-width:80px;font-size:13.78px;border-radius:30px;padding:0 14px}
 .hero-controls>button:disabled{color:#6f6a64;background:#eae7e2;cursor:default}
-#hero-position{font-family:var(--serif);font-size:14px;font-variant-numeric:tabular-nums;min-width:50px}
+#hero-position{font-family:var(--serif);font-size:14.84px;font-variant-numeric:tabular-nums;min-width:50px}
 .hero-dots{display:flex;gap:14px;margin-left:5px}
-.hero-dots button{min-width:27px;height:44px;opacity:.55;font-family:var(--serif);font-size:13px}
+.hero-dots button{min-width:27px;height:44px;opacity:.55;font-family:var(--serif);font-size:13.78px}
 .hero-dots button[aria-pressed=true]{opacity:1;border-bottom:1px solid var(--espresso)}
 .content-tabs{min-width:0}
 .content-tablist{display:flex;gap:0;overflow-x:auto;scrollbar-width:thin;border-bottom:1px solid var(--line);margin-bottom:36px;scroll-padding-inline:20px}
-.content-tablist a,.content-tablist button{flex:0 0 auto;padding:15px 28px;color:#6b655e;font-size:19px;font-weight:500;border-bottom:2px solid transparent;white-space:nowrap;transition:color 200ms var(--motion-ease),border-color 200ms var(--motion-ease)}
+.content-tablist a,.content-tablist button{flex:0 0 auto;padding:15px 28px;color:#6b655e;font-size:20.14px;font-weight:500;border-bottom:2px solid transparent;white-space:nowrap;transition:color 200ms var(--motion-ease),border-color 200ms var(--motion-ease)}
 .content-tablist [aria-selected=true]{color:var(--espresso);border-bottom-color:var(--espresso)}
 .content-tablist a:hover,.content-tablist button:hover{color:var(--espresso)}
 .care-tabs .content-panels{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
@@ -29,28 +29,28 @@
 .tab-image .photo-crop{border-radius:0}
 .tab-image .photo-crop img{height:125%}
 .tab-copy{padding-top:25px}
-.tab-copy .eyebrow{margin-bottom:18px;font-size:13px}
-.tab-copy h3{font-size:27px}
-.tab-copy>p:not(.eyebrow){font-size:16px;margin-top:20px;max-width:410px;line-height:1.8}
+.tab-copy .eyebrow{margin-bottom:18px;font-size:13.78px}
+.tab-copy h3{font-size:28.62px}
+.tab-copy>p:not(.eyebrow){font-size:16.96px;margin-top:20px;max-width:410px;line-height:1.8}
 .tab-copy .button{margin-top:28px}
 .care-tabs.tabs-ready .content-panels{display:block}
 .care-tabs.tabs-ready .content-panel{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:65px;min-height:360px}
 .care-tabs.tabs-ready .tab-image{height:360px}
 .care-tabs.tabs-ready .tab-copy{padding:20px 0}
-.care-tabs.tabs-ready h3{font-size:34px;line-height:1.5}
-.equipment-tabs .equipment-position{display:block;font-family:var(--serif);font-size:15px;letter-spacing:.1em;margin-top:25px}
-.equipment-tabs .equipment-track .tab-copy .eyebrow{font-size:12px;margin-bottom:12px}
+.care-tabs.tabs-ready h3{font-size:36.04px;line-height:1.5}
+.equipment-tabs .equipment-position{display:block;font-family:var(--serif);font-size:15.9px;letter-spacing:.1em;margin-top:25px}
+.equipment-tabs .equipment-track .tab-copy .eyebrow{font-size:12.72px;margin-bottom:12px}
 .equipment-tabs .equipment-track .tab-copy{padding-top:20px}
 .equipment-tabs.tabs-ready .equipment-track{display:block;overflow:visible;padding:0;scroll-snap-type:none}
 .equipment-tabs.tabs-ready .equipment-card{display:grid;grid-template-columns:1.1fr 1fr;gap:65px;align-items:center;min-height:350px;border:1px solid var(--line);border-radius:24px;background:white;padding:36px;max-width:none}
 .equipment-tabs.tabs-ready .equipment-image{height:285px}
 .equipment-tabs.tabs-ready .equipment-image img{width:100%;height:100%;object-fit:contain}
-.equipment-tabs.tabs-ready h3{font-size:34px;margin-top:0}
+.equipment-tabs.tabs-ready h3{font-size:36.04px;margin-top:0}
 .equipment-tabs.tabs-ready .tab-copy{padding:0}
-.equipment-tabs.tabs-ready .tab-copy>p:not(.eyebrow){font-size:18px;color:var(--navy)}
+.equipment-tabs.tabs-ready .tab-copy>p:not(.eyebrow){font-size:19.08px;color:var(--navy)}
 .equipment-tabs .content-panel{touch-action:pan-y}
 .doctor-controls{display:none;align-items:center;justify-content:center;gap:24px;margin-top:22px}
-.doctor-controls>span{font-family:var(--serif);font-size:15px;font-variant-numeric:tabular-nums}
+.doctor-controls>span{font-family:var(--serif);font-size:15.9px;font-variant-numeric:tabular-nums}
 .round-button{transition:background-color 220ms var(--motion-ease),border-color 220ms var(--motion-ease)}
 .round-button:disabled{opacity:.35;cursor:default}
 .doctor-card,.feature-item,.space-grid>a{outline-offset:6px}
@@ -72,16 +72,16 @@
 .section-head p.is-revealed,.mission-copy>p.is-revealed{transition-duration:500ms}
 .mission-photo.reveal-pending{transform:none}
 .history-count{font-variant-numeric:tabular-nums;display:inline-block;min-width:1.1em}
-@media(max-width:900px){.content-tablist a,.content-tablist button{font-size:17px;padding-inline:22px}.care-tabs.tabs-ready .content-panel,.equipment-tabs.tabs-ready .equipment-card{gap:35px}.care-tabs.tabs-ready h3,.equipment-tabs.tabs-ready h3{font-size:28px}.care-tabs.tabs-ready .tab-image{height:320px}.equipment-tabs.tabs-ready .equipment-image{height:245px}.hero-controls{gap:9px}.hero-dots{gap:9px}.hero-controls>button[data-hero-play]{min-width:74px;padding-inline:10px}}
-@media(max-width:640px){.hero-controls{gap:12px;margin-top:23px;max-width:100%}.hero-controls>button{width:40px;height:40px}.hero-controls>button[data-hero-play]{width:auto;min-width:80px}.hero-dots{gap:12px;margin-left:0}.hero-dots button{height:40px}.content-tablist{margin-bottom:26px}.content-tablist a,.content-tablist button{font-size:17px;padding:14px 19px}.care-tabs .content-panels{grid-template-columns:1fr;gap:36px}.care-tabs.tabs-ready .content-panel{display:block;min-height:0}.care-tabs.tabs-ready .tab-image{height:245px}.care-tabs.tabs-ready .tab-copy{padding-top:28px}.care-tabs.tabs-ready h3{font-size:28px}.tab-copy .button{margin-top:24px}.equipment-tabs.tabs-ready .equipment-card{display:block;padding:24px;min-height:390px}.equipment-tabs.tabs-ready .equipment-image{height:220px}.equipment-tabs.tabs-ready .tab-copy{padding-top:25px}.equipment-tabs.tabs-ready h3{font-size:27px}.equipment-tabs.tabs-ready .tab-copy>p:not(.eyebrow){font-size:17px;margin-top:12px}.equipment-position{margin-top:16px!important}.doctor-grid.carousel-ready{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:0;scrollbar-width:none;padding:5px 0 5px}.doctor-grid.carousel-ready::-webkit-scrollbar{display:none}.doctor-grid.carousel-ready .doctor-card{flex:0 0 86%;min-width:0;scroll-snap-align:start}.doctor-grid.carousel-ready .doctor-photo{height:350px}.doctor-controls:not([hidden]){display:flex}.reveal-pending{transform:translateY(14px)}.hero-visual{touch-action:pan-y}}
+@media(max-width:900px){.content-tablist a,.content-tablist button{font-size:18.02px;padding-inline:22px}.care-tabs.tabs-ready .content-panel,.equipment-tabs.tabs-ready .equipment-card{gap:35px}.care-tabs.tabs-ready h3,.equipment-tabs.tabs-ready h3{font-size:29.68px}.care-tabs.tabs-ready .tab-image{height:320px}.equipment-tabs.tabs-ready .equipment-image{height:245px}.hero-controls{gap:9px}.hero-dots{gap:9px}.hero-controls>button[data-hero-play]{min-width:74px;padding-inline:10px}}
+@media(max-width:640px){.hero-controls{gap:12px;margin-top:23px;max-width:100%}.hero-controls>button{width:40px;height:40px}.hero-controls>button[data-hero-play]{width:auto;min-width:80px}.hero-dots{gap:12px;margin-left:0}.hero-dots button{height:40px}.content-tablist{margin-bottom:26px}.content-tablist a,.content-tablist button{font-size:18.02px;padding:14px 19px}.care-tabs .content-panels{grid-template-columns:1fr;gap:36px}.care-tabs.tabs-ready .content-panel{display:block;min-height:0}.care-tabs.tabs-ready .tab-image{height:245px}.care-tabs.tabs-ready .tab-copy{padding-top:28px}.care-tabs.tabs-ready h3{font-size:29.68px}.tab-copy .button{margin-top:24px}.equipment-tabs.tabs-ready .equipment-card{display:block;padding:24px;min-height:390px}.equipment-tabs.tabs-ready .equipment-image{height:220px}.equipment-tabs.tabs-ready .tab-copy{padding-top:25px}.equipment-tabs.tabs-ready h3{font-size:28.62px}.equipment-tabs.tabs-ready .tab-copy>p:not(.eyebrow){font-size:18.02px;margin-top:12px}.equipment-position{margin-top:16px!important}.doctor-grid.carousel-ready{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:0;scrollbar-width:none;padding:5px 0 5px}.doctor-grid.carousel-ready::-webkit-scrollbar{display:none}.doctor-grid.carousel-ready .doctor-card{flex:0 0 86%;min-width:0;scroll-snap-align:start}.doctor-grid.carousel-ready .doctor-photo{height:350px}.doctor-controls:not([hidden]){display:flex}.reveal-pending{transform:translateY(14px)}.hero-visual{touch-action:pan-y}}
 @media(prefers-reduced-motion:reduce){.reveal-pending,.is-revealed{opacity:1!important;transform:none!important}.hero-image-outgoing{display:none!important}#hero-image{will-change:auto;opacity:1!important;transform:translateY(var(--photo-offset,0%))!important}.capsule-stage img{animation:none!important}.text-link::after,.space-grid img{transform:none!important}.doctor-card .original img{transform:translate(-4%,-1%)!important}}
 
 
 /* Life care style doctor tabs */
 #doctors.lifecare-ready .lifecare-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .lifecare-tabs button{text-align:center;padding:18px 8px;color:#8b8276}
-.lifecare-tabs .eyebrow{display:block;font-size:12px;margin-bottom:8px;letter-spacing:.12em}
-.lifecare-tabs button>span:last-child{font-size:clamp(15px,2vw,23px)}
+.lifecare-tabs .eyebrow{display:block;font-size:12.72px;margin-bottom:8px;letter-spacing:.12em}
+.lifecare-tabs button>span:last-child{font-size:clamp(15.9px,2.12vw,24.38px)}
 .lifecare-tabs button[aria-selected=true]{color:var(--espresso);font-weight:600}
 .lifecare-progress{position:relative;height:2px;background:var(--line);margin:12px 8px 38px}
 .lifecare-fill{position:absolute;inset:0 auto 0 0;background:var(--espresso);width:0}
@@ -90,17 +90,17 @@
 #doctors.lifecare-ready .doctor-card{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,70px);align-items:center;padding:32px;border:1px solid var(--line);border-radius:28px;background:#eeebe5;opacity:1;transform:none}
 #doctors.lifecare-ready .doctor-photo{height:380px}
 #doctors.lifecare-ready .doctor-meta{padding:24px 0}
-#doctors.lifecare-ready .doctor-meta h3{font-size:clamp(26px,3vw,40px);margin-bottom:24px}
-#doctors.lifecare-ready .doctor-meta p{font-size:17px;line-height:1.9}
-.lifecare-play{display:block;margin:18px 0 0 auto;padding:8px 16px;border:1px solid var(--line);border-radius:24px;font-size:13px}
+#doctors.lifecare-ready .doctor-meta h3{font-size:clamp(27.56px,3.18vw,42.4px);margin-bottom:24px}
+#doctors.lifecare-ready .doctor-meta p{font-size:18.02px;line-height:1.9}
+.lifecare-play{display:block;margin:18px 0 0 auto;padding:8px 16px;border:1px solid var(--line);border-radius:24px;font-size:13.78px}
 .lifecare-play:disabled{opacity:.5;cursor:default}
 @media(max-width:640px){
  #doctors.lifecare-ready .doctor-card{grid-template-columns:1fr;gap:12px;padding:20px}
  #doctors.lifecare-ready .doctor-photo{height:330px}
  #doctors.lifecare-ready .doctor-placeholder{height:330px}
  #doctors.lifecare-ready .doctor-meta{min-height:170px;padding:16px 0}
- #doctors.lifecare-ready .doctor-meta p{font-size:15px}
- .lifecare-tabs button{padding:14px 0}.lifecare-tabs .eyebrow{font-size:9px;letter-spacing:.04em}
+ #doctors.lifecare-ready .doctor-meta p{font-size:15.9px}
+ .lifecare-tabs button{padding:14px 0}.lifecare-tabs .eyebrow{font-size:9.54px;letter-spacing:.04em}
  .lifecare-progress{margin-bottom:26px}
 }
 
@@ -125,15 +125,15 @@
 
 /* Director biography */
 .doctor-bio{margin-top:24px;text-align:left}
-.doctor-bio h4{font-size:15px;font-weight:600;color:var(--espresso);margin:24px 0 10px}
+.doctor-bio h4{font-size:15.9px;font-weight:600;color:var(--espresso);margin:24px 0 10px}
 .doctor-bio h4:first-child{margin-top:0}
 .doctor-bio ul{list-style:none;padding:0;margin:0;color:#746d64}
-.doctor-bio li{position:relative;padding-left:12px;font-size:14px;line-height:1.8;word-break:keep-all}
+.doctor-bio li{position:relative;padding-left:12px;font-size:14.84px;line-height:1.8;word-break:keep-all}
 .doctor-bio li+li{margin-top:5px}
 .doctor-bio li::before{content:'–';position:absolute;left:0}
 #doctors.lifecare-ready .doctor-card{align-items:start}
 #doctors.lifecare-ready .doctor-photo{align-self:center}
-@media(max-width:640px){.doctor-bio li{font-size:13px}.doctor-bio h4{font-size:14px}}
+@media(max-width:640px){.doctor-bio li{font-size:13.78px}.doctor-bio h4{font-size:14.84px}}
 
 /* Stronger brand contrast and motion for the doctor section. */
 #doctors.lifecare-ready{position:relative}
@@ -156,9 +156,9 @@
 #doctors.lifecare-ready .doctor-placeholder{background:linear-gradient(145deg,#aa8966,#6f533c);color:#fff3de}
 #doctors .doctor-placeholder .profile-number{color:#e8cfaa}
 #doctors.lifecare-ready .doctor-meta{position:relative;z-index:1;animation:doctor-copy-in 850ms 160ms var(--motion-ease) both}
-#doctors.lifecare-ready .doctor-meta h3{color:#fff8ee;font-size:clamp(30px,3.5vw,46px);letter-spacing:-.035em}
+#doctors.lifecare-ready .doctor-meta h3{color:#fff8ee;font-size:clamp(31.8px,3.71vw,48.76px);letter-spacing:-.035em}
 #doctors.lifecare-ready .doctor-meta h3 small{color:#dfc291}
-#doctors.lifecare-ready .doctor-meta .role{color:#e4c596;letter-spacing:.06em;font-size:13px}
+#doctors.lifecare-ready .doctor-meta .role{color:#e4c596;letter-spacing:.06em;font-size:13.78px}
 #doctors.lifecare-ready .doctor-meta>p:not(.role){color:#ece1d4}
 #doctors .doctor-bio{border-top:1px solid #dbc29735;padding-top:22px}
 #doctors .doctor-bio h4{color:#e9cd9d;letter-spacing:.08em}
@@ -178,8 +178,8 @@
 @media(max-width:640px){
  #doctors.lifecare-ready .doctor-card{padding:30px 24px;min-height:0;border-radius:24px;gap:22px}
  #doctors.lifecare-ready .doctor-meta{padding-top:12px}
- #doctors .doctor-bio li{font-size:13px}
- #doctors .lifecare-tabs button>span:last-child{font-size:14px}
+ #doctors .doctor-bio li{font-size:13.78px}
+ #doctors .lifecare-tabs button>span:last-child{font-size:14.84px}
  #doctors.lifecare-ready .doctor-card::before{width:300px;height:300px}
  #doctors.lifecare-ready .doctor-card::after{width:240px;height:240px}
 }
@@ -210,38 +210,38 @@
 /* Fuller doctor composition: larger visual, tighter spacing, wider canvas. */
 #doctors.wrap{width:min(1320px,calc(100% - 80px));padding-block:76px}
 #doctors .section-head{margin-bottom:30px;align-items:center}
-#doctors .section-head h2{font-size:clamp(32px,3.4vw,48px);line-height:1.25}
+#doctors .section-head h2{font-size:clamp(33.92px,3.6vw,50.88px);line-height:1.25}
 #doctors .section-head .eyebrow{margin-bottom:14px}
 #doctors .lifecare-progress{margin-bottom:26px}
 #doctors.lifecare-ready .doctor-card{grid-template-columns:1fr 1fr;gap:clamp(30px,4vw,60px);padding:36px 48px;min-height:540px}
 #doctors.lifecare-ready .doctor-photo.original{width:min(100%,365px);height:auto;aspect-ratio:.72;margin:0}
 #doctors.lifecare-ready .doctor-photo.doctor-placeholder{width:100%;height:470px;border-radius:24px}
 #doctors.lifecare-ready .doctor-meta{padding:18px 0;width:100%}
-#doctors.lifecare-ready .doctor-meta h3{font-size:clamp(36px,4vw,56px);margin-bottom:22px}
-#doctors.lifecare-ready .doctor-meta h3 small{font-size:18px}
-#doctors .doctor-bio li{font-size:16px;line-height:1.85}
+#doctors.lifecare-ready .doctor-meta h3{font-size:clamp(38.16px,4.24vw,59.36px);margin-bottom:22px}
+#doctors.lifecare-ready .doctor-meta h3 small{font-size:19.08px}
+#doctors .doctor-bio li{font-size:16.96px;line-height:1.85}
 #doctors .doctor-bio li+li{margin-top:12px}
-#doctors .doctor-more{display:flex;align-items:center;justify-content:space-between;margin-top:28px;padding-top:20px;border-top:1px solid #dbc29740;color:#f1d7ae;font-size:14px;letter-spacing:.04em}
-#doctors .doctor-more span{display:grid;place-items:center;width:40px;height:40px;border:1px solid #dbc29775;border-radius:50%;font-size:22px;transition:transform 350ms var(--motion-ease),background 350ms ease}
+#doctors .doctor-more{display:flex;align-items:center;justify-content:space-between;margin-top:28px;padding-top:20px;border-top:1px solid #dbc29740;color:#f1d7ae;font-size:14.84px;letter-spacing:.04em}
+#doctors .doctor-more span{display:grid;place-items:center;width:40px;height:40px;border:1px solid #dbc29775;border-radius:50%;font-size:23.32px;transition:transform 350ms var(--motion-ease),background 350ms ease}
 #doctors .doctor-card:hover .doctor-more span{transform:translateX(5px);background:#d8b88620}
-#doctors .lifecare-play{border:0;background:none;font-size:12px;padding:4px 0;margin-top:12px}
+#doctors .lifecare-play{border:0;background:none;font-size:12.72px;padding:4px 0;margin-top:12px}
 @media(max-width:900px){
  #doctors.wrap{width:calc(100% - 48px)}
  #doctors.lifecare-ready .doctor-card{padding:30px;gap:30px;min-height:0}
- #doctors .doctor-bio li{font-size:14px}
+ #doctors .doctor-bio li{font-size:14.84px}
  #doctors.lifecare-ready .doctor-photo.doctor-placeholder{height:380px}
 }
 @media(max-width:640px){
  #doctors.wrap{width:calc(100% - 32px);padding-block:56px}
  #doctors .section-head{align-items:start;gap:16px}
- #doctors .section-head h2{font-size:30px}
- #doctors .section-head>.text-link{font-size:12px;white-space:nowrap}
+ #doctors .section-head h2{font-size:31.8px}
+ #doctors .section-head>.text-link{font-size:12.72px;white-space:nowrap}
  #doctors.lifecare-ready .doctor-card{grid-template-columns:1fr;padding:26px;gap:22px}
  #doctors.lifecare-ready .doctor-photo.original{width:min(100%,270px)}
  #doctors.lifecare-ready .doctor-photo.doctor-placeholder{height:350px}
  #doctors.lifecare-ready .doctor-meta{padding:8px 0}
- #doctors.lifecare-ready .doctor-meta h3{font-size:36px}
- #doctors .doctor-bio li{font-size:13px}
+ #doctors.lifecare-ready .doctor-meta h3{font-size:38.16px}
+ #doctors .doctor-bio li{font-size:13.78px}
  #doctors .doctor-more{margin-top:22px;padding-top:16px}
 }
 @media(prefers-reduced-motion:reduce){#doctors .doctor-more span{transition:none}}
@@ -250,7 +250,7 @@
 #doctors.wrap{width:min(1600px,calc(100% - 96px));padding:80px 0;margin-block:0;background:none;border:0;border-radius:0;box-shadow:none}
 #doctors .section-head{margin-bottom:34px;gap:30px;align-items:center}
 #doctors .section-head h2 br{display:none}
-#doctors .section-head h2{font-size:clamp(32px,3vw,48px);line-height:1.35}
+#doctors .section-head h2{font-size:clamp(33.92px,3.18vw,50.88px);line-height:1.35}
 #doctors .section-head .eyebrow{margin-bottom:14px}
 #doctors .section-head>.text-link{flex-shrink:0;background:none;border:0;border-bottom:1px solid var(--espresso);border-radius:0;padding:8px 0}
 #doctors.lifecare-ready .lifecare-tabs{padding:6px 0;background:none;border:0;border-radius:0;border-bottom:1px solid #c8b492}
@@ -270,7 +270,7 @@
 @media(max-width:640px){
  #doctors.wrap{width:calc(100% - 32px);padding-block:48px}
  #doctors .section-head{display:block;margin-bottom:24px}
- #doctors .section-head h2{font-size:30px}
+ #doctors .section-head h2{font-size:31.8px}
  #doctors .section-head>.text-link{margin-top:16px}
  #doctors.lifecare-ready .doctor-card{grid-template-columns:1fr;padding:28px 24px;gap:22px}
  #doctors.lifecare-ready .doctor-photo.original{width:min(100%,270px)}
@@ -282,8 +282,8 @@
 #doctors .lifecare-tabs button{position:relative;overflow:hidden;isolation:isolate;padding:28px 12px 30px;border:0;border-radius:0;background:none;box-shadow:none;color:#8b7967;font-weight:400;transition:color 350ms ease}
 #doctors .lifecare-tabs button::before{content:'';position:absolute;z-index:-1;inset:0;background:radial-gradient(ellipse at 50% 100%,#bba07830 0%,#d9c5a316 45%,transparent 75%);opacity:0;transform:translateY(10px);transition:opacity 450ms ease,transform 600ms var(--motion-ease)}
 #doctors .lifecare-tabs button::after{content:'';position:absolute;bottom:0;left:18%;right:18%;height:2px;background:linear-gradient(90deg,transparent,#bea78a,#756556,#bea78a,transparent);transform:scaleX(0);transform-origin:center;transition:transform 550ms var(--motion-ease)}
-#doctors .lifecare-tabs button>.eyebrow{color:#9d8d7c;letter-spacing:.15em;font-size:12px;margin-bottom:12px;transition:color 350ms ease}
-#doctors .lifecare-tabs button>span:last-child{font-size:clamp(19px,2vw,29px);letter-spacing:-.035em;line-height:1.4;transition:transform 450ms var(--motion-ease)}
+#doctors .lifecare-tabs button>.eyebrow{color:#9d8d7c;letter-spacing:.15em;font-size:12.72px;margin-bottom:12px;transition:color 350ms ease}
+#doctors .lifecare-tabs button>span:last-child{font-size:clamp(20.14px,2.12vw,30.74px);letter-spacing:-.035em;line-height:1.4;transition:transform 450ms var(--motion-ease)}
 #doctors .lifecare-tabs button[aria-selected=true]{color:#574334;font-weight:600}
 #doctors .lifecare-tabs button[aria-selected=true]>.eyebrow{color:#927449}
 #doctors .lifecare-tabs button[aria-selected=true]::after{transform:scaleX(1)}
@@ -297,86 +297,86 @@
 #doctors .lifecare-tabs button:focus-visible::before{opacity:1;transform:none}
 @media(max-width:640px){
  #doctors .lifecare-tabs button{padding:20px 4px 22px}
- #doctors .lifecare-tabs button>.eyebrow{font-size:9px;letter-spacing:.08em;margin-bottom:9px}
- #doctors .lifecare-tabs button>span:last-child{font-size:15px}
+ #doctors .lifecare-tabs button>.eyebrow{font-size:9.54px;letter-spacing:.08em;margin-bottom:9px}
+ #doctors .lifecare-tabs button>span:last-child{font-size:15.9px}
 }
 @media(prefers-reduced-motion:reduce){
  #doctors .lifecare-tabs button,#doctors .lifecare-tabs button::before,#doctors .lifecare-tabs button::after,#doctors .lifecare-tabs button>span{transition:none;animation:none}
 }
 
 /* Larger type scale across home and detail pages. */
-body{font-size:18px;line-height:1.8}
-h1{font-size:clamp(48px,5.2vw,84px);line-height:1.22}
-h2{font-size:clamp(36px,3.4vw,52px);line-height:1.3}
-h3{font-size:29px}
-.eyebrow{font-size:16px;letter-spacing:.14em}
-.hero-intro{font-size:24px;line-height:1.75}
-.hero-footnote{font-size:16px}
-.section-head>p{font-size:19px;max-width:390px}
-.text-link{font-size:16px}
-.button{font-size:17px;min-height:56px}
-#nav a{font-size:17px}
-#mega a{font-size:17px}#mega h2{font-size:21px}
-.header-phone{font-size:18px}
-.content-tablist a,.content-tablist button{font-size:22px}
-.tab-copy>p:not(.eyebrow){font-size:19px}
-.care-tabs.tabs-ready h3,.equipment-tabs.tabs-ready h3{font-size:39px}
-.doctor-meta p{font-size:17px}
-.doctor-meta .role{font-size:16px}
-#doctors .section-head h2{font-size:clamp(36px,3.4vw,54px)}
-#doctors .lifecare-tabs button>span:last-child{font-size:clamp(22px,2.3vw,33px)}
-#doctors .lifecare-tabs button>.eyebrow{font-size:14px}
-#doctors.lifecare-ready .doctor-meta h3{font-size:clamp(40px,4vw,60px)}
-#doctors.lifecare-ready .doctor-meta .role{font-size:15px}
-#doctors .doctor-bio h4{font-size:17px}
-#doctors .doctor-bio li{font-size:18px}
-#doctors .doctor-more{font-size:16px}
-.lead{font-size:22px}
-.content-section p,.content-layout p,.greeting p,.promise-detail p{font-size:19px}
-.note,.source-note{font-size:15px}
-.footer{font-size:15px}.footer-top>div{font-size:16px}.footer-bottom{font-size:14px}
-@media(max-width:1200px) and (min-width:901px){#nav{gap:18px}#nav a{font-size:16px}.header{gap:22px;padding-inline:32px}}
+body{font-size:19.08px;line-height:1.8}
+h1{font-size:clamp(50.88px,5.51vw,89.04px);line-height:1.22}
+h2{font-size:clamp(38.16px,3.6vw,55.12px);line-height:1.3}
+h3{font-size:30.74px}
+.eyebrow{font-size:16.96px;letter-spacing:.14em}
+.hero-intro{font-size:25.44px;line-height:1.75}
+.hero-footnote{font-size:16.96px}
+.section-head>p{font-size:20.14px;max-width:390px}
+.text-link{font-size:16.96px}
+.button{font-size:18.02px;min-height:56px}
+#nav a{font-size:18.02px}
+#mega a{font-size:18.02px}#mega h2{font-size:22.26px}
+.header-phone{font-size:19.08px}
+.content-tablist a,.content-tablist button{font-size:23.32px}
+.tab-copy>p:not(.eyebrow){font-size:20.14px}
+.care-tabs.tabs-ready h3,.equipment-tabs.tabs-ready h3{font-size:41.34px}
+.doctor-meta p{font-size:18.02px}
+.doctor-meta .role{font-size:16.96px}
+#doctors .section-head h2{font-size:clamp(38.16px,3.6vw,57.24px)}
+#doctors .lifecare-tabs button>span:last-child{font-size:clamp(23.32px,2.44vw,34.98px)}
+#doctors .lifecare-tabs button>.eyebrow{font-size:14.84px}
+#doctors.lifecare-ready .doctor-meta h3{font-size:clamp(42.4px,4.24vw,63.6px)}
+#doctors.lifecare-ready .doctor-meta .role{font-size:15.9px}
+#doctors .doctor-bio h4{font-size:18.02px}
+#doctors .doctor-bio li{font-size:19.08px}
+#doctors .doctor-more{font-size:16.96px}
+.lead{font-size:23.32px}
+.content-section p,.content-layout p,.greeting p,.promise-detail p{font-size:20.14px}
+.note,.source-note{font-size:15.9px}
+.footer{font-size:15.9px}.footer-top>div{font-size:16.96px}.footer-bottom{font-size:14.84px}
+@media(max-width:1200px) and (min-width:901px){#nav{gap:18px}#nav a{font-size:16.96px}.header{gap:22px;padding-inline:32px}}
 @media(max-width:900px){
- body{font-size:17px}h1{font-size:clamp(42px,6vw,62px)}h2{font-size:38px}h3{font-size:27px}
- .hero-intro{font-size:21px}.content-tablist a,.content-tablist button{font-size:19px}
+ body{font-size:18.02px}h1{font-size:clamp(44.52px,6.36vw,65.72px)}h2{font-size:40.28px}h3{font-size:28.62px}
+ .hero-intro{font-size:22.26px}.content-tablist a,.content-tablist button{font-size:20.14px}
 }
 @media(max-width:640px){
- body{font-size:16px;line-height:1.75}h1{font-size:clamp(38px,10vw,48px)}h2{font-size:32px}h3{font-size:25px}
- .eyebrow{font-size:13px}.hero-intro{font-size:20px}.hero-footnote{font-size:14px}
- .section-head>p,.tab-copy>p:not(.eyebrow){font-size:17px}.text-link{font-size:15px}.button{font-size:16px}
- .care-tabs.tabs-ready h3,.equipment-tabs.tabs-ready h3{font-size:30px}
- #doctors .section-head h2{font-size:32px}
- #doctors .lifecare-tabs button>span:last-child{font-size:16px}
- #doctors .lifecare-tabs button>.eyebrow{font-size:10px;letter-spacing:.04em}
- #doctors.lifecare-ready .doctor-meta h3{font-size:39px}
- #doctors .doctor-bio li{font-size:15px}#doctors .doctor-bio h4{font-size:16px}
- .lead{font-size:19px}.content-section p,.content-layout p,.greeting p,.promise-detail p{font-size:17px}
- .note,.source-note{font-size:14px}.footer p{font-size:13px}.footer-top>div{font-size:14px}.footer-bottom{font-size:12px}
+ body{font-size:16.96px;line-height:1.75}h1{font-size:clamp(40.28px,10.6vw,50.88px)}h2{font-size:33.92px}h3{font-size:26.5px}
+ .eyebrow{font-size:13.78px}.hero-intro{font-size:21.2px}.hero-footnote{font-size:14.84px}
+ .section-head>p,.tab-copy>p:not(.eyebrow){font-size:18.02px}.text-link{font-size:15.9px}.button{font-size:16.96px}
+ .care-tabs.tabs-ready h3,.equipment-tabs.tabs-ready h3{font-size:31.8px}
+ #doctors .section-head h2{font-size:33.92px}
+ #doctors .lifecare-tabs button>span:last-child{font-size:16.96px}
+ #doctors .lifecare-tabs button>.eyebrow{font-size:10.6px;letter-spacing:.04em}
+ #doctors.lifecare-ready .doctor-meta h3{font-size:41.34px}
+ #doctors .doctor-bio li{font-size:15.9px}#doctors .doctor-bio h4{font-size:16.96px}
+ .lead{font-size:20.14px}.content-section p,.content-layout p,.greeting p,.promise-detail p{font-size:18.02px}
+ .note,.source-note{font-size:14.84px}.footer p{font-size:13.78px}.footer-top>div{font-size:14.84px}.footer-bottom{font-size:12.72px}
 }
 
 /* Fill the director text area through hierarchy and full-width biography rows. */
 #doctors.lifecare-ready .doctor-meta h3{display:flex;align-items:baseline;gap:18px;margin-bottom:20px}
 #doctors.lifecare-ready .doctor-meta h3 small{margin-left:0;white-space:nowrap}
-#doctors.lifecare-ready .doctor-meta>.doctor-statement{font-size:clamp(23px,2.1vw,32px);line-height:1.55;color:#f2dec0;letter-spacing:-.04em;font-weight:500;margin-bottom:28px;max-width:none}
+#doctors.lifecare-ready .doctor-meta>.doctor-statement{font-size:clamp(24.38px,2.23vw,33.92px);line-height:1.55;color:#f2dec0;letter-spacing:-.04em;font-weight:500;margin-bottom:28px;max-width:none}
 #doctors .doctor-bio{padding-top:20px;margin-top:0}
-#doctors .doctor-bio h4{margin-bottom:12px;font-size:16px;letter-spacing:.12em}
+#doctors .doctor-bio h4{margin-bottom:12px;font-size:16.96px;letter-spacing:.12em}
 #doctors .doctor-bio ul{counter-reset:career}
-#doctors .doctor-bio li{counter-increment:career;display:flex;align-items:baseline;gap:18px;padding:13px 0;line-height:1.6;border-bottom:1px solid #dbc29720;font-size:clamp(16px,1.25vw,20px)}
+#doctors .doctor-bio li{counter-increment:career;display:flex;align-items:baseline;gap:18px;padding:13px 0;line-height:1.6;border-bottom:1px solid #dbc29720;font-size:clamp(16.96px,1.33vw,21.2px)}
 #doctors .doctor-bio li+li{margin-top:0}
-#doctors .doctor-bio li::before{content:counter(career,decimal-leading-zero);position:static;flex:0 0 26px;width:auto;height:auto;border-radius:0;background:none;color:#d0ad77;font-family:var(--serif);font-size:15px;letter-spacing:.04em}
+#doctors .doctor-bio li::before{content:counter(career,decimal-leading-zero);position:static;flex:0 0 26px;width:auto;height:auto;border-radius:0;background:none;color:#d0ad77;font-family:var(--serif);font-size:15.9px;letter-spacing:.04em}
 #doctors .doctor-more{margin-top:22px;padding-top:16px}
 @media(max-width:900px){
- #doctors.lifecare-ready .doctor-meta>.doctor-statement{font-size:23px}
- #doctors .doctor-bio li{font-size:15px;gap:12px}
+ #doctors.lifecare-ready .doctor-meta>.doctor-statement{font-size:24.38px}
+ #doctors .doctor-bio li{font-size:15.9px;gap:12px}
 }
 @media(max-width:640px){
- #doctors.lifecare-ready .doctor-meta>.doctor-statement{font-size:22px;margin-bottom:24px}
+ #doctors.lifecare-ready .doctor-meta>.doctor-statement{font-size:23.32px;margin-bottom:24px}
  #doctors.lifecare-ready .doctor-meta h3{gap:12px}
- #doctors .doctor-bio li{font-size:15px;padding-block:12px}
+ #doctors .doctor-bio li{font-size:15.9px;padding-block:12px}
 }
 
 /* Mid-dot biography and a subtle clinic logo at the card base. */
-#doctors .doctor-bio li::before{content:'·';flex-basis:12px;font-family:inherit;font-size:24px;line-height:1;color:#d0ad77;letter-spacing:0}
+#doctors .doctor-bio li::before{content:'·';flex-basis:12px;font-family:inherit;font-size:25.44px;line-height:1;color:#d0ad77;letter-spacing:0}
 #doctors .doctor-bio li{gap:12px}
 #doctors.lifecare-ready .doctor-card{border-radius:24px;padding-bottom:76px}
 #doctors .doctor-watermark{position:absolute;z-index:0;right:-20px;bottom:10px;width:min(68%,850px);height:auto;max-width:none;opacity:.075;pointer-events:none;user-select:none;object-fit:contain}
@@ -457,28 +457,28 @@ h3{font-size:29px}
 }
 #doctors.lifecare-ready .doctor-card:first-child .doctor-photo.original{width:min(100%,430px);justify-self:center;position:relative}
 #doctors.lifecare-ready .doctor-card:first-child .doctor-photo.original img{filter:sepia(.1) saturate(.9) brightness(.91) contrast(.97) drop-shadow(8px 4px 16px #1d140b2a)}
-#doctors.lifecare-ready .doctor-meta .role{color:#f4d8a8;font-weight:600;letter-spacing:.02em;font-size:16px}
+#doctors.lifecare-ready .doctor-meta .role{color:#f4d8a8;font-weight:600;letter-spacing:.02em;font-size:16.96px}
 #doctors.lifecare-ready .doctor-meta h3{color:#fffaf3;text-shadow:0 2px 12px #1b120d30}
-#doctors.lifecare-ready .doctor-meta h3 small{color:#f3d8ae;font-weight:500;font-size:20px}
+#doctors.lifecare-ready .doctor-meta h3 small{color:#f3d8ae;font-weight:500;font-size:21.2px}
 #doctors.lifecare-ready .doctor-meta>.doctor-statement{color:#fff2dd;font-weight:600;line-height:1.6}
-#doctors .doctor-bio h4{color:#f6d7a4;font-weight:650;font-size:18px;letter-spacing:.04em}
+#doctors .doctor-bio h4{color:#f6d7a4;font-weight:650;font-size:19.08px;letter-spacing:.04em}
 #doctors .doctor-bio ul{color:#fff8ed}
-#doctors .doctor-bio li{font-size:clamp(18px,1.35vw,21px);font-weight:500;line-height:1.8;border-bottom-color:#ead1ab38}
+#doctors .doctor-bio li{font-size:clamp(19.08px,1.43vw,22.26px);font-weight:500;line-height:1.8;border-bottom-color:#ead1ab38}
 #doctors .doctor-bio li::before{color:#f2cb8b}
-#doctors .doctor-more{color:#fff0d6;font-weight:600;font-size:17px;border-top-color:#ead1ab50}
+#doctors .doctor-more{color:#fff0d6;font-weight:600;font-size:18.02px;border-top-color:#ead1ab50}
 #doctors .doctor-more span{border-color:#e9c991;color:#fff5e3}
 #doctors .doctor-watermark{opacity:.035}
-@media(max-width:900px){#doctors .doctor-bio li{font-size:17px}}
+@media(max-width:900px){#doctors .doctor-bio li{font-size:18.02px}}
 @media(max-width:640px){
  #doctors.lifecare-ready .doctor-card:first-child,
  #doctors.lifecare-ready .doctor-card:first-child.light-active{
   background-image:linear-gradient(to bottom,#241a13ed 0%,#241a13e0 53%,#39291c85 78%,#39291c66 100%),url('assets/clinic-interior.jpg');
  }
  #doctors.lifecare-ready .doctor-card:first-child .doctor-photo.original{width:min(100%,310px)}
- #doctors.lifecare-ready .doctor-meta .role{font-size:14px}
- #doctors.lifecare-ready .doctor-meta h3 small{font-size:18px}
- #doctors .doctor-bio li{font-size:16px}
- #doctors .doctor-bio h4,#doctors .doctor-more{font-size:16px}
+ #doctors.lifecare-ready .doctor-meta .role{font-size:14.84px}
+ #doctors.lifecare-ready .doctor-meta h3 small{font-size:19.08px}
+ #doctors .doctor-bio li{font-size:16.96px}
+ #doctors .doctor-bio h4,#doctors .doctor-more{font-size:16.96px}
 }
 
 /* Move the wall sign left and raise the portrait while keeping its base aligned. */
@@ -534,8 +534,8 @@ h3{font-size:29px}
 }
 
 /* Larger specialist label in the doctor introduction. */
-#doctors.lifecare-ready .doctor-meta .role{font-size:21px;line-height:1.5;margin-bottom:12px}
-@media(max-width:640px){#doctors.lifecare-ready .doctor-meta .role{font-size:18px}}
+#doctors.lifecare-ready .doctor-meta .role{font-size:22.26px;line-height:1.5;margin-bottom:12px}
+@media(max-width:640px){#doctors.lifecare-ready .doctor-meta .role{font-size:19.08px}}
 
 /* Staggered typography motion for each doctor tab. */
 #doctors.lifecare-ready .doctor-meta{animation:none}
@@ -580,10 +580,10 @@ h3{font-size:29px}
 }
 
 /* Button-style profile link within the linked doctor card. */
-#doctors .doctor-more{display:inline-flex;align-items:center;justify-content:center;width:auto;min-height:52px;margin-top:26px;padding:12px 26px;border:1px solid #d8b684;border-radius:28px;background:linear-gradient(120deg,#e3c99f,#b68d5a);color:#35251a;font-size:16px;font-weight:650;letter-spacing:0;box-shadow:0 5px 16px #20140d20;transition:background 300ms ease,box-shadow 300ms ease}
+#doctors .doctor-more{display:inline-flex;align-items:center;justify-content:center;width:auto;min-height:52px;margin-top:26px;padding:12px 26px;border:1px solid #d8b684;border-radius:28px;background:linear-gradient(120deg,#e3c99f,#b68d5a);color:#35251a;font-size:16.96px;font-weight:650;letter-spacing:0;box-shadow:0 5px 16px #20140d20;transition:background 300ms ease,box-shadow 300ms ease}
 #doctors .doctor-card:hover .doctor-more{background:linear-gradient(120deg,#f0dcb9,#c6a06b);box-shadow:0 8px 20px #20140d30}
 #doctors .doctor-more span{display:none}
-@media(max-width:640px){#doctors .doctor-more{min-height:48px;font-size:15px;padding:11px 22px}}
+@media(max-width:640px){#doctors .doctor-more{min-height:48px;font-size:15.9px;padding:11px 22px}}
 @media(prefers-reduced-motion:reduce){#doctors .doctor-more{transition:none}}
 
 /* Side-by-side biography groups on the doctor detail page. */
@@ -600,26 +600,26 @@ h3{font-size:29px}
 .page-hero .eyebrow::before{content:'';width:28px;height:2px;background:linear-gradient(90deg,#756556,#bea78a)}
 .page-tabs a[aria-current=page]{font-weight:700;color:#5c4330}
 .profile-detail>.doctor-photo{align-self:start}
-.profile-detail>.doctor-photo+div>.role{display:inline-block;color:#927449;font-size:16px;font-weight:600;letter-spacing:.03em;margin-bottom:12px}
-.profile-detail h2{font-size:clamp(38px,4vw,56px);font-weight:650;color:#4c3728;letter-spacing:-.045em;line-height:1.2}
+.profile-detail>.doctor-photo+div>.role{display:inline-block;color:#927449;font-size:16.96px;font-weight:600;letter-spacing:.03em;margin-bottom:12px}
+.profile-detail h2{font-size:clamp(40.28px,4.24vw,59.36px);font-weight:650;color:#4c3728;letter-spacing:-.045em;line-height:1.2}
 .profile-detail .biography-columns{margin-top:34px;gap:38px}
-.profile-detail .biography-columns h4{display:flex;align-items:center;gap:10px;color:#684b33;font-size:20px;font-weight:650;letter-spacing:-.025em;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid #cdbc9f}
+.profile-detail .biography-columns h4{display:flex;align-items:center;gap:10px;color:#684b33;font-size:21.2px;font-weight:650;letter-spacing:-.025em;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid #cdbc9f}
 .profile-detail .biography-columns h4::before{content:'';width:5px;height:18px;border-radius:3px;background:linear-gradient(#bea78a,#756556)}
 .profile-detail .doctor-bio ul{color:#4e4740}
-.profile-detail .doctor-bio li{font-size:16px;line-height:1.85;padding-left:16px}
+.profile-detail .doctor-bio li{font-size:16.96px;line-height:1.85;padding-left:16px}
 .profile-detail .doctor-bio li+li{margin-top:9px}
-.profile-detail .doctor-bio li::before{content:'·';color:#a17b48;font-size:23px;font-weight:700;line-height:1.25}
+.profile-detail .doctor-bio li::before{content:'·';color:#a17b48;font-size:24.38px;font-weight:700;line-height:1.25}
 .profile-pending h3{color:#684b33;font-weight:600}
 @media(max-width:640px){
- .profile-detail h2{font-size:40px}
+ .profile-detail h2{font-size:42.4px}
  .profile-detail .biography-columns{margin-top:26px;gap:28px}
- .profile-detail .biography-columns h4{font-size:19px}
- .profile-detail .doctor-bio li{font-size:15px}
+ .profile-detail .biography-columns h4{font-size:20.14px}
+ .profile-detail .doctor-bio li{font-size:15.9px}
 }
 
 .profile-detail .doctor-detail-name{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-.profile-detail .doctor-detail-name small{font-size:23px;font-weight:500;color:#927449;letter-spacing:-.02em}
-@media(max-width:640px){.profile-detail .doctor-detail-name{gap:10px}.profile-detail .doctor-detail-name small{font-size:19px}}
+.profile-detail .doctor-detail-name small{font-size:24.38px;font-weight:500;color:#927449;letter-spacing:-.02em}
+@media(max-width:640px){.profile-detail .doctor-detail-name{gap:10px}.profile-detail .doctor-detail-name small{font-size:20.14px}}
 
 /* Brand gradient behind the extended director portrait on the detail page. */
 .profile-detail .doctor-photo.original{height:auto;min-height:480px;border-radius:24px;background:radial-gradient(ellipse at 30% 20%,#dfcfb6,transparent 65%),linear-gradient(145deg,#c3ab8e,#756556);padding:22px 12px 0;display:flex;align-items:flex-end;overflow:hidden}
@@ -639,8 +639,8 @@ h3{font-size:29px}
 @media(max-width:640px){.profile-detail{grid-template-columns:1fr}.profile-detail .doctor-photo.original{width:min(100%,400px)}}
 
 /* Stronger specialist label and tighter name spacing on the detail page. */
-.profile-detail>.doctor-photo+div>.role{font-size:21px;line-height:1.4;margin-bottom:6px;font-weight:600}
-@media(max-width:640px){.profile-detail>.doctor-photo+div>.role{font-size:18px;margin-bottom:5px}}
+.profile-detail>.doctor-photo+div>.role{font-size:22.26px;line-height:1.4;margin-bottom:6px;font-weight:600}
+@media(max-width:640px){.profile-detail>.doctor-photo+div>.role{font-size:19.08px;margin-bottom:5px}}
 
 /* Restrained motion for the doctor detail section. */
 .profile-detail.detail-motion-visible .doctor-photo.original::before{background-size:160% 160%;animation:detail-gradient-drift 12s ease-in-out infinite alternate}
@@ -681,7 +681,7 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
 
 /* Main page navigation follows the sections of the page. */
 .onepage-home #nav{gap:clamp(16px,1.6vw,28px)}
-.onepage-home #nav a{position:relative;font-size:16px}
+.onepage-home #nav a{position:relative;font-size:16.96px}
 .onepage-home #nav a[aria-current=location]{color:#927449}
 .onepage-home #nav a[aria-current=location]::after{content:'';position:absolute;bottom:24px;left:0;right:0;height:2px;background:linear-gradient(90deg,#756556,#bea78a)}
 .onepage-home main>section[id]{scroll-margin-top:110px}
@@ -691,12 +691,12 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
 @media(min-width:901px) and (min-height:650px){
  #doctors.wrap.lifecare-ready{height:calc(100svh - 100px);padding-block:20px;display:flex;flex-direction:column;scroll-margin-top:100px}
  #doctors .section-head{flex:none;margin-bottom:12px}
- #doctors .section-head h2{font-size:clamp(28px,2.6vw,42px)}
- #doctors .section-head .eyebrow{font-size:12px;margin-bottom:6px}
+ #doctors .section-head h2{font-size:clamp(29.68px,2.76vw,44.52px)}
+ #doctors .section-head .eyebrow{font-size:12.72px;margin-bottom:6px}
  #doctors .lifecare-tabs{flex:none}
  #doctors .lifecare-tabs button{padding:12px 10px 14px}
- #doctors .lifecare-tabs button>.eyebrow{font-size:11px;margin-bottom:6px}
- #doctors .lifecare-tabs button>span:last-child{font-size:clamp(20px,1.8vw,28px)}
+ #doctors .lifecare-tabs button>.eyebrow{font-size:11.66px;margin-bottom:6px}
+ #doctors .lifecare-tabs button>span:last-child{font-size:clamp(21.2px,1.91vw,29.68px)}
  #doctors .lifecare-progress{flex:none;margin:12px 0 16px}
  #doctors.lifecare-ready .doctor-grid{flex:1;min-height:0}
  #doctors.lifecare-ready .doctor-card{height:100%;min-height:0;padding:20px 5% 0;gap:4vw}
@@ -704,13 +704,13 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
  #doctors.lifecare-ready .doctor-card .doctor-photo.original img{height:100%;width:auto;max-width:100%;object-fit:contain;object-position:center bottom}
  #doctors.lifecare-ready .doctor-photo.doctor-placeholder{height:100%;min-height:0}
  #doctors.lifecare-ready .doctor-card .doctor-meta{padding:4px 0 16px;align-self:center}
- #doctors.lifecare-ready .doctor-meta>.role{font-size:18px;padding-top:0;margin-bottom:4px}
- #doctors.lifecare-ready .doctor-meta h3{font-size:clamp(34px,3vw,48px);margin-bottom:10px}
- #doctors.lifecare-ready .doctor-meta>.doctor-statement{font-size:clamp(19px,1.7vw,26px);line-height:1.4;margin-bottom:12px}
+ #doctors.lifecare-ready .doctor-meta>.role{font-size:19.08px;padding-top:0;margin-bottom:4px}
+ #doctors.lifecare-ready .doctor-meta h3{font-size:clamp(36.04px,3.18vw,50.88px);margin-bottom:10px}
+ #doctors.lifecare-ready .doctor-meta>.doctor-statement{font-size:clamp(20.14px,1.8vw,27.56px);line-height:1.4;margin-bottom:12px}
  #doctors .doctor-bio{padding-top:12px}
- #doctors .doctor-bio h4{font-size:15px;margin-bottom:4px}
- #doctors .doctor-bio li{font-size:clamp(14px,1.1vw,17px);padding:7px 0;line-height:1.5}
- #doctors .doctor-more{min-height:42px;padding:9px 20px;font-size:14px;margin-top:14px}
+ #doctors .doctor-bio h4{font-size:15.9px;margin-bottom:4px}
+ #doctors .doctor-bio li{font-size:clamp(14.84px,1.17vw,18.02px);padding:7px 0;line-height:1.5}
+ #doctors .doctor-more{min-height:42px;padding:9px 20px;font-size:14.84px;margin-top:14px}
 }
 
 /* Keep the portrait smaller without letting its intrinsic size stretch the card. */
@@ -752,7 +752,7 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
  .screen-scroll-home .hero-visual{height:100%;min-height:0;max-height:calc(100svh - 164px)}
  .screen-scroll-home .hero-visual img{height:100%;width:100%;object-fit:cover}
  .screen-scroll-home .section-head{margin-bottom:clamp(18px,3vh,32px)}
- .screen-scroll-home .section-head h2{font-size:clamp(30px,2.7vw,44px)}
+ .screen-scroll-home .section-head h2{font-size:clamp(31.8px,2.86vw,46.64px)}
  .screen-scroll-home .section-head .eyebrow{margin-bottom:10px}
  .screen-scroll-home #care,.screen-scroll-home #equipment,.screen-scroll-home #space,.screen-scroll-home #visit{display:flex;flex-direction:column;justify-content:center}
  .screen-scroll-home .care-tabs.tabs-ready .tab-image{height:clamp(250px,43vh,440px)}
@@ -778,46 +778,46 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
  .screen-scroll-home main>section.section.white{height:calc(100svh - 100px);min-height:0;padding-block:24px}
  .screen-scroll-home main>section.section.white>.wrap{height:100%;min-height:0;display:flex;flex-direction:column}
  .screen-scroll-home .section.white .section-head{flex:none;margin-bottom:16px}
- .screen-scroll-home .section.white .section-head .eyebrow{font-size:12px;margin-bottom:6px}
- .screen-scroll-home .section.white .section-head h2{font-size:clamp(28px,2.4vw,38px)}
+ .screen-scroll-home .section.white .section-head .eyebrow{font-size:12.72px;margin-bottom:6px}
+ .screen-scroll-home .section.white .section-head h2{font-size:clamp(29.68px,2.54vw,40.28px)}
  .screen-scroll-home #care .care-tabs{flex:1;min-height:0;display:flex;flex-direction:column}
  .screen-scroll-home #care .content-tablist{flex:none;margin-bottom:16px}
- .screen-scroll-home #care .content-tablist a{padding:8px 24px;font-size:20px}
+ .screen-scroll-home #care .content-tablist a{padding:8px 24px;font-size:21.2px}
  .screen-scroll-home #care .content-panels{flex:1;min-height:0}
  .screen-scroll-home #care .care-tabs.tabs-ready .content-panel{height:100%;min-height:0;gap:4vw}
  .screen-scroll-home #care .care-tabs.tabs-ready .tab-image{height:100%;min-height:0}
  .screen-scroll-home #care .tab-copy{padding-block:0}
- .screen-scroll-home #care .tab-copy .eyebrow{margin-bottom:10px;font-size:12px}
- .screen-scroll-home #care .tab-copy h3{font-size:clamp(26px,2.4vw,36px);line-height:1.4}
- .screen-scroll-home #care .tab-copy>p:not(.eyebrow){font-size:17px;margin-top:12px}
+ .screen-scroll-home #care .tab-copy .eyebrow{margin-bottom:10px;font-size:12.72px}
+ .screen-scroll-home #care .tab-copy h3{font-size:clamp(27.56px,2.54vw,38.16px);line-height:1.4}
+ .screen-scroll-home #care .tab-copy>p:not(.eyebrow){font-size:18.02px;margin-top:12px}
  .screen-scroll-home #care .tab-copy .button{margin-top:16px;min-height:44px;padding:8px 24px}
  .screen-scroll-home #care .feature-grid{flex:none;margin-top:18px;padding-top:16px;gap:24px}
  .screen-scroll-home #care .feature-item img{width:70px;height:70px}
- .screen-scroll-home #care .feature-item h3{font-size:18px}
+ .screen-scroll-home #care .feature-item h3{font-size:19.08px}
  .screen-scroll-home #space .space-grid{flex:1;min-height:0;grid-template-rows:repeat(2,minmax(0,1fr));gap:16px 24px}
  .screen-scroll-home #space .space-grid>a{min-height:0;display:flex;flex-direction:column}
  .screen-scroll-home #space .space-grid img{flex:1;width:100%;height:0;min-height:0;object-fit:cover;border-radius:18px}
- .screen-scroll-home #space .space-grid span{flex:none;margin-top:6px;font-size:17px;line-height:1.5}
+ .screen-scroll-home #space .space-grid span{flex:none;margin-top:6px;font-size:18.02px;line-height:1.5}
 }
 
 /* Preserve the screen-sized layout; only tighten typography on smaller desktops. */
 @media(min-width:901px) and (max-height:850px){
- #doctors .section-head h2{font-size:clamp(24px,2.2vw,32px);line-height:1.25}
- #doctors .section-head .eyebrow{font-size:11px;line-height:1.3}
- #doctors .lifecare-tabs button>span:last-child{font-size:clamp(18px,1.6vw,24px);line-height:1.3}
- #doctors.lifecare-ready .doctor-meta>.role{font-size:15px;line-height:1.3}
- #doctors.lifecare-ready .doctor-meta h3{font-size:clamp(30px,2.6vw,38px);line-height:1.2}
- #doctors.lifecare-ready .doctor-meta h3 small{font-size:16px}
- #doctors.lifecare-ready .doctor-meta>.doctor-statement{font-size:clamp(17px,1.5vw,21px);line-height:1.3}
- #doctors .doctor-bio h4{font-size:13px;line-height:1.3}
- #doctors .doctor-bio li{font-size:13px;line-height:1.35}
- #doctors .doctor-more{font-size:13px;line-height:1.3}
+ #doctors .section-head h2{font-size:clamp(25.44px,2.33vw,33.92px);line-height:1.25}
+ #doctors .section-head .eyebrow{font-size:11.66px;line-height:1.3}
+ #doctors .lifecare-tabs button>span:last-child{font-size:clamp(19.08px,1.7vw,25.44px);line-height:1.3}
+ #doctors.lifecare-ready .doctor-meta>.role{font-size:15.9px;line-height:1.3}
+ #doctors.lifecare-ready .doctor-meta h3{font-size:clamp(31.8px,2.76vw,40.28px);line-height:1.2}
+ #doctors.lifecare-ready .doctor-meta h3 small{font-size:16.96px}
+ #doctors.lifecare-ready .doctor-meta>.doctor-statement{font-size:clamp(18.02px,1.59vw,22.26px);line-height:1.3}
+ #doctors .doctor-bio h4{font-size:13.78px;line-height:1.3}
+ #doctors .doctor-bio li{font-size:13.78px;line-height:1.35}
+ #doctors .doctor-more{font-size:13.78px;line-height:1.3}
 }
 @media(min-width:901px) and (min-height:650px) and (max-height:730px){
- #doctors .section-head h2{font-size:25px}
- #doctors.lifecare-ready .doctor-meta h3{font-size:30px}
- #doctors.lifecare-ready .doctor-meta>.doctor-statement{font-size:17px;line-height:1.25}
- #doctors .doctor-bio li{font-size:12px;line-height:1.25}
+ #doctors .section-head h2{font-size:26.5px}
+ #doctors.lifecare-ready .doctor-meta h3{font-size:31.8px}
+ #doctors.lifecare-ready .doctor-meta>.doctor-statement{font-size:18.02px;line-height:1.25}
+ #doctors .doctor-bio li{font-size:12.72px;line-height:1.25}
 }
 
 /* Keep the profile button clear of the bottom edge on short desktop screens. */
@@ -837,12 +837,12 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
 #mega{background:#3e2f23;color:#fff8ed;border:0;box-shadow:0 18px 30px #25190f18;padding:30px clamp(32px,7vw,115px) 48px;max-height:calc(100svh - 100px);overflow-y:auto;overscroll-behavior:contain}
 #mega:not([hidden]){grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(24px,5.3vw,88px)}
 #mega>div{text-align:center;min-width:0}
-#mega h2{color:#d1b273;font-size:clamp(16px,1.1vw,18px);font-weight:600;line-height:1.5;letter-spacing:-.03em;border-bottom:1px solid #a28b6870;padding-bottom:24px;margin:0 0 4px}
-#mega a{color:#fff8ed;font-size:clamp(15px,1.05vw,17px);font-weight:400;line-height:1.5;letter-spacing:-.03em;margin:0;padding:17px 0;transition:color 180ms ease}
+#mega h2{color:#d1b273;font-size:clamp(16.96px,1.17vw,19.08px);font-weight:600;line-height:1.5;letter-spacing:-.03em;border-bottom:1px solid #a28b6870;padding-bottom:24px;margin:0 0 4px}
+#mega a{color:#fff8ed;font-size:clamp(15.9px,1.11vw,18.02px);font-weight:400;line-height:1.5;letter-spacing:-.03em;margin:0;padding:17px 0;transition:color 180ms ease}
 #mega a:hover,#mega a:focus-visible{color:#e6c58c;text-decoration:none}
 @media(min-width:901px){
  .header #nav{flex:1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;margin-left:12px}
- .header #nav>a{font-size:clamp(14px,1vw,16px);font-weight:400;text-align:center;padding:34px 6px;letter-spacing:-.03em}
+ .header #nav>a{font-size:clamp(14.84px,1.06vw,16.96px);font-weight:400;text-align:center;padding:34px 6px;letter-spacing:-.03em}
 }
 @media(max-width:1200px) and (min-width:901px){
  .header{gap:18px;padding-inline:24px}
@@ -851,17 +851,17 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
  #mega{padding:24px 30px 30px}
  #mega:not([hidden]){gap:22px}
  #mega h2{padding-bottom:16px}
- #mega a{padding-block:13px;font-size:17px}
+ #mega a{padding-block:13px;font-size:18.02px}
 }
 @media(max-width:900px){
  #mega{max-height:calc(100svh - 84px);padding:24px}
  #mega:not([hidden]){grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 22px}
- #mega h2{font-size:18px;padding-bottom:12px}
- #mega a{font-size:16px;padding-block:10px}
+ #mega h2{font-size:19.08px;padding-bottom:12px}
+ #mega a{font-size:16.96px;padding-block:10px}
 }
 @media(max-width:640px){#mega{max-height:calc(100svh - 78px)}}
-@media(max-width:1200px) and (min-width:901px){#mega a{font-size:15px}}
-@media(max-width:900px){#mega h2{font-size:16px}#mega a{font-size:15px}}
+@media(max-width:1200px) and (min-width:901px){#mega a{font-size:15.9px}}
+@media(max-width:900px){#mega h2{font-size:16.96px}#mega a{font-size:15.9px}}
 
 /* Submenu columns share the exact horizontal bounds of the top navigation. */
 #mega{background:radial-gradient(ellipse at 15% 0%,#88766435,transparent 55%),linear-gradient(125deg,#4e463e 0%,#3d3732 55%,#302c29 100%);border-top:1px solid #c8b59625;box-shadow:0 20px 38px #211c1926}
@@ -904,18 +904,18 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
 @media(min-width:1024px) and (min-height:650px){
  .screen-scroll-home #equipment.section.wrap{height:calc(100svh - 100px);min-height:0;padding-block:24px;justify-content:flex-start}
  .screen-scroll-home #equipment .section-head{flex:none;margin-bottom:16px}
- .screen-scroll-home #equipment .section-head .eyebrow{font-size:12px;margin-bottom:6px}
- .screen-scroll-home #equipment .section-head h2{font-size:clamp(28px,2.4vw,38px)}
+ .screen-scroll-home #equipment .section-head .eyebrow{font-size:12.72px;margin-bottom:6px}
+ .screen-scroll-home #equipment .section-head h2{font-size:clamp(29.68px,2.54vw,40.28px)}
  .screen-scroll-home #equipment .equipment-toolbar{margin-top:0}
  .screen-scroll-home #equipment .equipment-tabs{flex:1;min-height:0;display:flex;flex-direction:column}
  .screen-scroll-home #equipment .content-tablist{flex:none;margin-bottom:16px}
- .screen-scroll-home #equipment .content-tablist button{font-size:clamp(16px,1.3vw,20px);padding:10px 22px}
+ .screen-scroll-home #equipment .content-tablist button{font-size:clamp(16.96px,1.38vw,21.2px);padding:10px 22px}
  .screen-scroll-home #equipment .equipment-track{flex:1;min-height:0}
  .screen-scroll-home #equipment .equipment-tabs.tabs-ready .equipment-card{height:100%;min-height:0;padding:24px 4%;gap:4vw}
  .screen-scroll-home #equipment .equipment-tabs.tabs-ready .equipment-image{height:100%;min-height:0;max-height:100%}
  .screen-scroll-home #equipment .equipment-image img{height:100%;width:100%;object-fit:contain}
  .screen-scroll-home #equipment .tab-copy .eyebrow{margin-bottom:12px}
- .screen-scroll-home #equipment .tab-copy h3{font-size:clamp(28px,2.5vw,38px)}
+ .screen-scroll-home #equipment .tab-copy h3{font-size:clamp(29.68px,2.65vw,40.28px)}
  .screen-scroll-home #equipment .equipment-position{margin-top:22px}
 }
 
@@ -930,31 +930,31 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
 @media(min-width:1024px) and (min-height:650px){
  .screen-scroll-home #visit.section.wrap{height:calc(100svh - 100px);min-height:0;padding-block:24px;justify-content:flex-start}
  .screen-scroll-home #visit .section-head{flex:none;margin-bottom:18px}
- .screen-scroll-home #visit .section-head .eyebrow{font-size:12px;margin-bottom:6px}
- .screen-scroll-home #visit .section-head h2{font-size:clamp(28px,2.4vw,38px);line-height:1.25}
+ .screen-scroll-home #visit .section-head .eyebrow{font-size:12.72px;margin-bottom:6px}
+ .screen-scroll-home #visit .section-head h2{font-size:clamp(29.68px,2.54vw,40.28px);line-height:1.25}
  .screen-scroll-home #visit .visit-grid{flex:1;min-height:0;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:4vw;align-items:stretch}
  .screen-scroll-home #visit .visit-grid>div:first-child{display:flex;flex-direction:column;min-height:0}
  .screen-scroll-home #visit .location-photo{flex:1;min-height:0;height:auto;border-radius:20px}
  .screen-scroll-home #visit .location-photo img{width:100%;height:100%;object-fit:cover}
  .screen-scroll-home #visit .location-pin{left:16px;right:16px;bottom:16px;padding:12px 18px;border-radius:12px}
- .screen-scroll-home #visit .location-pin strong{font-size:17px}
- .screen-scroll-home #visit .location-pin p{font-size:13px}
+ .screen-scroll-home #visit .location-pin strong{font-size:18.02px}
+ .screen-scroll-home #visit .location-pin p{font-size:13.78px}
  .screen-scroll-home #visit .location-actions{flex:none;gap:12px;margin-top:12px}
- .screen-scroll-home #visit .location-actions .button{min-height:40px;padding:7px 22px;font-size:14px}
- .screen-scroll-home #visit .note{font-size:13px;line-height:1.5;margin-top:10px}
+ .screen-scroll-home #visit .location-actions .button{min-height:40px;padding:7px 22px;font-size:14.84px}
+ .screen-scroll-home #visit .note{font-size:13.78px;line-height:1.5;margin-top:10px}
  .screen-scroll-home #visit .visit-info{min-height:0;max-width:none;display:flex;flex-direction:column;justify-content:center}
- .screen-scroll-home #visit .visit-info h3{font-size:21px;margin:0 0 8px}
- .screen-scroll-home #visit .hours{margin:0 0 18px;font-size:16px;line-height:1.4}
+ .screen-scroll-home #visit .visit-info h3{font-size:22.26px;margin:0 0 8px}
+ .screen-scroll-home #visit .hours{margin:0 0 18px;font-size:16.96px;line-height:1.4}
  .screen-scroll-home #visit .hours>div{padding-block:8px}
- .screen-scroll-home #visit .visit-info address{font-size:15px;line-height:1.6}
- .screen-scroll-home #visit .phone-large{font-size:clamp(29px,2.5vw,40px);line-height:1.2;margin:16px 0 0}
+ .screen-scroll-home #visit .visit-info address{font-size:15.9px;line-height:1.6}
+ .screen-scroll-home #visit .phone-large{font-size:clamp(30.74px,2.65vw,42.4px);line-height:1.2;margin:16px 0 0}
 }
 @media(min-width:1024px) and (min-height:650px) and (max-height:730px){
  .screen-scroll-home #visit .section-head{margin-bottom:12px}
- .screen-scroll-home #visit .section-head h2{font-size:28px}
- .screen-scroll-home #visit .hours{margin-bottom:12px;font-size:15px}
+ .screen-scroll-home #visit .section-head h2{font-size:29.68px}
+ .screen-scroll-home #visit .hours{margin-bottom:12px;font-size:15.9px}
  .screen-scroll-home #visit .hours>div{padding-block:6px}
- .screen-scroll-home #visit .phone-large{margin-top:12px;font-size:30px}
+ .screen-scroll-home #visit .phone-large{margin-top:12px;font-size:31.8px}
 }
 @media(max-width:900px){#visit .visit-info{border-left:0;border-top:1px solid #bca58a55;padding:24px 0 0}}
 
@@ -975,7 +975,7 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
  .screen-scroll-home #history .capsule-stage>img:nth-child(3){height:96%}
  .screen-scroll-home #history .capsule-stage>img:nth-child(4){height:86%}
  .screen-scroll-home #history .capsule-stage>img:nth-child(5){height:68%;margin-bottom:3%}
- .screen-scroll-home #history .year{font-size:clamp(74px,7vw,112px)}
+ .screen-scroll-home #history .year{font-size:clamp(78.44px,7.42vw,118.72px)}
 }
 @media(prefers-reduced-motion:no-preference){
  #history.history-motion-ready:not(.history-in-view) .capsule-stage>img{opacity:0;translate:0 22px}
@@ -1014,11 +1014,11 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
 
 /* Brand-colored history medallion with a prominent thirteen-year message. */
 #history .history-copy{isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 25% 15%,#99826870,transparent 60%),linear-gradient(135deg,#79634d 0%,#534234 50%,#352b24 100%);color:#fffaf1;border:1px solid #d4ba9250;box-shadow:0 14px 36px #35281c20}
-#history .history-copy small{position:relative;z-index:1;color:#eedcc1;font-size:14px;letter-spacing:.24em}
-#history .year{position:relative;z-index:1;color:#fffaf1;font-size:clamp(64px,6vw,92px)}
-#history .history-copy p{position:relative;z-index:1;color:#f5eadd;font-size:17px;line-height:1.65}
-#history .history-count{color:#fff;font-family:var(--serif);font-size:clamp(36px,3.5vw,52px);font-weight:600;line-height:1.1;vertical-align:baseline;margin:0 3px 0 6px}
-#history .history-count+span{font-size:23px;font-weight:600;color:#fff}
+#history .history-copy small{position:relative;z-index:1;color:#eedcc1;font-size:14.84px;letter-spacing:.24em}
+#history .year{position:relative;z-index:1;color:#fffaf1;font-size:clamp(67.84px,6.36vw,97.52px)}
+#history .history-copy p{position:relative;z-index:1;color:#f5eadd;font-size:18.02px;line-height:1.65}
+#history .history-count{color:#fff;font-family:var(--serif);font-size:clamp(38.16px,3.71vw,55.12px);font-weight:600;line-height:1.1;vertical-align:baseline;margin:0 3px 0 6px}
+#history .history-count+span{font-size:24.38px;font-weight:600;color:#fff}
 #history .history-copy::before{content:'';position:absolute;z-index:0;inset:-35% -90%;background:linear-gradient(110deg,transparent 40%,#e5cda02e 49%,#fff3db24 52%,transparent 61%);pointer-events:none;transform:translateX(-36%)}
 #history.history-in-view .history-copy::after{background:linear-gradient(90deg,transparent,#e7c994,transparent)}
 @media(prefers-reduced-motion:no-preference){
@@ -1027,13 +1027,13 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
 }
 @keyframes history-brand-flow{0%,15%{transform:translateX(-36%)}70%,100%{transform:translateX(36%)}}
 @keyframes history-years-emphasis{from{opacity:0;translate:0 12px;scale:.85}to{opacity:1;translate:0 0;scale:1}}
-@media(max-width:640px){#history .year{font-size:64px}#history .history-copy p{font-size:14px}#history .history-count{font-size:38px}#history .history-count+span{font-size:20px}}
+@media(max-width:640px){#history .year{font-size:67.84px}#history .history-copy p{font-size:14.84px}#history .history-count{font-size:40.28px}#history .history-count+span{font-size:21.2px}}
 
 /* Refined history medallion: balanced typography and a slow satin reflection. */
 #history .history-copy{background:radial-gradient(ellipse at 24% 16%,#9b82634a,transparent 58%),linear-gradient(145deg,#76614c,#4e3e31 55%,#342a23);border-color:#d9c3a363;box-shadow:0 16px 42px #38291d22,inset 0 0 0 7px #cfb38b0a}
-#history .history-copy small{font-size:13px;letter-spacing:.3em;color:#e8d2b1}
-#history .year{font-size:clamp(72px,6.5vw,102px);font-weight:400;letter-spacing:-.035em}
-#history .history-copy p{font-size:17px;line-height:1.9;color:#f1e7d8}
+#history .history-copy small{font-size:13.78px;letter-spacing:.3em;color:#e8d2b1}
+#history .year{font-size:clamp(76.32px,6.89vw,108.12px);font-weight:400;letter-spacing:-.035em}
+#history .history-copy p{font-size:18.02px;line-height:1.9;color:#f1e7d8}
 #history .history-count{font:inherit;color:inherit;min-width:0;margin:0 2px;vertical-align:baseline}
 #history .history-count+span{font:inherit;color:inherit}
 #history .history-copy::before{inset:-30% -80%;background:linear-gradient(115deg,transparent 45%,#e7d2af12 49%,#fff1d51a 51%,transparent 56%)}
@@ -1045,16 +1045,16 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
 }
 @keyframes history-date-reveal{from{opacity:0;translate:0 8px;letter-spacing:.035em}to{opacity:1;translate:0 0;letter-spacing:-.035em}}
 @keyframes history-caption-reveal{from{opacity:0;translate:0 6px}to{opacity:1;translate:0 0}}
-@media(max-width:640px){#history .year{font-size:70px}#history .history-copy p{font-size:15px}#history .history-count,#history .history-count+span{font:inherit}}
+@media(max-width:640px){#history .year{font-size:74.2px}#history .history-copy p{font-size:15.9px}#history .history-count,#history .history-count+span{font:inherit}}
 
 /* A clearer flowing highlight, with a stronger SINCE label. */
-#history .history-copy small{font-size:18px;letter-spacing:.24em;font-weight:500;color:#f5e2c2}
+#history .history-copy small{font-size:19.08px;letter-spacing:.24em;font-weight:500;color:#f5e2c2}
 #history .history-copy::before{inset:-35% -90%;background:linear-gradient(112deg,transparent 39%,#c9a77220 45%,#f6dfb947 50%,#fff3d933 53%,#c9a77218 58%,transparent 65%)}
 @media(prefers-reduced-motion:no-preference){
  #history.history-in-view .history-copy::before{animation:history-brand-flow 7s 700ms ease-in-out infinite}
  #history.history-in-view .history-copy small{animation:history-caption-reveal 1300ms 150ms ease-out both}
 }
-@media(max-width:640px){#history .history-copy small{font-size:16px}}
+@media(max-width:640px){#history .history-copy small{font-size:16.96px}}
 
 /* Lower SINCE slightly and reserve stable space for the rolling year count. */
 #history .history-copy small{position:relative;top:8px}
@@ -1062,7 +1062,7 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
 
 /* Place the top control directly beneath the floating quick bar. */
 @media(min-width:641px){
- .back-top{top:min(calc(50% + 232px),calc(100% - 60px));bottom:auto;right:33px;width:44px;height:44px;font-size:22px;display:grid;place-items:center;box-shadow:0 4px 14px #3e2f2310}
+ .back-top{top:min(calc(50% + 232px),calc(100% - 60px));bottom:auto;right:33px;width:44px;height:44px;font-size:23.32px;display:grid;place-items:center;box-shadow:0 4px 14px #3e2f2310}
 }
 @media(min-width:641px) and (max-width:1200px){.back-top{right:18px;top:min(calc(50% + 230px),calc(100% - 60px))}}
 @media(min-width:641px) and (max-width:900px){.back-top{right:11px;top:min(calc(50% + 208px),calc(100% - 60px))}}
