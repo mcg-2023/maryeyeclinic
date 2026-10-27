@@ -49,7 +49,25 @@
   if(transitionFrame!==null){event.preventDefault();event.stopImmediatePropagation();return;}
   const cover=document.querySelector('.mission-cover-stage.cover-enabled');
   const bounds=cover?.getBoundingClientRect();
-  const inCover=!reduced.matches&&bounds&&bounds.top<=(event.deltaY<0?2:window.innerHeight)&&bounds.bottom>110;
+  const approach=cover?.previousElementSibling;
+  const careBounds=approach?.id==='care'?approach.getBoundingClientRect():null;
+  // Keep the care chapter in the chapter controller in BOTH directions.
+  // Only hand off to the scrubbed cover after history is fully aligned.
+  const atCare=careBounds&&careBounds.top<=102&&careBounds.bottom>100&&bounds.top>2;
+  if(atCare){
+   event.preventDefault();event.stopImmediatePropagation();cancelCover();
+   const now=performance.now(),gap=now-lastWheel;lastWheel=now;
+   if(now<lockedUntil||(lockedUntil>0&&gap<160))return;
+   const direction=Math.sign(event.deltaY);if(!direction)return;
+   if(gap>180||Math.sign(wheelTotal)!==direction)wheelTotal=0;
+   wheelTotal+=event.deltaY;
+   if(Math.abs(wheelTotal)<55)return;
+   wheelTotal=0;
+   const destination=direction>0?document.getElementById('history'):approach.previousElementSibling;
+   if(destination)go(destination);
+   return;
+  }
+  const inCover=!reduced.matches&&bounds&&bounds.top<=2&&bounds.bottom>110;
   if(inCover||coverFrame!==null){
    event.preventDefault();event.stopImmediatePropagation();
    if(event.deltaY<0&&bounds.top>=-2){
