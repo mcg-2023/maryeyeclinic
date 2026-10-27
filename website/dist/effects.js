@@ -173,7 +173,7 @@
    logo.src='assets/favicon.svg';logo.alt='';logo.setAttribute('aria-hidden','true');card.appendChild(logo);
   });
   const nav=document.createElement('div');nav.className='lifecare-tabs';nav.setAttribute('role','tablist');nav.setAttribute('aria-label','의료진 진료 분야');
-  const labels=['이정헌 대표원장','망막·녹내장','소아안과'];
+  const labels=cards.map(card=>card.querySelector('h3').textContent.replace(/(대표원장|원장)$/, ' $1'));
   const tabs=cards.map((card,i)=>{
    const button=document.createElement('button');button.type='button';button.id='doctor-tab-'+i;button.setAttribute('role','tab');button.innerHTML='<span class="eyebrow">SPECIALIST 0'+(i+1)+'</span><span>'+labels[i]+'</span>';
    card.id='doctor-panel-'+i;button.setAttribute('aria-controls',card.id);nav.appendChild(button);return button;
@@ -277,7 +277,7 @@
   window.addEventListener('scroll',()=>{if(frame===null)frame=requestAnimationFrame(update);},{passive:true});update();
  }
  function initReveal(){
-  const targets=[...document.querySelectorAll('.section-head .eyebrow,.section-head h2,.section-head>p,.doctor-card,.content-tabs,.feature-item,.mission-copy>h2,.mission-copy>p,.promise-grid>div,.mission-photo,.space-grid>a,.visit-grid>div,.content-layout>div,.profile-pending,.history-list,.promise-detail article,.facility-gallery article,.greeting p')];
+  const targets=[...document.querySelectorAll('.section-head .eyebrow,.section-head h2,.section-head>p,.doctor-card,.content-tabs,.feature-item,.promise-grid>div,.mission-photo,.space-grid>a,.visit-grid>div,.content-layout>div,.profile-pending,.history-list,.promise-detail article,.facility-gallery article,.greeting p')];
   if(motion.matches||typeof IntersectionObserver==='undefined')return;
   let observer=null,idle=null,safety=null,receivedCallbacks=false;
   function reveal(el){el.classList.remove('reveal-pending');el.classList.add('is-revealed');observer?.unobserve(el);}
@@ -368,7 +368,7 @@
  });
  function initHistoryMotion(){
   const section=document.getElementById('history');
-  if(!section||motion.matches||typeof IntersectionObserver!=='function')return;
+  if(!section||!section.querySelector('.capsule-stage')||motion.matches||typeof IntersectionObserver!=='function')return;
   section.classList.add('history-motion-ready');
   const observer=new IntersectionObserver(entries=>{
    entries.forEach(entry=>{
@@ -379,6 +379,69 @@
   observer.observe(section);
   cleanups.push(()=>{observer.disconnect();section.classList.remove('history-motion-ready','history-in-view');});
  }
+ function initMissionCover(){
+  const mission=document.getElementById('promise'),history=document.getElementById('history');
+  if(!mission||!history||history.nextElementSibling!==mission)return;
+  const floatObserver=typeof IntersectionObserver==='function'?new IntersectionObserver(entries=>{
+   history.classList.toggle('history-floating',entries[0].isIntersecting);
+  }):null;
+  floatObserver?.observe(history);
+  if(!floatObserver)history.classList.add('history-floating');
+  cleanups.push(()=>{floatObserver?.disconnect();history.classList.remove('history-floating');});
+  const stage=document.createElement('div'),sheet=document.createElement('div');
+  stage.className='mission-cover-stage';sheet.className='mission-cover-sheet';
+  const following=[mission];
+  history.before(stage);stage.append(history,sheet);sheet.append(...following);
+  let frame=null,geometry=null,lastOffset=null,lastVisible=null;
+  const update=()=>{
+   if(!geometry)return;
+   const {ready,viewport,start,historyHeight,extra}=geometry;
+   const distance=Math.max(0,window.scrollY-start);
+   const journey=history.classList.contains('history-journey')?viewport*1.4:0;
+   const progress=Math.max(0,Math.min(1,(distance-viewport*.25-journey)/(viewport*1.95)));
+   if(journey){
+    const tour=ready?Math.min(1,distance/journey):0;
+    history.style.setProperty('--history-drift',(-tour*viewport*1.2).toFixed(2)+'px');
+    history.classList.toggle('history-show-years',tour>=.5||!ready);
+   }
+   const offset=ready?Math.max(0,Math.min(extra,distance-progress*viewport)):0;
+   const top=start+historyHeight-window.scrollY+offset;
+   const visible=!ready||top<=viewport*.3;
+   // Scroll frames only write composited properties; measurements happen on resize.
+   if(lastOffset!==offset){sheet.style.transform=ready?'translate3d(0,'+offset+'px,0)':'';lastOffset=offset;}
+   if(lastVisible!==visible){mission.classList.toggle('mission-copy-visible',visible);lastVisible=visible;}
+  };
+  const measure=()=>{
+   frame=null;
+   const ready=!motion.matches&&window.innerHeight>0;
+   stage.classList.toggle('cover-enabled',ready);
+   const viewport=window.innerHeight,extra=viewport*(history.classList.contains('history-journey')?2.6:1.2);
+   const historyHeight=history.offsetHeight,sheetHeight=sheet.offsetHeight;
+   const start=stage.getBoundingClientRect().top+window.scrollY;
+   geometry={ready,viewport,start,historyHeight,extra};
+   stage.dataset.coverStop=String(start+historyHeight+extra+(sheetHeight-viewport)/2);
+   const height=ready?(historyHeight+sheetHeight+extra)+'px':'';
+   if(stage.style.height!==height)stage.style.height=height;
+   lastOffset=null;lastVisible=null;update();
+  };
+  const schedule=()=>{if(frame===null)frame=requestAnimationFrame(measure);};
+  window.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('mission-scroll-tick',update);
+  window.addEventListener('resize',schedule,{passive:true});
+  window.addEventListener('load',schedule);
+  motion.addEventListener?.('change',schedule);
+  const resizeObserver=typeof ResizeObserver==='function'?new ResizeObserver(schedule):null;
+  resizeObserver?.observe(history);resizeObserver?.observe(sheet);
+  document.fonts?.ready.then(schedule);measure();
+  cleanups.push(()=>{
+   window.removeEventListener('scroll',update);window.removeEventListener('mission-scroll-tick',update);
+   window.removeEventListener('resize',schedule);window.removeEventListener('load',schedule);
+   resizeObserver?.disconnect();motion.removeEventListener?.('change',schedule);
+   if(frame!==null)cancelAnimationFrame(frame);
+   stage.before(history,...following);stage.remove();mission.classList.remove('mission-copy-visible');
+  });
+ }
+ safe(initMissionCover);
  safe(initDoctors);safe(initReveal);safe(initCount);safe(initDoctorDetailMotion);safe(initHistoryMotion);
  window.addEventListener('pagehide',()=>cleanups.forEach(fn=>fn()));
 })();

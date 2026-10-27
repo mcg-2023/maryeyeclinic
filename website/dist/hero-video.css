@@ -33,3 +33,5 @@
  .hero-video-toolbar button{flex-shrink:0;min-height:40px;padding:8px 13px;gap:7px;border-color:#d7cbb9;background:transparent;color:#6d5943;backdrop-filter:none;font-size:11px}
  .hero-video-toolbar button:focus-visible{outline-color:#917548}
 }
+/* Keep the clinic film autoplaying without the pause pill. */
+.hero-video-toolbar [data-video-play]{display:none}
