@@ -1,0 +1,117 @@
+﻿/* A complete contact panel, inspired by the reference footer's information hierarchy. */
+.visit-information{padding:28px 0 0 34px;border-left:1px solid #c7b39355}
+.visit-information .visit-brand-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:22px;border-bottom:1px solid #c4b08d66}
+.visit-brand-row>img{display:block;width:min(240px,58%);height:auto;object-fit:contain}
+.visit-brand-row>span{font-family:var(--serif);font-size:10px;letter-spacing:.12em;color:#a48a62;white-space:nowrap}
+.visit-information .visit-contact-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 0;border-bottom:1px solid #c4b08d55}
+.visit-contact-label{font-size:13px;color:#9b8461;margin-bottom:7px}
+.visit-information .phone-large{font-size:clamp(32px,3vw,46px);line-height:1.15;margin:0;color:#63472f;letter-spacing:-.02em}
+.visit-call-button{display:inline-flex;align-items:center;justify-content:center;gap:15px;padding:11px 18px;border:1px solid #bfa884;border-radius:30px;font-size:13px;white-space:nowrap;color:#806240;background:#f7f0e5}
+.visit-call-button:hover{background:#6e5239;color:#fff4de;border-color:#6e5239}
+.visit-information .visit-info-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.visit-information .visit-info-heading h3{font-size:22px;font-weight:550;color:#604b37;margin:0}
+.visit-info-heading>span{font-size:9px;letter-spacing:.12em;color:#ac987a;font-family:var(--serif)}
+.visit-hours-block{padding:24px 0 0}
+.visit-information .hours{margin:0 0 20px;font-size:18px;line-height:1.5}
+.visit-information .hours>div{padding:10px 0;border-bottom:1px solid #c4b08d33;align-items:center}
+.visit-information .hours dt{color:#786652;font-size:16px}
+.visit-information .hours dd{color:#4b3b2c;font-size:20px;font-variant-numeric:tabular-nums;letter-spacing:.015em}
+.visit-information .hours dd>span{color:#b8a387;margin-inline:8px}
+.visit-information .hours .closed{padding-top:10px;margin-top:0;font-size:16px;border-top:0}
+.visit-information .hours .closed dd{font-size:16px;color:#a38250}
+.visit-arrival-block{padding-top:2px}
+.visit-copy-link{font-size:12px;color:#9c8057;display:inline-flex;gap:12px;align-items:center;padding:4px 0}
+.visit-information address{font-size:17px;font-style:normal;line-height:1.65;color:#8a7862}
+.visit-information address strong{font-weight:500;color:#56422e}
+.visit-transport{display:grid;grid-template-columns:1fr 1.15fr;gap:12px;margin-top:20px}
+.visit-transport>div{padding:16px;border:1px solid #d4c4a944;background:#ece3d54d;border-radius:12px}
+.visit-transport-label{display:flex;align-items:center;gap:8px;font-size:12px;color:#a1855d}
+.visit-transport-label>i{font-style:normal;width:20px;height:20px;border:1px solid #ad9773;border-radius:50%;display:grid;place-items:center;font-size:11px;font-family:Arial,sans-serif;line-height:1}
+.visit-transport>div:first-child .visit-transport-label>i{color:#76825f;border-color:#8e9974}
+.visit-transport p{font-size:13px;color:#75624b;line-height:1.6;margin-top:8px}
+@media(min-width:1024px) and (min-height:650px){
+ .screen-scroll-home #visit .visit-info.visit-information{justify-content:flex-start;padding-top:0;padding-left:32px}
+ .screen-scroll-home #visit .visit-information .visit-brand-row{padding-bottom:18px}
+ .screen-scroll-home #visit .visit-information .visit-contact-row{padding-block:18px}
+ .screen-scroll-home #visit .visit-information .phone-large{font-size:clamp(33px,2.7vw,46px);margin:0}
+ .screen-scroll-home #visit .visit-information h3{font-size:21px;margin:0}
+ .screen-scroll-home #visit .visit-information .visit-hours-block{padding-top:20px}
+ .screen-scroll-home #visit .visit-information .hours{font-size:18px;line-height:1.4;margin-bottom:17px}
+ .screen-scroll-home #visit .visit-information .hours>div{padding-block:8px}
+ .screen-scroll-home #visit .visit-information .hours dd{font-size:21px}
+ .screen-scroll-home #visit .visit-information .hours .closed dd{font-size:16px}
+ .screen-scroll-home #visit .visit-information address{font-size:17px;line-height:1.55}
+ .screen-scroll-home #visit .visit-transport{margin-top:16px}
+ .screen-scroll-home #visit .visit-transport>div{padding:12px}
+}
+@media(min-width:1024px) and (max-height:799px){.visit-information .visit-brand-row{display:none}.screen-scroll-home #visit .visit-information .visit-contact-row{padding-block:0 14px}.screen-scroll-home #visit .visit-information .visit-hours-block{padding-top:15px}.screen-scroll-home #visit .visit-information .hours>div{padding-block:5px}.screen-scroll-home #visit .visit-information .hours{margin-bottom:12px}.screen-scroll-home #visit .visit-information .visit-info-heading{margin-bottom:8px}.screen-scroll-home #visit .visit-transport{margin-top:12px}.screen-scroll-home #visit .visit-transport>div{padding:9px 12px}}
+@media(max-width:1000px){.visit-information{padding:28px 0 0;border-left:0;border-top:1px solid #c7b39355}.visit-information .visit-brand-row{padding-bottom:20px}.visit-brand-row>img{max-width:250px}.visit-information .phone-large{font-size:40px}}
+@media(max-width:640px){.visit-brand-row>span{font-size:8px}.visit-information .visit-contact-row{padding-block:20px}.visit-information .phone-large{font-size:32px}.visit-call-button{font-size:12px;padding:10px 14px;gap:10px}.visit-information .hours dd{font-size:19px}.visit-information .visit-info-heading h3{font-size:21px}.visit-info-heading>span{font-size:8px}.visit-information .hours dt{font-size:15px}.visit-information address{font-size:16px}.visit-transport{gap:8px}.visit-transport>div{padding:12px 10px}.visit-transport p{font-size:12px}.visit-transport-label{font-size:11px}}
+@media(min-width:1024px){#visit .visit-info.visit-information{padding-right:72px}.screen-scroll-home #visit .visit-info.visit-information{padding-right:72px}}
+.visit-map-buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:22px}
+.visit-map-link{display:flex;align-items:center;justify-content:center;gap:7px;min-height:50px;padding:10px 8px;border:1px solid #cbb99d88;border-radius:10px;background:#f9f5ed;font-size:13px;color:#755b3b;white-space:nowrap;transition:background .2s,border-color .2s,transform .2s}
+.visit-map-link:hover{background:#eee3d0;border-color:#a98c61;transform:translateY(-2px)}
+.visit-map-mark{display:grid;place-items:center;width:22px;height:22px;border-radius:6px;font-family:Arial,sans-serif;font-size:12px;font-weight:700;background:#fff;color:#806444}
+.visit-map-naver .visit-map-mark{color:#16874b}.visit-map-kakao .visit-map-mark{color:#493b17;background:#f4dd7a}.visit-map-google .visit-map-mark{color:#4285a6}
+.visit-map-arrow{font-size:13px;color:#a38b66;margin-left:2px}
+@media(max-width:1200px) and (min-width:1001px){.visit-map-link{font-size:11px;gap:4px;padding-inline:5px}.visit-map-mark{width:18px;height:18px;font-size:10px}.visit-map-arrow{display:none}}
+@media(max-width:640px){.visit-map-buttons{gap:7px;margin-top:20px}.visit-map-link{font-size:12px;gap:5px;padding-inline:5px}.visit-map-mark{width:20px;height:20px;font-size:11px}.visit-map-arrow{display:none}}
+@media(prefers-reduced-motion:reduce){.visit-map-link{transition:none}}
+/* Provider-colored map buttons; contact telephone styling stays unchanged. */
+.visit-map-buttons{gap:10px}
+.visit-map-link{min-height:54px;border:0;border-radius:999px;padding:12px 15px;font-size:14px;font-weight:650;box-shadow:none}
+.visit-map-naver{background:#24b600;color:#fff}
+.visit-map-naver:hover{background:#1b9800;border-color:transparent}
+.visit-map-kakao{background:#ffe500;color:#191600}
+.visit-map-kakao:hover{background:#f3d900;border-color:transparent}
+.visit-map-google{background:#4285f4;color:#fff}
+.visit-map-google:hover{background:#2d70dc;border-color:transparent}
+.visit-map-link .visit-map-mark{background:#ffffffed;color:#4285f4;border-radius:50%;width:24px;height:24px;font-size:13px}
+.visit-map-naver .visit-map-mark{color:#1aa83b}.visit-map-kakao .visit-map-mark{background:#fff7ac;color:#2a2114}
+.visit-map-link .visit-map-arrow{color:currentColor;opacity:.85}
+@media(max-width:1200px){.visit-map-link{padding:11px 8px;font-size:12px;gap:5px}.visit-map-link .visit-map-mark{width:20px;height:20px;font-size:11px}}
+@media(max-width:640px){.visit-map-link{min-height:48px;font-size:12px;padding:10px 7px}}
+.visit-map-link{font-size:18px;min-height:58px}
+@media(max-width:1200px){.visit-map-link{font-size:15px}}
+@media(max-width:640px){.visit-map-link{font-size:15px;min-height:52px}}
+/* Match the information panel to the full height of the adjacent photograph. */
+@media(min-width:1024px) and (min-height:650px){
+ .screen-scroll-home #visit .visit-info.visit-information{align-self:stretch;justify-content:space-between;padding-bottom:0;gap:14px}
+ .screen-scroll-home #visit .visit-information .visit-brand-row{padding-bottom:18px;flex:none}
+ #visit .visit-brand-row>img{width:min(280px,62%)}
+ #visit .visit-brand-row>span{font-size:11px}
+ .screen-scroll-home #visit .visit-information .visit-contact-row{padding:12px 0 20px;flex:none}
+ #visit .visit-contact-label{font-size:15px;margin-bottom:8px}
+ .screen-scroll-home #visit .visit-information .phone-large{font-size:clamp(38px,3.15vw,54px)}
+ #visit .visit-call-button{font-size:15px;padding:12px 20px}
+ .screen-scroll-home #visit .visit-information .visit-hours-block{padding-top:4px;flex:1;display:flex;flex-direction:column;justify-content:center}
+ .screen-scroll-home #visit .visit-information .visit-info-heading h3{font-size:25px}
+ #visit .visit-info-heading>span{font-size:10px}
+ .screen-scroll-home #visit .visit-information .hours{margin-bottom:0}
+ .screen-scroll-home #visit .visit-information .hours>div{padding-block:11px}
+ #visit .visit-information .hours dt{font-size:18px}
+ .screen-scroll-home #visit .visit-information .hours dd{font-size:25px}
+ .screen-scroll-home #visit .visit-information .hours .closed dd{font-size:18px}
+ #visit .visit-arrival-block{flex:none;padding-top:8px}
+ .screen-scroll-home #visit .visit-information address{font-size:20px;line-height:1.6}
+ #visit .visit-copy-link{font-size:14px}
+ #visit .visit-map-buttons{margin-top:24px}
+ #visit .visit-map-link{font-size:19px;min-height:60px}
+}
+@media(min-width:1024px) and (max-height:799px){
+ .screen-scroll-home #visit .visit-info.visit-information{gap:8px}
+ .screen-scroll-home #visit .visit-information .visit-contact-row{padding:0 0 10px}
+ .screen-scroll-home #visit .visit-information .phone-large{font-size:36px}
+ .screen-scroll-home #visit .visit-information .visit-info-heading h3{font-size:22px}
+ .screen-scroll-home #visit .visit-information .hours>div{padding-block:6px}
+ .screen-scroll-home #visit .visit-information .hours dd{font-size:22px}
+ #visit .visit-information .hours dt{font-size:16px}
+ .screen-scroll-home #visit .visit-information address{font-size:18px}
+ #visit .visit-map-buttons{margin-top:15px}
+ #visit .visit-map-link{min-height:50px;font-size:15px}
+}
+@media(min-width:1024px) and (min-height:650px){.screen-scroll-home #visit.section.wrap{height:auto;min-height:calc(100svh - 100px)}.screen-scroll-home #visit .visit-grid{flex:none;min-height:clamp(600px,66vh,780px);align-items:stretch}}
+#visit .visit-information .hours dt,#visit .visit-information .hours dd{font-weight:600}
+
+#visit .visit-call-button{justify-content:center;text-align:center;font-size:19px;font-weight:550;min-width:130px;padding:13px 22px}
+@media(max-width:640px){#visit .visit-call-button{font-size:17px;min-width:104px;padding:12px 16px}}
