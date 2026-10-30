@@ -5,7 +5,8 @@ const http = require('node:http');
 const QA = require('./dist/qa-engine.js');
 const {loadQA} = require('./qa-index.cjs');
 const {createAnswer, createChatHandler} = require('./chat-service.cjs');
-const entries = loadQA();
+// Keep the original single-entry fixture to test missing-evidence behavior.
+const entries = QA.parse('주례성모안과 진료시간\n오전 10시부터 오후 6시', 'qa.txt');
 const politeHours = '오전 10시부터 오후 6시입니다.\n\n더 궁금하신 점이 있으시면 편하게 질문해 주세요.';
 test('plain QA file is parsed with source line and original answer', () => {
   assert.equal(entries.length, 1);
@@ -44,7 +45,7 @@ test('without provider settings, grounded extraction works without external requ
 function mockProvider(selection, inspect) {
   return async (url, request) => {
     if (inspect) inspect(url, JSON.parse(request.body));
-    return {ok: true, json: async () => ({status: 'completed', output: [{content: [{type: 'output_text', text: JSON.stringify(selection)}]}]})};
+    return {ok: true, json: async () => ({status: 'completed', output: [{content: [{type: 'output_text', text: JSON.stringify({answer:selection.supported?entries[0].answer:'',...selection})}]}]})};
   };
 }
 test('RAG sends retrieved snippets, disables response storage and renders only original evidence', async () => {

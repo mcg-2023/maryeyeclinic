@@ -1,12 +1,1146 @@
 {
-  "version": 1,
+  "version": 2,
+  "reviewedAt": "2026-10-30",
   "entries": [
     {
-      "id": "qa-1",
-      "question": "주례 성모안과 진료시간",
-      "answer": "오전 10시부터 오후 6시",
-      "source": "qa.txt",
-      "line": 1
+      "id": "knowledge-1",
+      "question": "답변 원칙",
+      "answer": "이 자료는 진료 안내와 일반적인 안과 정보를 제공합니다. 증상만으로 진단, 수술 필요 여부, 특정 렌즈의 적합성, 치료 결과 또는 회복 기간을 확정하지 않습니다. 검사와 상담을 안내하고 개인별 차이를 설명합니다. 검사 결과나 사진만으로 확진하지 않습니다. 약의 처방, 용량 변경 또는 중단을 지시하지 않고 담당 의료진에게 문의하도록 합니다. 확실하지 않은 정보는 추측하지 않습니다. 병원이 실제로 제공하는 검사나 치료가 확인되지 않은 경우 시행 여부를 병원에 문의하도록 합니다. 진료 범위 외 질문에는 “죄송하지만 해당 내용은 안내가 어렵습니다. 관련 진료과에 문의해 주세요.”라고 답합니다. 다만 응급 징후는 진료 범위와 무관하게 우선 대응합니다.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 7,
+      "section": "답변 원칙",
+      "references": [],
+      "kind": "policy"
+    },
+    {
+      "id": "knowledge-2",
+      "question": "응급 증상 우선 안내",
+      "answer": "갑작스러운 시력 상실 또는 급격한 시력 저하, 심한 눈 통증과 충혈·흐린 시야·구역, 갑자기 늘어난 날파리와 번쩍임 또는 커튼 같은 시야 가림, 눈에 물체가 박히거나 심한 외상, 화학물질이 눈에 들어간 경우, 눈 수술이나 안구 주사 후 심한 통증 또는 시력 저하는 신속한 응급 평가가 필요합니다. 진료시간이나 예약을 기다리지 말고 즉시 안과 응급진료가 가능한 의료기관 또는 응급실을 방문하도록 안내하고 위급하면 119에 연락하도록 합니다. 화학물질은 즉시 깨끗한 흐르는 물로 눈을 충분히 씻으면서 응급 진료를 받도록 안내합니다. 눈에 박힌 물체는 빼거나 누르지 않습니다.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 11,
+      "section": "응급 증상 우선 안내",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/floaters",
+        "https://www.nhs.uk/conditions/eye-injuries/"
+      ],
+      "kind": "emergency"
+    },
+    {
+      "id": "knowledge-3",
+      "question": "주소 위치 오시는 길 지하철 주례역 전화번호 연락처 홈페이지",
+      "answer": "병원명: 주례성모안과. 주소: 부산광역시 사상구 가야대로 276 엠스퀘어메디컬센터 9층. 지하철 2호선 주례역 5번 출구 앞. 전화: 051-325-1919. 홈페이지: https://www.maryeyeclinic.com/",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 15,
+      "section": "병원 안내",
+      "references": [
+        "https://www.maryeyeclinic.com/"
+      ],
+      "intent": "location"
+    },
+    {
+      "id": "knowledge-4",
+      "question": "진료시간 운영시간 평일 월요일 화요일 수요일 목요일 금요일 토요일 일요일 공휴일 점심시간 휴진 접수 마감",
+      "answer": "평일 진료시간은 09:00~18:00, 토요일은 09:00~13:00입니다. 점심시간은 13:00~14:00이며 일요일과 공휴일은 휴진입니다. 토요일 진료는 점심시간 이전에 끝납니다. 접수 마감시간과 특정 날짜의 운영 여부는 병원에 확인해 주세요.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 17,
+      "section": "병원 안내",
+      "references": [],
+      "intent": "hours"
+    },
+    {
+      "id": "knowledge-5",
+      "question": "주차 주차장 주차비 주차 지원 학장천 공영주차장 수술 환자 일반 환자",
+      "answer": "주차: 일반 환자는 주차 지원이 없으며 학장천 공영주차장을 이용합니다. 수술 환자에 한해 주차비를 지원합니다. 지원 조건과 이용 방법은 방문 전 병원에 문의해 주세요.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 19,
+      "section": "병원 안내",
+      "references": [],
+      "intent": "parking"
+    },
+    {
+      "id": "knowledge-6",
+      "question": "의료진 원장 이정헌 전문의 진료 일정 담당 분야",
+      "answer": "의료진: 이정헌 대표원장은 안과 전문의입니다. 의료진의 진료 일정과 담당 분야는 변경될 수 있으므로 병원에 확인해 주세요. 대표원장에게만 진료받는다고 단정하지 않습니다.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 21,
+      "section": "병원 안내",
+      "references": [],
+      "intent": "doctorSchedule"
+    },
+    {
+      "id": "knowledge-7",
+      "question": "예약 예약방법 예약취소 예약변경 진료 예약",
+      "answer": "예약: 실제 예약 가능 시간, 예약 완료 여부, 진료과별 담당 의료진은 실시간 확인이 필요합니다. 챗봇은 연동 기능 없이 예약을 확정하거나 취소했다고 말하지 않습니다. 전화 051-325-1919로 문의하도록 안내합니다.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 23,
+      "section": "병원 안내",
+      "references": [],
+      "intent": "reservation"
+    },
+    {
+      "id": "knowledge-8",
+      "question": "비용 가격 금액 보험 검사비 수술비 렌즈 비용",
+      "answer": "비용과 보험: 현재 확정된 공개 가격 정보가 없습니다. 수술·검사·렌즈 비용, 보험 적용 및 주차 지원 조건은 개인 상태와 진료 내용에 따라 병원에 확인해 주세요. 확인되지 않은 금액을 안내하지 않습니다.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 25,
+      "section": "병원 안내",
+      "references": [],
+      "intent": "cost"
+    },
+    {
+      "id": "knowledge-9",
+      "question": "병원에서 안내할 수 있는 진료 범위",
+      "answer": "병원 제공 자료의 주요 분야는 백내장, 노안, 시력교정, 소아안과와 사시, 드림렌즈, 안구건조, 녹내장, 망막과 황반변성, 안성형(안검하수·안검내반), 안종합검진입니다. 제공 자료에는 백내장·노안백내장 수술, 시력교정수술, IPL 및 안구 주사치료가 기재되어 있으나 특정 방법·제품의 현재 시행 여부는 병원 확인이 필요합니다. 각 항목에 대한 아래 내용은 일반 의학 정보이며 특정 치료가 해당 환자에게 적합하거나 현재 병원에서 시행 중이라는 뜻은 아닙니다.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 29,
+      "section": "병원에서 안내할 수 있는 진료 범위",
+      "references": []
+    },
+    {
+      "id": "knowledge-10",
+      "question": "백내장 수술 인공수정체 단초점 다초점 렌즈 합병증",
+      "answer": "백내장은 눈의 수정체가 혼탁해져 시야가 흐려지는 질환입니다. 진찰을 통해 일상생활의 불편과 눈 상태를 고려하여 치료를 결정합니다. 백내장 수술은 혼탁한 수정체를 제거하고 인공수정체를 삽입하는 방법입니다. 감염, 출혈 등 합병증 가능성이 있어 수술 전 이점과 위험을 의료진과 상담해야 합니다. 단초점과 다초점 인공수정체는 초점 특성이 다르며 적합성은 눈 상태와 생활 방식에 따라 결정합니다. 수술 후 안경이 필요 없다고 보장하지 않습니다.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 33,
+      "section": "백내장과 노안",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/cataracts/cataract-surgery"
+      ]
+    },
+    {
+      "id": "knowledge-11",
+      "question": "노안 가까운 글씨 돋보기",
+      "answer": "노안은 나이가 들면서 가까운 곳에 초점을 맞추기 어려워지는 변화입니다. 안경이나 콘택트렌즈 등으로 교정할 수 있으며, 수술 적합성은 검사가 필요합니다.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 35,
+      "section": "백내장과 노안",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/presbyopia"
+      ]
+    },
+    {
+      "id": "knowledge-12",
+      "question": "소아안과 사시 아이 눈 찡그림 가까이 보는 아이",
+      "answer": "사시는 두 눈의 시선이 같은 곳을 향하지 않는 상태입니다. 원인과 치료 방법은 다양하며 소아에서는 시력 발달 평가가 중요하므로 안과 진찰을 권합니다. 아이가 눈을 찡그리거나 물체를 가까이 보는 경우 굴절이상 등 여러 가능성이 있으므로 검사 없이 원인을 단정하지 않습니다.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 39,
+      "section": "소아안과 사시와 드림렌즈",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/strabismus"
+      ]
+    },
+    {
+      "id": "knowledge-13",
+      "question": "드림렌즈 착용 효과 부작용 위생",
+      "answer": "드림렌즈는 주로 밤에 착용해 각막 형태를 일시적으로 변화시키는 렌즈입니다. 적합 여부는 눈 상태와 굴절검사로 평가하며, 효과는 영구적이지 않습니다. 렌즈 위생과 정기 검진이 중요하며 통증·충혈·시력 저하가 생기면 착용을 중단하고 신속히 안과에 연락해야 합니다. 감염 위험이 있습니다.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 41,
+      "section": "소아안과 사시와 드림렌즈",
+      "references": [
+        "https://www.aao.org/eye-health/diseases/what-is-orthokeratology"
+      ]
+    },
+    {
+      "id": "knowledge-14",
+      "question": "안구건조",
+      "answer": "안구건조는 눈물이 부족하거나 눈물막이 불안정해 발생할 수 있으며 건조감, 이물감, 따가움, 충혈 또는 흐린 시야가 나타날 수 있습니다. 원인과 정도에 따라 관리가 달라지므로 지속되면 진료를 권합니다. IPL은 병원 제공 자료에 기재된 시술이나 적응증과 시행 여부는 진료 시 확인합니다.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 45,
+      "section": "안구건조",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/dry-eye"
+      ]
+    },
+    {
+      "id": "knowledge-15",
+      "question": "녹내장",
+      "answer": "녹내장은 시신경 손상과 관련된 질환으로 초기에는 증상을 느끼지 못할 수 있습니다. 안압과 시신경 등의 검사를 통해 평가하며 치료는 진행을 늦추는 데 목적이 있습니다. 갑작스러운 심한 눈 통증과 시력 저하 등은 응급 평가가 필요합니다.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 49,
+      "section": "녹내장",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma"
+      ]
+    },
+    {
+      "id": "knowledge-16",
+      "question": "망막과 황반변성",
+      "answer": "망막은 빛을 감지하는 눈 안쪽 조직이며 황반은 중심 시력에 중요합니다. 황반변성은 중심 시야에 영향을 줄 수 있고 직선이 휘어 보이거나 중심이 흐려질 수 있습니다. 새로 생긴 시야 변화는 신속히 안과에 문의합니다. 상태에 따라 안구 주사 등 치료를 고려할 수 있으나 약제 선택과 치료 주기는 의료진이 결정합니다.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 53,
+      "section": "망막과 황반변성",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/age-related-macular-degeneration"
+      ]
+    },
+    {
+      "id": "knowledge-17",
+      "question": "안성형 안검하수와 안검내반",
+      "answer": "안검하수는 윗눈꺼풀이 처지는 상태로 심하면 시야에 영향을 줄 수 있습니다. 안검내반은 눈꺼풀이 안쪽으로 말려 속눈썹이 눈 표면에 닿을 수 있는 상태입니다. 원인과 정도에 따라 치료가 다르므로 검사가 필요하며 수술이나 보험 적용을 단정할 수 없습니다.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 57,
+      "section": "안성형 안검하수와 안검내반",
+      "references": [
+        "https://www.aao.org/eye-health/diseases/what-is-ptosis",
+        "https://www.aao.org/eyenet/article/diagnosis-management-of-involutional-entropion"
+      ]
+    },
+    {
+      "id": "knowledge-18",
+      "question": "시력교정 안경 콘택트렌즈 라식 라섹 수술 안종합검진 검사 항목 소요 시간 준비사항 비용",
+      "answer": "시력교정은 굴절 상태에 따라 안경, 콘택트렌즈 또는 수술 등 여러 방법을 고려할 수 있습니다. 특정 수술의 시행 여부와 적합성은 병원에 확인하고 검사 후 결정합니다. 안종합검진의 검사 항목, 소요 시간, 준비사항 및 비용은 병원에 문의해 주세요. 모든 사람에게 동일한 검사가 진행된다고 단정하지 않습니다.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 61,
+      "section": "시력교정 및 안종합검진",
+      "references": []
+    },
+    {
+      "id": "knowledge-19",
+      "question": "주차할 수 있나요?",
+      "answer": "일반 환자는 주차 지원이 없어 학장천 공영주차장을 이용하셔야 합니다. 수술 환자는 주차비 지원이 가능하며 자세한 조건은 병원에 문의해 주세요.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 65,
+      "section": "자주 묻는 질문",
+      "references": []
+    },
+    {
+      "id": "knowledge-20",
+      "question": "제 증상이 백내장인가요?",
+      "answer": "증상만으로 진단하기는 어렵습니다. 정확한 확인을 위해 안과 검사와 진료를 받아보세요.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 68,
+      "section": "자주 묻는 질문",
+      "references": []
+    },
+    {
+      "id": "knowledge-21",
+      "question": "백내장 수술 비용은 얼마인가요?",
+      "answer": "검사 결과와 수술 방법 등에 따라 비용이 달라질 수 있습니다. 정확한 비용과 보험 적용 여부는 병원에 문의해 주세요.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 71,
+      "section": "자주 묻는 질문",
+      "references": []
+    },
+    {
+      "id": "knowledge-22",
+      "question": "토요일에 점심시간이 있나요?",
+      "answer": "토요일 진료는 오전 9시부터 오후 1시까지입니다. 접수 마감시간은 병원에 확인해 주세요.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 74,
+      "section": "자주 묻는 질문",
+      "references": []
+    },
+    {
+      "id": "knowledge-23",
+      "question": "소변이 자주 마려운데 어떤 약을 먹어야 하나요?",
+      "answer": "죄송하지만 해당 내용은 안내가 어렵습니다. 관련 진료과에 문의해 주세요.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 77,
+      "section": "자주 묻는 질문",
+      "references": []
+    },
+    {
+      "id": "knowledge-24",
+      "question": "갑자기 한쪽 눈이 안 보여요.",
+      "answer": "갑작스러운 시력 상실은 응급 상황일 수 있습니다. 예약이나 진료시간을 기다리지 말고 즉시 안과 응급진료가 가능한 의료기관 또는 응급실로 가세요. 위급하면 119에 연락하세요.",
+      "source": "maryeye_chatbot_knowledge.md",
+      "line": 80,
+      "section": "자주 묻는 질문",
+      "references": []
+    },
+    {
+      "id": "clinic-doctors",
+      "question": "의료진 원장님 의사 선생님 몇 분 몇 명 이정헌 유지명 송도윤",
+      "answer": "주례성모안과는 이정헌 대표원장, 유지명 원장, 송도윤 원장 등 총 세 명의 안과 전문의가 함께 진료합니다. 의료진별 진료 일정은 병원에 확인해 주세요.",
+      "doctors": [
+        "이정헌 대표원장",
+        "유지명 원장",
+        "송도윤 원장"
+      ],
+      "intent": "doctors",
+      "source": "clinic-profile.json",
+      "line": 2,
+      "section": "의료진 소개"
+    },
+    {
+      "id": "faq-first-visit",
+      "category": "방문 준비",
+      "question": "처음 방문하는데 무엇을 준비하나요?",
+      "aliases": [
+        "초진 준비물",
+        "처음 가는데 뭘 가져가요"
+      ],
+      "match": [
+        "초진|처음|첫방문",
+        "준비|가져|필요|뭘|무엇"
+      ],
+      "answer": "처음 방문하실 때 필요한 준비물과 접수 절차는 병원에 확인해 주세요. 증상, 복용 중인 약, 이전 검사나 수술 이력을 메모해 오시면 상담에 도움이 돼요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 5,
+      "section": "방문 준비"
+    },
+    {
+      "id": "faq-identity",
+      "category": "방문 준비",
+      "question": "접수할 때 신분증이 필요한가요?",
+      "aliases": [
+        "신분증 가져가야 해요",
+        "아이 접수 서류"
+      ],
+      "match": [
+        "신분증|접수서류|아이접수서류"
+      ],
+      "answer": "본인 확인과 접수에 필요한 서류는 연령과 진료 상황에 따라 확인이 필요해요. 방문 전 051-325-1919로 문의해 주세요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 13,
+      "section": "방문 준비"
+    },
+    {
+      "id": "faq-walk-in",
+      "category": "예약·접수",
+      "question": "예약 없이 방문해도 되나요?",
+      "aliases": [
+        "예약 안하고 가도 돼",
+        "당일 접수 가능해요"
+      ],
+      "match": [
+        "예약없이|예약안|당일접수|그냥가도"
+      ],
+      "answer": "예약 없이 방문할 때의 접수 가능 여부와 대기시간은 당일 상황에 따라 달라요. 방문 전 병원에 전화해 접수 가능 여부를 확인해 주세요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 21,
+      "section": "예약·접수"
+    },
+    {
+      "id": "faq-wait",
+      "category": "예약·접수",
+      "question": "진료 대기시간은 얼마나 걸리나요?",
+      "aliases": [
+        "얼마나 기다려야 돼",
+        "대기 오래 걸려요"
+      ],
+      "match": [
+        "대기|기다려|기다리"
+      ],
+      "answer": "실시간 대기 인원은 챗봇에서 확인할 수 없어요. 진료와 검사 진행 상황에 따라 달라지니 병원에 문의해 주세요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 29,
+      "section": "예약·접수"
+    },
+    {
+      "id": "faq-deadline",
+      "category": "예약·접수",
+      "question": "접수는 몇 시에 마감하나요?",
+      "aliases": [
+        "접수 마감 시간",
+        "마지막 접수 몇시야"
+      ],
+      "match": [
+        "접수",
+        "마감|마지막|몇시|언제까지"
+      ],
+      "answer": "접수 마감시간은 진료 종료시간과 다를 수 있어요. 검사나 진료 내용에 따른 마감시간은 051-325-1919로 확인해 주세요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 37,
+      "section": "예약·접수"
+    },
+    {
+      "id": "faq-holiday",
+      "category": "예약·접수",
+      "question": "특정 날짜에 진료하나요?",
+      "aliases": [
+        "오늘 문 열었어",
+        "내일 진료해요"
+      ],
+      "match": [
+        "오늘|내일|이번주|다음주|[0-9]+월[0-9]+일",
+        "진료|문열|영업|운영"
+      ],
+      "answer": "특정 날짜의 실제 운영 여부는 챗봇에서 확인할 수 없어요. 평일은 09:00~18:00, 토요일은 09:00~13:00이며 일요일·공휴일은 휴진이에요. 임시 휴진이나 변경 여부는 전화로 확인해 주세요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 45,
+      "section": "예약·접수"
+    },
+    {
+      "id": "faq-doctor-choice",
+      "category": "의료진",
+      "question": "원하는 원장님께 진료받을 수 있나요?",
+      "aliases": [
+        "이정헌 원장님 지정 가능해요",
+        "유지명 원장님으로 예약할래"
+      ],
+      "match": [
+        "원장|이정헌|유지명|송도윤",
+        "지정|선택|예약할|진료받|담당"
+      ],
+      "answer": "원장님 지정 진료와 담당 일정은 예약·접수 시 병원에 확인해 주세요. 챗봇에서는 특정 원장님의 예약 가능 여부를 확정할 수 없어요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 53,
+      "section": "의료진"
+    },
+    {
+      "id": "faq-parking-surgery",
+      "category": "주차",
+      "question": "수술 환자는 주차비를 지원받나요?",
+      "aliases": [
+        "수술하면 주차 무료야",
+        "수술 환자 주차비"
+      ],
+      "match": [
+        "수술",
+        "주차"
+      ],
+      "answer": "수술 환자에 한해 주차비를 지원해 드려요. 지원 조건과 이용 방법은 방문 전 병원에 확인해 주세요. 일반 진료 환자는 학장천 공영주차장을 이용하며 주차비 지원은 없어요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 61,
+      "section": "주차"
+    },
+    {
+      "id": "faq-exam-duration",
+      "category": "검사",
+      "question": "눈 검사는 얼마나 걸리나요?",
+      "aliases": [
+        "검사 시간 얼마나 걸려",
+        "종합검진 소요시간"
+      ],
+      "match": [
+        "검사|검진",
+        "얼마나|소요|오래|시간"
+      ],
+      "answer": "검사 시간은 필요한 검사 항목과 눈 상태에 따라 달라요. 산동검사가 포함되면 기다리는 시간이 추가될 수 있어요. 예약 시 예상 소요시간을 확인해 주세요.",
+      "basis": "National Eye Institute 일반 의료 정보",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/healthy-vision/finding-eye-doctor/get-dilated-eye-exam"
+      ],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 69,
+      "section": "검사"
+    },
+    {
+      "id": "faq-dilation",
+      "category": "검사",
+      "question": "산동검사는 무엇인가요?",
+      "aliases": [
+        "동공 확대 검사 뭐야",
+        "산동검사 궁금해"
+      ],
+      "match": [
+        "산동|동공확대"
+      ],
+      "answer": "산동검사는 안약으로 동공을 넓혀 눈 안쪽을 자세히 살펴보는 검사예요. 검사 후 일시적으로 시야가 흐리거나 눈이 부실 수 있어요. 필요한 검사인지는 진료 후 결정해요.",
+      "basis": "National Eye Institute 일반 의료 정보",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/healthy-vision/finding-eye-doctor/get-dilated-eye-exam"
+      ],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 78,
+      "section": "검사"
+    },
+    {
+      "id": "faq-drive-exam",
+      "category": "검사",
+      "question": "검사 후 운전해도 되나요?",
+      "aliases": [
+        "산동검사 하고 운전해도 돼",
+        "눈 검사 뒤 차 몰아도 돼"
+      ],
+      "match": [
+        "검사|산동|동공",
+        "운전|차몰"
+      ],
+      "answer": "산동검사 후에는 시야가 흐리거나 눈이 부실 수 있어요. 검사 당일에는 직접 운전하지 않도록 귀가 방법을 준비해 주세요. 어떤 검사를 받는지는 방문 전 병원에 확인해 주세요.",
+      "basis": "National Eye Institute 일반 의료 정보",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/healthy-vision/finding-eye-doctor/get-dilated-eye-exam"
+      ],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 87,
+      "section": "검사"
+    },
+    {
+      "id": "faq-lens-before-exam",
+      "category": "검사",
+      "question": "검사 전에 렌즈를 빼야 하나요?",
+      "aliases": [
+        "렌즈 끼고 검사 가도 돼",
+        "검사 전 렌즈 중단 며칠"
+      ],
+      "match": [
+        "검사|검진|방문",
+        "렌즈|콘택트"
+      ],
+      "answer": "렌즈를 빼는 시점과 착용 중단 기간은 렌즈 종류와 검사 목적에 따라 달라요. 임의로 기간을 정하지 마시고 예약할 때 렌즈 종류를 알려 준비 방법을 확인해 주세요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 96,
+      "section": "검사"
+    },
+    {
+      "id": "faq-fasting",
+      "category": "방문 준비",
+      "question": "검사나 수술 전에 금식해야 하나요?",
+      "aliases": [
+        "밥 먹고 검사 가도 돼",
+        "수술 전 물 마셔도 돼"
+      ],
+      "match": [
+        "금식|밥먹고|수술전물|식사하고"
+      ],
+      "answer": "금식 여부는 검사·수술 방법과 마취 계획에 따라 달라요. 정해진 안내를 받지 못하셨다면 병원에 먼저 확인해 주세요.",
+      "basis": "National Eye Institute 일반 의료 정보",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/cataracts/cataract-surgery"
+      ],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 104,
+      "section": "방문 준비"
+    },
+    {
+      "id": "faq-medication",
+      "category": "약·안약",
+      "question": "먹던 약이나 안약을 중단해야 하나요?",
+      "aliases": [
+        "혈압약 끊어야 해",
+        "안약 이제 안 넣어도 돼",
+        "약 얼마나 넣어요"
+      ],
+      "match": [
+        "약|안약",
+        "중단|끊|멈|안넣|안먹|용량|얼마나|몇번"
+      ],
+      "answer": "복용약이나 처방 안약을 임의로 중단하거나 횟수를 바꾸지 마세요. 약 이름과 복용·사용 상황을 담당 의료진에게 알려 안내받아 주세요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 113,
+      "section": "약·안약"
+    },
+    {
+      "id": "faq-exam-items",
+      "category": "검사",
+      "question": "종합검진에서는 어떤 검사를 하나요?",
+      "aliases": [
+        "안종합검진 검사 항목",
+        "눈 검진 뭐 검사해"
+      ],
+      "match": [
+        "검진|검사",
+        "항목|어떤검사|뭐검사|무슨검사"
+      ],
+      "answer": "눈 상태에 따라 시력·안압·시야 검사와 눈 안쪽을 확인하는 검사 등을 고려해요. 모든 분이 같은 검사를 받는 것은 아니며 실제 항목과 비용은 병원에 확인해 주세요.",
+      "basis": "National Eye Institute 일반 의료 정보",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/healthy-vision/finding-eye-doctor/get-dilated-eye-exam"
+      ],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 121,
+      "section": "검사"
+    },
+    {
+      "id": "faq-checkup-interval",
+      "category": "검사",
+      "question": "눈이 불편하지 않아도 검진이 필요한가요?",
+      "aliases": [
+        "눈 멀쩡한데 검사 받아야 돼",
+        "안과 검진 얼마나 자주"
+      ],
+      "match": [
+        "검진|검사",
+        "불편하지|멀쩡|자주|주기|정기"
+      ],
+      "answer": "일부 눈 질환은 초기 증상이 없을 수 있어요. 나이와 기저질환, 가족력에 따라 필요한 검사와 주기가 달라지니 진료 시 상담해 주세요.",
+      "basis": "National Eye Institute 일반 의료 정보",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/healthy-vision/finding-eye-doctor/get-dilated-eye-exam"
+      ],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 130,
+      "section": "검사"
+    },
+    {
+      "id": "faq-cataract-difference",
+      "category": "백내장·노안",
+      "question": "백내장과 노안은 다른가요?",
+      "aliases": [
+        "노안 백내장 차이",
+        "돋보기 쓰면 백내장이야"
+      ],
+      "match": [
+        "백내장",
+        "노안|돋보기쓰면|차이"
+      ],
+      "answer": "백내장은 수정체가 혼탁해지는 질환이고, 노안은 나이가 들면서 가까운 곳에 초점을 맞추기 어려워지는 변화예요. 함께 나타날 수도 있어 증상의 원인은 검사로 확인해야 해요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 139,
+      "section": "백내장·노안"
+    },
+    {
+      "id": "faq-cataract-timing",
+      "category": "백내장·노안",
+      "question": "백내장 수술은 언제 해야 하나요?",
+      "aliases": [
+        "백내장 수술 시기",
+        "백내장이면 바로 수술해야 돼"
+      ],
+      "match": [
+        "백내장",
+        "시기|언제|바로|꼭|해야"
+      ],
+      "answer": "수술 시기는 시력 저하로 인한 일상생활의 불편과 검사 결과를 함께 보고 결정해요. 백내장이 있다고 모두 바로 수술하는 것은 아니니 의료진과 이점·위험을 상담해 주세요.",
+      "basis": "National Eye Institute 일반 의료 정보",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/cataracts/cataract-surgery"
+      ],
+      "exclude": "운전|안경|돋보기|금식|주차|회복|출근|일상|비용|수술비",
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 147,
+      "section": "백내장·노안"
+    },
+    {
+      "id": "faq-iol",
+      "category": "백내장·노안",
+      "question": "단초점과 다초점 렌즈는 어떻게 다른가요?",
+      "aliases": [
+        "단초점 다초점 차이",
+        "인공수정체 어떤 렌즈가 좋아"
+      ],
+      "match": [
+        "단초점|다초점|인공수정체",
+        "차이|다른|추천|어떤|좋아|좋은"
+      ],
+      "answer": "단초점과 다초점 인공수정체는 초점 특성이 달라요. 눈 상태와 생활 방식에 따라 맞는 렌즈가 달라지므로 검사 후 상담해 주세요. 특정 렌즈가 누구에게나 더 좋은 것은 아니에요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 156,
+      "section": "백내장·노안"
+    },
+    {
+      "id": "faq-glasses-after",
+      "category": "백내장·노안",
+      "question": "백내장 수술 후 안경을 안 써도 되나요?",
+      "aliases": [
+        "수술하면 돋보기 안 써도 돼",
+        "백내장 수술하고 안경 필요해"
+      ],
+      "match": [
+        "백내장|수술",
+        "안경|돋보기"
+      ],
+      "answer": "수술 후 안경이 필요한지는 눈 상태와 선택한 인공수정체, 보는 거리에 따라 달라요. 안경이 전혀 필요 없다고 보장할 수는 없어요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 164,
+      "section": "백내장·노안"
+    },
+    {
+      "id": "faq-recovery",
+      "category": "수술 안내",
+      "question": "수술 후 언제 일상생활이 가능한가요?",
+      "aliases": [
+        "백내장 회복 며칠 걸려",
+        "수술 후 출근 언제 해"
+      ],
+      "match": [
+        "수술|백내장",
+        "회복|출근|일상|며칠"
+      ],
+      "answer": "회복 속도와 일상생활 복귀 시점은 수술 방법과 눈 상태에 따라 달라요. 출근·운동·세안 등 활동별 주의사항은 수술 후 담당 의료진의 안내를 따라 주세요.",
+      "basis": "National Eye Institute 일반 의료 정보",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/cataracts/cataract-surgery"
+      ],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 172,
+      "section": "수술 안내"
+    },
+    {
+      "id": "faq-drive-surgery",
+      "category": "수술 안내",
+      "question": "백내장 수술 당일 운전할 수 있나요?",
+      "aliases": [
+        "수술하고 차 몰고 집에 가도 돼",
+        "백내장 수술 후 운전"
+      ],
+      "match": [
+        "수술",
+        "운전|차몰"
+      ],
+      "answer": "백내장 수술 당일에는 직접 운전하지 말고 보호자 등과 안전하게 귀가할 방법을 준비해 주세요. 운전 재개 시점은 진료 후 담당 의료진에게 확인해 주세요.",
+      "basis": "National Eye Institute 일반 의료 정보",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/cataracts/cataract-surgery"
+      ],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 181,
+      "section": "수술 안내"
+    },
+    {
+      "id": "faq-surgery-risks",
+      "category": "수술 안내",
+      "question": "백내장 수술에 부작용이 있나요?",
+      "aliases": [
+        "백내장 수술 위험해",
+        "백내장 합병증"
+      ],
+      "match": [
+        "백내장",
+        "부작용|위험|합병증"
+      ],
+      "answer": "백내장 수술도 감염·출혈 등 합병증 가능성이 있어요. 본인의 눈 상태에서 기대할 수 있는 이점과 위험을 수술 전에 의료진과 충분히 상담해 주세요.",
+      "basis": "National Eye Institute 일반 의료 정보",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/cataracts/cataract-surgery"
+      ],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 190,
+      "section": "수술 안내"
+    },
+    {
+      "id": "faq-dream-age",
+      "category": "드림렌즈",
+      "question": "드림렌즈는 몇 살부터 가능한가요?",
+      "aliases": [
+        "드림렌즈 나이 제한",
+        "우리 아이 드림렌즈 할 수 있어"
+      ],
+      "match": [
+        "드림렌즈|드림랜즈",
+        "나이|몇살|아이|가능"
+      ],
+      "answer": "드림렌즈 적합 여부는 나이만으로 결정하지 않아요. 눈 상태와 굴절검사를 확인하고 위생 관리가 가능한지도 함께 상담해야 해요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 199,
+      "section": "드림렌즈"
+    },
+    {
+      "id": "faq-dream-permanent",
+      "category": "드림렌즈",
+      "question": "드림렌즈 효과는 영구적인가요?",
+      "aliases": [
+        "드림렌즈 끊으면 어떻게 돼",
+        "드림렌즈 영구 시력교정"
+      ],
+      "match": [
+        "드림렌즈|드림랜즈",
+        "영구|끊|중단|계속"
+      ],
+      "answer": "드림렌즈는 각막 형태를 일시적으로 변화시키는 렌즈라 효과가 영구적이지 않아요. 착용 계획과 중단 후 관리 방법은 담당 의료진과 상담해 주세요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 207,
+      "section": "드림렌즈"
+    },
+    {
+      "id": "faq-dream-pain",
+      "category": "드림렌즈",
+      "question": "드림렌즈를 끼고 눈이 아프면 어떻게 하나요?",
+      "aliases": [
+        "드림렌즈 끼고 충혈됐어",
+        "렌즈 끼니까 눈이 아파"
+      ],
+      "match": [
+        "렌즈",
+        "아파|통증|충혈|따가|시력저하"
+      ],
+      "answer": "렌즈 착용 중 통증·충혈·시력 저하가 생기면 착용을 중단하고 신속히 안과에 연락해 주세요. 감염 등 원인을 검사로 확인해야 해요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 215,
+      "section": "드림렌즈"
+    },
+    {
+      "id": "faq-dream-care",
+      "category": "드림렌즈",
+      "question": "드림렌즈는 어떻게 관리하나요?",
+      "aliases": [
+        "드림렌즈 세척 방법",
+        "드림렌즈 위생 관리"
+      ],
+      "match": [
+        "드림렌즈|드림랜즈",
+        "관리|세척|위생"
+      ],
+      "answer": "드림렌즈는 위생 관리와 정기 검진이 중요해요. 제품별 세척·보관 방법과 착용시간은 처방받은 안내를 따라 주세요. 임의의 방법으로 관리하지 말고 궁금한 점은 병원에 확인해 주세요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 223,
+      "section": "드림렌즈"
+    },
+    {
+      "id": "faq-child-squint",
+      "category": "소아안과",
+      "question": "아이가 눈을 찡그리고 가까이 봐요.",
+      "aliases": [
+        "아이가 티비 가까이 봐",
+        "애가 눈 찡그려"
+      ],
+      "match": [
+        "아이|애가|소아",
+        "찡그|가까이|가까운"
+      ],
+      "answer": "굴절이상 등 여러 가능성이 있어 증상만으로 원인을 단정하기는 어려워요. 소아안과 진료로 시력과 눈 상태를 확인해 주세요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 231,
+      "section": "소아안과"
+    },
+    {
+      "id": "faq-strabismus",
+      "category": "소아안과",
+      "question": "아이가 사시인 것 같은데 기다려도 되나요?",
+      "aliases": [
+        "아이 눈이 몰려 보여",
+        "사시 그냥 둬도 돼"
+      ],
+      "match": [
+        "사시|눈이몰려|눈몰림"
+      ],
+      "answer": "사시가 의심되면 안과 진찰을 권해요. 특히 아이는 시력 발달을 함께 평가하는 것이 중요하며, 검사 후 원인과 치료 방법을 상담해야 해요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 239,
+      "section": "소아안과"
+    },
+    {
+      "id": "faq-dry-symptoms",
+      "category": "안구건조",
+      "question": "눈이 뻑뻑하고 모래가 들어간 것 같아요.",
+      "aliases": [
+        "눈에 이물감 있어",
+        "눈이 건조하고 따가워"
+      ],
+      "match": [
+        "뻑뻑|이물감|모래|건조하고|안구건조증상"
+      ],
+      "answer": "안구건조는 눈물이 부족하거나 눈물막이 불안정할 때 생길 수 있어요. 건조감·이물감·따가움·흐린 시야가 나타날 수 있지만 다른 원인도 가능하니 증상이 지속되면 진료로 확인해 주세요.",
+      "basis": "National Eye Institute 일반 의료 정보",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/dry-eye"
+      ],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 247,
+      "section": "안구건조"
+    },
+    {
+      "id": "faq-artificial-tears",
+      "category": "안구건조",
+      "question": "인공눈물만 넣으면 괜찮아지나요?",
+      "aliases": [
+        "인공눈물 계속 넣어도 돼",
+        "안구건조 안약 추천"
+      ],
+      "match": [
+        "인공눈물|안구건조안약"
+      ],
+      "answer": "인공눈물은 건조 증상 완화에 사용되지만 원인과 정도에 따라 다른 관리가 필요할 수 있어요. 제품 선택과 사용법은 의료진·약사에게 확인하고, 지속되는 증상은 진료받아 주세요.",
+      "basis": "National Eye Institute 일반 의료 정보",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/dry-eye"
+      ],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 256,
+      "section": "안구건조"
+    },
+    {
+      "id": "faq-dry-life",
+      "category": "안구건조",
+      "question": "안구건조가 있을 때 생활에서 무엇을 조심하나요?",
+      "aliases": [
+        "건조한 눈 생활 관리",
+        "컴퓨터 오래 보면 눈이 건조해"
+      ],
+      "match": [
+        "안구건조|건조한눈|눈이건조|컴퓨터",
+        "생활|관리|오래|조심"
+      ],
+      "answer": "화면을 오래 볼 때 중간중간 쉬고, 건조하거나 바람이 직접 닿는 환경을 피하는 것이 도움이 될 수 있어요. 증상이 지속되면 원인에 맞는 관리가 필요하니 진료받아 주세요.",
+      "basis": "National Eye Institute 일반 의료 정보",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/dry-eye"
+      ],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 265,
+      "section": "안구건조"
+    },
+    {
+      "id": "faq-ipl",
+      "category": "안구건조",
+      "question": "IPL 치료를 받을 수 있나요?",
+      "aliases": [
+        "안구건조 IPL 해요",
+        "ipl 효과 궁금해"
+      ],
+      "match": [
+        "ipl|아이피엘"
+      ],
+      "answer": "병원 제공 자료에 IPL이 기재되어 있지만 현재 시행 여부와 적응증은 진료 시 확인해야 해요. 안구건조의 원인과 눈 상태를 검사한 뒤 적합한지 상담해 주세요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 274,
+      "section": "안구건조"
+    },
+    {
+      "id": "faq-glaucoma-silent",
+      "category": "녹내장",
+      "question": "잘 보이는데 녹내장일 수 있나요?",
+      "aliases": [
+        "녹내장 초기 증상 없나요",
+        "시력 좋은데 녹내장 검사 필요해"
+      ],
+      "match": [
+        "녹내장",
+        "잘보|시력좋|초기|증상없|증상은"
+      ],
+      "answer": "녹내장은 초기에 뚜렷한 증상이 없을 수 있어요. 시력이 좋게 느껴져도 안압·시신경·시야 등의 검사로 확인해야 해요.",
+      "basis": "National Eye Institute 일반 의료 정보",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma"
+      ],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 282,
+      "section": "녹내장"
+    },
+    {
+      "id": "faq-glaucoma-cure",
+      "category": "녹내장",
+      "question": "녹내장은 완치할 수 있나요?",
+      "aliases": [
+        "녹내장 치료 목적",
+        "녹내장 약 쓰면 완치돼"
+      ],
+      "match": [
+        "녹내장",
+        "완치|치료|진행"
+      ],
+      "answer": "녹내장 치료는 진행을 늦추고 남아 있는 시력을 보호하는 데 목적이 있어요. 상태에 따라 치료 방법과 검진 계획이 달라지므로 정기 진료를 받아 주세요.",
+      "basis": "National Eye Institute 일반 의료 정보",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma"
+      ],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 291,
+      "section": "녹내장"
+    },
+    {
+      "id": "faq-glaucoma-family",
+      "category": "녹내장",
+      "question": "가족 중 녹내장이 있으면 검사해야 하나요?",
+      "aliases": [
+        "부모님 녹내장인데 나도 검사",
+        "녹내장 가족력"
+      ],
+      "match": [
+        "녹내장",
+        "가족|부모|유전"
+      ],
+      "answer": "녹내장 가족력은 위험 요인 중 하나예요. 필요한 검사와 검진 주기를 안과에서 상담해 주세요. 가족력이 있다고 모두 녹내장인 것은 아니에요.",
+      "basis": "National Eye Institute 일반 의료 정보",
+      "references": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma"
+      ],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 300,
+      "section": "녹내장"
+    },
+    {
+      "id": "faq-retina-injection",
+      "category": "망막",
+      "question": "안구 주사는 몇 번 맞아야 하나요?",
+      "aliases": [
+        "황반변성 주사 주기",
+        "눈 주사 몇번 맞아"
+      ],
+      "match": [
+        "주사",
+        "몇번|주기|얼마나|계속"
+      ],
+      "answer": "안구 주사 약제와 치료 횟수·주기는 질환과 검사 결과에 따라 의료진이 결정해요. 정해진 횟수를 모든 환자에게 동일하게 적용하지 않아요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 309,
+      "section": "망막"
+    },
+    {
+      "id": "faq-distorted",
+      "category": "망막",
+      "question": "직선이 휘어 보이고 중심이 흐려요.",
+      "aliases": [
+        "글자가 휘어 보여",
+        "가운데가 흐릿해"
+      ],
+      "match": [
+        "휘어|찌그러|중심이흐|가운데가흐"
+      ],
+      "answer": "직선이 휘어 보이거나 중심이 흐려지는 변화는 황반 등 눈 상태를 확인할 필요가 있어요. 새로 생긴 증상이라면 신속히 안과에 문의해 주세요. 증상만으로 병명을 확정할 수는 없어요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 317,
+      "section": "망막"
+    },
+    {
+      "id": "faq-ptosis",
+      "category": "안성형",
+      "question": "눈꺼풀이 처지면 수술해야 하나요?",
+      "aliases": [
+        "안검하수 수술 필요해",
+        "눈꺼풀 처짐 보험 돼요"
+      ],
+      "match": [
+        "눈꺼풀|안검하수",
+        "처|수술|보험"
+      ],
+      "answer": "눈꺼풀이 처지는 원인과 시야에 미치는 정도를 검사한 뒤 치료를 결정해요. 수술 필요 여부나 보험 적용을 증상만으로 확정할 수는 없어요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 325,
+      "section": "안성형"
+    },
+    {
+      "id": "faq-inward-lashes",
+      "category": "안성형",
+      "question": "속눈썹이 눈을 찌르는 것 같아요.",
+      "aliases": [
+        "속눈썹 눈에 닿아",
+        "안검내반 치료"
+      ],
+      "match": [
+        "속눈썹|안검내반"
+      ],
+      "answer": "눈꺼풀이 안으로 말리면서 속눈썹이 눈 표면에 닿는 경우 등이 있어요. 원인과 정도에 따라 치료가 달라지니 안과에서 확인해 주세요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 333,
+      "section": "안성형"
+    },
+    {
+      "id": "faq-lasik",
+      "category": "시력교정",
+      "question": "라식이나 라섹 수술을 받을 수 있나요?",
+      "aliases": [
+        "라식 가능해요",
+        "라섹 하는 병원인가요"
+      ],
+      "match": [
+        "라식|라섹|시력교정수술"
+      ],
+      "answer": "시력교정수술의 현재 시행 여부는 병원에 확인해 주세요. 수술 적합 여부와 방법은 눈 상태를 검사한 뒤 결정하며, 질문만으로 가능 여부를 확정할 수는 없어요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 341,
+      "section": "시력교정"
+    },
+    {
+      "id": "faq-fees",
+      "category": "비용·서류",
+      "question": "검사비나 수술비를 미리 알 수 있나요?",
+      "aliases": [
+        "검사비 얼마예요",
+        "백내장 수술비 얼마야"
+      ],
+      "match": [
+        "검사비|수술비|렌즈비|검사비용|수술비용|백내장.*얼마"
+      ],
+      "answer": "현재 확정된 공개 가격 자료는 없어요. 검사 항목, 수술 방법과 렌즈, 보험 적용에 따라 달라질 수 있으니 051-325-1919로 문의해 주세요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 349,
+      "section": "비용·서류"
+    },
+    {
+      "id": "faq-documents",
+      "category": "비용·서류",
+      "question": "진단서나 보험 청구 서류를 받을 수 있나요?",
+      "aliases": [
+        "실비 서류 발급",
+        "진료확인서 받을 수 있어"
+      ],
+      "match": [
+        "진단서|진료확인서|서류발급|실비서류|보험청구서류"
+      ],
+      "answer": "필요한 서류 종류, 발급 가능 여부와 비용, 본인 확인 준비물은 병원에 문의해 주세요. 보험 청구에 필요한 서류는 가입한 보험사에도 확인해 주세요.",
+      "basis": "사용자 제공 maryeye_chatbot_knowledge.md",
+      "references": [],
+      "faq": true,
+      "source": "clinic-faq.md",
+      "line": 357,
+      "section": "비용·서류"
     }
   ]
 }

@@ -20,6 +20,7 @@
 .qa-message--user>p{background:linear-gradient(130deg,#7b654d,#584535);color:#fff8ed;border-radius:16px 4px 16px 16px}
 .qa-suggestions button{background:#f3ede3;border-color:#ded0ba;color:#796044;padding:8px 14px}
 .qa-suggestions button:hover{background:#eae0d1}
+.qa-suggestions{display:flex;flex-wrap:wrap;gap:6px}
 .qa-form{background:#fff;border-color:#ddd0bc;border-radius:18px;padding:8px 8px 8px 16px}
 .qa-form button{background:linear-gradient(135deg,#967b55,#665039);border-radius:12px;color:#fff8e9}
 @media(max-width:640px){
@@ -30,3 +31,5 @@
  .qa-header{padding:20px}
 }
 @media(prefers-reduced-motion:reduce){.qa-launcher{transition:none}}
+.qa-message--assistant>p{line-height:1.85;word-break:keep-all;overflow-wrap:anywhere;padding:16px 17px}
+.qa-source>a{display:block;margin-top:5px;text-decoration:underline;text-underline-offset:3px}
