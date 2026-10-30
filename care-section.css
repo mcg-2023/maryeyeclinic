@@ -23,3 +23,16 @@
 .care-comparison .care-drag-help{position:absolute;top:18px;right:20px;z-index:2;margin:0;padding:8px 13px;border:1px solid #ffffff66;border-radius:999px;background:#fffdf0db;color:#79664d;backdrop-filter:blur(8px);font-size:10px;line-height:1.4;pointer-events:none}
 @media(max-width:900px){.care-view-caption{gap:24px;padding:0}.care-view-caption>div{grid-template-columns:100px minmax(0,1fr);gap:16px}.care-active-copy{padding-left:16px;font-size:13px}.care-view-caption h3{font-size:22px}}
 @media(max-width:640px){.care-view-caption{display:flex;flex-wrap:wrap;align-items:flex-start;gap:14px;margin-top:20px;padding:0 3px}.care-view-caption>div{display:block;flex-basis:100%}.care-view-caption h3{font-size:23px}.care-active-copy{padding:0;border:0;font-size:13px;margin-top:8px;max-width:none}.care-active-link{font-size:12px;gap:22px;padding:7px 0;margin:0}.care-simulation-note{text-align:left;font-size:9px;margin:14px 3px 0;line-height:1.8}.care-comparison .care-drag-help{top:12px;right:12px;padding:6px 10px;font-size:8px}}
+/* The service grid follows the comparison directly, without a caption row. */
+.care-experience{gap:16px}
+.care-view .care-simulation-note.sr-only{margin:0;padding:0}
+@media(min-width:1024px) and (min-height:650px){.screen-scroll-home #care .care-experience{gap:16px}}
+/* Automatic comparison sweep, with a quiet boundary and no drag handle. */
+.care-comparison:not([data-mode="photo"]) .care-scene-soft{animation:care-auto-reveal 13s ease-in-out infinite}
+.care-comparison:not([data-mode="photo"]) .care-divider{animation:care-auto-boundary 13s ease-in-out infinite}
+.care-comparison .care-divider>span,.care-comparison .care-range,.care-comparison .care-drag-help{display:none}
+.care-comparison.care-auto-paused .care-scene-soft,.care-comparison.care-auto-paused .care-divider{animation-play-state:paused}
+@media(hover:hover) and (pointer:fine){.care-comparison:hover .care-scene-soft,.care-comparison:hover .care-divider{animation-play-state:paused}}
+@keyframes care-auto-reveal{0%,100%{clip-path:inset(0 82% 0 0)}50%{clip-path:inset(0 18% 0 0)}}
+@keyframes care-auto-boundary{0%,100%{left:18%}50%{left:82%}}
+@media(prefers-reduced-motion:reduce){.care-comparison:not([data-mode="photo"]) .care-scene-soft,.care-comparison:not([data-mode="photo"]) .care-divider{animation:none}}

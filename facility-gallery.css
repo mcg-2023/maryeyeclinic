@@ -50,3 +50,12 @@
 .facility-modal .facility-modal-head h2{font-size:36px;line-height:1.15;margin:0}
 .facility-modal .facility-modal-description{font-size:18px;line-height:1.45;margin-top:10px;margin-bottom:15px}
 @media(max-width:700px){.facility-modal{padding-top:19px}.facility-modal-eyebrow{font-size:11px}.facility-modal .facility-modal-head h2{font-size:30px;line-height:1.15}.facility-modal .facility-modal-description{font-size:16px;line-height:1.45;margin-top:8px;margin-bottom:13px}}
+/* Photo-only lightbox. Controls sit over the photograph. */
+dialog.facility-modal{position:fixed;padding:0;border:0;border-radius:14px;width:min(1100px,calc(100vw - 32px));height:80dvh;max-width:calc(100vw - 32px);max-height:calc(100dvh - 32px);overflow:hidden;background:#211b16;box-sizing:border-box}
+.facility-modal .facility-modal-stage{width:100%;height:100%;min-height:0;border-radius:0;background:transparent}
+.facility-modal .facility-modal-photo>img{width:100%;height:100%;object-fit:contain}
+.facility-modal .facility-modal-close,.facility-modal .facility-modal-play{position:absolute;z-index:3;display:grid;place-items:center;width:40px;height:40px;min-height:0;padding:0;border:1px solid #ffffff65;border-radius:50%;background:#20171099;color:#fff;font-size:25px;line-height:1;backdrop-filter:blur(8px)}
+.facility-modal .facility-modal-close{right:14px;top:14px}
+.facility-modal .facility-modal-play{right:14px;bottom:14px;font-size:17px}
+.facility-modal .facility-modal-close:hover,.facility-modal .facility-modal-play:hover{background:#201710dd}
+@media(max-width:700px){dialog.facility-modal{border-radius:10px}.facility-modal .facility-modal-close{right:10px;top:10px}.facility-modal .facility-modal-play{right:10px;bottom:10px}}

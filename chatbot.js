@@ -11,16 +11,32 @@
   launcher.addEventListener('click', () => open(panel.hidden));
   document.getElementById('qa-close').addEventListener('click', () => open(false));
   root.addEventListener('keydown', event => { if (event.key === 'Escape' && !panel.hidden) { event.preventDefault(); event.stopPropagation(); open(false); } });
+  function readableReply(text) {
+    // Preserve existing paragraphs, URLs, decimal numbers and explicit lists.
+    return String(text).replace(/\r\n/g,'\n').split(/\n{2,}/).map(block=>{
+      if(/https?:\/\/|^\s*(?:[-•]|\d+[.)])\s/m.test(block))return block;
+      return block.replace(/([.!?。])\s+(?=[가-힣A-Za-z])/g,'$1\n\n');
+    }).join('\n\n');
+  }
+  async function replyPause(started, result) {
+    if(result?.mode==='emergency')return;
+    const remaining=1000-(performance.now()-started);
+    if(remaining>0)await new Promise(resolve=>setTimeout(resolve,remaining));
+  }
   function append(text, role, sources, phone) {
     const message = document.createElement('div'); message.className = 'qa-message qa-message--' + role;
     const speaker = document.createElement('span'); speaker.className = 'qa-speaker'; speaker.textContent = role === 'user' ? '나' : '안내 도우미';
-    const p = document.createElement('p'); p.textContent = text; message.append(speaker, p);
+    const p = document.createElement('p'); p.textContent = role==='assistant'?readableReply(text):text; message.append(speaker, p);
     if (sources && sources.length) {
       const details = document.createElement('details'); details.className = 'qa-source';
-      const summary = document.createElement('summary'); summary.textContent = '답변 근거 · 병원 QA 안내'; details.append(summary);
+      const summary = document.createElement('summary'); summary.textContent = '답변 근거 · 병원 지식자료'; details.append(summary);
       for (const source of sources) {
         const quote = document.createElement('blockquote'); quote.textContent = source.question + '\n' + source.answer;
         const cite = document.createElement('cite'); cite.textContent = source.source + ' · ' + source.line + '행'; details.append(quote, cite);
+        for (const [index, url] of (source.references || []).entries()) {
+          if (!/^https:\/\//i.test(url)) continue;
+          const link = document.createElement('a'); link.href=url;link.target='_blank';link.rel='noopener noreferrer';link.textContent='참고 출처 '+(index+1);details.append(link);
+        }
       }
       message.append(details);
     }
@@ -59,8 +75,10 @@
     busy = true; send.disabled = true; form.setAttribute('aria-busy', 'true'); input.value = '';
     document.getElementById('qa-suggestions').hidden = true;
     append(question, 'user'); status.textContent = '안내 자료를 확인하고 있어요…';
-    try { const result = await ask(question); append(result.answer, 'assistant', result.sources, result.phone); status.textContent = ''; }
+    const started=performance.now();
+    try { const result = await ask(question);status.textContent='답변을 정리하고 있어요…';await replyPause(started,result);append(result.answer, 'assistant', result.sources, result.phone); status.textContent = ''; }
     catch (error) {
+      await replyPause(started);
       append(error.message === 'rate' ? '질문이 많아 잠시 쉬고 있어요. 잠시 후 다시 질문해 주세요.' : '안내 자료에 연결하지 못했습니다. 잠시 후 다시 시도하거나 병원으로 전화 문의해 주세요.', 'assistant', [], ClinicQA.PHONE);
       status.textContent = '질문을 다시 보내실 수 있어요.';
     } finally { busy = false; send.disabled = false; form.removeAttribute('aria-busy'); }
