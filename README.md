@@ -20,3 +20,9 @@ node server.cjs
 메인 페이지: website/dist/index.html
 상세 구성과 미확인 자료: [website/README.md](website/README.md)
 인터랙션 명세: [website/homepage-effects.md](website/homepage-effects.md)
+
+## GitHub Pages
+
+https://mcg-2023.github.io/maryeyeclinic/
+
+GitHub Pages publishes the root of the `gh-pages` branch. After building and committing changes, run `git subtree push --prefix website/dist origin gh-pages` from the repository root. The static chatbot uses bundled QA data.

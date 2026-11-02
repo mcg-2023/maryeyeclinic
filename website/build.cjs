@@ -4,7 +4,7 @@ const {MENU,ROUTES,renderPage,titleFor}=require('./dist/app.js');
 const chatbotMarkup=require('./chatbot-markup.cjs');
 const {buildQA}=require('./qa-index.cjs');
 const qaEntries=buildQA();
-const origin='https://jurye-st-mary-eye.mcg2023mcg.chatgpt.site';
+const origin=process.env.SITE_URL || 'https://mcg-2023.github.io/maryeyeclinic';
 let template=fs.readFileSync('template.html','utf8').replace(/href="#\/about\/location"/g,'href="about-location.html"').replace(/href="#\/"/g,'href="index.html"');
 template=template.replace('<nav id="nav" aria-label="주 메뉴"></nav>','<nav id="nav" aria-label="주 메뉴">'+MENU.map(([title,items])=>'<a href="'+items[0][1]+'.html">'+title+'</a>').join('')+'</nav>');
 for(const key of ROUTES){
