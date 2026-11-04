@@ -33,3 +33,21 @@
 @media(prefers-reduced-motion:reduce){.qa-launcher{transition:none}}
 .qa-message--assistant>p{line-height:1.85;word-break:keep-all;overflow-wrap:anywhere;padding:16px 17px}
 .qa-source>a{display:block;margin-top:5px;text-decoration:underline;text-underline-offset:3px}
+@media(min-width:901px){
+ .header #header-chat-slot .qa-launcher{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:7px 17px 7px 8px;border:1px solid #65513c;border-radius:12px;background:#493a2c;color:#fff8eb;font-size:14px;font-weight:650;letter-spacing:-.02em;line-height:1.5;box-shadow:0 4px 12px #493a2c22;transition:background .18s,box-shadow .18s}
+ .header #header-chat-slot .qa-launcher>svg{box-sizing:border-box;width:30px;height:30px;padding:6px;border:0;border-radius:8px;background:#e8c88d;color:#493a2c}
+ .header #header-chat-slot .qa-launcher:hover,.header #header-chat-slot .qa-launcher[aria-expanded=true]{background:#614a32;box-shadow:0 5px 15px #493a2c30}
+}
+@media(max-width:900px){
+ .qa-mobile-launcher .qa-chat{right:16px;bottom:24px}
+ .qa-mobile-launcher .qa-launcher{min-height:54px;padding:9px 19px 9px 10px;gap:10px;border-radius:30px;background:linear-gradient(135deg,#a17a42,#634728);border:2px solid #e4c78e;color:#fff;box-shadow:0 0 0 4px #ead7af55,0 6px 24px #3e2f234d;font-size:15px;font-weight:700}
+ .qa-mobile-launcher .qa-launcher>svg{width:22px;height:22px;padding:6px;color:#fff2ce;background:#e9c58033;border-color:#f1d69b99}
+ .qa-mobile-launcher .back-top{right:16px;bottom:90px}
+ .qa-mobile-launcher .qa-panel{position:fixed;top:auto;right:16px;bottom:90px;max-height:calc(100dvh - 180px)}
+ body.qa-mobile-launcher:has(.qa-panel:not([hidden])) .back-top{visibility:hidden}
+}
+@media(max-width:640px){
+ .qa-mobile-launcher .qa-chat{bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+ .qa-mobile-launcher .back-top{bottom:calc(154px + env(safe-area-inset-bottom,0px))}
+ .qa-mobile-launcher .qa-panel{bottom:calc(150px + env(safe-area-inset-bottom,0px));max-height:calc(100dvh - 240px - env(safe-area-inset-bottom,0px))}
+}

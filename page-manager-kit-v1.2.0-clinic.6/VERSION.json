@@ -1,0 +1,9 @@
+{
+  "target": "Vercel Node.js 24 + Supabase Postgres",
+  "baseVersion": "1.2.0-clinic.5",
+  "sha512": "sha512-mj0SmLJaJeBz+XF5iFsI63yPMc2+KeZGHI5Wzdfi6/asMook8VKd8sYhhbJ1G0CmB0g7J3ICHPheaxoSskXctg==",
+  "tarball": "mcg-page-manager-1.2.0-clinic.6.tgz",
+  "updatedAt": "2026-11-02",
+  "version": "1.2.0-clinic.6",
+  "name": "@mcg/page-manager"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "page-manager-website-starter",
+  "version": "1.2.0-clinic.6",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "node server.mjs",
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "@mcg/page-manager": "file:./vendor/mcg-page-manager-1.2.0-clinic.6.tgz"
+  }
+}

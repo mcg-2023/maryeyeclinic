@@ -1,6 +1,7 @@
 ﻿.sites-runtime/
 .qa/
 node_modules/
+.data/
 *.tar
 *.tar.gz
 .env

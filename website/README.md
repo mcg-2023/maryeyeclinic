@@ -10,7 +10,7 @@
 
 ## 실행과 변경
 
-Node.js가 설치된 환경에서 실행합니다.
+Node.js 24 이상이 필요합니다. 최초 실행 전 `npm.cmd install`로 제공된 관리자 키트와 의존성을 설치합니다.
 
 ```sh
 node build.cjs
@@ -19,6 +19,18 @@ node server.cjs
 ```
 
 미리보기: http://127.0.0.1:4173
+
+## 눈여겨볼 정보 관리자
+
+관리자: http://localhost:4173/admin/ · 새 글: http://localhost:4173/admin/new/
+
+제공된 `page-manager-kit-v1.2.0-clinic.6`을 연결했습니다. 제목·주제·요약·본문·작성자를 입력하고 대표이미지를 선택한 뒤 임시저장 또는 발행할 수 있습니다. 발행한 글만 `/interest.html`과 `/articles/글ID/`에 표시됩니다. 기존 13개 안내 글도 첫 실행 시 한 번 가져와 수정·보관·삭제할 수 있습니다. 게시판 검색에는 새 글의 제목·요약·본문이 자동 반영됩니다.
+
+글과 이미지는 `website/.data/posts.sqlite`에 저장됩니다. 브라우저를 닫거나 서버를 다시 실행해도 유지됩니다. 백업할 때는 서버를 종료하고 `.data` 폴더 전체를 복사하세요. DB는 Git과 정적 배포 파일에 포함하지 않습니다. `npm run build`는 DB를 초기화하지 않습니다.
+
+현재 루프백 로컬 미리보기에서는 키트의 로컬 관리자 모드로 열립니다. 외부 공개 운영은 별도 서버 배포와 관리자 인증 설정이 필요합니다. GitHub Pages 같은 정적 호스팅만으로 글 저장 기능은 실행되지 않습니다. 키트의 운영 배포 안내는 제공 폴더의 `Vercel-Supabase-배포안내.md`에 있습니다. 이 작업에서는 외부 DB나 운영 사이트에 배포하지 않았습니다.
+
+관리자 설정은 `page-manager.config.cjs`, 서버와 공개 게시판 연결은 `page-manager.cjs`에서 관리합니다. 키트 원본은 수정하지 않았습니다. 검증: `node --test page-manager.test.cjs`.
 
 `dist/app.js`의 CONFIG에서 선택형 진료 배너, 상담·예약 링크, 비급여 항목을 변경할 수 있습니다.
 의료진과 진료 문구는 같은 파일에서 변경한 뒤 `node build.cjs`를 실행하세요.

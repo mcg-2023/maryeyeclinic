@@ -11,6 +11,7 @@ const MENU=[
  ['소아안과',[['사시·약시','pediatric-strabismus'],['드림렌즈','pediatric-dream'],['소아 안종합검진','pediatric-exam']]],
  ['진료과목',[['안구건조증','care-dry'],['안성형','care-oculoplastic'],['안종합검진','care-exam']]],
 ];
+MENU.push(['눈여겨볼 정보', [['눈여겨볼 정보', 'interest']]]);
 const PROMISES=[['충분한 상담','불편한 증상과 생활 속 어려움부터 듣습니다. 궁금한 점을 충분히 이야기할 수 있도록 상담합니다.'],['정밀한 검사','눈의 상태와 증상에 필요한 검사를 선택하고, 검사 결과를 함께 살펴봅니다.'],['맞춤형 치료','눈의 상태와 생활 방식, 치료 목표를 고려해 적합한 치료 방향을 상의합니다.'],['투명한 설명','검사 결과, 치료 선택지와 예상 비용, 주의사항을 이해하기 쉬운 말로 설명합니다.'],['지속적 관리','진료 이후의 경과를 살피고, 필요한 정기검진과 관리 방법을 안내합니다.'],['협진 체계','분야별 진료가 필요한 경우 의료진이 함께 환자의 눈 상태를 살펴봅니다.']];
 const EQUIPMENT=[['루메라 700','백내장 수술현미경','image19.jpg'],['니덱 OCT','안저·시신경 검사','image20.jpg'],['센츄리온','백내장 수술','image22.jpg'],['백내장 수술 장비','수술 장비','image21.jpg']];
 const SPACES=[['대기 공간','image23.png','넓은 대기 공간에서 편안하게 진료를 기다리실 수 있습니다.'],['접수','image24.png','진료 접수와 내원 안내를 도와드립니다.'],['검사실','image25.png','눈 상태를 살피는 검사 공간입니다.'],['진료실','image26.png','검사 결과를 확인하고 진료 방향을 상담합니다.']];
@@ -98,15 +99,30 @@ function aboutPage(key){
  if(key==='about-location')body+='<section class="content-section">'+visit()+'</section>';
  return body+'</div>';
 }
+
+function informationPage(){
+ const posts=Object.entries(PAGES).map(([route,p],i)=>({id:i+1,route,image:p.image,title:p.title+' 알아보기',category:MENU[p.group][0],summary:p.definition,search:[p.title,p.definition,p.lead,...(p.symptoms||[]),...(p.tests||[])].join(' ')}));
+ return '<section class="info-hero"><div class="wrap"><p class="eyebrow">EYE HEALTH JOURNAL</p><h1>눈여겨볼 정보</h1><p>알아두면 좋은 눈 이야기,<br>건강한 일상을 위해 차근차근 전합니다.</p><span class="info-hero-mark" aria-hidden="true">eye.</span></div></section><section class="info-board wrap" aria-label="눈 건강 정보 게시판"><div class="info-heading"><div><p class="eyebrow">A CLOSER LOOK</p><h2>내 눈을 위한 작은 관심</h2><p>궁금했던 눈 건강 정보를 만나보세요.</p></div><form id="info-search" role="search" action="interest.html" method="get"><label class="sr-only" for="info-query">게시글 검색</label><input id="info-query" name="q" type="search" placeholder="궁금한 정보를 검색해 보세요" maxlength="100"><button type="submit" aria-label="검색">검색 ↗</button></form></div><div class="info-filters" aria-label="정보 분류">'+['전체',...new Set(posts.map(p=>p.category))].map((c,i)=>'<button type="button" data-info-category="'+esc(c)+'" aria-pressed="'+(!i)+'">'+esc(c)+'</button>').join('')+'</div><div id="info-results"><p class="info-count" role="status">전체 <strong>'+posts.length+'</strong>건</p><div class="info-list">'+posts.map(p=>'<article class="info-row" data-info-post data-category="'+esc(p.category)+'" data-search="'+esc(p.search)+'"><a class="info-thumbnail" href="'+link(p.route)+'" tabindex="-1" aria-hidden="true"><img src="assets/'+esc(p.image)+'" alt="'+esc(p.title)+'" loading="lazy"><span class="info-thumbnail-shade"></span><span class="info-thumbnail-copy"><span class="info-thumbnail-kicker">EYE HEALTH · '+String(p.id).padStart(2,'0')+'</span><strong>'+esc(p.title.replace(' 알아보기',''))+'</strong><span class="info-thumbnail-caption">내 눈을 위한<br>건강 이야기</span></span><span class="info-thumbnail-brand">주례성모안과</span></a><div><span class="info-category">'+esc(p.category)+'</span><h3><a href="'+link(p.route)+'" data-info-detail="'+p.id+'">'+esc(p.title)+'</a></h3><p>'+esc(p.summary)+'</p></div><a class="info-arrow" href="'+link(p.route)+'" aria-label="'+esc(p.title)+' 자세히 보기">↗</a></article>').join('')+'</div><p class="info-empty" hidden>검색 결과가 없습니다. 다른 검색어를 입력해 주세요.</p></div><nav class="info-pagination" aria-label="게시판 페이지"></nav><p class="info-footnote">주례성모안과의 눈 건강 안내를 모았습니다. 자세한 내용은 각 진료 안내에서 확인하실 수 있습니다.</p></section>';
+}
+
 const ROUTES=['',...MENU.flatMap(([,items])=>items.map(([,r])=>r))];
-function renderPage(key){return key===''?home():PAGES[key]?carePage(key):key.startsWith('about-')?aboutPage(key):'<section class="section wrap"><h1>페이지를 찾을 수 없습니다.</h1><a class="button" href="index.html">홈으로</a></section>';}
+function renderPage(key){return key==='interest'?informationPage():key===''?home():PAGES[key]?carePage(key):key.startsWith('about-')?aboutPage(key):'<section class="section wrap"><h1>페이지를 찾을 수 없습니다.</h1><a class="button" href="index.html">홈으로</a></section>';}
 function titleFor(key){return PAGES[key]?.title||MENU.flatMap(([,items])=>items).find(([,r])=>r===key)?.[0]||'당신의 눈, 우리의 약속';}
-if(typeof module!=='undefined')module.exports={CONFIG,MENU,ROUTES,renderPage,titleFor,link};
+if(typeof module!=='undefined')module.exports={CONFIG,MENU,ROUTES,renderPage,titleFor,link,PAGES};
 if(typeof document!=='undefined'){
  const menu=document.getElementById('mega'),toggle=document.getElementById('menu-toggle'),nav=document.getElementById('nav');
  const file=location.pathname.split('/').pop(),route=file==='index.html'||!file?'':file.replace(/\.html$/,'');
  nav.innerHTML=MENU.map(([t,items])=>'<a href="'+link(items[0][1])+'">'+t+'</a>').join('');
- menu.innerHTML=MENU.map(([t,items])=>'<div><h2>'+t+'</h2>'+items.map(([s,r])=>'<a href="'+link(r)+'">'+s+'</a>').join('')+'</div>').join('');
+ menu.setAttribute('data-lenis-prevent','');
+ menu.innerHTML=MENU.map(([t,items],i)=>{
+  const expanded=items.length>1&&items.some(([,r])=>r===route);
+  return '<div class="menu-group'+(expanded?' is-expanded':'')+'"><h2><span class="menu-desktop-title">'+t+'</span>'+(items.length===1?'<a class="menu-mobile-direct" href="'+link(items[0][1])+'">'+t+'<span aria-hidden="true">↗</span></a>':'<button class="menu-category-toggle" type="button" aria-expanded="'+expanded+'" aria-controls="menu-links-'+i+'">'+t+'<span class="menu-category-icon" aria-hidden="true"></span></button>')+'</h2><div class="menu-links" id="menu-links-'+i+'">'+items.map(([s,r])=>'<a href="'+link(r)+'"'+(r===route?' aria-current="page"':'')+'>'+s+'</a>').join('')+'</div></div>';
+ }).join('');
+ menu.addEventListener('click',e=>{
+  const button=e.target.closest('.menu-category-toggle');if(!button)return;
+  const group=button.closest('.menu-group'),open=button.getAttribute('aria-expanded')!=='true';
+  menu.querySelectorAll('.menu-group').forEach(item=>{const expanded=item===group&&open;item.classList.toggle('is-expanded',expanded);item.querySelector('.menu-category-toggle')?.setAttribute('aria-expanded',String(expanded));});
+ });
  function showMenu(open){menu.hidden=!open;toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'전체 메뉴 닫기':'전체 메뉴 열기');}
  toggle.addEventListener('click',()=>showMenu(menu.hidden));
  nav.addEventListener('mouseenter',()=>{if(matchMedia('(hover:hover) and (min-width:901px)').matches)showMenu(true);});

@@ -8,6 +8,8 @@ for(const r of ROUTES){
  assert(html.includes('<html lang="ko">'));assert(html.includes('<link rel="canonical"'));
  for(const m of html.matchAll(/(?:href|src)="([^"]+)"/g)){
   const ref=m[1];if(/^(https?:|tel:|mailto:|data:|#)/.test(ref))continue;
+  // The admin entry is served by the authenticated Page Manager router.
+  if(ref==='/admin/'){links++;continue;}
   assert(fs.existsSync(path.join('dist',ref)),file+' has missing asset or page '+ref);
   if(ref.startsWith('assets/')){used.add(ref);images++;}else links++;
  }

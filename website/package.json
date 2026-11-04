@@ -1,0 +1,13 @@
+{
+  "name": "jurye-mary-eye-clinic",
+  "private": true,
+  "scripts": {
+    "build": "node build.cjs",
+    "start": "node server.cjs",
+    "check": "node check.cjs"
+  },
+  "engines": {"node": ">=24"},
+  "dependencies": {
+    "@mcg/page-manager": "file:../page-manager-kit-v1.2.0-clinic.6/mcg-page-manager-1.2.0-clinic.6.tgz"
+  }
+}

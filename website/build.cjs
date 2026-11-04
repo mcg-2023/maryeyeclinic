@@ -1,5 +1,8 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path');
+const managerAssets=path.resolve(path.dirname(require.resolve('@mcg/page-manager/assets')),'../dist/assets');
+fs.cpSync(managerAssets,path.join(__dirname,'dist/page-manager'),{recursive:true});
+fs.copyFileSync(path.join(__dirname,'../page-manager-kit-v1.2.0-clinic.6/article-images.css'),path.join(__dirname,'dist/page-manager/article-images.css'));
 const {MENU,ROUTES,renderPage,titleFor}=require('./dist/app.js');
 const chatbotMarkup=require('./chatbot-markup.cjs');
 const {buildQA}=require('./qa-index.cjs');
@@ -13,7 +16,8 @@ for(const key of ROUTES){
  html=html.replace(/<title>.*?<\/title>/,'<title>주례성모안과 | '+title+'</title>');
  if(key)html=html.replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="주례성모안과 '+title+' 안내. 눈 상태에 맞는 검사와 진료를 상담합니다.">');
  html=html.replace('</head>','<link rel="canonical" href="'+origin+'/'+file+'"></head>');
- if(!key){html=html.replace('</head>','<link rel="stylesheet" href="chatbot.css"></head>').replace('</body>',chatbotMarkup()+'</body>');}
+ {html=html.replace('</head>','<link rel="stylesheet" href="chatbot.css"></head>').replace('</body>',chatbotMarkup()+'</body>');}
+ if(key==='interest'){html=html.replace(/<script src="information\.js[^"]*" defer><\/script>/, '<script>'+fs.readFileSync('dist/information.js','utf8')+'</script>');}
  fs.writeFileSync(path.join('dist',file),html);
 }
 const manifest=JSON.parse(fs.readFileSync('.openai/hosting.json','utf8').replace(/^\uFEFF/,''));
