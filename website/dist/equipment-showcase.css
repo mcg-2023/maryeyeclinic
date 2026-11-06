@@ -1,9 +1,9 @@
 ﻿/* Four expanding equipment panels, in the clinic's warm neutral palette. */
 #equipment.equipment-showcase{padding-block:85px 65px}
 #equipment .equipment-heading{text-align:center;margin-bottom:44px}
-#equipment .equipment-heading .eyebrow{font-size:15px;letter-spacing:.16em;margin-bottom:20px;color:#9c7c4b}
-#equipment .equipment-heading h2{font-size:clamp(36px,3.3vw,56px);font-weight:550;line-height:1.35;color:#3e2f23}
-#equipment .equipment-intro{font-size:17px;line-height:1.8;color:#8b8073;margin-top:20px}
+#equipment .equipment-heading .eyebrow{font-size:16.5px;letter-spacing:.16em;margin-bottom:20px;color:#9c7c4b}
+#equipment .equipment-heading h2{font-size:clamp(39.6px,3.63vw,61.6px);font-weight:550;line-height:1.35;color:#3e2f23}
+#equipment .equipment-intro{font-size:18.7px;line-height:1.8;color:#8b8073;margin-top:20px}
 #equipment .equipment-accordion{display:flex;gap:16px;width:100%;height:clamp(390px,43vw,530px)}
 #equipment .equipment-tile{position:relative;isolation:isolate;overflow:hidden;border-radius:16px;flex:1 1 0%;min-width:0;background:#5d4935;transition:flex-grow 650ms cubic-bezier(.22,1,.36,1),background-color 500ms ease;border:1px solid #d9cdbd}
 #equipment .equipment-tile.is-active{flex-grow:5.8;background:#f9f6ef}
@@ -14,61 +14,61 @@
 #equipment .is-active .equipment-tile-visual::after{opacity:0}
 #equipment .is-active .equipment-tile-visual img{position:absolute;right:0;top:6%;width:60%;height:88%;object-fit:contain;opacity:1;padding:12px}
 #equipment .equipment-tile-toggle{position:absolute;inset:0;z-index:2;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:20px;padding:25px 12px;color:#f8efdf;text-align:center}
-#equipment .equipment-tile-index{font-family:var(--serif);font-size:15px;letter-spacing:.08em;color:#ead7b6}
-#equipment .equipment-tile-name{writing-mode:vertical-rl;font-size:23px;letter-spacing:.03em;white-space:nowrap;font-weight:500}
-#equipment .equipment-tile-icon{width:30px;height:30px;border:1px solid #f1ddbb70;border-radius:50%;display:grid;place-items:center;font-size:20px;line-height:1}
+#equipment .equipment-tile-index{font-family:var(--serif);font-size:16.5px;letter-spacing:.08em;color:#ead7b6}
+#equipment .equipment-tile-name{writing-mode:vertical-rl;font-size:25.3px;letter-spacing:.03em;white-space:nowrap;font-weight:500}
+#equipment .equipment-tile-icon{width:30px;height:30px;border:1px solid #f1ddbb70;border-radius:50%;display:grid;place-items:center;font-size:22px;line-height:1}
 #equipment .is-active .equipment-tile-toggle{inset:0 0 auto;height:64px;flex-direction:row;justify-content:space-between;padding:22px 30px;color:#9f8256}
 #equipment .is-active .equipment-tile-toggle .equipment-tile-name{display:none}
 #equipment .is-active .equipment-tile-index{color:#a48a61}
 #equipment .is-active .equipment-tile-icon{border-color:#baa58166;color:#8f7653;transform:rotate(45deg)}
 #equipment .equipment-tile-detail{position:absolute;z-index:3;left:32px;top:50%;width:39%;transform:translateY(-35%)}
-#equipment .equipment-detail-label{font-family:var(--serif);font-size:10px;letter-spacing:.1em;color:#a68c65;margin-bottom:17px}
-#equipment .equipment-tile-detail h3{font-size:clamp(25px,2.2vw,37px);line-height:1.25;font-weight:550;letter-spacing:-.05em;color:#3e2f23;word-break:keep-all}
-#equipment .equipment-detail-copy{font-size:17px;line-height:1.7;color:#897963;margin-top:22px}
-#equipment .equipment-detail-link{font-size:13px;color:#856b44;display:inline-flex;gap:15px;align-items:center;border-bottom:1px solid #bca98466;padding-block:8px;margin-top:28px;position:relative;z-index:4}
-#equipment .equipment-detail-count{display:block;font-family:var(--serif);font-size:12px;letter-spacing:.1em;color:#8d7350;margin-top:35px}
+#equipment .equipment-detail-label{font-family:var(--serif);font-size:11px;letter-spacing:.1em;color:#a68c65;margin-bottom:17px}
+#equipment .equipment-tile-detail h3{font-size:clamp(27.5px,2.42vw,40.7px);line-height:1.25;font-weight:550;letter-spacing:-.05em;color:#3e2f23;word-break:keep-all}
+#equipment .equipment-detail-copy{font-size:18.7px;line-height:1.7;color:#897963;margin-top:22px}
+#equipment .equipment-detail-link{font-size:14.3px;color:#856b44;display:inline-flex;gap:15px;align-items:center;border-bottom:1px solid #bca98466;padding-block:8px;margin-top:28px;position:relative;z-index:4}
+#equipment .equipment-detail-count{display:block;font-family:var(--serif);font-size:13.2px;letter-spacing:.1em;color:#8d7350;margin-top:35px}
 #equipment .equipment-detail-count>span{color:#b6aa99}
-#equipment .equipment-hint{text-align:right;font-size:12px;color:#a2937d;margin-top:16px}
+#equipment .equipment-hint{text-align:right;font-size:13.2px;color:#a2937d;margin-top:16px}
 #equipment .equipment-tile-toggle:focus-visible{outline:2px solid #b28c4e;outline-offset:-5px;border-radius:16px}
-@media(min-width:1024px) and (min-height:650px){.screen-scroll-home #equipment.equipment-showcase{padding-block:32px}.screen-scroll-home #equipment .equipment-heading{margin-bottom:28px}.screen-scroll-home #equipment .equipment-heading h2{font-size:clamp(34px,3vw,48px)}.screen-scroll-home #equipment .equipment-heading .eyebrow{margin-bottom:14px}.screen-scroll-home #equipment .equipment-intro{margin-top:14px;font-size:15px}.screen-scroll-home #equipment .equipment-accordion{height:clamp(330px,48vh,520px)}}
-@media(max-width:1000px) and (min-width:701px){#equipment .equipment-accordion{gap:10px;height:400px}#equipment .equipment-tile.is-active{flex-grow:5}#equipment .equipment-tile-detail{left:22px}#equipment .equipment-tile-name{font-size:20px}#equipment .equipment-tile-detail h3{font-size:26px}#equipment .equipment-detail-copy{font-size:15px}}
+@media(min-width:1024px) and (min-height:650px){.screen-scroll-home #equipment.equipment-showcase{padding-block:32px}.screen-scroll-home #equipment .equipment-heading{margin-bottom:28px}.screen-scroll-home #equipment .equipment-heading h2{font-size:clamp(37.4px,3.3vw,52.8px)}.screen-scroll-home #equipment .equipment-heading .eyebrow{margin-bottom:14px}.screen-scroll-home #equipment .equipment-intro{margin-top:14px;font-size:16.5px}.screen-scroll-home #equipment .equipment-accordion{height:clamp(330px,48vh,520px)}}
+@media(max-width:1000px) and (min-width:701px){#equipment .equipment-accordion{gap:10px;height:400px}#equipment .equipment-tile.is-active{flex-grow:5}#equipment .equipment-tile-detail{left:22px}#equipment .equipment-tile-name{font-size:22px}#equipment .equipment-tile-detail h3{font-size:28.6px}#equipment .equipment-detail-copy{font-size:16.5px}}
 @media(max-width:700px){
  #equipment.equipment-showcase{padding-block:70px 55px}
  #equipment .equipment-heading{margin-bottom:30px}
- #equipment .equipment-heading .eyebrow{font-size:12px;margin-bottom:16px}
- #equipment .equipment-heading h2{font-size:32px}
- #equipment .equipment-intro{font-size:15px;margin-top:18px}
+ #equipment .equipment-heading .eyebrow{font-size:13.2px;margin-bottom:16px}
+ #equipment .equipment-heading h2{font-size:35.2px}
+ #equipment .equipment-intro{font-size:16.5px;margin-top:18px}
  #equipment .equipment-accordion{flex-direction:column;height:auto;gap:10px}
  #equipment .equipment-tile,#equipment .equipment-tile.is-active{flex:none;width:100%;height:72px;transition:height 550ms cubic-bezier(.22,1,.36,1)}
  #equipment .equipment-tile.is-active{height:390px}
  #equipment .equipment-tile-toggle{flex-direction:row;padding:20px;gap:15px;justify-content:flex-start}
- #equipment .equipment-tile-name{writing-mode:horizontal-tb;font-size:18px;letter-spacing:-.03em}
+ #equipment .equipment-tile-name{writing-mode:horizontal-tb;font-size:19.8px;letter-spacing:-.03em}
  #equipment .equipment-tile-icon{margin-left:auto;width:27px;height:27px}
  #equipment .is-active .equipment-tile-toggle{height:56px;padding:18px 20px}
  #equipment .equipment-tile-detail{left:22px;top:90px;transform:none;width:50%}
- #equipment .equipment-tile-detail h3{font-size:27px}
- #equipment .equipment-detail-label{font-size:9px;margin-bottom:13px}
- #equipment .equipment-detail-copy{font-size:15px;margin-top:16px}
- #equipment .equipment-detail-link{font-size:12px;margin-top:24px;gap:8px}
- #equipment .equipment-detail-count{margin-top:25px;font-size:11px}
+ #equipment .equipment-tile-detail h3{font-size:29.7px}
+ #equipment .equipment-detail-label{font-size:9.9px;margin-bottom:13px}
+ #equipment .equipment-detail-copy{font-size:16.5px;margin-top:16px}
+ #equipment .equipment-detail-link{font-size:13.2px;margin-top:24px;gap:8px}
+ #equipment .equipment-detail-count{margin-top:25px;font-size:12.1px}
  #equipment .is-active .equipment-tile-visual img{right:-5%;top:22%;width:64%;height:75%;padding:6px}
- #equipment .equipment-hint{text-align:center;font-size:11px}
+ #equipment .equipment-hint{text-align:center;font-size:12.1px}
 }
 @media(prefers-reduced-motion:reduce){#equipment .equipment-tile,#equipment .equipment-tile-visual,#equipment .equipment-tile-visual::after,#equipment .equipment-tile-visual img{transition:none}}
 @media(min-width:1024px){.screen-scroll-home main>#equipment.equipment-showcase{width:min(1600px,calc(100% - 200px));margin-inline:auto}}
 
 /* Broader equipment section and larger, more readable copy. */
-#equipment .equipment-heading h2{font-size:clamp(32px,3.1vw,54px);white-space:nowrap}
-#equipment .equipment-intro{font-size:21px;line-height:1.8}
+#equipment .equipment-heading h2{font-size:clamp(35.2px,3.41vw,59.4px);white-space:nowrap}
+#equipment .equipment-intro{font-size:23.1px;line-height:1.8}
 #equipment .equipment-tile-detail{width:40%}
-#equipment .equipment-tile-detail h3{font-size:clamp(30px,2.7vw,46px)}
-#equipment .equipment-detail-label{font-size:12px}
-#equipment .equipment-detail-copy{font-size:21px;line-height:1.7;margin-top:24px}
-#equipment .equipment-detail-count{font-size:15px;margin-top:38px}
-#equipment .equipment-tile-name{font-size:25px}
-@media(min-width:1024px){.screen-scroll-home main>#equipment.equipment-showcase{width:min(1800px,calc(100% - 140px));margin-left:36px;margin-right:104px}.screen-scroll-home #equipment .equipment-heading h2{font-size:clamp(32px,3.1vw,54px)}.screen-scroll-home #equipment .equipment-intro{font-size:20px}}
-@media(min-width:701px) and (max-width:1000px){#equipment .equipment-tile-detail h3{font-size:30px}#equipment .equipment-detail-copy{font-size:18px}#equipment .equipment-intro{font-size:19px}}
-@media(max-width:700px){#equipment .equipment-heading h2{font-size:clamp(17px,4.6vw,30px);letter-spacing:-.055em}#equipment .equipment-intro{font-size:17px}#equipment .equipment-tile-detail h3{font-size:30px}#equipment .equipment-detail-copy{font-size:18px}#equipment .equipment-detail-label{font-size:10px}#equipment .equipment-detail-count{font-size:13px;margin-top:28px}#equipment .equipment-tile-name{font-size:19px}#equipment .equipment-tile-detail{width:50%}}
+#equipment .equipment-tile-detail h3{font-size:clamp(33px,2.97vw,50.6px)}
+#equipment .equipment-detail-label{font-size:13.2px}
+#equipment .equipment-detail-copy{font-size:23.1px;line-height:1.7;margin-top:24px}
+#equipment .equipment-detail-count{font-size:16.5px;margin-top:38px}
+#equipment .equipment-tile-name{font-size:27.5px}
+@media(min-width:1024px){.screen-scroll-home main>#equipment.equipment-showcase{width:min(1800px,calc(100% - 140px));margin-left:36px;margin-right:104px}.screen-scroll-home #equipment .equipment-heading h2{font-size:clamp(35.2px,3.41vw,59.4px)}.screen-scroll-home #equipment .equipment-intro{font-size:22px}}
+@media(min-width:701px) and (max-width:1000px){#equipment .equipment-tile-detail h3{font-size:33px}#equipment .equipment-detail-copy{font-size:19.8px}#equipment .equipment-intro{font-size:20.9px}}
+@media(max-width:700px){#equipment .equipment-heading h2{font-size:clamp(18.7px,5.06vw,33px);letter-spacing:-.055em}#equipment .equipment-intro{font-size:18.7px}#equipment .equipment-tile-detail h3{font-size:33px}#equipment .equipment-detail-copy{font-size:19.8px}#equipment .equipment-detail-label{font-size:11px}#equipment .equipment-detail-count{font-size:14.3px;margin-top:28px}#equipment .equipment-tile-name{font-size:20.9px}#equipment .equipment-tile-detail{width:50%}}
 @media(min-width:1024px){.screen-scroll-home main>#equipment.equipment-showcase{margin-inline:auto}}
 /* Lower the equipment composition within its screen-sized section. */
 @media(min-width:1024px) and (min-height:800px){.screen-scroll-home #equipment.equipment-showcase{padding-top:90px;padding-bottom:10px}}

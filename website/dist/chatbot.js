@@ -12,7 +12,7 @@
   function placeLauncher(){
     const floating=mobileLayout.matches||!headerSlot;
     if(floating)root.prepend(launcher);else headerSlot.append(launcher);
-    launcher.querySelector('span').textContent='챗봇 상담';
+    launcher.querySelector('span').textContent='병원 안내 챗봇';
     document.body.classList.toggle('qa-header-launcher',!floating);
     document.body.classList.toggle('qa-mobile-launcher',floating);
   }

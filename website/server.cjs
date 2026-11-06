@@ -4,6 +4,7 @@ const {createChatHandler}=require('./chat-service.cjs');
 try{process.loadEnvFile(path.join(__dirname,'.env'));}catch(error){if(error.code!=='ENOENT')throw error;}
 const {createClinicManager}=require('./page-manager.cjs');
 const managerReady=createClinicManager();
+const setup=require('./admin-setup.cjs').createAdminSetup();
 const chat=createChatHandler();
 const root=path.resolve(__dirname,'dist'),mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png','.jpg':'image/jpeg','.xml':'application/xml','.txt':'text/plain; charset=utf-8'};
 const server=http.createServer(async(req,res)=>{
@@ -15,8 +16,8 @@ const server=http.createServer(async(req,res)=>{
  if(url==='/interest.html'||url.startsWith('/admin')||url.startsWith('/api/posts')||url.startsWith('/api/statistics')||url==='/api/public/track'||url.startsWith('/media/')||url.startsWith('/articles/')){
   const chunks=[];for await(const chunk of req)chunks.push(chunk);
   const request=new Request(new URL(req.url,'http://'+req.headers.host),{method:req.method,headers:req.headers,...(['GET','HEAD'].includes(req.method)?{}:{body:Buffer.concat(chunks)})});
-  const managed=await (await managerReady).fetch(request);
-  if(managed){res.writeHead(managed.status,Object.fromEntries(managed.headers));res.end(req.method==='HEAD'?null:Buffer.from(await managed.arrayBuffer()));return;}
+  const managed=await setup.fetch(request)||await (await managerReady).fetch(request);
+  if(managed){const headers=Object.fromEntries(managed.headers),cookies=managed.headers.getSetCookie();if(cookies.length)headers['set-cookie']=cookies;res.writeHead(managed.status,headers);res.end(req.method==='HEAD'?null:Buffer.from(await managed.arrayBuffer()));return;}
  }
  if(!['GET','HEAD'].includes(req.method)){res.writeHead(405,{Allow:'GET, HEAD'});res.end();return;}
  const file=path.resolve(root,'.'+(url==='/'?'/index.html':url));

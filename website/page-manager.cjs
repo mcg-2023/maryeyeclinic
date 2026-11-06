@@ -8,7 +8,7 @@ async function createClinicManager(options={}){
  const {createSqliteDatabase}=await import('@mcg/page-manager/sqlite');
  const filename=options.filename||process.env.PAGE_MANAGER_DB||path.join(__dirname,'.data','posts.sqlite');
  const database=createSqliteDatabase(filename);
- const manager=createPageManager(config,{storage:database,localPreview:options.localPreview??(process.env.NODE_ENV!=='production'&&!process.env.VERCEL)});
+ const manager=createPageManager(config,{storage:database,localPreview:options.localPreview===true,...(options.environment?{environment:options.environment}:{})});
  const seedMarker=filename+'.seeded-v1';
  if(options.seed!==false&&!fs.existsSync(seedMarker)){
   const repo=repository(database),existing=await repo.list();
@@ -46,7 +46,15 @@ async function createClinicManager(options={}){
  return {
   manager,database,close:()=>database.close(),
   async fetch(request){
-   const managed=await manager.fetch(request);if(managed)return managed;
+   const requested=new URL(request.url);
+   const managed=await manager.fetch(request);
+   if(managed){
+    if(new URL(request.url).pathname==='/admin/login/'&&managed.headers.get('Content-Type')?.includes('text/html')){
+     const html=(await managed.text()).replace('</head>','<link rel="stylesheet" href="/admin-login.css"></head>');
+     return new Response(html,{status:managed.status,headers:managed.headers});
+    }
+    return managed;
+   }
    if(!['GET','HEAD'].includes(request.method))return null;
    const url=new URL(request.url);
    if(url.pathname==='/interest.html'){

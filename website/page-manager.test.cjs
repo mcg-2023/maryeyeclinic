@@ -6,7 +6,7 @@ test('saved posts persist, publish to the board, retain images and respect draft
  let site;
  const request=(url,fields,headers={})=>new Request('http://localhost:4173'+url,fields?{method:'POST',headers:{Origin:'http://localhost:4173','Content-Type':'application/x-www-form-urlencoded',Accept:'application/json',...headers},body:new URLSearchParams({csrf:'local-preview',...fields})}:{});
  try{
-  site=await createClinicManager({filename});
+  site=await createClinicManager({filename,localPreview:true});
   assert.equal((await site.manager.publishedPosts()).length,13);
   assert.equal((await site.fetch(request('/admin/'))).status,200);
   const post={title:'검증용 글 $& <안내>',category:'pediatric',body:'<h2>검증 본문</h2><p>저장 내용입니다.</p><script>window.bad=true</script>',bodyFormat:'html',author:'검증 담당',excerpt:'검증용 요약',status:'draft'};
@@ -24,7 +24,7 @@ test('saved posts persist, publish to the board, retain images and respect draft
   // Existing imported covers must also survive a normal editor save.
   const {repository}=await import('@mcg/page-manager');const seeded=await repository(site.database).get('pediatric-dream');
   result=await site.fetch(request('/api/posts',{...seeded,cover:'/media/pediatric-dream/cover',bodyFormat:'html'}));assert.equal(result.status,200,await result.clone().text());
-  site.close();site=await createClinicManager({filename});assert.equal((await site.manager.publishedPosts()).length,14);
+  site.close();site=await createClinicManager({filename,localPreview:true});assert.equal((await site.manager.publishedPosts()).length,14);
   result=await site.fetch(request('/api/posts/status',{id,status:'archived'}));assert.equal(result.status,200);assert.equal((await site.fetch(request('/articles/'+id+'/'))).status,404);
   assert.equal((await site.manager.publishedPosts()).length,13);
   site.close();site=await createClinicManager({filename,localPreview:false});assert.notEqual((await site.fetch(request('/admin/'))).status,200);
