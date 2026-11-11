@@ -44,3 +44,6 @@
  .qa-mobile-launcher .back-top{bottom:calc(154px + env(safe-area-inset-bottom,0px))}
  .qa-mobile-launcher .qa-panel{bottom:calc(150px + env(safe-area-inset-bottom,0px));max-height:calc(100dvh - 240px - env(safe-area-inset-bottom,0px))}
 }
+.qa-panel{height:780px;max-height:calc(100dvh - 135px)}
+@media(max-width:900px){.qa-mobile-launcher .qa-panel{height:calc(100dvh - 120px);max-height:calc(100dvh - 120px)}}
+@media(max-width:640px){.qa-mobile-launcher .qa-panel{height:calc(100dvh - 174px - env(safe-area-inset-bottom,0px));max-height:calc(100dvh - 174px - env(safe-area-inset-bottom,0px))}}

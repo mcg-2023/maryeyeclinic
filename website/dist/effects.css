@@ -1404,3 +1404,15 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
 #history .memory-7{--history-focus:61% 50%}
 #history.history-journey .history-memory.memory-5{left:15%;width:14%;aspect-ratio:3/5}
 @media(max-width:640px){#history.history-journey .history-memory.memory-5{left:-2%;width:21%;aspect-ratio:3/5}}
+/* Align every dropdown column with its matching primary navigation item. */
+@media(min-width:901px){
+ .header #nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));flex:1;gap:0}
+ .header #nav>a{text-align:center;white-space:nowrap;justify-content:center}
+ .header #mega,body.subpage .header #mega{padding:30px var(--menu-right,32px) 40px var(--menu-left,320px)!important;column-gap:0!important}
+ .header #mega:not([hidden]),body.subpage .header #mega:not([hidden]){grid-template-columns:repeat(6,minmax(0,1fr))!important}
+ .header #mega>.menu-group,body.subpage .header #mega>.menu-group{padding-inline:6px;min-width:0;text-align:center}
+ .header #mega h2,body.subpage .header #mega h2{font-size:clamp(14px,1.15vw,20px);line-height:1.6;white-space:nowrap;text-align:center}
+ .header #mega .menu-links>a,body.subpage .header #mega .menu-links>a{display:flex;align-items:center;justify-content:center;min-height:52px;margin:0;padding:10px 0;font-size:clamp(14px,1.1vw,19px);line-height:1.6;white-space:normal;word-break:keep-all;overflow-wrap:break-word}
+}
+@media(min-width:901px) and (max-width:1250px){.header #header-chat-slot{display:none}.header #nav>a{font-size:15px}.header{gap:12px;padding-inline:24px}}
+@media(min-width:901px){.header #mega .menu-links>a,body.subpage .header #mega .menu-links>a{font-size:clamp(12px,1vw,18px);white-space:nowrap}}

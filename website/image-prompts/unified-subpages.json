@@ -1,0 +1,33 @@
+{
+  "tool": "Built-in image_gen",
+  "assets": [
+    {
+      "file": "dist/assets/vision-amd.webp",
+      "prompt": "Create one photorealistic high-resolution landscape editorial photograph for a Korean ophthalmology website. A quiet pedestrian street with straight shop facades, crisp window grids and one plain sign, distant adults, no readable text, natural perspective. Sophisticated ivory, sage and natural daylight palette. Wide 16:9 composition, realistic scene, all distances crisply focused, NO added blur, no vignette, no visual defect, no graphic overlay, no watermark or text. The website will apply vision effects separately."
+    },
+    {
+      "file": "dist/assets/vision-diabetes.webp",
+      "prompt": "Create one photorealistic high-resolution landscape editorial photograph for a Korean ophthalmology website. A bright everyday outdoor market with fruit stalls and clear canopy structure, no readable lettering, no people in foreground. Sophisticated ivory, sage and natural daylight palette. Wide 16:9 composition, realistic scene, all distances crisply focused, NO added blur, no vignette, no visual defect, no graphic overlay, no watermark or text. The website will apply vision effects separately."
+    },
+    {
+      "file": "dist/assets/vision-detachment.webp",
+      "prompt": "Create one photorealistic high-resolution landscape editorial photograph for a Korean ophthalmology website. A calm waterfront town seen across a marina, tiny boats, railing, blue sky and distant mountains. Sophisticated ivory, sage and natural daylight palette. Wide 16:9 composition, realistic scene, all distances crisply focused, NO added blur, no vignette, no visual defect, no graphic overlay, no watermark or text. The website will apply vision effects separately."
+    },
+    {
+      "file": "dist/assets/vision-glaucoma.webp",
+      "prompt": "Create one photorealistic high-resolution landscape editorial photograph for a Korean ophthalmology website. A wide sunlit forest walking path with clearly visible trees and benches on both left and right edges, central path receding into distance. Sophisticated ivory, sage and natural daylight palette. Wide 16:9 composition, realistic scene, all distances crisply focused, NO added blur, no vignette, no visual defect, no graphic overlay, no watermark or text. The website will apply vision effects separately."
+    },
+    {
+      "file": "dist/assets/vision-children.webp",
+      "prompt": "Create one photorealistic high-resolution landscape editorial photograph for a Korean ophthalmology website. A bright empty primary school classroom viewed from a seated child eye level, blackboard with no readable words, desks and color pencils in foreground. Sophisticated ivory, sage and natural daylight palette. Wide 16:9 composition, realistic scene, all distances crisply focused, NO added blur, no vignette, no visual defect, no graphic overlay, no watermark or text. The website will apply vision effects separately."
+    },
+    {
+      "file": "dist/assets/vision-myopia.webp",
+      "prompt": "Create one photorealistic high-resolution landscape editorial photograph for a Korean ophthalmology website. A safe outdoor school playground viewed from edge, basketball hoop and colorful play structures in middle distance, distant apartment buildings, no people in foreground. Sophisticated ivory, sage and natural daylight palette. Wide 16:9 composition, realistic scene, all distances crisply focused, NO added blur, no vignette, no visual defect, no graphic overlay, no watermark or text. The website will apply vision effects separately."
+    },
+    {
+      "file": "dist/assets/vision-pediatric-care.webp",
+      "prompt": "Create one photorealistic high-resolution landscape editorial photograph for a Korean ophthalmology website. A Korean parent and an 8-year-old child calmly talking with an eye doctor in a bright ivory ophthalmology clinic, friendly natural expressions, medium shot, realistic anatomy, no logos. Sophisticated ivory, sage and natural daylight palette. Wide 16:9 composition, realistic scene, all distances crisply focused, NO added blur, no vignette, no visual defect, no graphic overlay, no watermark or text. The website will apply vision effects separately."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "tool": "Built-in image_gen",
+  "assets": [
+    {
+      "file": "dist/assets/cataract-cause-aging.webp",
+      "prompt": "Create one landscape 16:9 editorial photograph for a Korean ophthalmology website card about aging as a cataract risk factor. Close natural portrait focusing on eyes of a Korean elderly woman around 70, fine wrinkles and gray hair, calm neutral expression, softly lit bright warm ivory clinic interior. Realistic skin, no artificially white pupil, no surgery, no text, no watermark. Sophisticated clean warm beige palette, subject centered with generous crop safety. Output a single photograph."
+    },
+    {
+      "file": "dist/assets/cataract-cause-medical.webp",
+      "prompt": "Create one landscape 16:9 premium editorial still-life photograph for a Korean ophthalmology website card about medical conditions, eye injury and long-term medication as cataract risk factors. Arrange a generic blood glucose meter, a small unbranded medicine vial with tablets, and clean protective eyeglasses on a warm ivory clinic counter. No readable labels, no brands, no text, no watermark, no needles or gore. Soft daylight, beige neutral background, refined realistic photography, objects centered and all visible with crop-safe margins. Output a single photograph."
+    },
+    {
+      "file": "dist/assets/cataract-cause-congenital.webp",
+      "prompt": "Create one landscape 16:9 premium editorial photograph for a Korean ophthalmology website card about congenital factors in cataracts. A peaceful Korean newborn baby with eyes gently open, being cradled safely in a parent's arms in a bright ivory clinical nursery, subtle blurred translucent DNA double helix educational model in far background, not a graphic overlay. Natural healthy appearance, no white pupil, no abnormalities, no implication that the pictured infant has a disease. Soft warm daylight and quiet beige palette matching medical website photography, centered crop-safe composition. No text, no brands, no watermark. Output a single photograph."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "tool": "Built-in image_gen edit",
+  "reference": "dist/assets/lens-panoptix.webp",
+  "file": "dist/assets/lens-panoptix-enhanced.webp",
+  "prompt": "Enhance resolution and clarity ONLY of this supplied original intraocular lens product image. Faithfully preserve the exact lens silhouette, relative geometry, orientation, pale yellow central optic with subtle concentric rings, both curved haptics, white background, original centered layout and the EXACT original printed word 'Penoptix' below. Do not correct or change the spelling. Remove pixelation and compression artifacts, carefully sharpen contours, upscale cleanly to high resolution. Do not redesign the device, add labels, arrows, extra parts, diagrams, textures, shadows or decorative elements. This is conservative restoration of the supplied photo, not a new product visualization. Preserve all original proportions and colors. Output same approximately 554:270 aspect ratio, high resolution."
+}

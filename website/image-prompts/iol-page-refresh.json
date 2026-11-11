@@ -1,0 +1,25 @@
+{
+  "tool": "Built-in image_gen",
+  "assets": [
+    {
+      "file": "dist/assets/iol-hero-window.webp",
+      "prompt": "Premium photorealistic panoramic 3:1 hero banner for Korean ophthalmology intraocular lens webpage. A Korean man about 60 with natural salt-and-pepper hair, no glasses, relaxed closed-mouth smile, in medium shot sitting by a large window in an understated bright ivory modern home. Subject on RIGHT THIRD with full head and shoulders safely framed. He looks thoughtfully out to daylight garden. LEFT HALF clean softly lit ivory wall with plenty of negative space for website heading. Warm beige and muted sage palette. Natural realistic skin, elegant editorial photography, no exaggerated stock smile, no extreme close-up, no medical diagrams, no text, logos, watermark."
+    },
+    {
+      "file": "dist/assets/iol-seaside-comparison.webp",
+      "prompt": "Photorealistic panoramic 3:1 landscape baseline photo for eye clinic vision comparison slider. A calm Korean seaside promenade on a clear day, mid-distance railing and wooden bench in foreground, blue ocean and sailboat in middle distance, small lighthouse and coastal hills far away. No garden park, no flowers, no people, no text. All distances exceptionally sharp with deep focus, refined natural photography, realistic daylight and restrained colors. Strong fine detail across entire frame for a sharp-versus-blurred visual comparison. No artificial blur, no graphic overlay, no watermark."
+    },
+    {
+      "file": "dist/assets/iol-examination.webp",
+      "prompt": "Premium photorealistic landscape 16:9 editorial photo for Korean eye clinic website about cataract examination before lens replacement. Side view of a Korean woman around 65 gently resting her chin on a real ophthalmic slit-lamp chinrest while an ophthalmologist examines her eye. Clean ivory clinical setting, natural anatomy, realistic believable slit lamp equipment, no invasive procedure, no instruments touching eye, no gore. Natural calm expressions, soft daylight, sophisticated beige and white palette. Medium shot with patient and clinician fully framed with crop-safe edges. No logos, readable text, no watermark."
+    },
+    {
+      "file": "dist/assets/iol-daily-focus.webp",
+      "prompt": "Premium photorealistic landscape 16:9 editorial photograph for Korean ophthalmology webpage about choosing intraocular lenses according to daily viewing distances. A Korean man around 60 at an ordinary neat home desk, three-quarter side view, using a desktop computer with a small open book lying naturally beside keyboard and a bright window showing distant city buildings. Comfortable posture, realistic hands, calm professional everyday setting, crisp high resolution details. Warm neutral ivory and oak palette with subtle sage accent, soft natural daylight, understated medical website editorial style. No giant text cards, no garden book close-up, no logos, no readable screen content or watermark."
+    }
+  ],
+  "diagram": {
+    "file": "dist/assets/iol-structure.svg",
+    "type": "Code-authored vector schematic; not a branded product photo"
+  }
+}

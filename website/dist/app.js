@@ -76,8 +76,7 @@ function section(en,title,body){return '<section class="content-section"><div cl
 function list(items){return '<ol class="numbered-list">'+items.map(([t,p],i)=>'<li><span class="num">0'+(i+1)+'</span><div><h3>'+t+'</h3><p>'+p+'</p></div></li>').join('')+'</ol>'}
 function tabs(group,current){return '<nav class="page-tabs" aria-label="'+esc(MENU[group][0])+' 세부 메뉴">'+MENU[group][1].map(([t,r])=>'<a href="'+link(r)+'" '+(r===current?'aria-current="page"':'')+'>'+t+'</a>').join('')+'</nav>'}
 function carePage(key){
- if(key==='cataract')return typeof module!=='undefined'?require('./cataract-page.js')():window.ClinicCataractPage();
- if(key==='presbyopia'||key==='lens')return typeof module!=='undefined'?require('./vision-pages.js')(key):window.ClinicVisionPage(key);
+ if(['cataract','presbyopia','lens'].includes(key))return typeof module!=='undefined'?require('./eye-detail.js')(key):window.ClinicEyeDetail(key);
  const p=PAGES[key];
  let body=pageHero(p.title,MENU[p.group][0],p.en,p.headline,p.lead,p.image)+'<div class="wrap">'+tabs(p.group,key);
  body+=section('UNDERSTANDING',p.title+' 안내','<p>'+p.definition+'</p>');
@@ -108,7 +107,14 @@ function informationPage(){
 }
 
 const ROUTES=['',...MENU.flatMap(([,items])=>items.map(([,r])=>r))];
-function renderPage(key){return key==='interest'?informationPage():key===''?home():PAGES[key]?carePage(key):key.startsWith('about-')?aboutPage(key):'<section class="section wrap"><h1>페이지를 찾을 수 없습니다.</h1><a class="button" href="index.html">홈으로</a></section>';}
+function renderPage(key){
+ if(key==='')return home();
+ if(PAGES[key])return typeof module!=='undefined'?require('./category-page.js')(key):window.ClinicCategoryPage(key);
+ const visual=typeof module!=='undefined'?require('./sub-visual.js'):window.ClinicSubVisual;
+ if(key==='interest')return visual(key)+informationPage().replace(/<section class="info-hero">[\s\S]*?<\/section>/,'');
+ if(key.startsWith('about-'))return visual(key)+aboutPage(key).replace(/<section class="page-hero wrap">[\s\S]*?<\/section>/,'');
+ return '<section class="section wrap"><h1>페이지를 찾을 수 없습니다.</h1><a class="button" href="index.html">홈으로</a></section>';
+}
 function titleFor(key){return PAGES[key]?.title||MENU.flatMap(([,items])=>items).find(([,r])=>r===key)?.[0]||'당신의 눈, 우리의 약속';}
 if(typeof module!=='undefined')module.exports={CONFIG,MENU,ROUTES,renderPage,titleFor,link,PAGES};
 if(typeof document!=='undefined'){

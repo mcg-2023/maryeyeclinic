@@ -1,0 +1,16 @@
+(function(root,factory){if(typeof module!=='undefined')module.exports=factory;else root.ClinicPresbyopiaPage=factory;})(typeof window!=='undefined'?window:this,function(){
+ const booking=typeof module!=='undefined'?require('./cataract-booking.js'):window.ClinicCataractBooking;
+ const reservation=typeof module!=='undefined'?require('./eye-reservation.js'):window.ClinicEyeReservation;
+ const symptoms=[
+ ['작은 글씨가 불편해요','휴대전화의 글자 크기를 키우거나 가까운 글씨를 읽기 어려워집니다.','presbyopia-phone-compare.webp','가까운 거리에서 휴대전화를 보는 모습'],
+ ['작은 표시가 잘 안 보여요','제품의 성분표나 가격표처럼 작은 표시를 확인하기 불편합니다.','presbyopia-small-label.webp','제품의 작은 성분표를 읽는 여성'],
+ ['책을 조금 더 멀리 두게 돼요','책을 눈에서 떨어뜨려 보거나, 오래 읽으면 눈이 쉽게 피로해집니다.','presbyopia-hero-reading.webp','창가에서 책을 읽는 중년 여성']
+ ];
+ const checks=['가까운 글씨가 전보다 흐리게 보입니다.','책이나 휴대전화를 더 멀리 두고 봅니다.','가까운 작업을 오래 하면 눈이 피로합니다.','먼 곳과 가까운 곳을 번갈아 볼 때 초점이 늦게 맞습니다.','조명이 어두우면 작은 글씨를 읽기 어렵습니다.','가까운 작업 후 눈 주위나 머리가 불편합니다.'];
+ return `<article class="eye-detail pr-page" data-eye-page="presbyopia">
+ <header class="ed-hero"><div class="ed-hero-image"><img src="assets/presbyopia-hero-reading.webp" alt="창가에서 책을 읽는 중년 여성"></div><div class="wrap ed-hero-text"><p class="ed-eyebrow">PRESBYOPIA</p><h1>노안</h1><p>가까운 글씨가 불편해졌다면,<br>눈의 변화를 확인하세요.</p></div></header>
+ <nav class="ed-tabs" aria-label="노안·백내장 세부 메뉴"><div class="wrap"><a href="cataract.html">백내장</a><a href="presbyopia.html" aria-current="page">노안</a><a href="lens.html">인공수정체</a></div></nav>
+ <section class="wrap pr-about" id="explanation"><div class="pr-about-copy"><p class="pr-caption">ABOUT PRESBYOPIA</p><h2>노안이란?</h2><p class="pr-emphasis">가까운 곳에 초점을 맞추는 힘이<br>서서히 줄어드는 변화입니다.</p><p class="pr-body">나이가 들면서 수정체가 단단해지고 탄력이 줄어 가까운 글씨가 흐리게 보일 수 있습니다.</p><p class="pr-body">책을 멀리 두고 읽거나, 가까운 작업 후 눈이 쉽게 피로해진다면 눈 상태를 확인해 보세요.</p></div><div class="pr-about-visual"><div class="ed-comparison" data-mode="presbyopia" style="--ed-split:50%"><img src="assets/presbyopia-phone-compare.webp" alt="가까운 휴대전화 글씨가 선명한 예시" draggable="false"><div class="ed-comparison-haze" aria-hidden="true"><img src="assets/presbyopia-phone-compare.webp" alt="가까운 휴대전화 글씨가 흐린 연출 예시" draggable="false"></div><div class="ed-comparison-labels" aria-hidden="true"><span>선명한 예시</span><span>노안 예시</span></div><div class="ed-comparison-line" aria-hidden="true"><b>↔</b></div><input type="range" min="0" max="100" value="50" aria-label="가까운 휴대전화 글씨의 흐림 비교"></div><p class="ed-note">좌우로 움직여 가까운 글씨를 비교해 보세요.<br>이해를 돕는 연출이며 실제 시야와 다를 수 있습니다.</p></div></section>
+ <section class="pr-symptoms"><div class="wrap"><div class="pr-section-title"><h2>일상에서 느껴지는 노안 증상</h2><p>가까운 것을 보는 일이 달라졌나요?</p></div><div class="pr-speech">글씨를 볼 때, 자꾸 거리를 조절하게 되나요?</div><div class="pr-symptom-grid">${symptoms.map(([title,description,image,alt])=>`<article class="pr-symptom-card"><div class="pr-card-image"><img src="assets/${image}" alt="${alt}" loading="lazy"></div><h3>${title}</h3><p>${description}</p></article>`).join('')}</div></div></section>
+ ${reservation({title:'혹시, 나도 노안일까요?',checks:checks.map((text,i)=>`<label class="ct-test-item"><input type="checkbox" name="cataract-symptom" value="${i}"><span class="ct-test-box" aria-hidden="true">✓</span><span>${text}</span></label>`).join(''),image:'presbyopia-hero-reading.webp',alt:'적당한 거리를 두고 책을 읽는 여성',caption:'읽는 거리부터,<br>눈의 변화를 살펴보세요.'})}${booking.dialog()}</article>`;
+});

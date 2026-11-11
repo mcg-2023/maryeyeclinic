@@ -1,0 +1,14 @@
+{
+  "tool": "Built-in image_gen",
+  "reference": "https://www.oklasik.com/?p=56",
+  "assets": [
+    {
+      "file": "dist/assets/presbyopia-phone-compare.webp",
+      "prompt": "Create a photorealistic 3:2 landscape editorial photograph for a Korean ophthalmology presbyopia educational webpage. First-person natural view of a single adult hand holding a normal sized smartphone vertically at comfortable reading distance in a bright cafe. Phone centered horizontally, entire phone visible, spans from 28 percent to 92 percent of image height. Screen shows a realistic simple white reading/news app with fine dark small text lines, absolutely no large headings or oversize text. No readable brand or logo. Background top quarter shows a real window and street with greenery, optically sharp. Deep focus: both near phone and distant scene must be sharp, NO blur anywhere. Natural ivory and warm oak palette, calm daylight, believable proportions, realistic single hand and five fingers. This image will be used as a vision comparison baseline; website adds blur to the near phone separately. No overlaid labels, no decorative graphics, no card or book. Subtle professional editorial photography."
+    },
+    {
+      "file": "dist/assets/presbyopia-small-label.webp",
+      "prompt": "Create a premium photorealistic 3:2 landscape editorial photograph for an ophthalmology website illustrating difficulty seeing small labels in middle age. A Korean woman around 50 in a natural everyday kitchen, viewed from side at shoulder level, holding a small plain pantry jar slightly away to read its tiny ingredients label, subtle attentive expression, no exaggerated squinting, no glasses. Jar and hands in focus, label has fine small print without brand or readable marketing words. Bright neutral ivory and warm wood kitchen, soft natural daylight, clean understated visual, realistic anatomy. Medium close shot showing face, hands, jar, crop-safe margins. No text overlays, logos or watermark."
+    }
+  ]
+}
