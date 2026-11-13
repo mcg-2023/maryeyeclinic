@@ -1,0 +1,13 @@
+.desk-login-story{background:linear-gradient(145deg,#f6f1e8,#ece2d1)}
+.desk-login .desk-eyebrow,.desk-login-copyright,.desk-login-help,.desk-back-link{color:#887252}
+.desk-login h1,.desk-login h2{color:#3e2f23}
+.desk-login-story>div>p:not(.desk-eyebrow),.desk-login-form>p,.desk-login .field label{color:#796b5a}
+.desk-login-symbol{background:#f5eee2;color:#75604c}
+.desk-login-decoration{color:#d4c19f}
+.desk-login-decoration i{border-color:#d4c19f}
+.desk-login-decoration b{color:#9c815a}
+.desk-login input{border-color:#ddd2c1;color:#3e2f23;background:#fffefa}
+.desk-login input:focus{border-color:#a48962;box-shadow:0 0 0 3px #a4896220}
+.desk-login .desk-password button{color:#927a58}
+.desk-login .desk-back-link{border-color:#e8dece}
+.desk-login :focus-visible{outline-color:#a48962}

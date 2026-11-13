@@ -7,7 +7,27 @@
   const messages = document.getElementById('qa-messages'), status = document.getElementById('qa-status'), send = document.getElementById('qa-send');
   let busy = false, dataPromise;
   document.body.classList.add('qa-chat-ready');
-  function open(value) { panel.hidden = !value; launcher.setAttribute('aria-expanded', String(value)); (value ? input : launcher).focus(); }
+  const headerSlot = document.getElementById('header-chat-slot');
+  const mobileLayout=matchMedia('(max-width:900px)');
+  function placeLauncher(){
+    const floating=mobileLayout.matches||!headerSlot;
+    if(floating)root.prepend(launcher);else headerSlot.append(launcher);
+    launcher.querySelector('span').textContent='병원 안내 챗봇';
+    document.body.classList.toggle('qa-header-launcher',!floating);
+    document.body.classList.toggle('qa-mobile-launcher',floating);
+  }
+  placeLauncher();
+  mobileLayout.addEventListener('change',placeLauncher);
+  launcher.addEventListener('keydown', event => { if (event.key === 'Escape' && !panel.hidden) open(false); });
+  launcher.setAttribute('aria-label','병원 안내 챗봇 열기');
+  function open(value) {
+    const menuToggle=document.getElementById('menu-toggle');
+    if(value&&menuToggle?.getAttribute('aria-expanded')==='true')menuToggle.click();
+    panel.hidden = !value;
+    launcher.setAttribute('aria-expanded', String(value));
+    launcher.setAttribute('aria-label',value?'병원 안내 챗봇 닫기':'병원 안내 챗봇 열기');
+    (value ? input : launcher).focus();
+  }
   launcher.addEventListener('click', () => open(panel.hidden));
   document.getElementById('qa-close').addEventListener('click', () => open(false));
   root.addEventListener('keydown', event => { if (event.key === 'Escape' && !panel.hidden) { event.preventDefault(); event.stopPropagation(); open(false); } });
@@ -22,6 +42,29 @@
     if(result?.mode==='emergency')return;
     const remaining=1000-(performance.now()-started);
     if(remaining>0)await new Promise(resolve=>setTimeout(resolve,remaining));
+  }
+  function friendlyReply(result, question) {
+    if (result.mode === 'emergency') return result.answer;
+    const answer = result.answer
+      .replace(/안내해 드립니다/g, '안내해 드릴게요')
+      .replace(/문의하시기 바랍니다/g, '편하게 문의해 주세요')
+      .replace(/필요합니다/g, '필요해요')
+      .replace(/가능합니다/g, '가능해요')
+      .replace(/권장합니다/g, '권장해요')
+      .replace(/확인합니다/g, '확인해요')
+      .replace(/상담합니다/g, '상담해요')
+      .replace(/달라집니다/g, '달라져요')
+      .replace(/다릅니다/g, '달라요')
+      .replace(/질환입니다/g, '질환이에요')
+      .replace(/상태입니다/g, '상태예요')
+      .replace(/변화입니다/g, '변화예요')
+      .replace(/방법입니다/g, '방법이에요')
+      .replace(/어렵습니다/g, '어려워요')
+      .replace(/없습니다/g, '없어요')
+      .replace(/있습니다/g, '있어요');
+    const routine = /진료시간|운영시간|몇 시|위치|주소|주차|준비물|전화번호|안녕|고마/.test(question);
+    if (/\p{Extended_Pictographic}/u.test(answer)) return answer;
+    return routine ? answer + ' 🙂' : '💡 ' + answer;
   }
   function append(text, role, sources, phone) {
     const message = document.createElement('div'); message.className = 'qa-message qa-message--' + role;
@@ -76,10 +119,10 @@
     document.getElementById('qa-suggestions').hidden = true;
     append(question, 'user'); status.textContent = '안내 자료를 확인하고 있어요…';
     const started=performance.now();
-    try { const result = await ask(question);status.textContent='답변을 정리하고 있어요…';await replyPause(started,result);append(result.answer, 'assistant', result.sources, result.phone); status.textContent = ''; }
+    try { const result = await ask(question);status.textContent='답변을 정리하고 있어요…';await replyPause(started,result);append(friendlyReply(result, question), 'assistant', result.sources, result.phone); status.textContent = ''; }
     catch (error) {
       await replyPause(started);
-      append(error.message === 'rate' ? '질문이 많아 잠시 쉬고 있어요. 잠시 후 다시 질문해 주세요.' : '안내 자료에 연결하지 못했습니다. 잠시 후 다시 시도하거나 병원으로 전화 문의해 주세요.', 'assistant', [], ClinicQA.PHONE);
+      append(error.message === 'rate' ? '잠깐만 기다려 주세요. 조금 뒤에 다시 질문해 주시면 안내해 드릴게요.' : '지금은 안내 자료에 연결하기 어려워요. 잠시 후 다시 시도해 주시거나 병원으로 편하게 전화해 주세요.', 'assistant', [], ClinicQA.PHONE);
       status.textContent = '질문을 다시 보내실 수 있어요.';
     } finally { busy = false; send.disabled = false; form.removeAttribute('aria-busy'); }
   }

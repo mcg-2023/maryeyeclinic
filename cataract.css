@@ -1,0 +1,147 @@
+.cataract-page{--ct-ink:#3e2f23;--ct-muted:#817363;--ct-gold:#a68b62;--ct-line:#ded5c7;background:#fffefa;color:var(--ct-ink);font-size:21.5px;line-height:1.85}
+.cataract-page .wrap{width:min(1200px,calc(100% - 112px))}
+.cataract-page p{word-break:keep-all}
+.cataract-page h2{font-size:clamp(40.48px,3.92vw,58.19px);font-weight:450;line-height:1.5;letter-spacing:-.055em}
+.cataract-page h2 em{font-style:normal;color:#a68b62}
+.cataract-page h3{font-weight:500;letter-spacing:-.04em}
+.ct-kicker{font-family:Georgia,serif;font-size:15.18px;letter-spacing:.17em;color:var(--ct-gold);margin-bottom:22px}
+.ct-hero{background:#f1ebe1;overflow:hidden}
+.ct-hero-inner{display:grid;grid-template-columns:1.12fr 1fr;min-height:600px;align-items:stretch;gap:30px}
+.ct-hero-copy{padding:28px 0 45px;position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.ct-breadcrumb{display:flex;align-items:center;gap:11px;font-size:15.18px;color:#948575;margin-bottom:55px}
+.ct-breadcrumb a:hover{color:#3e2f23}
+.ct-hero .ct-kicker{margin-bottom:18px}
+.ct-hero h1{font-size:clamp(50.6px,5.19vw,77.16px);line-height:1.38;font-weight:450;letter-spacing:-.065em;white-space:nowrap}
+.ct-hero-lead{font-size:21.5px;color:#817363;line-height:1.9;margin:26px 0 24px}
+.ct-text-link{display:inline-flex;justify-content:space-between;align-items:center;gap:38px;border-bottom:1px solid #ac9676;padding:9px 0;font-size:18.97px}
+.ct-text-link span{font-size:26.57px;transition:transform .2s}
+.ct-text-link:hover span{transform:translate(2px,-2px)}
+.ct-hero-signature{font:12.65px Georgia,serif;letter-spacing:.2em;color:#a68b62;margin-top:43px}
+.ct-hero-photo{position:relative;align-self:stretch;padding:40px 0 40px;min-width:0}
+.ct-hero-photo:before{content:'';position:absolute;width:480px;height:480px;top:3%;right:-150px;border:1px solid #cdbb9f88;border-radius:50%;pointer-events:none}
+.ct-hero-photo>img{position:relative;width:100%;height:100%;max-height:550px;object-fit:cover;border-radius:160px 12px 12px 12px;object-position:65% center;filter:saturate(.76);box-shadow:0 16px 42px #59452b10}
+.ct-photo-note{position:absolute;bottom:62px;right:24px;color:#fff;text-shadow:0 1px 10px #342715;font-size:16.45px;letter-spacing:.03em}
+.ct-nav-wrap{background:#fffefa;border-bottom:1px solid var(--ct-line)}
+.ct-nav{display:flex;justify-content:center}
+.ct-nav a{width:33.33%;padding:23px 20px 20px;text-align:center;font-size:22.77px;border-bottom:3px solid transparent;display:flex;justify-content:center;align-items:center;gap:14px;color:#9a8b7a}
+.ct-nav a span{font-family:Georgia,serif;font-size:12.65px;letter-spacing:.07em}
+.ct-nav a[aria-current]{border-color:#876847;color:#4d3926}
+.ct-nav a:hover{background:#f8f3eb;color:#4d3926}
+.ct-section{padding-block:110px;scroll-margin-top:120px}
+.ct-heading{text-align:center;max-width:900px;margin:0 auto 58px}
+.ct-heading>p:last-child{color:var(--ct-muted);margin-top:22px;line-height:1.9}
+.ct-definition{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:25px}
+.ct-diagram{position:relative;background:#fff;border:1px solid #ece5da;border-radius:28px;padding:22px 30px 48px}
+.ct-diagram img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.ct-diagram>span{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font-size:15.18px;border-radius:30px;background:#f3eee5;color:#866c4b;padding:4px 17px}
+.ct-small-label{font-size:12.65px;letter-spacing:.15em;color:#a28b68}
+.ct-definition-copy h3{font-size:37.95px;line-height:1.55;margin:16px 0 22px}
+.ct-definition-copy>p{font-size:20.24px;color:#817363;margin-bottom:18px}
+.ct-definition-copy .ct-text-link{margin-top:8px}
+.ct-vision-section{padding:90px 0;background:#f2eee6}
+.ct-vision{position:relative;aspect-ratio:2.25;overflow:hidden;border-radius:24px;background:#ddd4c5;cursor:ew-resize;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.ct-vision>img,.ct-vision-haze,.ct-vision-haze img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ct-vision>img,.ct-vision-haze img{object-position:center 48%;-webkit-user-drag:none}
+.ct-vision-haze{clip-path:inset(0 0 0 var(--ct-split));background:#e8e1d5}
+.ct-vision-haze img{filter:blur(5px) contrast(.67) brightness(1.2);opacity:.88}
+.ct-vision-tag{position:absolute;top:24px;padding:6px 15px;border-radius:30px;background:#fffef9e8;font-size:15.18px;color:#594533}
+.ct-vision-tag--clear{left:24px}.ct-vision-tag--haze{right:24px}
+.ct-vision-line{position:absolute;left:var(--ct-split);top:0;bottom:0;border-left:1px solid #fffefa;pointer-events:none}
+.ct-vision-line b{position:absolute;top:44%;left:0;transform:translate(-50%,-50%);width:45px;height:45px;border-radius:50%;display:grid;place-items:center;background:#fffefa;color:#846745;box-shadow:0 4px 14px #37230b22;font-size:26.57px;font-weight:400}
+.ct-vision-control{display:flex;align-items:center;gap:20px;position:absolute;bottom:24px;left:50%;transform:translateX(-50%);background:#fffef9f5;border-radius:40px;width:min(550px,85%);padding:14px 24px;font-size:15.18px;white-space:nowrap}
+.ct-vision-control input{flex:1;min-width:0;accent-color:#92754e;cursor:ew-resize}
+.ct-caption{font-size:15.18px;color:#988772;text-align:center;margin-top:18px}
+.ct-symptom-layout{display:grid;grid-template-columns:.95fr 1.2fr;gap:80px}
+.ct-symptom-intro>p:not(.ct-kicker){font-size:20.24px;color:var(--ct-muted);margin-top:24px}
+.ct-symptom-note{display:flex;align-items:center;gap:15px;border-top:1px solid var(--ct-line);margin-top:38px;padding-top:24px;color:#9a815e}
+.ct-symptom-note>span{font-size:34.15px}.ct-symptom-note p{font-size:16.45px;line-height:1.8}
+.ct-symptom{position:relative;display:flex;align-items:center;gap:20px;padding:25px 12px;border-bottom:1px solid var(--ct-line);cursor:pointer}
+.ct-symptom:first-child{border-top:1px solid var(--ct-line)}
+.ct-symptom input{position:absolute;left:12px;width:28px;height:28px;opacity:0}
+.ct-check{width:28px;height:28px;display:grid;place-items:center;flex:none;border:1px solid #c6b79f;border-radius:50%;color:transparent;transition:background .2s}
+.ct-symptom input:checked+.ct-check{background:#836445;border-color:#836445;color:#fff}
+.ct-symptom input:focus-visible+.ct-check{outline:2px solid #a68b62;outline-offset:4px}
+.ct-symptom>span:nth-last-of-type(1){flex:1}
+.ct-symptom strong{display:block;font-weight:500;font-size:24.03px}
+.ct-symptom span span{display:block;font-size:17.71px;color:#8b7b67;margin-top:4px}
+.ct-symptom small{font:15.18px Georgia,serif;color:#b3a287;align-self:flex-start;padding-top:8px}
+.ct-symptom:has(input:checked){background:#f6f0e6}
+.ct-check-status{font-size:16.45px;color:#967c59;min-height:48px;padding-top:19px}
+.ct-lens-section{background:#f4efe6;padding:100px 0}
+.ct-lens-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.ct-lens-card{position:relative;padding:45px 40px 30px;background:#fffefa;border:1px solid #e4d9c7;border-radius:22px;overflow:hidden}
+.ct-lens-number{position:absolute;right:28px;top:20px;font:69.57px Georgia,serif;color:#e7ddcc}
+.ct-lens-card .ct-small-label{position:relative;margin-bottom:13px}
+.ct-lens-card h3{font-size:36.68px;margin-bottom:35px}
+.ct-lens-card>p:not(.ct-small-label){font-size:20.24px;color:#8a7964}
+.ct-distance{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:29px;padding:20px 0;border-block:1px solid #ded3c0;font-size:16.45px}
+.ct-distance i{width:18px;border-top:1px solid #bda580}
+.ct-distance strong{border:1px solid #bba17a;border-radius:30px;padding:6px 12px;font-weight:500}
+.ct-distance--single>span{color:#b5a58f}
+.ct-lens-foot{display:block;margin-top:28px;padding-top:20px;border-top:1px solid #e4d9c7;font-size:16.45px;color:#a58c66}
+.ct-lens-card--dark{background:#59432e;border-color:#59432e;color:#f3e7d2}
+.ct-lens-card--dark h3{color:#fff9ef}
+.ct-lens-card--dark .ct-small-label{color:#ceb98f}
+.ct-lens-card--dark .ct-lens-number{color:#82684a}
+.ct-lens-card--dark>p:not(.ct-small-label){color:#dccbb0}
+.ct-lens-card--dark .ct-distance{border-color:#8e7454}
+.ct-lens-card--dark .ct-lens-foot{border-color:#8e7454;color:#c9b28c}
+.ct-lens-bottom{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-top:27px}
+.ct-lens-bottom p{font-size:16.45px;color:#98846a}
+.ct-care-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.ct-care-photo{aspect-ratio:1.6;overflow:hidden;border-radius:20px;margin-bottom:25px;background:#ece5da}
+.ct-care-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.ct-care-grid article:first-child .ct-care-photo img{object-position:center 65%;transform:scale(1.08)}
+.ct-care-grid article>span{font-size:12.65px;letter-spacing:.13em;color:#ac9472}
+.ct-care-grid h3{font-size:34.15px;margin:12px 0}
+.ct-care-grid article>p{max-width:480px;font-size:20.24px;color:#8c7962}
+.ct-promise{display:flex;align-items:center;justify-content:space-between;gap:30px;border-top:1px solid var(--ct-line);margin-top:65px;padding-top:36px}
+.ct-promise>img{width:250px;height:auto;object-fit:contain}
+.ct-promise>p{font-size:27.83px;line-height:1.6}.ct-promise strong{font-weight:500;color:#a68b62}
+.ct-questions{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;padding-block:0 100px}
+.ct-questions>div>p:last-child{font-size:18.97px;color:#95816a;margin-top:22px}
+.ct-faq details{border-bottom:1px solid var(--ct-line)}
+.ct-faq details:first-child{border-top:1px solid var(--ct-line)}
+.ct-faq summary{display:flex;align-items:center;gap:17px;padding:25px 0;cursor:pointer;list-style:none;font-size:21.5px;line-height:1.65}
+.ct-faq summary::-webkit-details-marker{display:none}
+.ct-faq summary>span{font:18.97px Georgia,serif;color:#ac9069;flex:none}
+.ct-faq summary>b{margin-left:auto;font-size:29.09px;font-weight:300;color:#ac9069}
+.ct-faq details[open] summary>b{transform:rotate(45deg)}
+.ct-faq details>p{padding:0 20px 27px 43px;font-size:18.97px;color:#8d7b65}
+.ct-contact{padding:70px 0;background:#52402f;color:#ebddc7}
+.ct-contact>.wrap{display:flex;align-items:center;justify-content:space-between;gap:45px}
+.ct-contact .ct-kicker{color:#c4aa80;margin-bottom:16px}
+.ct-contact h2{color:#fff6e7;font-size:43.01px}
+.ct-contact p:last-child{font-size:17.71px;color:#cab698;margin-top:18px}
+.ct-contact-actions{display:flex;flex-direction:column;gap:18px;min-width:290px}
+.ct-phone{font:43.01px Georgia,serif;border-bottom:1px solid #ad906d;padding-bottom:15px;color:#fff6e7}
+.ct-contact-actions a{display:flex;justify-content:space-between;gap:30px}
+.ct-contact-actions>a:last-child{font-size:17.71px}
+.ct-page-foot{padding-block:27px 45px;color:#a1907b;font-size:15.18px;display:flex;justify-content:space-between;gap:20px}
+.ct-page-foot a{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:1100px){.cataract-page .wrap{width:calc(100% - 64px)}.ct-hero-inner{gap:20px;min-height:560px}.ct-hero h1{font-size:53.13px}.ct-hero-photo{padding-block:45px}.ct-definition,.ct-symptom-layout{gap:45px}.ct-lens-card{padding:35px 27px}.ct-distance{font-size:15.18px;gap:5px}.ct-distance strong{padding:5px 9px}.ct-contact h2{font-size:36.68px}}
+@media(max-width:760px){
+ .cataract-page{font-size:20.24px}.cataract-page .wrap{width:calc(100% - 40px)}
+ .ct-hero-inner{grid-template-columns:1fr;gap:0}.ct-hero-copy{padding:22px 0 24px}.ct-breadcrumb{margin-bottom:33px;font-size:12.65px;gap:8px}
+ .ct-hero h1{font-size:clamp(43.01px,9.87vw,61.98px);white-space:normal}.ct-hero-lead{font-size:17.71px;margin-block:20px}.ct-hero .ct-kicker{font-size:13.91px}
+ .ct-hero-signature{display:none}.ct-hero-photo{padding:0 0 24px}.ct-hero-photo>img{height:330px;object-position:center 39%;border-radius:110px 8px 8px 8px}
+ .ct-hero-photo:before{display:none}.ct-photo-note{bottom:42px;font-size:13.91px;right:16px}
+ .ct-nav a{font-size:18.97px;padding:18px 0 15px}.ct-nav a span{display:none}
+ .ct-section{padding-block:68px}.ct-heading{margin-bottom:35px}.cataract-page h2{font-size:clamp(34.15px,8.73vw,45.54px);line-height:1.5}
+ .ct-kicker{font-size:12.65px;margin-bottom:17px}.ct-heading>p:last-child{font-size:17.71px;margin-top:19px}.ct-heading p br{display:none}
+ .ct-definition,.ct-symptom-layout{grid-template-columns:1fr;gap:30px}.ct-definition{margin-top:0}.ct-diagram{padding:18px 18px 40px;max-width:510px;width:100%;margin-inline:auto}
+ .ct-definition-copy h3{font-size:34.15px}.ct-definition-copy>p{font-size:17.71px}.ct-text-link{font-size:17.71px}
+ .ct-vision-section{padding:60px 0}.ct-vision{aspect-ratio:1.25;border-radius:16px}.ct-vision-tag{top:14px;font-size:12.65px;padding:5px 10px}.ct-vision-tag--clear{left:12px}.ct-vision-tag--haze{right:12px}
+ .ct-vision-control{width:90%;padding:10px 13px;gap:10px;font-size:12.65px;bottom:14px}.ct-caption{font-size:12.65px}.ct-vision-line b{width:34px;height:34px;font-size:21.5px}
+ .ct-symptom-intro>p:not(.ct-kicker){font-size:17.71px}.ct-symptom-note{margin-top:25px;padding-top:18px}.ct-symptom{gap:14px;padding:20px 7px}.ct-symptom strong{font-size:21.5px}.ct-symptom span span{font-size:16.45px}.ct-symptom small{font-size:12.65px}
+ .ct-lens-section{padding:65px 0}.ct-lens-grid{grid-template-columns:1fr;gap:20px}.ct-lens-card{padding:30px 25px}.ct-lens-card h3{font-size:32.89px;margin-bottom:25px}.ct-lens-card>p:not(.ct-small-label){font-size:17.71px}.ct-distance{font-size:16.45px}.ct-distance strong{padding:6px 12px}
+ .ct-lens-bottom{align-items:flex-start;flex-direction:column;gap:12px}.ct-lens-bottom p{font-size:15.18px}
+ .ct-care-grid{grid-template-columns:1fr;gap:38px}.ct-care-photo{margin-bottom:20px}.ct-care-grid h3{font-size:31.62px}.ct-care-grid article>p{font-size:17.71px}
+ .ct-promise{flex-wrap:wrap;margin-top:40px;padding-top:28px;gap:23px}.ct-promise>img{width:200px}.ct-promise>p{font-size:21.5px}.ct-promise .ct-text-link{width:100%}
+ .ct-questions{grid-template-columns:1fr;gap:30px;padding-bottom:65px}.ct-faq summary{font-size:18.97px;gap:12px;padding-block:21px}.ct-faq details>p{font-size:16.45px;padding-left:32px}.ct-questions>div>p:last-child{font-size:17.71px}
+ .ct-contact{padding:50px 0}.ct-contact>.wrap{flex-direction:column;align-items:stretch;gap:30px}.ct-contact h2{font-size:35.42px}.ct-contact-actions{min-width:0}.ct-phone{font-size:40.48px}.ct-contact p:last-child{font-size:15.18px}
+ .ct-page-foot{flex-direction:column;gap:10px;font-size:13.91px}
+}
+@media(prefers-reduced-motion:reduce){.cataract-page *{transition:none!important;scroll-behavior:auto!important}}
+
+@media(max-width:360px){.ct-contact-actions a{gap:10px}}

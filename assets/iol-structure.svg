@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+ <title id="title">인공수정체 구조 설명용 일러스트</title><desc id="desc">가운데 원형 광학부와 양쪽으로 뻗은 곡선 형태의 지지부를 단순화한 그림입니다. 특정 제품의 사진이 아닙니다.</desc>
+ <defs>
+  <radialGradient id="optic" cx="38%" cy="32%" r="72%"><stop stop-color="#fff" stop-opacity=".95"/><stop offset=".55" stop-color="#e8f0eb" stop-opacity=".55"/><stop offset=".85" stop-color="#cad8d0" stop-opacity=".8"/><stop offset="1" stop-color="#9aafa1"/></radialGradient>
+  <linearGradient id="arm" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8a9f91"/><stop offset=".45" stop-color="#d9e4db"/><stop offset="1" stop-color="#8c9d8f"/></linearGradient>
+  <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="15" stdDeviation="12" flood-color="#445548" flood-opacity=".12"/></filter>
+ </defs>
+ <rect width="800" height="500" rx="20" fill="#f7f8f4"/>
+ <ellipse cx="402" cy="396" rx="195" ry="14" fill="#a0afa0" opacity=".08"/>
+ <g filter="url(#shadow)" transform="rotate(-17 400 250)">
+  <path d="M295 187C248 154 172 137 126 171C88 199 83 244 96 277" fill="none" stroke="url(#arm)" stroke-width="18" stroke-linecap="round"/>
+  <path d="M505 313C552 346 628 363 674 329C712 301 717 256 704 223" fill="none" stroke="url(#arm)" stroke-width="18" stroke-linecap="round"/>
+  <path d="M295 187C248 154 172 137 126 171C88 199 83 244 96 277" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="4" stroke-linecap="round" transform="translate(0 -3)"/>
+  <path d="M505 313C552 346 628 363 674 329C712 301 717 256 704 223" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="4" stroke-linecap="round" transform="translate(0 -3)"/>
+  <circle cx="400" cy="250" r="132" fill="url(#optic)" stroke="#91a698" stroke-width="2"/>
+  <circle cx="400" cy="250" r="124" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="3"/>
+  <circle cx="400" cy="250" r="114" fill="none" stroke="#c4d1c6" stroke-width="1"/>
+  <path d="M316 203a100 100 0 0 1 123-46" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity=".7"/>
+ </g>
+ <g stroke="#9cae9f" stroke-width="1.5" fill="none"><path d="M422 259L527 405H615"/><path d="M176 166L145 84H71"/></g>
+ <g fill="#5b6d5f" font-family="sans-serif" font-size="17"><text x="626" y="411">광학부</text><text x="60" y="72">지지부</text></g>
+</svg>

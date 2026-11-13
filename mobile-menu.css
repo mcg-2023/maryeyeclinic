@@ -1,0 +1,34 @@
+.menu-category-toggle,.header #mega .menu-mobile-direct{display:none}
+@media(max-width:900px){
+ .header #mega{background:#faf8f4;color:#493d32;border-top:1px solid #e9e2d8;box-shadow:0 14px 26px #35281b14;padding:8px 22px 20px;max-height:calc(100dvh - 150px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+ .header #mega:not([hidden]){display:block;animation:none}
+ .header #mega>.menu-group{padding:0;text-align:left;border-bottom:1px solid #e8e0d6}
+ .header #mega h2{margin:0;padding:0;border:0;font-size:18.7px;white-space:normal}
+ .menu-desktop-title{display:none}
+ .menu-category-toggle,.header #mega .menu-mobile-direct{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:60px;padding:16px 2px;margin:0;color:#493d32;font-size:18.7px;font-weight:600;line-height:1.5;text-align:left;letter-spacing:-.025em}
+ .menu-category-icon{position:relative;flex-shrink:0;width:16px;height:16px;margin-right:4px;color:#a08a70}
+ .menu-category-icon::before,.menu-category-icon::after{content:'';position:absolute;background:currentColor;top:7px;left:2px;width:12px;height:1px}
+ .menu-category-icon::after{transform:rotate(90deg)}
+ .is-expanded .menu-category-icon::after{display:none}
+ .header #mega .menu-mobile-direct>span{font-size:22px;font-weight:400;color:#a08a70;margin-right:4px}
+ .header #mega .menu-links{display:none}
+ .header #mega .is-expanded .menu-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px;background:#f0ebe3;padding:8px 14px;margin:0 0 14px;border-radius:10px}
+ .header #mega .menu-links>a{display:flex;align-items:center;min-height:44px;padding:10px 2px;margin:0;font-size:15.4px;font-weight:400;color:#796b5b;line-height:1.5;word-break:keep-all}
+ .header #mega .menu-links>a:hover,.header #mega .menu-links>a[aria-current=page]{color:#4e3926;font-weight:600}
+ .header #mega a:focus-visible,.menu-category-toggle:focus-visible{outline:2px solid #a08763;outline-offset:2px;border-radius:4px}
+}
+@media(max-width:380px){.header #mega{padding-inline:18px}.menu-category-toggle,.header #mega .menu-mobile-direct{font-size:17.6px;min-height:56px}.header #mega .menu-links>a{font-size:14.3px}}
+/* Keep mobile header actions together without squeezing the clinic logo. */
+@media(max-width:900px){
+ .header{display:grid;grid-template-columns:minmax(0,1fr) 40px;align-items:center;gap:10px;height:72px;padding-inline:18px}
+ .header .brand{min-width:0;max-width:200px}
+ .header .brand-logo--horizontal{width:100%;max-width:200px;height:auto}
+ .header #header-chat-slot{display:none}
+ .header #header-chat-slot .qa-launcher{display:grid;place-items:center;width:40px;height:40px;min-height:40px;padding:0;gap:0;background:#f3eee6;border:1px solid #dfd4c5;border-radius:50%;color:#75604c;box-shadow:none}
+ .header #header-chat-slot .qa-launcher:hover{background:#eae1d4}
+ .header #header-chat-slot .qa-launcher>svg{width:21px;height:21px;padding:0;border:0;color:inherit;background:none}
+ .header #header-chat-slot .qa-launcher>span{display:none}
+ .header #menu-toggle{width:40px;height:40px;padding:7px;justify-self:end}
+ .qa-header-launcher .qa-panel{top:84px;right:16px;max-height:calc(100dvh - 176px)}
+}
+@media(max-width:380px){.header{gap:6px;padding-inline:12px}.header .brand{max-width:175px}}
