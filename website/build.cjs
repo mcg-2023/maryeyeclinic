@@ -16,8 +16,9 @@ for(const key of ROUTES){
  if(key){
   html=html.replace('<body>','<body class="subpage">');
   let assets='<script src="category-data.js" defer></script><script src="sub-visual.js" defer></script>';
-  if(PAGES[key])assets+='<link rel="stylesheet" href="cataract-booking.css"><link rel="stylesheet" href="eye-detail.css"><link rel="stylesheet" href="eye-reservation.css"><script src="cataract-booking.js" defer></script><script src="eye-reservation.js" defer></script><script src="category-page.js" defer></script><script src="eye-detail-effects.js" defer></script><script src="category-interactions.js" defer></script>';
-  html=html.replace('</head>',assets+'<link rel="stylesheet" href="subpages.css"></head>');
+  if(PAGES[key])assets+='<link rel="stylesheet" href="cataract-booking.css"><link rel="stylesheet" href="eye-detail.css"><link rel="stylesheet" href="eye-reservation.css"><script src="cataract-booking.js" defer></script><script src="eye-reservation.js" defer></script><script src="issue-charts.js" defer></script><script src="category-page.js" defer></script><script src="eye-detail-effects.js" defer></script><script src="category-interactions.js" defer></script>';
+  if(key==='about-doctors')assets+='<script src="doctor-profiles.js" defer></script>';
+  html=html.replace('</head>',assets+'<link rel="stylesheet" href="subpages.css"><link rel="stylesheet" href="requested-refinements.css"></head>');
  }
  html=html.replace(/<title>.*?<\/title>/,'<title>주례성모안과 | '+title+'</title>');
  if(key)html=html.replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="주례성모안과 '+title+' 안내. 눈 상태에 맞는 검사와 진료를 상담합니다.">');

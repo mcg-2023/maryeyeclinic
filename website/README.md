@@ -14,9 +14,9 @@
 
 20개 서브페이지의 첫 화면은 `dist/sub-visual.js`에서 영문 제목과 이미지로 구성합니다. `dist/subpages.css`가 메뉴와 이어지는 배경, 메뉴 호버 색상, 반응형 레이아웃을 관리합니다. 병원소개와 게시판의 본문 기능은 유지합니다.
 
-13개 진료 페이지는 `dist/category-data.js`의 주제별 자료와 `dist/category-page.js`의 공통 렌더러를 사용합니다. 개요 → 시야 비교 → 이슈 → 원인 카드 → 증상 확인·예약 순서입니다. 이슈마다 설명 4문단, 수치가 없는 개념 도식 2개, 강조 문장과 자료 출처를 표시합니다. 체크 문항은 6개이며 1개 선택 시 예약하기가 활성화됩니다. 응급 증상 안내는 예약과 별도로 표시합니다.
+13개 진료 페이지는 `dist/category-data.js`의 주제별 자료와 `dist/category-page.js`의 공통 렌더러를 사용합니다. 개요 → 시야 비교 → 이슈 → 원인 카드 → 증상 확인·예약 순서입니다. 이슈마다 설명 4문단, 실제 통계 막대그래프 2개, 강조 문장과 자료 출처를 표시합니다. 차트 값·단위·조사 대상·출처는 `dist/issue-charts.js`, 관련 표시와 문장 길이에 맞춘 괄호는 `dist/requested-refinements.css`에서 관리합니다. 체크 문항은 6개이며 1개 선택 시 예약하기가 활성화됩니다. 응급 증상 안내는 예약과 별도로 표시합니다.
 
-예약 영역은 `eye-reservation.js`·`eye-reservation.css`, 등장 효과와 비교 슬라이더는 `eye-detail-effects.js`, 원인 카드 이동은 `category-interactions.js`에서 관리합니다. 이전 개별 렌더러(`eye-detail.js`, `presbyopia-page.js`)는 현재 진료 페이지 빌드에 사용하지 않습니다. 새 이미지의 제작 기록은 `image-prompts/unified-subpages.json`에 있습니다.
+예약 영역은 `eye-reservation.js`·`eye-reservation.css`, 등장 효과와 비교 슬라이더는 `eye-detail-effects.js`, Causes of 원인 카드의 약 5초 간격 자동 이동은 `category-interactions.js`에서 관리합니다. 마우스·키보드 사용 중, 화면 밖에 있을 때와 모션 줄이기 설정에서는 자동 이동을 멈춥니다. 의료진 소개의 추가 프로필은 `dist/doctor-profiles.js`에 공식 홈페이지 기준 약력·사진을 보관합니다. 이전 개별 렌더러(`eye-detail.js`, `presbyopia-page.js`)는 현재 진료 페이지 빌드에 사용하지 않습니다. 새 이미지의 제작 기록은 `image-prompts/unified-subpages.json`에 있습니다.
 
 검증: 저장소 루트에서 `node .tools/check-unified-subpages.cjs`, `website`에서 `node check.cjs`.
 

@@ -1,0 +1,7 @@
+(function(root,factory){if(typeof module!=='undefined')module.exports=factory;else root.ClinicDoctorProfiles=factory;})(typeof window!=='undefined'?window:this,function(){
+ const doctors=[
+ {name:'유지명',photo:'yoo-jimyung-cutout.png',specialty:'사시·약시 · 굴절이상 · 소아안과 · 신경안과',career:['충남대학교 의과대학','충남대학교 대학원 석사','조선대학교 대학원 박사','대구가톨릭병원 안과 전공의','마산고려병원 안과과장','경상국립대학교 의과대학 안과학교실 주임교수','경상국립대학교병원 진료처장','경상국립대학교병원 안과과장','경상대학교 의과대학 명예교수'],activity:['미국 오리건 유인원 연구센터 교환교수','한국사시소아안과학회 회장','대한안과학회 제60대 회장']},
+ {name:'송도윤',photo:'song-doyoon-cutout.png',specialty:'황반변성 · 망막 · 안성형(안검하수·안검내반) · 백내장',career:['조선대학교 의학전문대학원 졸업','부산성모안과병원 전문의','부산성모안과병원 성형안과 임상강사','국립경상대학교병원 안과교수(백내장·망막)'],activity:['대한안과학회 정회원','대한성형안과학회 정회원','한국백내장굴절수술학회 정회원','영남망막학회 정회원']}
+ ];
+ return doctors.map(d=>`<article class="profile-detail profile-colleague"><div class="doctor-photo original"><img src="assets/${d.photo}" alt="${d.name} 원장" loading="lazy"></div><div><p class="role">안과 전문의</p><h2 class="doctor-detail-name">${d.name} <small>원장</small></h2><p class="doctor-specialty">${d.specialty}</p><div class="doctor-bio biography-columns"><div><h4>약력</h4><ul>${d.career.map(text=>`<li>${text}</li>`).join('')}</ul></div><div><h4>연수 및 학회 활동</h4><ul>${d.activity.map(text=>`<li>${text}</li>`).join('')}</ul></div></div></div></article>`).join('')+'<p class="source-note">의료진 약력 자료: <a href="https://www.maryeyeclinic.com/" target="_blank" rel="noopener noreferrer">주례성모안과 공식 홈페이지</a></p>';
+});
