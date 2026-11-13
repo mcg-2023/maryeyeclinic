@@ -2,7 +2,7 @@
  const data=typeof module!=='undefined'?require('./category-data.js'):window.ClinicCategoryData;
  const info={
  'about-greeting':['Greetings','facility-consultation-01.jpg','주례성모안과 진료 공간'],
- 'about-doctors':['Our Doctors','director-clinic-logo.png','주례성모안과 의료진'],
+ 'about-doctors':['Our Doctors','facility-waiting-01.jpg','주례성모안과 원내 대기 공간'],
  'about-philosophy':['Our Philosophy','clinic-interior.jpg','편안한 병원 공간'],
  'about-history':['Our History','history-waiting-lounge.jpg','주례성모안과 공간'],
  'about-facilities':['Our Facilities','facility-waiting-02.jpg','병원 대기 공간'],
