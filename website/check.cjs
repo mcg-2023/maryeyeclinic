@@ -7,7 +7,7 @@ for(const r of ROUTES){
  assert.equal((html.match(/<h1[ >]/g)||[]).length,1,file+' must have one h1');
  assert(html.includes('<html lang="ko">'));assert(html.includes('<link rel="canonical"'));
  for(const m of html.matchAll(/(?:href|src)="([^"]+)"/g)){
-  const ref=m[1];if(/^(https?:|tel:|mailto:|data:|#)/.test(ref))continue;
+  const ref=m[1].split(/[?#]/)[0];if(/^(https?:|tel:|mailto:|data:|#)/.test(m[1]))continue;
   // The admin entry is served by the authenticated Page Manager router.
   if(ref==='/admin/'){links++;continue;}
   assert(fs.existsSync(path.join('dist',ref)),file+' has missing asset or page '+ref);

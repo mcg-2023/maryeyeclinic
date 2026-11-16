@@ -1,5 +1,6 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path');
+const {createHash}=require('node:crypto');
 const managerAssets=path.resolve(path.dirname(require.resolve('@mcg/page-manager/assets')),'../dist/assets');
 fs.cpSync(managerAssets,path.join(__dirname,'dist/page-manager'),{recursive:true});
 fs.copyFileSync(path.join(__dirname,'../page-manager-kit-v1.2.0-clinic.6/article-images.css'),path.join(__dirname,'dist/page-manager/article-images.css'));
@@ -28,6 +29,13 @@ for(const key of ROUTES){
  if(key==='interest'){html=html.replace(/<script src="information\.js[^"]*" defer><\/script>/, '<script>'+fs.readFileSync('dist/information.js','utf8')+'</script>');}
  html=html.replace('<link rel="stylesheet" href="november-refinements.css">','');
  html=html.replace('</head>','<link rel="stylesheet" href="november-refinements.css"></head>');
+ html=html.replace(/\b(src|href)="([^"?#]+\.(?:js|css))"/g,(attribute,name,file)=>{
+  if(/^(?:https?:)?\/\//.test(file))return attribute;
+  const asset=path.join(__dirname,'dist',file);
+  if(!fs.existsSync(asset))return attribute;
+  const version=createHash('sha256').update(fs.readFileSync(asset)).digest('hex').slice(0,12);
+  return `${name}="${file}?v=${version}"`;
+ });
  fs.writeFileSync(path.join('dist',file),html);
 }
 const manifest=JSON.parse(fs.readFileSync('.openai/hosting.json','utf8').replace(/^\uFEFF/,''));
