@@ -2,28 +2,43 @@
  const reduced=matchMedia('(prefers-reduced-motion:reduce)');
  document.querySelectorAll('.uc-cause-layout').forEach(section=>{
   const track=section.querySelector('.uc-cause-track'),toggle=section.querySelector('[data-cause-autoplay]');
+  const cards=[...track.querySelectorAll('.uc-cause-card')];
   let visible=false,hovering=false,focused=false,paused=reduced.matches,timer;
   let drag=null,suppressClick=false;
+  function positions(){return cards.map(card=>card.offsetLeft-cards[0].offsetLeft);}
+  function nearestIndex(left){
+   const stops=positions();
+   return stops.reduce((nearest,position,index)=>Math.abs(position-left)<Math.abs(stops[nearest]-left)?index:nearest,0);
+  }
+  function showCard(index){
+   const stops=positions();
+   track.scrollTo({left:stops[Math.max(0,Math.min(cards.length-1,index))],behavior:reduced.matches?'instant':'smooth'});
+  }
+  function measure(){
+   track.style.setProperty('--cause-card-width',cards[0].getBoundingClientRect().width+'px');
+   track.style.setProperty('--cause-gap',(parseFloat(getComputedStyle(track).gap)||28)+'px');
+  }
+  measure();
+  if('ResizeObserver'in window)new ResizeObserver(measure).observe(track);
   function paint(){if(!toggle)return;toggle.textContent=paused?'▶':'Ⅱ';toggle.setAttribute('aria-label',paused?'원인 카드 자동 재생 시작':'원인 카드 자동 재생 일시정지');toggle.setAttribute('aria-pressed',String(paused));}
   function move(direction){
-   const card=track.querySelector('.uc-cause-card'),gap=parseFloat(getComputedStyle(track).gap)||28;
-   const step=card.getBoundingClientRect().width+gap,max=track.scrollWidth-track.clientWidth;
-   const next=direction>0?(track.scrollLeft>=max-3?0:Math.min(max,track.scrollLeft+step)):(track.scrollLeft<3?max:Math.max(0,track.scrollLeft-step));
-   track.scrollTo({left:next,behavior:reduced.matches?'instant':'smooth'});
+   const current=nearestIndex(track.scrollLeft);
+   showCard((current+direction+cards.length)%cards.length);
   }
   function schedule(){clearTimeout(timer);if(paused||reduced.matches||!visible||hovering||focused||drag||document.hidden)return;timer=setTimeout(()=>{move(1);schedule();},4800);}
   track.addEventListener('dragstart',event=>event.preventDefault());
   track.addEventListener('pointerdown',event=>{
-   if(event.pointerType==='touch'||event.button!==0||!event.isPrimary)return;
+   if(event.button!==0||!event.isPrimary)return;
    if(event.target.closest('a,button,input,select,textarea'))return;
    suppressClick=false;
    track.scrollTo({left:track.scrollLeft,behavior:'instant'});
-   drag={pointerId:event.pointerId,startX:event.clientX,startScroll:track.scrollLeft,moved:false};
+   drag={pointerId:event.pointerId,startX:event.clientX,startY:event.clientY,startScroll:track.scrollLeft,startIndex:nearestIndex(track.scrollLeft),distance:0,moved:false};
    clearTimeout(timer);
   });
   document.addEventListener('pointermove',event=>{
    if(!drag||event.pointerId!==drag.pointerId)return;
    const distance=event.clientX-drag.startX;
+   if(!drag.moved&&event.pointerType==='touch'&&Math.abs(event.clientY-drag.startY)>Math.abs(distance)+8){drag=null;schedule();return;}
    if(!drag.moved&&Math.abs(distance)<5)return;
    if(!drag.moved){
     drag.moved=true;
@@ -31,6 +46,7 @@
     track.setPointerCapture(event.pointerId);
    }
    event.preventDefault();
+   drag.distance=distance;
    track.scrollTo({left:drag.startScroll-distance,behavior:'instant'});
   },{passive:false});
   function finishDrag(event){
@@ -41,16 +57,14 @@
    track.classList.remove('is-dragging');
    if(track.hasPointerCapture(event.pointerId))track.releasePointerCapture(event.pointerId);
    if(completed.moved){
-    const card=track.querySelector('.uc-cause-card');
-    const step=card.getBoundingClientRect().width+(parseFloat(getComputedStyle(track).gap)||28);
-    const target=Math.min(track.scrollWidth-track.clientWidth,Math.round(track.scrollLeft/step)*step);
-    track.scrollTo({left:target,behavior:reduced.matches?'instant':'smooth'});
+    const direction=Math.abs(completed.distance)>=32?(completed.distance<0?1:-1):0;
+    showCard(completed.startIndex+direction);
    }
    schedule();
   }
   document.addEventListener('pointerup',finishDrag);
   document.addEventListener('pointercancel',finishDrag);
-  track.addEventListener('lostpointercapture',finishDrag);
+  track.addEventListener('lostpointercapture',event=>{if(event.target===track)finishDrag(event);});
   track.addEventListener('click',event=>{
    if(!suppressClick||event.detail===0)return;
    suppressClick=false;
