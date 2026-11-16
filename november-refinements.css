@@ -203,3 +203,33 @@ body .footer{background:radial-gradient(ellipse at 0 0,#a58a6440,transparent 70%
 .uc-cause-track.is-dragging .uc-cause-card{cursor:grabbing}
 .uc-cause-track img{-webkit-user-drag:none;user-select:none}
 .uc-cause-photo img[src*="cataract-aging-upperbody"]{object-fit:cover;object-position:center top}
+
+/* Seven treatment areas in rows of three and four. */
+.care-services{grid-template-columns:repeat(12,minmax(0,1fr));gap:14px 18px}
+.care-services .care-service{grid-column:span 3}
+.care-services .care-service:nth-child(-n+3){grid-column:span 4}
+.care-services .care-service:nth-child(n)::after{display:block;right:-10px}
+.care-services .care-service:nth-child(3)::after,
+.care-services .care-service:last-child::after{display:none}
+
+#space .space-gallery-card>span::after{content:none}
+
+body #visit .visit-info .visit-map-buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%;box-sizing:border-box}
+body #visit .visit-info .visit-map-buttons .visit-map-link{width:100%;min-width:0;box-sizing:border-box;justify-content:center;gap:4px;padding:10px 4px;font-size:clamp(11px,1vw,14px);white-space:nowrap}
+body #visit .visit-info .visit-call-button{background:linear-gradient(135deg,#7b6650,#514134 65%,#3e332b);color:#fff;border-color:#c9b18c80;box-shadow:inset 0 1px 0 #fff4da25}
+body #visit .visit-info .visit-call-button:hover{background:linear-gradient(135deg,#8b7359,#5b4939 65%,#493a2f);color:#fff}
+
+.footer .footer-top>div{gap:12px 26px}
+.footer .footer-top>div>a,.footer .footer-top>div>button{background:none;border:0;border-radius:0;box-shadow:none;padding:8px 0;min-height:40px;font-weight:700;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px;color:#fff3df}
+.footer .footer-top>div>a:hover,.footer .footer-top>div>button:hover{background:none;border:0;color:#fff;text-decoration-thickness:2px}
+
+@media(max-width:640px){
+ .care-services{gap:12px 10px}
+ .care-services .care-service{padding:12px 3px;min-height:65px}
+ .care-services .care-service:nth-child(n)::after{right:-6px;height:14px;top:calc(50% - 7px)}
+ .care-services .care-service:nth-child(3)::after,.care-services .care-service:last-child::after{display:none}
+ .care-services .care-service-name{font-size:clamp(13px,3.6vw,19px);letter-spacing:-.05em}
+ .care-services .care-service:nth-child(-n+3) .care-service-name{font-size:clamp(18px,5vw,24px)}
+ body #visit .visit-info .visit-map-buttons .visit-map-link{font-size:13px;padding:11px 4px}
+ .footer .footer-top>div{gap:10px 22px}
+}
