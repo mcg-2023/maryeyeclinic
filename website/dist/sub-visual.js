@@ -38,8 +38,7 @@
   lines=[words.slice(0,split).join(' '),words.slice(split).join(' ')];
  }
  const title=lines.map((line,i)=>{
-  const parts=line.split(' '),accent=parts.shift();
-  return `<span class="sub-visual-title-line${i?' is-offset':''}"><span class="sub-visual-accent">${accent}</span>${parts.length?' '+parts.join(' '):''}</span>`;
+  return `<span class="sub-visual-title-line${i?' is-offset':''}"><span class="sub-visual-accent">${line.charAt(0)}</span>${line.slice(1)}</span>`;
  }).join('');
  return `<section class="sub-visual" id="sub-visual" aria-label="${item[0]}"><div class="sub-visual-title"><h1>${title}</h1><div class="sub-visual-copy"><h2>${message[0]}</h2><p>${message[1]}</p></div></div><div class="sub-visual-photo"><img src="assets/${item[1]}" alt="${item[2]}" fetchpriority="high" decoding="async"></div></section>`;
 });
