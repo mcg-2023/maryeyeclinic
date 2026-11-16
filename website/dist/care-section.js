@@ -13,7 +13,7 @@
   items.forEach((item,i)=>item.setAttribute('aria-pressed',String(i===index)));
   comparison.dataset.mode=data.mode;
   if(caption)caption.textContent=data.title;if(copy)copy.textContent=data.copy;if(link){link.href=data.route;link.setAttribute('aria-label',data.title+' 진료 자세히 보기');}
-  count.textContent=String(index+1).padStart(2,'0')+' / '+String(items.length).padStart(2,'0');
+  if(count)count.textContent=String(index+1).padStart(2,'0')+' / '+String(items.length).padStart(2,'0');
   scene.src=data.image;scene.alt=photo?data.title+' 진료 관련 사진':'시야 변화를 비교하기 위한 병원 공간 사진';softImage.src=data.image;
   before.textContent={vision:'흐릿한 시야 예시',presbyopia:'가까운 글씨 흐림 예시',cataract:'뿌연 시야 예시',macular:'중심 시야 변화 예시'}[data.mode]||'';
   if(note)note.hidden=photo;

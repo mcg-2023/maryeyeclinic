@@ -17,6 +17,7 @@ for(const key of ROUTES){
   html=html.replace('<body>','<body class="subpage">');
   let assets='<script src="category-data.js" defer></script><script src="sub-visual.js" defer></script>';
   if(PAGES[key])assets+='<link rel="stylesheet" href="cataract-booking.css"><link rel="stylesheet" href="eye-detail.css"><link rel="stylesheet" href="eye-reservation.css"><script src="cataract-booking.js" defer></script><script src="eye-reservation.js" defer></script><script src="issue-charts.js" defer></script><script src="category-page.js" defer></script><script src="eye-detail-effects.js" defer></script><script src="category-interactions.js" defer></script>';
+  if(key==='about-location')assets+='<script src="directions-page.js" defer></script>';
   if(key==='about-doctors')assets+='<script src="doctor-profiles.js" defer></script>';
   html=html.replace('</head>',assets+'<link rel="stylesheet" href="subpages.css"><link rel="stylesheet" href="requested-refinements.css"></head>');
  }
@@ -25,6 +26,8 @@ for(const key of ROUTES){
  html=html.replace('</head>','<link rel="canonical" href="'+origin+'/'+file+'"></head>');
  {html=html.replace('</head>','<link rel="stylesheet" href="chatbot.css"></head>').replace('</body>',chatbotMarkup()+'</body>');}
  if(key==='interest'){html=html.replace(/<script src="information\.js[^"]*" defer><\/script>/, '<script>'+fs.readFileSync('dist/information.js','utf8')+'</script>');}
+ html=html.replace('<link rel="stylesheet" href="november-refinements.css">','');
+ html=html.replace('</head>','<link rel="stylesheet" href="november-refinements.css"></head>');
  fs.writeFileSync(path.join('dist',file),html);
 }
 const manifest=JSON.parse(fs.readFileSync('.openai/hosting.json','utf8').replace(/^\uFEFF/,''));
