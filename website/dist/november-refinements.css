@@ -243,7 +243,7 @@ body #visit .visit-info .visit-call-button:hover{background:linear-gradient(135d
 .sub-visual-title{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:center;min-height:clamp(220px,18vw,320px);margin-bottom:42px}
 .sub-visual-title h1{container-type:inline-size;width:100%;max-width:none;margin:0;font-size:clamp(58px,6.2vw,114px);line-height:1.06;letter-spacing:-.055em}
 .sub-visual-title-line{display:block;white-space:nowrap;font-size:min(clamp(58px,6.2vw,114px),calc(100cqw / var(--title-units)));line-height:1.06}
-.sub-visual-accent{display:inline-block;color:#a58a65;background:linear-gradient(110deg,#493426 0%,#9c7348 22%,#f0d49a 43%,#b8915c 58%,#624730 78%,#d9b77d 100%);background-size:250% 100%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:sub-title-shimmer 28s ease-in-out infinite}
+.sub-visual-accent{display:inline-block;color:#a58a65;background:linear-gradient(110deg,#403128 0%,#6d513b 22%,#9b7953 43%,#806044 58%,#4c382c 78%,#8b6949 100%);background-size:250% 100%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:sub-title-shimmer 28s ease-in-out infinite}
 .sub-visual-copy{width:100%;max-width:680px;justify-self:end;text-align:right;padding:0}
 .sub-visual-copy h2,.sub-visual-copy p{text-align:right}
 .sub-visual-photo{height:auto;min-height:0;aspect-ratio:8/3}
