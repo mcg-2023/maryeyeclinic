@@ -261,3 +261,6 @@ body #visit .visit-info .visit-call-button:hover{background:linear-gradient(135d
 @media(max-width:700px){#visit .visit-heading{margin-bottom:20px}.content-section>.greeting .philosophy-highlight{font-size:26px}.greeting .philosophy-description{margin-top:18px}}
 @media(prefers-reduced-motion:reduce){.content-section>.greeting .philosophy-highlight{animation:none}}
 
+
+/* Bring subpage title/copy closer to its image. */
+.sub-visual-title{margin-bottom:28px}@media(max-width:1100px){.sub-visual-title{margin-bottom:26px}}@media(max-width:700px){.sub-visual-title{margin-bottom:22px}}
