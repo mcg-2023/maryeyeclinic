@@ -179,7 +179,7 @@
    report(video.error);
    if(!alternateTried){
     alternateTried=true;
-    video.src='assets/clinic-hero-v2.webm';video.load();play();
+    video.src='assets/clinic-hero-v3.webm';video.load();play();
    }else{video.pause();hero.classList.add('video-unavailable');paint();}
   });
   const watchdog=setTimeout(()=>{

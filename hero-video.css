@@ -1,6 +1,6 @@
 /* Full-width clinic film. Keep the complete frame visible on narrow screens. */
 .hero.hero-video{position:relative;isolation:isolate;display:flex;align-items:center;width:100%;max-width:none;margin:0;min-height:620px;height:calc(100svh - 100px);max-height:960px;padding:72px max(7vw,32px);overflow:hidden;background:#282c2b;color:#fff;box-sizing:border-box}
-.hero.hero-video .hero-visual{position:absolute;inset:0;width:100%;height:100%;max-height:none;border-radius:0;overflow:hidden;margin:0;background:url('assets/clinic-hero-poster.jpg') center/cover no-repeat;z-index:-2}
+.hero.hero-video .hero-visual{position:absolute;inset:0;width:100%;height:100%;max-height:none;border-radius:0;overflow:hidden;margin:0;background:url('assets/clinic-hero-poster-v3.jpg') center/cover no-repeat;z-index:-2}
 .hero-video video{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
 .hero.hero-video::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,24,23,.72),rgba(12,24,23,.4) 36%,rgba(12,24,23,.06) 72%),linear-gradient(0deg,rgba(0,0,0,.3),transparent 28%);pointer-events:none}
 .hero-video .hero-copy{max-width:600px;text-shadow:0 2px 24px #0003}
