@@ -14,8 +14,8 @@
    observer.observe(item);
   });
  }
- const comparison=root.querySelector('.ed-comparison'),range=comparison.querySelector('input');
- range.addEventListener('input',()=>comparison.style.setProperty('--ed-split',range.value+'%'));
+ const comparison=root.querySelector('.ed-comparison'),range=comparison?.querySelector('input');
+ range?.addEventListener('input',()=>comparison.style.setProperty('--ed-split',range.value+'%'));
  const checks=[...root.querySelectorAll('[name="cataract-symptom"]')],button=root.querySelector('.ct-booking-trigger'),dialog=root.querySelector('dialog'),status=root.querySelector('.ed-check-status');
  let opener=button;
  function open(source){opener=source;if(dialog.open)return;dialog.showModal();document.body.classList.add('ct-booking-open');dialog.querySelector('.ct-booking-call').focus();}

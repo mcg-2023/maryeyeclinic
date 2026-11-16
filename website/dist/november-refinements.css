@@ -98,7 +98,7 @@ body.subpage{--sub-visual-bg:#f3eee6}
 
 /* Thin animated gold edge around the consultation image */
 .unified-category .pr-selftest .pr-check-photo{border:0;box-shadow:0 22px 55px #120d0938}
-.unified-category .pr-selftest .pr-check-photo::after{inset:0;padding:1.5px;border-radius:inherit;z-index:2;pointer-events:none;background:linear-gradient(110deg,#9b7747 10%,#d9b875 30%,#fff0bb 40%,#a17b44 50%,#d9b875 75%,#9b7747 90%);background-size:300% 100%;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;animation:consultation-edge 7s linear infinite}
+.unified-category .pr-selftest .pr-check-photo::after{inset:0;padding:4px;border-radius:inherit;z-index:2;pointer-events:none;background:linear-gradient(110deg,#9b7747 10%,#d9b875 30%,#fff0bb 40%,#a17b44 50%,#d9b875 75%,#9b7747 90%);background-size:300% 100%;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;animation:consultation-edge 7s linear infinite}
 @keyframes consultation-edge{0%{background-position:0% 50%}100%{background-position:300% 50%}}
 .unified-category[data-eye-page=presbyopia] .uc-vision{height:auto;aspect-ratio:16/9}
 .unified-category[data-eye-page=presbyopia] .uc-vision>img,.unified-category[data-eye-page=presbyopia] .uc-vision .ed-comparison-haze img{height:100%;object-fit:cover;padding:0}
@@ -233,3 +233,6 @@ body #visit .visit-info .visit-call-button:hover{background:linear-gradient(135d
  body #visit .visit-info .visit-map-buttons .visit-map-link{font-size:13px;padding:11px 4px}
  .footer .footer-top>div{gap:10px 22px}
 }
+
+/* Compact shared Issue sections after removing the closing tagline. */
+.unified-category .uc-issue{padding-block:80px}.unified-category .uc-issue-text{margin:30px auto 36px}@media(max-width:700px){.unified-category .uc-issue{padding-block:48px}.unified-category .uc-issue-text{margin:24px auto 28px}}
