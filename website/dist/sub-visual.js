@@ -30,15 +30,7 @@
   'interest':['알아두면 좋은 눈 이야기','주례성모안과가 전하는 눈 건강 정보로 일상의 작은 변화를 살펴보세요.']
  };
  const message=copy[key]||['눈 건강을 함께 살피는 주례성모안과','진료와 검사, 머무는 시간까지 세심하게 생각합니다.'];
- const words=item[0].split(' ');
- let lines=[item[0]];
- if(item[0].length>15&&words.length>1){
-  let split=1;
-  for(let i=2;i<words.length;i++)if(Math.max(words.slice(0,i).join(' ').length,words.slice(i).join(' ').length)<Math.max(words.slice(0,split).join(' ').length,words.slice(split).join(' ').length))split=i;
-  lines=[words.slice(0,split).join(' '),words.slice(split).join(' ')];
- }
- const title=lines.map((line,i)=>{
-  return `<span class="sub-visual-title-line${i?' is-offset':''}"><span class="sub-visual-accent">${line.charAt(0)}</span>${line.slice(1)}</span>`;
- }).join('');
+ const titleUnits=[...item[0]].reduce((sum,char)=>sum+(/[ilj]/.test(char)?.3:/[mwMW]/.test(char)?.9:char===' '?.26:/[A-Z&]/.test(char)?.76:.56)-.055,0).toFixed(2);
+ const title=`<span class="sub-visual-title-line" style="--title-units:${titleUnits}"><span class="sub-visual-accent">${item[0].charAt(0)}</span>${item[0].slice(1)}</span>`;
  return `<section class="sub-visual" id="sub-visual" aria-label="${item[0]}"><div class="sub-visual-title"><h1>${title}</h1><div class="sub-visual-copy"><h2>${message[0]}</h2><p>${message[1]}</p></div></div><div class="sub-visual-photo"><img src="assets/${item[1]}" alt="${item[2]}" fetchpriority="high" decoding="async"></div></section>`;
 });
