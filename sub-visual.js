@@ -31,7 +31,6 @@
  };
  const message=copy[key]||['눈 건강을 함께 살피는 주례성모안과','진료와 검사, 머무는 시간까지 세심하게 생각합니다.'];
  const titleUnits=[...item[0]].reduce((sum,char)=>sum+(/[ilj]/.test(char)?.3:/[mwMW]/.test(char)?.9:char===' '?.26:/[A-Z&]/.test(char)?.76:.56)-.055,0).toFixed(2);
- const accentedTitle=item[0].replace(/\b([A-Z])/g,'<span class="sub-visual-accent">$1</span>');
- const title=`<span class="sub-visual-title-line" style="--title-units:${titleUnits}">${accentedTitle}</span>`;
+ const title=`<span class="sub-visual-title-line" style="--title-units:${titleUnits}"><span class="sub-visual-accent">${item[0]}</span></span>`;
  return `<section class="sub-visual" id="sub-visual" aria-label="${item[0]}"><div class="sub-visual-title"><h1>${title}</h1><div class="sub-visual-copy"><h2>${message[0]}</h2><p>${message[1]}</p></div></div><div class="sub-visual-photo"><img src="assets/${item[1]}" alt="${item[2]}" fetchpriority="high" decoding="async"></div></section>`;
 });
