@@ -31,6 +31,15 @@
  };
  const message=copy[key]||['눈 건강을 함께 살피는 주례성모안과','진료와 검사, 머무는 시간까지 세심하게 생각합니다.'];
  const words=item[0].split(' ');
- const title=`<span class="sub-visual-accent">${words.shift()}</span>${words.length?' '+words.join(' '):''}`;
+ let lines=[item[0]];
+ if(item[0].length>15&&words.length>1){
+  let split=1;
+  for(let i=2;i<words.length;i++)if(Math.max(words.slice(0,i).join(' ').length,words.slice(i).join(' ').length)<Math.max(words.slice(0,split).join(' ').length,words.slice(split).join(' ').length))split=i;
+  lines=[words.slice(0,split).join(' '),words.slice(split).join(' ')];
+ }
+ const title=lines.map((line,i)=>{
+  const parts=line.split(' '),accent=parts.shift();
+  return `<span class="sub-visual-title-line${i?' is-offset':''}"><span class="sub-visual-accent">${accent}</span>${parts.length?' '+parts.join(' '):''}</span>`;
+ }).join('');
  return `<section class="sub-visual" id="sub-visual" aria-label="${item[0]}"><div class="sub-visual-title"><h1>${title}</h1><div class="sub-visual-copy"><h2>${message[0]}</h2><p>${message[1]}</p></div></div><div class="sub-visual-photo"><img src="assets/${item[1]}" alt="${item[2]}" fetchpriority="high" decoding="async"></div></section>`;
 });
