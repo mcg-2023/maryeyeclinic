@@ -5,25 +5,23 @@
   const cards=[...track.querySelectorAll('.uc-cause-card')];
   let visible=false,hovering=false,focused=false,paused=reduced.matches,timer;
   let drag=null,suppressClick=false;
-  function positions(){return cards.map(card=>card.offsetLeft-cards[0].offsetLeft);}
+  function positions(){
+   const maximum=Math.max(0,track.scrollWidth-track.clientWidth);
+   return [...new Set(cards.map(card=>Math.min(maximum,card.offsetLeft-cards[0].offsetLeft)))];
+  }
   function nearestIndex(left){
    const stops=positions();
    return stops.reduce((nearest,position,index)=>Math.abs(position-left)<Math.abs(stops[nearest]-left)?index:nearest,0);
   }
   function showCard(index){
    const stops=positions();
-   track.scrollTo({left:stops[Math.max(0,Math.min(cards.length-1,index))],behavior:reduced.matches?'instant':'smooth'});
+   track.scrollTo({left:stops[Math.max(0,Math.min(stops.length-1,index))],behavior:reduced.matches?'instant':'smooth'});
   }
-  function measure(){
-   track.style.setProperty('--cause-card-width',cards[0].getBoundingClientRect().width+'px');
-   track.style.setProperty('--cause-gap',(parseFloat(getComputedStyle(track).gap)||28)+'px');
-  }
-  measure();
-  if('ResizeObserver'in window)new ResizeObserver(measure).observe(track);
   function paint(){if(!toggle)return;toggle.textContent=paused?'▶':'Ⅱ';toggle.setAttribute('aria-label',paused?'원인 카드 자동 재생 시작':'원인 카드 자동 재생 일시정지');toggle.setAttribute('aria-pressed',String(paused));}
   function move(direction){
    const current=nearestIndex(track.scrollLeft);
-   showCard((current+direction+cards.length)%cards.length);
+   const count=positions().length;
+   showCard((current+direction+count)%count);
   }
   function schedule(){clearTimeout(timer);if(paused||reduced.matches||!visible||hovering||focused||drag||document.hidden)return;timer=setTimeout(()=>{move(1);schedule();},4800);}
   track.addEventListener('dragstart',event=>event.preventDefault());
