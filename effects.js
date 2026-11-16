@@ -137,24 +137,61 @@
  function initHeroVideo(){
   const video=document.getElementById('hero-video'),hero=video.closest('.hero');
   const button=hero.querySelector('[data-video-play]'),label=button.querySelector('[data-video-label]'),icon=button.querySelector('[data-video-icon]');
-  let userPaused=false,visible=true,failed=false;
-  video.muted=true;video.defaultMuted=true;button.hidden=false;
+  let userPaused=false,visible=true,alternateTried=false,manualPlayback=false,failedSources=0;
+  video.muted=true;video.defaultMuted=true;video.playsInline=true;button.hidden=false;
+  function report(error){
+   hero.dataset.videoError=String(error?.code||error?.name||'autoplay-blocked');
+   hero.classList.add('video-needs-play');
+   console.warn('Clinic hero playback',{
+    error:hero.dataset.videoError,
+    source:video.currentSrc,
+    readyState:video.readyState,
+    networkState:video.networkState,
+    reducedMotion:motion.matches
+   });
+  }
   function paint(){
-   const paused=video.paused;button.setAttribute('aria-pressed',String(paused));
+   const paused=video.paused||video.readyState<2;button.setAttribute('aria-pressed',String(paused));
    button.setAttribute('aria-label',paused?'소개 영상 재생':'소개 영상 일시정지');
    label.textContent=paused?'재생':'일시정지';icon.textContent=paused?'▶':'Ⅱ';
    hero.dataset.autoplay=paused?'paused':'playing';
+   if(!paused){hero.classList.remove('video-needs-play','video-unavailable');delete hero.dataset.videoError;}
   }
+  function play(){video.play()?.catch(error=>{report(error);paint();});}
   function sync(){
-   if(failed||userPaused||motion.matches||document.hidden||!visible){video.pause();paint();return;}
-   video.play()?.catch(paint);
+   if(userPaused||(motion.matches&&!manualPlayback)||document.hidden||!visible){video.pause();paint();if(motion.matches)hero.classList.add('video-needs-play');return;}
+   play();
   }
-  button.addEventListener('click',()=>{userPaused=!video.paused;if(userPaused)video.pause();else video.play()?.catch(paint);paint();});
-  video.addEventListener('play',paint);video.addEventListener('pause',paint);
-  video.addEventListener('error',()=>{failed=true;video.pause();button.hidden=true;hero.classList.add('video-unavailable');});
+  button.addEventListener('click',()=>{
+   userPaused=!video.paused&&video.readyState>=2;
+   if(userPaused)video.pause();
+   else{manualPlayback=true;if(video.error||video.networkState===3){failedSources=0;video.load();}play();}
+   paint();
+  });
+  video.addEventListener('play',paint);video.addEventListener('playing',paint);video.addEventListener('pause',paint);
+  video.addEventListener('loadeddata',sync);
+  const sources=[...video.querySelectorAll('source')];
+  sources.forEach(source=>source.addEventListener('error',()=>{
+   failedSources++;
+   if(failedSources>=sources.length){report({name:'source-unavailable'});hero.classList.add('video-unavailable');paint();}
+  }));
+  video.addEventListener('error',()=>{
+   report(video.error);
+   if(!alternateTried){
+    alternateTried=true;
+    video.src='assets/clinic-hero-v2.webm';video.load();play();
+   }else{video.pause();hero.classList.add('video-unavailable');paint();}
+  });
+  const watchdog=setTimeout(()=>{
+   if(visible&&!document.hidden&&(video.paused||video.readyState<2)){
+    hero.classList.add('video-needs-play');
+    if(video.readyState===0&&video.networkState===3){report({name:'source-unavailable'});video.pause();hero.classList.add('video-unavailable');}
+    paint();
+   }
+  },9000);
   document.addEventListener('visibilitychange',sync);motion.addEventListener?.('change',sync);
   if(typeof IntersectionObserver==='function')new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;sync();},{threshold:.1}).observe(hero);
-  cleanups.push(()=>video.pause());sync();paint();
+  cleanups.push(()=>{clearTimeout(watchdog);video.pause();});sync();paint();
  }
  function initDoctors(){
   const root=document.getElementById('doctors'),track=document.getElementById('doctor-track');
