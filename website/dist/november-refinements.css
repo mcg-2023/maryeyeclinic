@@ -132,7 +132,7 @@ body .footer{background:radial-gradient(ellipse at 0 0,#a58a6440,transparent 70%
 /* Playback recovery remains available when a browser blocks autoplay. */
 .hero-video.video-needs-play .hero-video-toolbar [data-video-play]{display:flex!important}
 .hero-video.video-needs-play .hero-video-toolbar button{background:#392b20dd;border-color:#d8c29c}
-.hero.hero-video .hero-visual{background-image:url('assets/clinic-hero-poster-v2.jpg')}
+.hero.hero-video .hero-visual{background-image:url('assets/clinic-hero-poster-v3.jpg')}
 
 @media(max-width:1100px){
  .sub-visual-title{gap:35px}
