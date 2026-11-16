@@ -256,8 +256,8 @@ body #visit .visit-info .visit-call-button:hover{background:linear-gradient(135d
 #visit .visit-heading{margin-bottom:28px}
 #visit .visit-heading .eyebrow{margin:0}
 .greeting .philosophy-statement{line-height:1.85}
-.greeting .philosophy-highlight{display:inline-block;font-weight:800;font-size:clamp(26px,2.7vw,44px);line-height:1.65;background:linear-gradient(110deg,#493426 0%,#9c7348 24%,#bd955e 45%,#725035 70%,#493426 100%);background-size:220% 100%;background-clip:text;-webkit-background-clip:text;color:#725035;-webkit-text-fill-color:transparent;animation:sub-title-shimmer 7s ease-in-out infinite}
+.content-section>.greeting .philosophy-highlight{display:inline-block;margin-top:0;font-weight:800;font-size:clamp(26px,2.7vw,44px);line-height:1.65;background:linear-gradient(110deg,#493426 0%,#9c7348 24%,#bd955e 45%,#725035 70%,#493426 100%);background-size:220% 100%;background-clip:text;-webkit-background-clip:text;color:#725035;-webkit-text-fill-color:transparent;animation:sub-title-shimmer 7s ease-in-out infinite}
 .greeting .philosophy-description{display:inline-block;margin-top:24px}
-@media(max-width:700px){#visit .visit-heading{margin-bottom:20px}.greeting .philosophy-highlight{font-size:26px}.greeting .philosophy-description{margin-top:18px}}
-@media(prefers-reduced-motion:reduce){.greeting .philosophy-highlight{animation:none}}
+@media(max-width:700px){#visit .visit-heading{margin-bottom:20px}.content-section>.greeting .philosophy-highlight{font-size:26px}.greeting .philosophy-description{margin-top:18px}}
+@media(prefers-reduced-motion:reduce){.content-section>.greeting .philosophy-highlight{animation:none}}
 
