@@ -197,7 +197,7 @@ body .footer{background:radial-gradient(ellipse at 0 0,#a58a6440,transparent 70%
 .unified-category[data-eye-page] .uc-about-photo img{object-fit:cover;object-position:center;padding:0}
 
 .uc-cause-track{cursor:grab;touch-action:pan-y}
-.uc-cause-track::after{content:'';flex:0 0 max(0px,calc(100% - var(--cause-card-width,410px) - var(--cause-gap,28px)))}
+.uc-cause-track::after{content:none}
 .uc-cause-card{cursor:grab;user-select:none}
 .uc-cause-track.is-dragging{cursor:grabbing;user-select:none;scroll-snap-type:none;scroll-behavior:auto}
 .uc-cause-track.is-dragging .uc-cause-card{cursor:grabbing}
