@@ -292,5 +292,11 @@ body #visit .visit-info .visit-call-button:hover{background:linear-gradient(135d
 
 .quick .back-top.quick-top{position:static;inset:auto;width:100%;height:auto;min-height:62px;margin:5px 0 0;padding:10px 0 4px;border:0;border-top:1px solid #ded3c4;border-radius:0;background:transparent;box-shadow:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;font-family:inherit;font-size:12px;font-weight:700;color:#71573c}
 .quick .quick-top span{font-size:25px;line-height:1;margin-bottom:5px}
+
+/* Consistent, smaller supporting copy across every subpage visual. */
+.sub-visual-copy h2,.sub-visual-copy p{font-size:18px;line-height:1.8;letter-spacing:-.025em;color:#756657;word-break:keep-all}
+.sub-visual-copy h2{font-weight:700;margin-bottom:10px}
+.sub-visual-copy p{font-weight:400;margin:0}
+@media(max-width:700px){.sub-visual-copy h2,.sub-visual-copy p{font-size:16px;line-height:1.8}.sub-visual-copy h2{margin-bottom:8px}}
 .quick .back-top.quick-top:hover{background:#f3eee6;border-radius:0 0 28px 28px}
 @media(max-width:640px){.quick{grid-template-columns:repeat(6,minmax(0,1fr))}.quick .back-top.quick-top{margin:0;border:0;min-height:60px;padding:8px 0;font-size:11px}.quick .back-top.quick-top:hover{border-radius:15px}}
