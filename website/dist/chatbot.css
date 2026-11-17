@@ -95,3 +95,12 @@ body.qa-mobile-launcher .back-top{right:32px;bottom:126px}
 #header-chat-slot .qa-launcher-say>span,#header-chat-slot .qa-launcher-say::after{display:none}
 #header-chat-slot .qa-launcher-say strong{font-size:13px;color:#5c4632;white-space:nowrap}
 body.qa-header-launcher .qa-panel{position:fixed;top:110px;bottom:auto;right:24px;width:420px;height:760px;max-width:calc(100vw - 48px);max-height:calc(100dvh - 135px)}
+
+.qa-launcher .qa-rotating-copy{display:block;height:26px;line-height:26px;overflow:hidden;width:154px;text-align:center;position:relative}
+.qa-rotating-track{display:flex;flex-direction:column;animation:qa-copy-slide 9s cubic-bezier(.65,0,.25,1) infinite}
+.qa-rotating-track>span{display:block;height:26px;line-height:26px;flex:none;white-space:nowrap}
+#header-chat-slot .qa-launcher-say{padding:7px 10px;border:1px solid #b79a7080;border-radius:12px;background:linear-gradient(135deg,#fbf5e9,#e9dcc7);box-shadow:inset 0 1px 0 #fff,0 3px 10px #4934260c}
+#header-chat-slot .qa-launcher-say strong{font-size:14px;font-weight:800;color:#594027;letter-spacing:-.035em}
+@keyframes qa-copy-slide{0%,38%{transform:translateY(0)}48%,86%{transform:translateY(-26px)}96%,100%{transform:translateY(-52px)}}
+@media(max-width:640px){.qa-launcher .qa-rotating-copy{width:141px}}
+@media(prefers-reduced-motion:reduce){.qa-rotating-track{animation:none}.qa-rotating-track>span:first-child{display:none}}

@@ -1,7 +1,7 @@
 'use strict';
 module.exports = function chatbotMarkup() {
   return `<div id="qa-chat" class="qa-chat" data-lenis-prevent>
-  <button class="qa-launcher" id="qa-launcher" type="button" aria-expanded="false" aria-controls="qa-panel" aria-label="챗봇 상담 열기"><span class="qa-launcher-say"><span>궁금한 점 있으세요?</span><strong>챗봇에게 물어보세요</strong></span><span class="qa-logo-badge"><img src="assets/chat-logo-relief.svg" alt="주례성모안과 로고" aria-hidden="true" width="82" height="82"></span></button>
+  <button class="qa-launcher" id="qa-launcher" type="button" aria-expanded="false" aria-controls="qa-panel" aria-label="챗봇 상담 열기"><span class="qa-launcher-say"><span>궁금한 점 있으세요?</span><strong class="qa-rotating-copy"><span class="qa-rotating-track" aria-hidden="true"><span>주례성모안과</span><span>챗봇에게 물어보세요</span><span>주례성모안과</span></span><span class="sr-only">주례성모안과 챗봇에게 물어보세요</span></strong></span><span class="qa-logo-badge"><img src="assets/chat-logo-relief.svg" alt="주례성모안과 로고" aria-hidden="true" width="82" height="82"></span></button>
   <section id="qa-panel" class="qa-panel" role="dialog" aria-labelledby="qa-title" hidden>
     <header class="qa-header"><span class="qa-header-logo"><img src="assets/chat-logo-relief.svg" alt="주례성모안과 로고" width="56" height="56"></span><div class="qa-header-copy"><span class="qa-kicker">JURYE ST. MARY’S</span><h2 id="qa-title">주례성모안과 상담 챗봇</h2><p>궁금한 점을 편하게 물어보세요</p></div><button type="button" id="qa-close" aria-label="챗봇 닫기">×</button></header>
     <div class="qa-messages" id="qa-messages" role="log" aria-live="polite" aria-relevant="additions" aria-label="챗봇 대화" tabindex="0"><div class="qa-message qa-message--assistant"><span class="qa-speaker">안내 도우미</span><p>안녕하세요 🙂<br>진료시간이나 방문 안내가 궁금하신가요?<br>편하게 물어보세요. 차근차근 안내해 드릴게요.</p></div></div>
