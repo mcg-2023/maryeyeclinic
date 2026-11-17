@@ -121,3 +121,14 @@ node --env-file=.env server.cjs
 API 구현 참고: [OpenAI 공식 Structured Outputs 문서](https://developers.openai.com/api/docs/guides/structured-outputs?api-mode=responses).
 
 검증: `node --test chatbot.test.cjs`, `node check.cjs`. 대화 저장·진료 예약·환자 정보 수집 기능은 포함하지 않습니다.
+
+## 관리자 페이지 운영 배포 (Vercel + Supabase)
+
+GitHub Pages는 정적 호스팅이라 관리자 페이지(로그인·글 저장)를 실행할 수 없습니다. 운영 관리자는 Vercel 함수와 Supabase DB로 동작합니다. 로컬 `node server.cjs`는 지금처럼 `.data/posts.sqlite`를 사용합니다.
+
+1. Supabase 새 프로젝트 → SQL Editor에서 `page-manager-kit-v1.2.0-clinic.6/supabase/01-new-project.sql` 실행
+2. Vercel 새 프로젝트 → 이 저장소 연결, Root Directory `website`, Framework Other, Node.js 24.x (나머지는 `vercel.json`이 지정)
+3. Vercel Environment Variables: `SITE_URL`(Vercel 주소 또는 실제 도메인), `SITE_INDEXING=off`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`(10자 이상), `SUPABASE_URL`, `SUPABASE_SECRET_KEY`(sb_secret_ 키)
+4. Deploy 후 `https://<vercel 주소>/admin/` 로그인. 첫 실행 시 기존 안내 글이 Supabase에 한 번 들어갑니다.
+
+구성: `api/index.mjs`(관리자·게시글·통계·글 페이지), `vercel.json`(해당 경로만 함수로 연결), `vercel-build.cjs`(빌드 후 `public/`에 정적 파일 복사, `interest.html`은 함수가 최신 글로 렌더링).

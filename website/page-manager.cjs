@@ -5,13 +5,15 @@ const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&
 
 async function createClinicManager(options={}){
  const {createPageManager,repository,postBody,postText}=await import('@mcg/page-manager');
- const {createSqliteDatabase}=await import('@mcg/page-manager/sqlite');
- const filename=options.filename||process.env.PAGE_MANAGER_DB||path.join(__dirname,'.data','posts.sqlite');
- const database=createSqliteDatabase(filename);
+ // Hosted (Vercel): Supabase keeps posts. Local: SQLite file under .data/.
+ const hosted=Boolean(process.env.SUPABASE_URL);
+ let database,filename,seedMarker;
+ if(hosted){const {createSupabaseDatabase}=await import('@mcg/page-manager/supabase');database=createSupabaseDatabase({url:process.env.SUPABASE_URL,secretKey:process.env.SUPABASE_SECRET_KEY||process.env.SUPABASE_SERVICE_ROLE_KEY});}
+ else{const {createSqliteDatabase}=await import('@mcg/page-manager/sqlite');filename=options.filename||process.env.PAGE_MANAGER_DB||path.join(__dirname,'.data','posts.sqlite');database=createSqliteDatabase(filename);seedMarker=filename+'.seeded-v1';}
  const manager=createPageManager(config,{storage:database,localPreview:options.localPreview===true,...(options.environment?{environment:options.environment}:{})});
- const seedMarker=filename+'.seeded-v1';
- if(options.seed!==false&&!fs.existsSync(seedMarker)){
-  const repo=repository(database),existing=await repo.list();
+ const seedExisting=hosted&&options.seed!==false?await repository(database).list():null;
+ if(options.seed!==false&&(hosted?seedExisting.length===0:!fs.existsSync(seedMarker))){
+  const repo=repository(database),existing=seedExisting||await repo.list();
   const {PAGES}=require('./dist/app.js');
   for(const [id,p] of Object.entries(PAGES)){
    if(existing.some(post=>post.id===id))continue;
@@ -25,10 +27,10 @@ async function createClinicManager(options={}){
    const cover='data:image/'+(/\.png$/i.test(p.image)?'png':'jpeg')+';base64,'+fs.readFileSync(path.join(__dirname,'dist/assets',p.image)).toString('base64');
    await repo.save({id,title,category,excerpt:p.definition,body,bodyFormat:'html',author:'주례성모안과',status:'published',seoTitle:title,description:p.definition,tags:[],cover,imageAlt:p.title,createdAt:'2026-11-04T00:00:00.000Z',updatedAt:'2026-11-04T00:00:00.000Z',publishedAt:'2026-11-04T00:00:00.000Z'});
   }
-  fs.writeFileSync(seedMarker,'Existing eye health articles imported once.\n');
+  if(seedMarker)fs.writeFileSync(seedMarker,'Existing eye health articles imported once.\n');
  }
  // Convert early imported covers to the editor's native stored-image format.
- for(const post of await repository(database).list())if(/^\/assets\/image\d+\.(png|jpg)$/.test(post.coverRef||'')){
+ if(!hosted)for(const post of await repository(database).list())if(/^\/assets\/image\d+\.(png|jpg)$/.test(post.coverRef||'')){
   const source=path.join(__dirname,'dist',post.coverRef.slice(1));
   if(fs.existsSync(source)){post.cover='data:image/'+(source.endsWith('.png')?'png':'jpeg')+';base64,'+fs.readFileSync(source).toString('base64');delete post.coverRef;await repository(database).save(post);}
  }
@@ -44,7 +46,7 @@ async function createClinicManager(options={}){
  const template=()=>fs.readFileSync(path.join(__dirname,'dist','interest.html'),'utf8');
  const response=(html,status=200)=>new Response(html,{status,headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
  return {
-  manager,database,close:()=>database.close(),
+  manager,database,close:()=>database.close?.(),
   async fetch(request){
    const requested=new URL(request.url);
    const managed=await manager.fetch(request);

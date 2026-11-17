@@ -1,0 +1,24 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "npm install",
+  "buildCommand": "node vercel-build.cjs",
+  "outputDirectory": "public",
+  "rewrites": [
+    {"source": "/admin", "destination": "/api/index"},
+    {"source": "/admin/:path*", "destination": "/api/index"},
+    {"source": "/api/posts/:path*", "destination": "/api/index"},
+    {"source": "/api/posts", "destination": "/api/index"},
+    {"source": "/api/statistics/:path*", "destination": "/api/index"},
+    {"source": "/api/public/track", "destination": "/api/index"},
+    {"source": "/media/:path*", "destination": "/api/index"},
+    {"source": "/articles/:path*", "destination": "/api/index"},
+    {"source": "/interest.html", "destination": "/api/index"}
+  ],
+  "functions": {
+    "api/index.mjs": {
+      "maxDuration": 60,
+      "includeFiles": "{dist/interest.html,dist/app.js,dist/assets/*.jpg,dist/assets/*.png,page-manager.config.cjs,admin-setup.cjs,page-manager.cjs}"
+    }
+  }
+}

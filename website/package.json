@@ -4,9 +4,12 @@
   "scripts": {
     "build": "node build.cjs",
     "start": "node server.cjs",
-    "check": "node check.cjs"
+    "check": "node check.cjs",
+    "vercel-build": "node vercel-build.cjs"
   },
-  "engines": {"node": ">=24"},
+  "engines": {
+    "node": "24.x"
+  },
   "dependencies": {
     "@mcg/page-manager": "file:../page-manager-kit-v1.2.0-clinic.6/mcg-page-manager-1.2.0-clinic.6.tgz"
   }
