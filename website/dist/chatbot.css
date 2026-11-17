@@ -118,3 +118,10 @@ body.qa-header-launcher .qa-panel{position:fixed;top:110px;bottom:auto;right:24p
 @keyframes qa-logo-float{0%,100%{translate:0 0}50%{translate:0 -5px}}
 @media(max-width:900px){.qa-chat .qa-logo-badge{width:76px;height:76px;animation:qa-logo-float 5s ease-in-out infinite}.qa-chat .qa-logo-badge img{width:69px;height:69px}}
 @media(prefers-reduced-motion:reduce){#header-chat-slot .qa-logo-badge,.qa-chat .qa-logo-badge{animation:none;translate:none}}
+
+/* Keep the invitation beside the enlarged header logo. */
+#header-chat-slot{width:auto}
+#header-chat-slot .qa-launcher{display:flex;flex-direction:row-reverse;align-items:center;gap:12px;width:auto;height:72px;margin-right:0}
+#header-chat-slot .qa-launcher-say{position:relative;top:auto;right:auto;width:190px;padding:10px;border-radius:20px}
+#header-chat-slot .qa-launcher-say::after{top:50%;right:auto;left:-7px;width:12px;height:12px;transform:translateY(-50%) rotate(-45deg);border:0;border-top:1px solid #e8dfd2;border-left:1px solid #e8dfd2}
+@media(min-width:901px) and (max-width:1200px){#header-chat-slot .qa-launcher{gap:8px}#header-chat-slot .qa-launcher-say{width:164px;padding:8px 5px}#header-chat-slot .qa-launcher-say strong{font-size:14px}#header-chat-slot .qa-rotating-copy{width:152px}}
