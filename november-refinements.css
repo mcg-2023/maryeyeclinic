@@ -341,3 +341,8 @@ body .footer::after{content:'';position:absolute;width:620px;height:620px;left:-
 @media(max-width:1100px){.footer .footer-main{grid-template-columns:minmax(200px,.8fr) minmax(0,1.4fr);gap:56px}.footer .footer-brand .brand-logo--vertical{width:210px}.footer .footer-info{padding-left:56px}.footer .footer-info dl{column-gap:28px}.footer .footer-info dt{min-width:80px}}
 @media(max-width:700px){.footer .footer-main{grid-template-columns:1fr;gap:30px}.footer .footer-brand{justify-self:start}.footer .footer-brand .brand-logo--vertical{width:170px}.footer .footer-info{padding-left:0}.footer .footer-links{gap:8px 20px}body .footer::after{width:420px;height:420px}}
 @media(prefers-reduced-motion:reduce){body .footer::before,body .footer::after{animation:none}}
+/* Wider footer: more horizontal room, still clear of the fixed quick bar */
+.footer>.wrap{width:min(1560px,calc(100% - 200px))}
+.footer .footer-main{gap:110px}
+@media(max-width:1100px){.footer>.wrap{width:calc(100% - 140px)}.footer .footer-main{gap:56px}}
+@media(max-width:700px){.footer>.wrap{width:calc(100% - 44px)}.footer .footer-main{gap:30px}}
