@@ -7,25 +7,19 @@
   const messages = document.getElementById('qa-messages'), status = document.getElementById('qa-status'), send = document.getElementById('qa-send');
   let busy = false, dataPromise;
   document.body.classList.add('qa-chat-ready');
-  const headerSlot = document.getElementById('header-chat-slot');
-  const mobileLayout=matchMedia('(max-width:900px)');
-  function placeLauncher(){
-    const floating=mobileLayout.matches||!headerSlot;
-    if(floating)root.prepend(launcher);else headerSlot.append(launcher);
-    launcher.querySelector('span').textContent='병원 안내 챗봇';
-    document.body.classList.toggle('qa-header-launcher',!floating);
-    document.body.classList.toggle('qa-mobile-launcher',floating);
-  }
-  placeLauncher();
-  mobileLayout.addEventListener('change',placeLauncher);
+  root.prepend(launcher);
+  document.body.classList.add('qa-mobile-launcher');
+  document.body.classList.remove('qa-header-launcher');
+  const faqToggle=document.getElementById('qa-faq-toggle'),suggestions=document.getElementById('qa-suggestions');
+  faqToggle.addEventListener('click',()=>{const expanded=faqToggle.getAttribute('aria-expanded')!=='true';faqToggle.setAttribute('aria-expanded',String(expanded));suggestions.hidden=!expanded;});
   launcher.addEventListener('keydown', event => { if (event.key === 'Escape' && !panel.hidden) open(false); });
-  launcher.setAttribute('aria-label','병원 안내 챗봇 열기');
+  launcher.setAttribute('aria-label','챗봇 상담 열기');
   function open(value) {
     const menuToggle=document.getElementById('menu-toggle');
     if(value&&menuToggle?.getAttribute('aria-expanded')==='true')menuToggle.click();
     panel.hidden = !value;
     launcher.setAttribute('aria-expanded', String(value));
-    launcher.setAttribute('aria-label',value?'병원 안내 챗봇 닫기':'병원 안내 챗봇 열기');
+    launcher.setAttribute('aria-label',value?'챗봇 상담 닫기':'챗봇 상담 열기');
     (value ? input : launcher).focus();
   }
   launcher.addEventListener('click', () => open(panel.hidden));
