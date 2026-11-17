@@ -47,3 +47,43 @@
 .qa-panel{height:780px;max-height:calc(100dvh - 135px)}
 @media(max-width:900px){.qa-mobile-launcher .qa-panel{height:calc(100dvh - 120px);max-height:calc(100dvh - 120px)}}
 @media(max-width:640px){.qa-mobile-launcher .qa-panel{height:calc(100dvh - 174px - env(safe-area-inset-bottom,0px));max-height:calc(100dvh - 174px - env(safe-area-inset-bottom,0px))}}
+
+/* Floating brand concierge, with the clinic's relief logo. */
+body.qa-mobile-launcher .qa-chat{right:24px;bottom:26px}
+.qa-chat .qa-launcher{padding:0;gap:14px;background:none;border:0;box-shadow:none;min-height:82px;color:#493b30;flex-direction:row}
+.qa-chat .qa-launcher:hover{background:none;box-shadow:none}
+.qa-launcher-say{position:relative;display:flex;flex-direction:column;align-items:flex-start;background:#fffdf8;border:1px solid #d8c9b5;padding:12px 18px;border-radius:18px;box-shadow:0 8px 28px #37291d15;font-size:13px;line-height:1.7;text-align:left}
+.qa-launcher-say::after{content:"";position:absolute;right:-5px;top:50%;width:8px;height:8px;background:#fffdf8;border-top:1px solid #d8c9b5;border-right:1px solid #d8c9b5;transform:translateY(-50%) rotate(45deg)}
+.qa-launcher-say strong{font-size:15px;font-weight:700}
+.qa-logo-badge{display:grid;place-items:center;width:82px;height:82px;flex:none;border-radius:50%;background:radial-gradient(circle at 30% 20%,#fffdf7,#eee3d1 67%,#c9b493);border:1px solid #b9a080;box-shadow:inset 0 2px 3px #fff,0 7px 19px #39291d26;transition:transform .3s}
+.qa-logo-badge img{width:72px;height:72px;object-fit:contain}
+.qa-launcher:hover .qa-logo-badge{transform:translateY(-3px)}
+.qa-launcher[aria-expanded=true] .qa-launcher-say{display:none}
+body.qa-mobile-launcher .qa-panel{position:fixed;top:auto;right:120px;bottom:28px;width:420px;height:760px;max-width:calc(100vw - 150px);max-height:calc(100dvh - 56px);border:1px solid #d6c4ad;border-radius:24px;box-shadow:0 20px 70px #30211730;background:#fffefd}
+.qa-chat .qa-header{align-items:center;gap:12px;padding:18px 16px;background:linear-gradient(125deg,#756049,#44352b);border-bottom:1px solid #ad916b60}
+.qa-header-logo{display:grid;place-items:center;width:54px;height:54px;flex:none;border-radius:50%;background:linear-gradient(135deg,#fffaf0,#dfceb4);box-shadow:inset 0 1px 2px #fff}
+.qa-header-logo img{width:50px;height:50px}
+.qa-header-copy{flex:1;min-width:0}
+.qa-chat .qa-header h2{font-size:18px;font-weight:700;line-height:1.5;margin:2px 0}
+.qa-chat .qa-header p{font-size:12px;margin:0;line-height:1.6}
+.qa-chat .qa-kicker{font-size:9px;letter-spacing:.12em}
+.qa-chat .qa-header>button{width:30px;height:30px;flex:none;align-self:center;font-size:26px}
+.qa-chat .qa-messages{padding:22px 18px;background:linear-gradient(#fffefd,#faf7f2)}
+.qa-message--assistant{position:relative;padding-left:47px;max-width:100%;box-sizing:border-box}
+.qa-message--assistant::before{content:"";position:absolute;left:0;top:20px;width:38px;height:38px;background:url('assets/chat-logo-relief.svg') center/contain no-repeat}
+.qa-chat .qa-message--assistant>p{background:#f0ebe4;border:1px solid #e8dfd3;border-radius:4px 18px 18px 18px;font-size:15px;padding:14px 15px;line-height:1.85}
+.qa-chat .qa-message--user>p{font-size:15px;background:#65503d}
+.qa-chat .qa-speaker{font-size:11px;margin-bottom:6px;color:#95816c}
+.qa-faq-toggle{display:flex;justify-content:space-between;align-items:center;width:100%;padding:14px 20px;flex:none;background:#fff;border-top:1px solid #e7ded2;color:#594330;font-size:15px;font-weight:700;text-align:left}
+.qa-faq-toggle span{transition:transform .2s;font-size:22px;line-height:1}
+.qa-faq-toggle[aria-expanded=true] span{transform:rotate(180deg)}
+.qa-chat .qa-suggestions{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 18px 14px;max-height:190px;overflow-y:auto;background:#fff}
+.qa-chat .qa-suggestions button{border-radius:10px;text-align:left;font-size:13px;background:#faf7f1;padding:10px 12px}
+.qa-chat .qa-status:empty{display:none}
+.qa-chat .qa-form{border-radius:28px;margin:8px 16px 0;padding:6px 6px 6px 16px}
+.qa-chat .qa-form button{border-radius:50%;background:linear-gradient(135deg,#93754f,#59422f)}
+.qa-chat .qa-disclaimer{font-size:10px;line-height:1.65;margin:9px 18px 14px}
+body.qa-mobile-launcher .back-top{right:32px;bottom:126px}
+@media(max-width:900px){body.qa-mobile-launcher .qa-panel{right:22px;bottom:120px;max-width:calc(100vw - 44px);height:730px;max-height:calc(100dvh - 145px)}}
+@media(max-width:640px){body.qa-mobile-launcher .qa-chat{right:14px;bottom:calc(86px + env(safe-area-inset-bottom,0px))}.qa-chat .qa-launcher{min-height:64px;gap:10px}.qa-logo-badge{width:64px;height:64px}.qa-logo-badge img{width:58px;height:58px}.qa-launcher-say{padding:8px 13px;font-size:11px}.qa-launcher-say strong{font-size:13px}body.qa-mobile-launcher .qa-panel{right:10px;bottom:calc(82px + env(safe-area-inset-bottom,0px));width:calc(100vw - 20px);max-width:none;height:calc(100dvh - 102px - env(safe-area-inset-bottom,0px));max-height:calc(100dvh - 102px - env(safe-area-inset-bottom,0px));z-index:2;border-radius:20px}.qa-chat .qa-header{padding:14px 12px;gap:9px}.qa-chat .qa-header h2{font-size:16px}.qa-chat .qa-messages{padding:18px 12px}.qa-message--assistant{padding-left:40px}.qa-message--assistant::before{width:33px;height:33px}body.qa-mobile-launcher .back-top{right:24px;bottom:160px}}
+@media(prefers-reduced-motion:reduce){.qa-logo-badge,.qa-faq-toggle span{transition:none}}
