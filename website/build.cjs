@@ -20,6 +20,7 @@ for(const key of ROUTES){
   if(PAGES[key])assets+='<link rel="stylesheet" href="cataract-booking.css"><link rel="stylesheet" href="eye-detail.css"><link rel="stylesheet" href="eye-reservation.css"><script src="cataract-booking.js" defer></script><script src="eye-reservation.js" defer></script><script src="issue-charts.js" defer></script><script src="category-page.js" defer></script><script src="eye-detail-effects.js" defer></script><script src="category-interactions.js" defer></script>';
   if(key==='about-location')assets+='<script src="directions-page.js" defer></script>';
   if(key==='about-doctors')assets+='<script src="doctor-profiles.js" defer></script>';
+  if(key==='patient-rights')assets+='<script src="patient-rights.js" defer></script>';
   html=html.replace('</head>',assets+'<link rel="stylesheet" href="subpages.css"><link rel="stylesheet" href="requested-refinements.css"></head>');
  }
  html=html.replace(/<title>.*?<\/title>/,'<title>주례성모안과 | '+title+'</title>');
