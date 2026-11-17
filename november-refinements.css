@@ -106,18 +106,6 @@ body.subpage{--sub-visual-bg:#f3eee6}
 .uc-cause-photo:has(img[src*="cataract-aging-upperbody"]){background:#efe8df}
 .uc-cause-photo img[src*="cataract-aging-upperbody"]{object-position:center top;object-fit:contain}
 
-/* Footer uses the same deep brown gradient as the chatbot */
-body .footer{background:radial-gradient(ellipse at 0 0,#a58a6440,transparent 70%),linear-gradient(125deg,#64523f,#3d332b);color:#f2e7d8;border-top:1px solid #b69d7840;padding:70px 0 30px}
-.footer .footer-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,420px);align-items:center;gap:50px;margin-bottom:32px}
-.footer .footer-top>.brand{grid-column:2;grid-row:1;justify-self:end}
-.footer .brand-logo--vertical{width:350px;max-width:100%;height:auto;max-height:235px;object-fit:contain}
-.footer .footer-top>div{grid-column:1;grid-row:1;display:flex;flex-wrap:wrap;gap:12px;align-content:center}
-.footer .footer-top>div>a,.footer .footer-top>div>button{padding:13px 23px;border:1px solid #d1b89677;border-radius:9px;background:#fff8e70d;color:#fff2df;display:inline-flex;align-items:center;justify-content:center;min-height:48px;font-size:16px;line-height:1.4}
-.footer .footer-top>div>a:hover,.footer .footer-top>div>button:hover{background:#e6d1ad;color:#3d2f23;border-color:#e6d1ad}
-.footer>.wrap>p{color:#e7d8c6;font-size:16px;line-height:1.9}
-.footer a{color:inherit}
-.footer .footer-bottom{border-top:1px solid #d1b89640;color:#d9c2a0;margin-top:35px;padding-top:25px}
-.footer .footer-bottom span{color:#e4cfb0}
 
 @media(min-width:901px){
  body.screen-scroll-home #visit .visit-grid{grid-template-columns:minmax(0,7fr) minmax(0,3fr);gap:32px}
@@ -182,13 +170,6 @@ body .footer{background:radial-gradient(ellipse at 0 0,#a58a6440,transparent 70%
  .directions-transport p,.directions-parking>p{font-size:18px}
  .directions-links{gap:10px}
  .directions-links a{font-size:16px;padding:12px 20px}
- .footer .footer-top{grid-template-columns:1fr;gap:35px}
- .footer .footer-top>.brand{grid-column:1;grid-row:2;justify-self:end}
- .footer .brand-logo--vertical{width:240px}
- .footer .footer-top>div{gap:10px}
- .footer .footer-top>div>a,.footer .footer-top>div>button{padding:12px 15px;font-size:14px}
- .footer>.wrap>p{font-size:14px}
- .footer .footer-bottom{gap:15px;flex-wrap:wrap}
 }
 @media(prefers-reduced-motion:reduce){.unified-category .pr-selftest .pr-check-photo::after{animation:none}}
 
@@ -219,9 +200,6 @@ body #visit .visit-info .visit-map-buttons .visit-map-link{width:100%;min-width:
 body #visit .visit-info .visit-call-button{background:linear-gradient(135deg,#7b6650,#514134 65%,#3e332b);color:#fff;border-color:#c9b18c80;box-shadow:inset 0 1px 0 #fff4da25}
 body #visit .visit-info .visit-call-button:hover{background:linear-gradient(135deg,#8b7359,#5b4939 65%,#493a2f);color:#fff}
 
-.footer .footer-top>div{gap:12px 26px}
-.footer .footer-top>div>a,.footer .footer-top>div>button{background:none;border:0;border-radius:0;box-shadow:none;padding:8px 0;min-height:40px;font-weight:700;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px;color:#fff3df}
-.footer .footer-top>div>a:hover,.footer .footer-top>div>button:hover{background:none;border:0;color:#fff;text-decoration-thickness:2px}
 
 @media(max-width:640px){
  .care-services{gap:12px 10px}
@@ -231,7 +209,6 @@ body #visit .visit-info .visit-call-button:hover{background:linear-gradient(135d
  .care-services .care-service-name{font-size:clamp(13px,3.6vw,19px);letter-spacing:-.05em}
  .care-services .care-service:nth-child(-n+3) .care-service-name{font-size:clamp(18px,5vw,24px)}
  body #visit .visit-info .visit-map-buttons .visit-map-link{font-size:13px;padding:11px 4px}
- .footer .footer-top>div{gap:10px 22px}
 }
 
 /* Compact shared Issue sections after removing the closing tagline. */
@@ -306,3 +283,47 @@ body #visit .visit-info .visit-call-button:hover{background:linear-gradient(135d
 @media(min-width:641px){.sub-visual-copy{box-sizing:border-box;padding-right:92px}}
 @media(min-width:641px) and (max-width:900px){.sub-visual-copy{padding-right:80px}}
 @media(max-width:640px){.sub-visual-copy{padding-right:0}}
+
+/* Footer: logo | clinic info | links, with a quiet bottom bar */
+body .footer{background:radial-gradient(ellipse at 0 0,#a58a6440,transparent 70%),linear-gradient(125deg,#64523f,#3d332b);color:#e7d8c6;border-top:1px solid #b69d7840;padding:72px 0 32px;font-size:15px}
+.footer a{color:inherit}
+.footer .footer-main{display:grid;grid-template-columns:200px minmax(0,1fr) auto;gap:64px;align-items:start}
+.footer .footer-brand{display:block}
+.footer .footer-brand .brand-logo--vertical{width:200px;max-width:100%;height:auto}
+.footer .footer-info{padding-left:64px;border-left:1px solid #d1b89633}
+.footer .footer-name{font-size:19px;font-weight:700;color:#fff3df;letter-spacing:-.02em;margin-bottom:18px}
+.footer .footer-info dl{display:grid;grid-template-columns:repeat(2,max-content);gap:10px 48px;margin:0}
+.footer .footer-info dl>div{display:flex;gap:14px;line-height:1.6}
+.footer .footer-info .footer-wide{grid-column:1/-1}
+.footer .footer-info dt{min-width:92px;color:#c2a983;font-size:14px;padding-top:1px}
+.footer .footer-info dd{margin:0;color:#f2e7d8;font-size:15px;word-break:keep-all}
+.footer .footer-info dd a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.footer .footer-links{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.footer .footer-links>a,.footer .footer-links>button{padding:6px 0;font-size:15px;font-weight:600;color:#fff3df;line-height:1.5;position:relative}
+.footer .footer-links>a::after,.footer .footer-links>button::after{content:'';position:absolute;left:0;bottom:4px;width:0;height:1px;background:currentColor;transition:width .25s}
+.footer .footer-links>a:hover::after,.footer .footer-links>button:hover::after{width:100%}
+.footer .footer-bottom{display:flex;align-items:center;gap:24px;border-top:1px solid #d1b89633;margin-top:56px;padding-top:24px;color:#bfa889;font-size:13px}
+.footer .footer-bottom small{font-size:13px}
+.footer .footer-bottom span{margin-left:auto;font-family:var(--serif);font-size:18px;color:#e4cfb0}
+.footer .footer-admin{font-size:12px;letter-spacing:.08em;color:#a8916f;opacity:.8}
+.footer .footer-admin:hover{opacity:1;color:#e4cfb0}
+@media(max-width:1100px){
+ .footer .footer-main{grid-template-columns:170px minmax(0,1fr);gap:40px 48px}
+ .footer .footer-brand .brand-logo--vertical{width:170px}
+ .footer .footer-info{padding-left:48px}
+ .footer .footer-links{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;gap:4px 28px;padding-top:24px;border-top:1px solid #d1b89633}
+}
+@media(max-width:700px){
+ body .footer{padding:48px 0 120px}
+ .footer .footer-main{grid-template-columns:1fr;gap:28px}
+ .footer .footer-brand .brand-logo--vertical{width:140px}
+ .footer .footer-info{padding-left:0;border-left:0}
+ .footer .footer-name{font-size:17px;margin-bottom:14px}
+ .footer .footer-info dl{grid-template-columns:1fr;gap:8px}
+ .footer .footer-info dt{min-width:86px;font-size:13px}
+ .footer .footer-info dd{font-size:14px}
+ .footer .footer-links{gap:2px 22px;padding-top:20px}
+ .footer .footer-links>a,.footer .footer-links>button{font-size:14px}
+ .footer .footer-bottom{flex-wrap:wrap;gap:8px 16px;margin-top:32px}
+ .footer .footer-bottom span{order:-1;flex-basis:100%;margin-left:0;font-size:17px}
+}
