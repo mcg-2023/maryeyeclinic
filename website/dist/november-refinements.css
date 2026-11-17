@@ -300,3 +300,9 @@ body #visit .visit-info .visit-call-button:hover{background:linear-gradient(135d
 @media(max-width:700px){.sub-visual-copy h2,.sub-visual-copy p{font-size:16px;line-height:1.8}.sub-visual-copy h2{margin-bottom:8px}}
 .quick .back-top.quick-top:hover{background:#f3eee6;border-radius:0 0 28px 28px}
 @media(max-width:640px){.quick{grid-template-columns:repeat(6,minmax(0,1fr))}.quick .back-top.quick-top{margin:0;border:0;min-height:60px;padding:8px 0;font-size:11px}.quick .back-top.quick-top:hover{border-radius:15px}}
+
+.sub-visual-copy h2,.sub-visual-copy p{line-height:1.55}
+.sub-visual-copy h2{margin-bottom:6px}
+@media(min-width:641px){.sub-visual-copy{box-sizing:border-box;padding-right:92px}}
+@media(min-width:641px) and (max-width:900px){.sub-visual-copy{padding-right:80px}}
+@media(max-width:640px){.sub-visual-copy{padding-right:0}}
