@@ -7,9 +7,16 @@
   const messages = document.getElementById('qa-messages'), status = document.getElementById('qa-status'), send = document.getElementById('qa-send');
   let busy = false, dataPromise;
   document.body.classList.add('qa-chat-ready');
-  root.prepend(launcher);
-  document.body.classList.add('qa-mobile-launcher');
-  document.body.classList.remove('qa-header-launcher');
+  const headerSlot=document.getElementById('header-chat-slot');
+  const mobileLayout=matchMedia('(max-width:900px)');
+  function placeLauncher(){
+    const floating=mobileLayout.matches||!headerSlot;
+    if(floating)root.prepend(launcher);else headerSlot.append(launcher);
+    document.body.classList.toggle('qa-mobile-launcher',floating);
+    document.body.classList.toggle('qa-header-launcher',!floating);
+  }
+  placeLauncher();
+  mobileLayout.addEventListener('change',placeLauncher);
   const faqToggle=document.getElementById('qa-faq-toggle'),suggestions=document.getElementById('qa-suggestions');
   faqToggle.addEventListener('click',()=>{const expanded=faqToggle.getAttribute('aria-expanded')!=='true';faqToggle.setAttribute('aria-expanded',String(expanded));suggestions.hidden=!expanded;});
   launcher.addEventListener('keydown', event => { if (event.key === 'Escape' && !panel.hidden) open(false); });

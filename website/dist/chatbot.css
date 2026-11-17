@@ -87,3 +87,11 @@ body.qa-mobile-launcher .back-top{right:32px;bottom:126px}
 @media(max-width:900px){body.qa-mobile-launcher .qa-panel{right:22px;bottom:120px;max-width:calc(100vw - 44px);height:730px;max-height:calc(100dvh - 145px)}}
 @media(max-width:640px){body.qa-mobile-launcher .qa-chat{right:14px;bottom:calc(86px + env(safe-area-inset-bottom,0px))}.qa-chat .qa-launcher{min-height:64px;gap:10px}.qa-logo-badge{width:64px;height:64px}.qa-logo-badge img{width:58px;height:58px}.qa-launcher-say{padding:8px 13px;font-size:11px}.qa-launcher-say strong{font-size:13px}body.qa-mobile-launcher .qa-panel{right:10px;bottom:calc(82px + env(safe-area-inset-bottom,0px));width:calc(100vw - 20px);max-width:none;height:calc(100dvh - 102px - env(safe-area-inset-bottom,0px));max-height:calc(100dvh - 102px - env(safe-area-inset-bottom,0px));z-index:2;border-radius:20px}.qa-chat .qa-header{padding:14px 12px;gap:9px}.qa-chat .qa-header h2{font-size:16px}.qa-chat .qa-messages{padding:18px 12px}.qa-message--assistant{padding-left:40px}.qa-message--assistant::before{width:33px;height:33px}body.qa-mobile-launcher .back-top{right:24px;bottom:160px}}
 @media(prefers-reduced-motion:reduce){.qa-logo-badge,.qa-faq-toggle span{transition:none}}
+
+#header-chat-slot .qa-launcher{display:flex;flex-direction:row-reverse;gap:7px;padding:0;min-height:52px;background:none;border:0;box-shadow:none}
+#header-chat-slot .qa-logo-badge{width:48px;height:48px}
+#header-chat-slot .qa-logo-badge img{width:43px;height:43px}
+#header-chat-slot .qa-launcher-say{display:flex;padding:0;border:0;box-shadow:none;background:none}
+#header-chat-slot .qa-launcher-say>span,#header-chat-slot .qa-launcher-say::after{display:none}
+#header-chat-slot .qa-launcher-say strong{font-size:13px;color:#5c4632;white-space:nowrap}
+body.qa-header-launcher .qa-panel{position:fixed;top:110px;bottom:auto;right:24px;width:420px;height:760px;max-width:calc(100vw - 48px);max-height:calc(100dvh - 135px)}
