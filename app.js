@@ -106,16 +106,17 @@ function informationPage(){
  return '<section class="info-hero"><div class="wrap"><p class="eyebrow">EYE HEALTH JOURNAL</p><h1>눈여겨볼 정보</h1><p>알아두면 좋은 눈 이야기,<br>건강한 일상을 위해 차근차근 전합니다.</p><span class="info-hero-mark" aria-hidden="true">eye.</span></div></section><section class="info-board wrap" aria-label="눈 건강 정보 게시판"><div class="info-heading"><div><p class="eyebrow">A CLOSER LOOK</p><h2>내 눈을 위한 작은 관심</h2><p>궁금했던 눈 건강 정보를 만나보세요.</p></div><form id="info-search" role="search" action="interest.html" method="get"><label class="sr-only" for="info-query">게시글 검색</label><input id="info-query" name="q" type="search" placeholder="궁금한 정보를 검색해 보세요" maxlength="100"><button type="submit" aria-label="검색">검색 ↗</button></form></div><div class="info-filters" aria-label="정보 분류">'+['전체',...new Set(posts.map(p=>p.category))].map((c,i)=>'<button type="button" data-info-category="'+esc(c)+'" aria-pressed="'+(!i)+'">'+esc(c)+'</button>').join('')+'</div><div id="info-results"><p class="info-count" role="status">전체 <strong>'+posts.length+'</strong>건</p><div class="info-list">'+posts.map(p=>'<article class="info-row" data-info-post data-category="'+esc(p.category)+'" data-search="'+esc(p.search)+'"><a class="info-thumbnail" href="'+link(p.route)+'" tabindex="-1" aria-hidden="true"><img src="assets/'+esc(p.image)+'" alt="'+esc(p.title)+'" loading="lazy"><span class="info-thumbnail-shade"></span><span class="info-thumbnail-copy"><span class="info-thumbnail-kicker">EYE HEALTH · '+String(p.id).padStart(2,'0')+'</span><strong>'+esc(p.title.replace(' 알아보기',''))+'</strong><span class="info-thumbnail-caption">내 눈을 위한<br>건강 이야기</span></span><span class="info-thumbnail-brand">주례성모안과</span></a><div><span class="info-category">'+esc(p.category)+'</span><h3><a href="'+link(p.route)+'" data-info-detail="'+p.id+'">'+esc(p.title)+'</a></h3><p>'+esc(p.summary)+'</p></div><a class="info-arrow" href="'+link(p.route)+'" aria-label="'+esc(p.title)+' 자세히 보기">↗</a></article>').join('')+'</div><p class="info-empty" hidden>검색 결과가 없습니다. 다른 검색어를 입력해 주세요.</p></div><nav class="info-pagination" aria-label="게시판 페이지"></nav><p class="info-footnote">주례성모안과의 눈 건강 안내를 모았습니다. 자세한 내용은 각 진료 안내에서 확인하실 수 있습니다.</p></section>';
 }
 
-const ROUTES=['',...MENU.flatMap(([,items])=>items.map(([,r])=>r))];
+const ROUTES=['','patient-rights',...MENU.flatMap(([,items])=>items.map(([,r])=>r))];
 function renderPage(key){
  if(key==='')return home();
+ if(key==='patient-rights')return typeof module!=='undefined'?require('./patient-rights.js')():window.ClinicPatientRights();
  if(PAGES[key])return typeof module!=='undefined'?require('./category-page.js')(key):window.ClinicCategoryPage(key);
  const visual=typeof module!=='undefined'?require('./sub-visual.js'):window.ClinicSubVisual;
  if(key==='interest')return visual(key)+informationPage().replace(/<section class="info-hero">[\s\S]*?<\/section>/,'');
  if(key.startsWith('about-'))return visual(key)+aboutPage(key).replace(/<section class="page-hero wrap">[\s\S]*?<\/section>/,'');
  return '<section class="section wrap"><h1>페이지를 찾을 수 없습니다.</h1><a class="button" href="index.html">홈으로</a></section>';
 }
-function titleFor(key){return PAGES[key]?.title||MENU.flatMap(([,items])=>items).find(([,r])=>r===key)?.[0]||'당신의 눈, 우리의 약속';}
+function titleFor(key){if(key==='patient-rights')return '환자권리장전';return PAGES[key]?.title||MENU.flatMap(([,items])=>items).find(([,r])=>r===key)?.[0]||'당신의 눈, 우리의 약속';}
 if(typeof module!=='undefined')module.exports={CONFIG,MENU,ROUTES,renderPage,titleFor,link,PAGES};
 if(typeof document!=='undefined'){
  const menu=document.getElementById('mega'),toggle=document.getElementById('menu-toggle'),nav=document.getElementById('nav');
