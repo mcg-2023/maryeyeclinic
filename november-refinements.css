@@ -450,3 +450,11 @@ body .footer::before,body .footer::after,.footer .footer-brand::before{content:n
 .footer .footer-info dl{gap:6px 20px}
 .footer .footer-info dl>div{gap:10px;line-height:1.5}
 .footer .footer-info dt,.footer .footer-info dd{line-height:1.5}
+
+/* Large, quiet eye emblem behind the left side; clinic details stay intact. */
+.footer .footer-main{position:relative;grid-template-columns:minmax(0,1fr) minmax(0,880px);gap:50px;min-height:230px}
+.footer .footer-info{grid-column:2;justify-self:end;width:100%;position:relative;z-index:1}
+.footer-watermark{position:absolute;left:-35px;top:50%;width:min(650px,44vw);aspect-ratio:146/119;transform:translateY(-50%);background:#eadbc5;mask:url('assets/favicon.svg') center/contain no-repeat;-webkit-mask:url('assets/favicon.svg') center/contain no-repeat;opacity:.1;pointer-events:none}
+@media(max-width:1200px){.footer .footer-main{grid-template-columns:minmax(0,1fr) minmax(0,74%);gap:30px}.footer-watermark{width:42vw;left:-25px}}
+@media(max-width:900px){.footer .footer-main{grid-template-columns:minmax(0,1fr) minmax(0,76%);gap:20px}.footer-watermark{width:46vw;left:-45px;opacity:.08}}
+@media(max-width:640px){.footer .footer-main{grid-template-columns:1fr;gap:0}.footer .footer-info{grid-column:1}.footer-watermark{width:330px;left:-75px;top:45%;opacity:.055}}
