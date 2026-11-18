@@ -100,6 +100,8 @@
     return ClinicQA.answer(question, data.entries);
   }
   async function ask(question) {
+    // Time-sensitive answers are recalculated on each question, including static hosting.
+    try{const local=await staticAnswer(question);if(local.mode==='realtime'||local.mode==='emergency')return local;}catch{}
     const controller = new AbortController(), timer = setTimeout(() => controller.abort(), 18000);
     try {
       const response = await fetch('/api/chat', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({question}), signal: controller.signal});

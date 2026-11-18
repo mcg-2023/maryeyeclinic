@@ -344,5 +344,12 @@ body .footer::after{content:'';position:absolute;width:620px;height:620px;left:-
 /* Wider footer: more horizontal room, still clear of the fixed quick bar */
 .footer>.wrap{width:min(1560px,calc(100% - 200px))}
 .footer .footer-main{gap:110px}
+
+/* Stable outer gutters on all display sizes, without a large-screen width cap. */
+.sub-visual{--visual-gutter:24px}
+.sub-visual .sub-visual-title,.sub-visual .sub-visual-photo{width:calc(100% - var(--visual-gutter) * 2);max-width:none;margin-inline:auto}
+.hero.hero-video .hero-copy{translate:0 28px}
+@media(max-width:900px){.sub-visual{--visual-gutter:16px}.hero.hero-video .hero-copy{translate:0 18px}}
+@media(max-width:640px){.sub-visual{--visual-gutter:12px}.hero.hero-video .hero-copy{translate:none;margin-top:12px}}
 @media(max-width:1100px){.footer>.wrap{width:calc(100% - 140px)}.footer .footer-main{gap:56px}}
 @media(max-width:700px){.footer>.wrap{width:calc(100% - 44px)}.footer .footer-main{gap:30px}}
