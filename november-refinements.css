@@ -497,3 +497,5 @@ body .footer::before,body .footer::after,.footer .footer-brand::before{content:n
 
 .footer .footer-watermark{top:calc(50% + 20px)}
 @media(max-width:640px){.footer .footer-watermark{top:calc(45% + 12px)}}
+
+.directions-panels .directions-contact-panel h3,.directions-panels .directions-hours-panel h3{color:#fff}
