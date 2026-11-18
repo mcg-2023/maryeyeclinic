@@ -458,3 +458,14 @@ body .footer::before,body .footer::after,.footer .footer-brand::before{content:n
 @media(max-width:1200px){.footer .footer-main{grid-template-columns:minmax(0,1fr) minmax(0,74%);gap:30px}.footer-watermark{width:42vw;left:-25px}}
 @media(max-width:900px){.footer .footer-main{grid-template-columns:minmax(0,1fr) minmax(0,76%);gap:20px}.footer-watermark{width:46vw;left:-45px;opacity:.08}}
 @media(max-width:640px){.footer .footer-main{grid-template-columns:1fr;gap:0}.footer .footer-info{grid-column:1}.footer-watermark{width:330px;left:-75px;top:45%;opacity:.055}}
+
+/* Left-aligned clinic details with a restrained, softly lit emblem on the right. */
+.footer .footer-main{grid-template-columns:minmax(0,880px) minmax(0,1fr)}
+.footer .footer-info{grid-column:1;justify-self:start}
+.footer-watermark{left:auto;right:0;width:min(510px,36vw);opacity:.09;background:linear-gradient(110deg,#fff 20%,#fff 40%,#e1c49b 47%,#fff 54%,#fff 80%);background-size:240% 100%;animation:footer-eye-light 18s ease-in-out infinite}
+@keyframes footer-eye-light{0%,35%{background-position:100% 50%;opacity:.085}55%{opacity:.13}75%,100%{background-position:0% 50%;opacity:.085}}
+@media(max-width:1200px){.footer .footer-main{grid-template-columns:minmax(0,74%) minmax(0,1fr)}.footer-watermark{right:-10px;width:36vw}}
+@media(max-width:900px){.footer .footer-main{grid-template-columns:minmax(0,76%) minmax(0,1fr)}.footer-watermark{left:auto;right:-25px;width:38vw}}
+@media(max-width:640px){.footer .footer-main{grid-template-columns:1fr}.footer-watermark{right:-60px;width:280px;opacity:.055;animation:footer-eye-light-mobile 18s ease-in-out infinite}}
+@keyframes footer-eye-light-mobile{0%,35%{background-position:100% 50%;opacity:.04}55%{opacity:.07}75%,100%{background-position:0% 50%;opacity:.04}}
+@media(prefers-reduced-motion:reduce){.footer-watermark{animation:none}}
