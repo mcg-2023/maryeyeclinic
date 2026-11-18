@@ -494,3 +494,6 @@ body .footer::before,body .footer::after,.footer .footer-brand::before{content:n
 .footer .footer-info dl>div{grid-template-columns:72px minmax(0,1fr)}
 @media(max-width:1100px){.footer .footer-info dl{grid-template-columns:1fr;column-gap:0}.footer .footer-info dl>div{grid-template-columns:112px minmax(0,1fr)}}
 @media(max-width:640px){.footer .footer-info{padding-left:12px}.footer .footer-info dl>div{grid-template-columns:100px minmax(0,1fr)}}
+
+.footer .footer-watermark{top:calc(50% + 20px)}
+@media(max-width:640px){.footer .footer-watermark{top:calc(45% + 12px)}}
