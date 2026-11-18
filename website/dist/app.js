@@ -13,7 +13,7 @@ const MENU=[
 ];
 MENU.push(['눈여겨볼 정보', [['눈여겨볼 정보', 'interest']]]);
 const PROMISES=[['충분한 상담','불편한 증상과 생활 속 어려움부터 듣습니다. 궁금한 점을 충분히 이야기할 수 있도록 상담합니다.'],['정밀한 검사','눈의 상태와 증상에 필요한 검사를 선택하고, 검사 결과를 함께 살펴봅니다.'],['맞춤형 치료','눈의 상태와 생활 방식, 치료 목표를 고려해 적합한 치료 방향을 상의합니다.'],['투명한 설명','검사 결과, 치료 선택지와 예상 비용, 주의사항을 이해하기 쉬운 말로 설명합니다.'],['지속적 관리','진료 이후의 경과를 살피고, 필요한 정기검진과 관리 방법을 안내합니다.'],['협진 체계','분야별 진료가 필요한 경우 의료진이 함께 환자의 눈 상태를 살펴봅니다.']];
-const EQUIPMENT=[['루메라 700','백내장 수술현미경','lumera-700-hd.png'],['니덱 OCT','안저·시신경 검사','image20.jpg'],['센츄리온','백내장 수술','image22.jpg'],['백내장 수술 장비','수술 장비','image21.jpg']];
+const EQUIPMENT=[['루메라 700','백내장 수술현미경','lumera-700-hd.png'],['니덱 OCT','안저·시신경 검사','image20.jpg'],['센츄리온','백내장 수술','image22.jpg'],['인피니티 비전 시스템','초음파 백내장 수술 장비','image21.jpg']];
 const SPACES=[['대기 공간','image23.png','넓은 대기 공간에서 편안하게 진료를 기다리실 수 있습니다.'],['접수','image24.png','진료 접수와 내원 안내를 도와드립니다.'],['검사실','image25.png','눈 상태를 살피는 검사 공간입니다.'],['진료실','image26.png','검사 결과를 확인하고 진료 방향을 상담합니다.']];
 const NEI='https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/';
 const PAGES={
@@ -41,20 +41,20 @@ const visit=()=>'<div class="visit-grid"><div><div class="location-photo locatio
 
 const MAIN_CARE=[['노안·백내장','CATARACT & PRESBYOPIA','뿌옇게 흐려진 시야,<br>원인부터 찾습니다.','시야의 변화를 살피고 생활에 맞는 진료 방향을 함께 상담합니다.','cataract','image7.png'],['망막·녹내장','RETINA & GLAUCOMA','보이지 않는 부분까지,<br>정밀하게 살핍니다.','망막과 시신경의 상태, 시야의 변화를 함께 확인합니다.','retina-amd','image8.png'],['소아안과','PEDIATRIC EYE CARE','아이의 눈은,<br>더 이른 관심이 필요합니다.','사시·약시와 굴절 상태, 아이의 시력 발달을 함께 살펴봅니다.','pediatric-strabismus','image9.png']];
 const CARE_SERVICES=[
- ['노안','PRESBYOPIA','가까운 글씨가 흐려지는 변화, 눈 상태와 생활 거리에 맞춰 살펴봅니다.','presbyopia','presbyopia','clinic-interior.jpg'],
- ['백내장','CATARACT','뿌옇게 흐려지는 시야의 원인을 확인하고 진료 방향을 함께 상담합니다.','cataract','cataract','clinic-interior.jpg'],
- ['황반변성','MACULAR DEGENERATION','중심 시야의 변화를 듣고 망막 상태를 세심하게 확인합니다.','retina-amd','macular','clinic-interior.jpg'],
+ ['노안','PRESBYOPIA','가까운 글씨가 흐려지는 변화, 눈 상태와 생활 거리에 맞춰 살펴봅니다.','presbyopia','presbyopia','presbyopia-magazine-view.webp'],
+ ['백내장','CATARACT','뿌옇게 흐려지는 시야의 원인을 확인하고 진료 방향을 함께 상담합니다.','cataract','cataract','cataract-life.jpg'],
+ ['황반변성','MACULAR DEGENERATION','중심 시야의 변화를 듣고 망막 상태를 세심하게 확인합니다.','retina-amd','macular','vision-amd.webp'],
  ['소아안과','PEDIATRIC EYE CARE','아이의 굴절 상태와 시력 발달을 살펴봅니다.','pediatric-strabismus','photo','vision-pediatric-care.webp'],
  ['드림렌즈','DREAM LENS','아이의 눈 상태와 생활 습관에 맞춰 렌즈 상담을 진행합니다.','pediatric-dream','photo','care-dream-lens.jpg'],
  ['안구건조증','DRY EYE CARE','눈의 불편함과 상태를 확인하고 검사·관리 방향을 안내합니다.','care-dry','photo','care-dry-consultation.jpg'],
- ['안종합검진','EYE EXAMINATION','시력부터 눈 건강까지, 필요한 검사를 차근차근 안내합니다.','care-exam','photo','iol-examination.webp']
+ ['안종합검진','EYE EXAMINATION','시력부터 눈 건강까지, 필요한 검사를 차근차근 안내합니다.','care-exam','photo','care-exam.jpg']
 ];
 function careTabs(){
  const reading='<div class="care-reading-card" aria-hidden="true"><small>YOUR EYES, OUR PROMISE</small><strong>당신의 눈,<br>우리의 약속.</strong><span>가까운 글씨를 천천히 읽어 보세요.</span></div>';
  return '<div class="care-experience"><div class="care-view"><div class="care-comparison" data-mode="presbyopia" style="--split:50%"><img class="care-scene" src="assets/clinic-interior.jpg" alt="시야 변화 비교를 위한 주례성모안과 공간 사진" loading="lazy" draggable="false">'+reading+'<div class="care-scene-soft" aria-hidden="true"><img src="assets/clinic-interior.jpg" alt="시야 변화 연출 예시" loading="lazy" draggable="false">'+reading+'</div><div class="care-comparison-labels" aria-hidden="true"><span data-care-before>흐릿한 시야 예시</span><span>선명한 화면</span></div><div class="care-divider" aria-hidden="true"></div></div><p class="care-simulation-note sr-only">이해를 돕기 위한 시야 연출입니다. 실제 증상이나 치료 결과를 나타내지 않습니다.</p></div><div class="care-services" role="group" aria-label="주요 진료 분야 선택">'+CARE_SERVICES.map(([title,en,copy,route,mode,file],i)=>'<button type="button" class="care-service" data-care-service="'+i+'" data-title="'+title+'" data-copy="'+esc(copy)+'" data-route="'+link(route)+'" data-mode="'+mode+'" data-image="assets/'+file+'" aria-pressed="'+(i===0)+'"><span class="care-service-name">'+title+'</span></button>').join('')+'</div></div>';
 }
 function equipmentSection(){
- return '<section class="section wrap equipment-showcase" id="equipment" aria-labelledby="equipment-title"><div class="equipment-heading"><p class="eyebrow">DIAGNOSTIC &amp; SURGICAL EQUIPMENT</p><h2 id="equipment-title">정밀한 진료를 위한 검사 및 수술 장비</h2><p class="equipment-intro">눈의 상태를 살피는 검사부터 수술까지<br>진료에 필요한 장비를 갖추고 있습니다.</p></div><div class="equipment-accordion" data-equipment-accordion>'+EQUIPMENT.map(([title,copy,file],i)=>'<article class="equipment-tile'+(i===0?' is-active':'')+'" data-equipment-tile="'+i+'"><div class="equipment-tile-visual">'+img(file,title)+'</div><button type="button" class="equipment-tile-toggle" id="equipment-toggle-'+i+'" aria-expanded="'+(i===0?'true':'false')+'" aria-controls="equipment-detail-'+i+'"><span class="equipment-tile-index">0'+(i+1)+'</span><span class="equipment-tile-name">'+title+'</span><span class="equipment-tile-icon" aria-hidden="true">+</span></button><div class="equipment-tile-detail" id="equipment-detail-'+i+'"'+(i===0?'':' hidden')+'><p class="equipment-detail-label">DIAGNOSTIC &amp; SURGICAL EQUIPMENT</p><h3>'+title+'</h3><p class="equipment-detail-copy">'+copy+'</p></div></article>').join('')+'</div></section>';
+ return '<section class="section wrap equipment-showcase" id="equipment" aria-labelledby="equipment-title"><div class="equipment-heading"><p class="eyebrow">DIAGNOSTIC &amp; SURGICAL EQUIPMENT</p><h2 id="equipment-title">정밀한 진료를 위한 검사 및 수술 장비</h2><p class="equipment-intro">눈의 상태를 살피는 검사부터 수술까지<br>진료에 필요한 장비를 갖추고 있습니다.</p></div><div class="equipment-accordion" data-equipment-accordion>'+EQUIPMENT.map(([title,copy,file],i)=>'<article class="equipment-tile'+(i===0?' is-active':'')+'" data-equipment-tile="'+i+'"><div class="equipment-tile-visual">'+img(file,title)+'</div><button type="button" class="equipment-tile-toggle" id="equipment-toggle-'+i+'" aria-expanded="'+(i===0?'true':'false')+'" aria-controls="equipment-detail-'+i+'"><span class="equipment-tile-name">'+title+'</span><span class="equipment-tile-icon" aria-hidden="true">+</span></button><div class="equipment-tile-detail" id="equipment-detail-'+i+'"'+(i===0?'':' hidden')+'><p class="equipment-detail-label">DIAGNOSTIC &amp; SURGICAL EQUIPMENT</p><h3>'+title+'</h3><p class="equipment-detail-copy">'+copy+'</p></div></article>').join('')+'</div></section>';
 }
 function doctorControls(){return '<div class="doctor-controls" data-enhancement hidden><button class="round-button" data-doctor="-1" aria-label="이전 의료진">‹</button><span id="doctor-position" aria-live="polite" aria-atomic="true">1 / 3</span><button class="round-button" data-doctor="1" aria-label="다음 의료진">›</button></div>';}
 

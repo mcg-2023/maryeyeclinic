@@ -1,0 +1,319 @@
+{
+  "generator": "Built-in image_gen",
+  "style": "Warm neutral Korean ophthalmology editorial photography; distinct cause scenes and consultation scenes, no text or watermarks. Illustrative images, not actual staff.",
+  "assets": [
+    {
+      "page": "cataract",
+      "title": "노화",
+      "image": "assets/topic-cataract-cause-1-v1.webp",
+      "scene": "Korean elder woman waist-up portrait, aging"
+    },
+    {
+      "page": "cataract",
+      "title": "전신 질환 및 약물",
+      "image": "assets/topic-cataract-cause-2-v1.webp",
+      "scene": "Glucose meter and medicines, systemic factors"
+    },
+    {
+      "page": "cataract",
+      "title": "외상 및 선천적 요인",
+      "image": "assets/topic-cataract-cause-3-v1.webp",
+      "scene": "Safety glasses and family record, trauma and congenital factors"
+    },
+    {
+      "page": "cataract",
+      "title": "백내장 증상 상담",
+      "image": "assets/topic-cataract-check-v1.webp",
+      "scene": "Elderly cataract patient consulting ophthalmologist"
+    },
+    {
+      "page": "presbyopia",
+      "title": "수정체 탄력 감소",
+      "image": "assets/topic-presbyopia-cause-1-v1.webp",
+      "scene": "side view of realistic aged human crystalline lens as a clean sophisticated optical medical 3D macro, no cross section invented"
+    },
+    {
+      "page": "presbyopia",
+      "title": "초점 조절력 저하",
+      "image": "assets/topic-presbyopia-cause-2-v1.webp",
+      "scene": "Korean woman 52 adjusting reading glasses to see a small printed menu, authentic near-focus difficulty"
+    },
+    {
+      "page": "presbyopia",
+      "title": "생활 거리의 차이",
+      "image": "assets/topic-presbyopia-cause-3-v1.webp",
+      "scene": "middle-aged Korean man switching attention between desktop monitor and a book, medium shot home office"
+    },
+    {
+      "page": "presbyopia",
+      "title": "노안 증상 상담",
+      "image": "assets/topic-presbyopia-check-v1.webp",
+      "scene": "different Korean woman 55 consulting optometrist with reading glasses and near vision chart in clinic"
+    },
+    {
+      "page": "lens",
+      "title": "혼탁한 수정체 제거",
+      "image": "assets/topic-lens-cause-1-v1.webp",
+      "scene": "sterile transparent artificial intraocular lens next to a realistic clouded crystalline lens in a surgical instrument tray, conceptual medical still life"
+    },
+    {
+      "page": "lens",
+      "title": "개인별 눈 상태",
+      "image": "assets/topic-lens-cause-2-v1.webp",
+      "scene": "corneal tomography instrument examining older Korean woman's eye from side, clinician hand near control"
+    },
+    {
+      "page": "lens",
+      "title": "생활 거리와 선호",
+      "image": "assets/topic-lens-cause-3-v1.webp",
+      "scene": "Korean older couple at desk with book, tablet, and view to distant garden, wide natural lifestyle scene"
+    },
+    {
+      "page": "lens",
+      "title": "인공수정체 증상 상담",
+      "image": "assets/topic-lens-check-v1.webp",
+      "scene": "older Korean man discussing several clear intraocular lens models with eye surgeon at consultation desk"
+    },
+    {
+      "page": "retina-amd",
+      "title": "나이에 따른 변화",
+      "image": "assets/topic-retina-amd-cause-1-v1.webp",
+      "scene": "Korean grandfather age 75 full upper body walking outdoors in gentle sunlight, generous headroom"
+    },
+    {
+      "page": "retina-amd",
+      "title": "흡연",
+      "image": "assets/topic-retina-amd-cause-2-v1.webp",
+      "scene": "unlit cigarettes and a cigarette packet on plain stone surface, smoke-free symbolic smoking risk photograph"
+    },
+    {
+      "page": "retina-amd",
+      "title": "가족력",
+      "image": "assets/topic-retina-amd-cause-3-v1.webp",
+      "scene": "adult Korean daughter and elderly mother reviewing family photo album together, warm household scene"
+    },
+    {
+      "page": "retina-amd",
+      "title": "황반변성 증상 상담",
+      "image": "assets/topic-retina-amd-check-v1.webp",
+      "scene": "older Korean woman undergoing retinal fundus camera examination with ophthalmologist, clinical photo"
+    },
+    {
+      "page": "retina-diabetes",
+      "title": "당뇨의 지속 기간",
+      "image": "assets/topic-retina-diabetes-cause-1-v1.webp",
+      "scene": "Korean older man reviewing years of unbranded diabetes monitoring notebooks, glucose meter beside him"
+    },
+    {
+      "page": "retina-diabetes",
+      "title": "혈당 관리 상태",
+      "image": "assets/topic-retina-diabetes-cause-2-v1.webp",
+      "scene": "close-up hands taking a finger-prick glucose test at a clean kitchen table, no blood visible"
+    },
+    {
+      "page": "retina-diabetes",
+      "title": "혈압 등 동반 요인",
+      "image": "assets/topic-retina-diabetes-cause-3-v1.webp",
+      "scene": "digital upper-arm blood-pressure measurement on older Korean woman in clinic, device numerals out of focus"
+    },
+    {
+      "page": "retina-diabetes",
+      "title": "당뇨망막병증 증상 상담",
+      "image": "assets/topic-retina-diabetes-check-v1.webp",
+      "scene": "Korean diabetic patient discussing retinal checkup with doctor and a blurred retinal scan display, medium scene"
+    },
+    {
+      "page": "retina-detachment",
+      "title": "망막의 열공",
+      "image": "assets/topic-retina-detachment-cause-1-v1.webp",
+      "scene": "precise photorealistic educational 3D macro of curved retinal tissue with a small horseshoe retinal tear, clean muted neutral background, no blood"
+    },
+    {
+      "page": "retina-detachment",
+      "title": "당김과 흉터",
+      "image": "assets/topic-retina-detachment-cause-2-v1.webp",
+      "scene": "precision educational 3D medical macro showing translucent vitreous fibers gently attached to retinal surface, no detached floating eye"
+    },
+    {
+      "page": "retina-detachment",
+      "title": "고도근시·외상 등",
+      "image": "assets/topic-retina-detachment-cause-3-v1.webp",
+      "scene": "strong prescription eyeglasses and protective sports goggles side by side on a pale wooden tabletop"
+    },
+    {
+      "page": "retina-detachment",
+      "title": "망막박리 증상 상담",
+      "image": "assets/topic-retina-detachment-check-v1.webp",
+      "scene": "Korean adult man receiving a careful dilated retinal eye examination with indirect ophthalmoscopy, calm clinical photograph"
+    },
+    {
+      "page": "retina-glaucoma",
+      "title": "안압과 방수 흐름",
+      "image": "assets/topic-retina-glaucoma-cause-1-v1.webp",
+      "scene": "clean educational medical 3D macro of eye anterior chamber with aqueous drainage angle and clear fluid, anatomically restrained no labels"
+    },
+    {
+      "page": "retina-glaucoma",
+      "title": "시신경의 민감도",
+      "image": "assets/topic-retina-glaucoma-cause-2-v1.webp",
+      "scene": "highly detailed optic nerve head as a realistic ophthalmic fundus examination photograph, muted natural retinal orange not graphic"
+    },
+    {
+      "page": "retina-glaucoma",
+      "title": "나이·가족력",
+      "image": "assets/topic-retina-glaucoma-cause-3-v1.webp",
+      "scene": "Korean adult woman and older father sharing their family medical history with a clinician at desk"
+    },
+    {
+      "page": "retina-glaucoma",
+      "title": "녹내장 증상 상담",
+      "image": "assets/topic-retina-glaucoma-check-v1.webp",
+      "scene": "Korean woman 60 seated for noncontact eye-pressure measurement, realistic clinic instrument side view"
+    },
+    {
+      "page": "pediatric-strabismus",
+      "title": "눈의 정렬 문제",
+      "image": "assets/topic-pediatric-strabismus-cause-1-v1.webp",
+      "scene": "pediatric ophthalmologist performing cover-uncover alignment test on Korean child using black occluder, no distorted eyes"
+    },
+    {
+      "page": "pediatric-strabismus",
+      "title": "굴절 이상 차이",
+      "image": "assets/topic-pediatric-strabismus-cause-2-v1.webp",
+      "scene": "child's prescription eyeglasses beside two trial lens holders on optical consultation desk, different lens strengths"
+    },
+    {
+      "page": "pediatric-strabismus",
+      "title": "시야를 가리는 질환",
+      "image": "assets/topic-pediatric-strabismus-cause-3-v1.webp",
+      "scene": "pediatric eye examination of Korean child with a gently drooping upper eyelid, subtle realistic ptosis no exaggerated facial deformation"
+    },
+    {
+      "page": "pediatric-strabismus",
+      "title": "사시·약시 증상 상담",
+      "image": "assets/topic-pediatric-strabismus-check-v1.webp",
+      "scene": "friendly Korean pediatric ophthalmologist consulting Korean mother and child, eye model on desk, warm bright clinic"
+    },
+    {
+      "page": "pediatric-dream",
+      "title": "근시와 굴절 상태",
+      "image": "assets/topic-pediatric-dream-cause-1-v1.webp",
+      "scene": "Korean schoolboy having refraction measurement using autorefractor, medium shot in bright pediatric eye room"
+    },
+    {
+      "page": "pediatric-dream",
+      "title": "일시적인 각막 변화",
+      "image": "assets/topic-pediatric-dream-cause-2-v1.webp",
+      "scene": "realistic medical 3D macro of transparent orthokeratology contact lens on smooth corneal surface, no labels"
+    },
+    {
+      "page": "pediatric-dream",
+      "title": "위생·착용 관리",
+      "image": "assets/topic-pediatric-dream-cause-3-v1.webp",
+      "scene": "adult hands washing and drying before handling rigid contact lens case, pristine sink area"
+    },
+    {
+      "page": "pediatric-dream",
+      "title": "드림렌즈 증상 상담",
+      "image": "assets/topic-pediatric-dream-check-v1.webp",
+      "scene": "Korean schoolgirl and mother learning how to handle a small contact lens with optometrist, close consultation photo"
+    },
+    {
+      "page": "pediatric-exam",
+      "title": "굴절 이상",
+      "image": "assets/topic-pediatric-exam-cause-1-v1.webp",
+      "scene": "Korean child trying lightweight trial frame while looking toward eye chart, warm clinical photo"
+    },
+    {
+      "page": "pediatric-exam",
+      "title": "시력 발달 요인",
+      "image": "assets/topic-pediatric-exam-cause-2-v1.webp",
+      "scene": "young Korean child following a small colorful fixation toy held by clinician, visual development check"
+    },
+    {
+      "page": "pediatric-exam",
+      "title": "가족력과 건강 상태",
+      "image": "assets/topic-pediatric-exam-cause-3-v1.webp",
+      "scene": "Korean parents talking about child's birth and family history at pediatric eye clinic, child at their side"
+    },
+    {
+      "page": "pediatric-exam",
+      "title": "소아 안종합검진 증상 상담",
+      "image": "assets/topic-pediatric-exam-check-v1.webp",
+      "scene": "Korean preschool girl having eye screening with pediatric clinician and parent, authentic gentle interaction"
+    },
+    {
+      "page": "care-dry",
+      "title": "눈물 분비 감소",
+      "image": "assets/topic-care-dry-cause-1-v1.webp",
+      "scene": "close-up realistic tear meniscus along lower eyelid of healthy adult eye, ophthalmic macro photography, no redness"
+    },
+    {
+      "page": "care-dry",
+      "title": "빠른 눈물 증발",
+      "image": "assets/topic-care-dry-cause-2-v1.webp",
+      "scene": "scientific photorealistic macro of tear film lipid layer on curved cornea, tiny bright reflection and subtle evaporation effect, clean medical model"
+    },
+    {
+      "page": "care-dry",
+      "title": "환경과 시생활",
+      "image": "assets/topic-care-dry-cause-3-v1.webp",
+      "scene": "Korean office worker taking an eye break from laptop in an air-conditioned office, desk plant and soft afternoon light"
+    },
+    {
+      "page": "care-dry",
+      "title": "안구건조증 증상 상담",
+      "image": "assets/topic-care-dry-check-v1.webp",
+      "scene": "Korean woman receiving meibomian gland and tear-film evaluation at slit lamp, clinician beside her"
+    },
+    {
+      "page": "care-oculoplastic",
+      "title": "노화에 따른 변화",
+      "image": "assets/topic-care-oculoplastic-cause-1-v1.webp",
+      "scene": "dignified Korean older woman's upper face with mild age-related eyelid skin changes, eye-level softly lit portrait with headroom"
+    },
+    {
+      "page": "care-oculoplastic",
+      "title": "선천적 구조",
+      "image": "assets/topic-care-oculoplastic-cause-2-v1.webp",
+      "scene": "natural Korean young adult portrait showing subtle congenital asymmetric eyelid fold, no caricature, calm studio photograph"
+    },
+    {
+      "page": "care-oculoplastic",
+      "title": "외상·질환 등",
+      "image": "assets/topic-care-oculoplastic-cause-3-v1.webp",
+      "scene": "doctor gently examining adult patient's eyelid after minor non-graphic injury, no blood or bruising focus"
+    },
+    {
+      "page": "care-oculoplastic",
+      "title": "안성형 증상 상담",
+      "image": "assets/topic-care-oculoplastic-check-v1.webp",
+      "scene": "Korean adult woman discussing eyelid function with ophthalmologist holding small hand mirror, clinic consultation"
+    },
+    {
+      "page": "care-exam",
+      "title": "나이와 눈의 변화",
+      "image": "assets/topic-care-exam-cause-1-v1.webp",
+      "scene": "Korean senior couple at annual ophthalmic examination appointment, waiting calmly with doctor nearby"
+    },
+    {
+      "page": "care-exam",
+      "title": "전신 질환·가족력",
+      "image": "assets/topic-care-exam-cause-2-v1.webp",
+      "scene": "clinician reviewing family medical history and diabetes records with Korean adult woman, no readable text"
+    },
+    {
+      "page": "care-exam",
+      "title": "생활과 기존 눈 질환",
+      "image": "assets/topic-care-exam-cause-3-v1.webp",
+      "scene": "prescription glasses, contact lens case, medicine bottle and ophthalmic exam report on clean clinic desk"
+    },
+    {
+      "page": "care-exam",
+      "title": "안종합검진 증상 상담",
+      "image": "assets/topic-care-exam-check-v1.webp",
+      "scene": "Korean middle-aged adult receiving comprehensive eye examination at modern slit lamp, clinician in profile"
+    }
+  ],
+  "promptTemplate": "Premium ophthalmology editorial contact sheet; precise 2 by 2 equal panels, edge-to-edge without gutters, dividers, text, labels or watermarks. Landscape 1536x1024. Every panel is a distinct standalone realistic scene. Warm ivory, natural beige, subtle bronze palette, authentic Korean patients, calm documentary photography, generous headroom. The listed scene is assigned to its corresponding panel. No readable writing or brand logos."
+}
