@@ -469,3 +469,10 @@ body .footer::before,body .footer::after,.footer .footer-brand::before{content:n
 @media(max-width:640px){.footer .footer-main{grid-template-columns:1fr}.footer-watermark{right:-60px;width:280px;opacity:.055;animation:footer-eye-light-mobile 18s ease-in-out infinite}}
 @keyframes footer-eye-light-mobile{0%,35%{background-position:100% 50%;opacity:.04}55%{opacity:.07}75%,100%{background-position:0% 50%;opacity:.04}}
 @media(prefers-reduced-motion:reduce){.footer-watermark{animation:none}}
+
+/* Small inset for footer details and tighter label-to-value spacing. */
+.footer .footer-info{box-sizing:border-box;padding-left:36px}
+.footer .footer-info dl>div{gap:7px}
+.footer .footer-info dt{min-width:88px}
+@media(max-width:900px){.footer .footer-info{padding-left:24px}}
+@media(max-width:640px){.footer .footer-info{padding-left:12px}.footer .footer-info dt{min-width:72px}.footer .footer-info dl>div{gap:7px}}
