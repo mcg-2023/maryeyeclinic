@@ -10,6 +10,16 @@ body.subpage{--sub-visual-bg:#f3eee6}
 .sub-visual-photo{width:calc(100% - 48px);max-width:1840px;height:clamp(470px,38vw,700px);border-radius:30px}
 .sub-visual-photo img{object-position:center 58%}
 
+/* Open, centered treatment selectors */
+.care-services{border:0;gap:16px 28px}
+.care-services .care-service{display:flex;align-items:center;justify-content:center;min-height:88px;padding:18px 12px;border:0;border-block:1px solid #bba98d;text-align:center;border-radius:0}
+.care-service-name{font-size:29px;line-height:1.4;font-weight:500}
+.care-services .care-service::after{content:'';position:absolute;right:-15px;top:calc(50% - 9px);height:18px;width:1px;background:#cbbda8;pointer-events:none}
+.care-services .care-service:nth-child(4n)::after{display:none}
+.care-service:hover{background:#e9e0d3}
+.care-services .care-service[aria-pressed=true]{background:#66513c;color:#fff;border-color:#66513c}
+.care-comparison[data-mode=photo] .care-scene{object-fit:cover}
+.care-view-heading,.care-number,.care-service-en,.care-service-arrow{display:none}
 
 /* Larger route film with compact contact column */
 @media(min-width:901px){
@@ -116,6 +126,7 @@ body.subpage{--sub-visual-bg:#f3eee6}
  .sub-visual-title{gap:35px}
  .sub-visual-copy h2{font-size:29px}
  .sub-visual-copy p{font-size:19px}
+ .care-service-name{font-size:25px}
  #visit .visit-grid{gap:25px}
 }
 @media(max-width:900px){
@@ -139,6 +150,11 @@ body.subpage{--sub-visual-bg:#f3eee6}
  .sub-visual-copy h2{font-size:25px;margin-bottom:14px}
  .sub-visual-copy p{font-size:18px;line-height:1.8}
  .sub-visual-photo{height:350px;width:calc(100% - 24px);border-radius:20px}
+ .care-services{gap:12px 22px}
+ .care-services .care-service{min-height:76px;padding:14px 8px}
+ .care-service-name{font-size:24px}
+ .care-services .care-service::after{right:-12px}
+ .care-services .care-service:nth-child(2n)::after{display:none}
  .content-section>.greeting{padding:40px 5px}
  .content-section>.greeting>p{font-size:25px}
  .directions-heading{margin-bottom:35px}
@@ -169,6 +185,13 @@ body.subpage{--sub-visual-bg:#f3eee6}
 .uc-cause-track img{-webkit-user-drag:none;user-select:none}
 .uc-cause-photo img[src*="cataract-aging-upperbody"]{object-fit:cover;object-position:center top}
 
+/* Seven treatment areas in rows of three and four. */
+.care-services{grid-template-columns:repeat(12,minmax(0,1fr));gap:14px 18px}
+.care-services .care-service{grid-column:span 3}
+.care-services .care-service:nth-child(-n+3){grid-column:span 4}
+.care-services .care-service:nth-child(n)::after{display:block;right:-10px}
+.care-services .care-service:nth-child(3)::after,
+.care-services .care-service:last-child::after{display:none}
 
 #space .space-gallery-card>span::after{content:none}
 
@@ -179,6 +202,12 @@ body #visit .visit-info .visit-call-button:hover{background:linear-gradient(135d
 
 
 @media(max-width:640px){
+ .care-services{gap:12px 10px}
+ .care-services .care-service{padding:12px 3px;min-height:65px}
+ .care-services .care-service:nth-child(n)::after{right:-6px;height:14px;top:calc(50% - 7px)}
+ .care-services .care-service:nth-child(3)::after,.care-services .care-service:last-child::after{display:none}
+ .care-services .care-service-name{font-size:clamp(13px,3.6vw,19px);letter-spacing:-.05em}
+ .care-services .care-service:nth-child(-n+3) .care-service-name{font-size:clamp(18px,5vw,24px)}
  body #visit .visit-info .visit-map-buttons .visit-map-link{font-size:13px;padding:11px 4px}
 }
 
