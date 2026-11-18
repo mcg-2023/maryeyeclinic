@@ -4,7 +4,7 @@ const {loadQA} = require('./qa-index.cjs');
 async function createAnswer(question, options = {}) {
   const entries = options.entries || loadQA();
   const fallback = QA.answer(question, entries);
-  if (fallback.mode === 'emergency') return fallback;
+  if (fallback.mode === 'emergency' || fallback.mode === 'realtime') return fallback;
   const retrieved = fallback.mode === 'conversational' ? fallback.sources : QA.retrieve(question, entries);
   const apiKey = options.apiKey ?? process.env.OPENAI_API_KEY;
   const model = options.model ?? process.env.OPENAI_MODEL;

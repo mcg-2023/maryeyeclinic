@@ -8,6 +8,21 @@ const {createAnswer, createChatHandler} = require('./chat-service.cjs');
 // Keep the original single-entry fixture to test missing-evidence behavior.
 const entries = QA.parse('주례성모안과 진료시간\n오전 10시부터 오후 6시', 'qa.txt');
 const politeHours = '오전 10시부터 오후 6시입니다.\n\n더 궁금하신 점이 있으시면 편하게 질문해 주세요.';
+
+test('live visit phrasing uses Korea time and never confirms real-time admission',()=>{
+  const docs=loadQA();
+  for(const question of ['오늘 방문해도 돼?','오늘 진료 보고싶은데 가능해?','지금 가도 돼?','오늘 예약 가능해?','오늘 몇시까지 해?']){
+    const r=QA.answer(question,docs,{now:new Date('2026-11-18T01:30:00Z')});
+    assert.equal(r.mode,'realtime',question);
+    assert.match(r.answer,/수요일/);assert.match(r.answer,/09:00~18:00/);
+    assert.match(r.answer,/접수 가능 여부는 확인할 수 없어요/);
+  }
+  const cases=[['2026-11-18T04:30:00Z',/정규 점심시간/],['2026-11-18T10:00:00Z',/정규 진료시간이 지난/],['2026-11-21T00:00:00Z',/09:00~13:00/],['2026-11-22T01:00:00Z',/휴진일/],['2026-11-17T23:00:00Z',/11월 18일 수요일/]];
+  for(const [time,expected] of cases)assert.match(QA.answer('오늘 방문 가능해?',docs,{now:new Date(time)}).answer,expected);
+  assert.match(QA.answer('내일 방문 가능해?',docs,{now:new Date('2026-11-18T01:30:00Z')}).answer,/11월 19일 목요일/);
+  assert.match(QA.answer('오늘 몇 시야?',docs,{now:new Date('2026-11-18T01:30:00Z')}).answer,/10시 30분/);
+  assert.equal(QA.answer('오늘 갑자기 눈이 안 보여요. 방문해도 돼요?',docs).mode,'emergency');
+});
 test('plain QA file is parsed with source line and original answer', () => {
   assert.equal(entries.length, 1);
   assert.equal(entries[0].answer, '오전 10시부터 오후 6시');

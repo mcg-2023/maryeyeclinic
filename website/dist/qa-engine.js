@@ -83,9 +83,38 @@
     });
     return scored.filter(doc => doc.score >= 0.38 && (doc.hits >= 2 || (query.size === 1 && doc.score === 1))).sort((a, b) => b.score - a.score).slice(0, 3);
   }
-  function answer(question, entries) {
+  function realtimeAnswer(question, entries, now = new Date()) {
+    const q=String(question).normalize('NFKC').replace(/\s+/g,'');
+    if(/프롬프트|지시.*무시|시스템명령/.test(q))return null;
+    const clock=!/몇시까지|몇시부터|진료|접수|방문|예약|오픈|마감/.test(q)&&/지금몇시|지금시간|지금시각|현재시간|현재시각|오늘몇시|몇시야|몇시에요|몇시예요|오늘.*(?:며칠|무슨요일|날짜)|오늘이?무슨날/.test(q);
+    const visit=/(오늘|내일|지금|당일)/.test(q)&&/(방문|진료|접수|예약|몇시까지|몇시부터|문열|문닫|영업|운영|가도|갈수|갈까|가려고|가면|가볼|열려|열었|쉬나요|쉬어|휴진)/.test(q);
+    if(!clock&&!visit)return null;
+    const parts=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(now).map(p=>[p.type,p.value]));
+    const current=new Date(Date.UTC(+parts.year,+parts.month-1,+parts.day));
+    const stamp=`${parts.year}년 ${+parts.month}월 ${+parts.day}일 ${'일월화수목금토'[current.getUTCDay()]}요일`;
+    const time=`${+parts.hour}시 ${+parts.minute}분`;
+    if(clock)return {answer:`지금은 한국 시간으로 ${stamp} ${time}이에요.`,sources:[],mode:'realtime',phone:PHONE};
+    const source=entries.find(e=>/평일/.test(e.answer)&&/09:00/.test(e.answer)&&/18:00/.test(e.answer)&&/토요일/.test(e.answer)&&/13:00/.test(e.answer));
+    if(!source)return null;
+    const tomorrow=q.includes('내일'),day=new Date(current.getTime()+(tomorrow?86400000:0)),weekday=day.getUTCDay(),label=tomorrow?'내일':'오늘';
+    const date=`${day.getUTCMonth()+1}월 ${day.getUTCDate()}일 ${'일월화수목금토'[weekday]}요일`;
+    let schedule;
+    if(weekday===0)schedule=`${label}(${date})은 정규 일정상 휴진일이에요.`;
+    else{
+      const closing=weekday===6?'13:00':'18:00';
+      schedule=`${label}(${date})의 정규 진료시간은 09:00~${closing}이에요.`;
+      if(weekday!==6)schedule+=' 점심시간은 13:00~14:00예요.';
+      if(!tomorrow){const minute=+parts.hour*60 + +parts.minute;
+        schedule+=minute<540?' 아직 진료 시작 전이에요.':minute>=(weekday===6?780:1080)?' 현재는 정규 진료시간이 지난 시간이에요.':weekday!==6&&minute>=780&&minute<840?' 현재는 정규 점심시간에 해당해요.':' 현재 시각은 정규 진료시간 안이에요.';
+      }
+    }
+    return {answer:`한국 시간 ${time} 기준으로 안내해 드릴게요.\n\n${schedule}\n\n공휴일·임시 휴진, 실시간 예약·대기 및 접수 가능 여부는 확인할 수 없어요. 접수가 일찍 마감될 수 있으니 방문 전 ${PHONE}로 당일 접수 가능 여부를 확인해 주세요.`,sources:[source],mode:'realtime',phone:PHONE};
+  }
+  function answer(question, entries, options = {}) {
     const urgent = emergencyAnswer(question, entries);
     if (urgent) return urgent;
+    const realtime=realtimeAnswer(question,entries,options.now||new Date());
+    if(realtime)return realtime;
     const faq=faqAnswer(question,entries);
     if(faq)return faq;
     const conversation = conversationalAnswer(question, entries);
@@ -219,5 +248,5 @@
     if(embedded)message='눈에 박힌 물체를 빼거나 눈을 누르지 마세요. '+message;
     return {answer:message,sources:[source],mode:'emergency',phone:PHONE};
   }
-  return {parse, retrieve, answer, emergencyAnswer, faqAnswer, conversationalAnswer, formatAnswer, FALLBACK, PHONE};
+  return {parse, retrieve, answer, realtimeAnswer, emergencyAnswer, faqAnswer, conversationalAnswer, formatAnswer, FALLBACK, PHONE};
 });
