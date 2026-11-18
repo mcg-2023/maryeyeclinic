@@ -476,3 +476,21 @@ body .footer::before,body .footer::after,.footer .footer-brand::before{content:n
 .footer .footer-info dt{min-width:88px}
 @media(max-width:900px){.footer .footer-info{padding-left:24px}}
 @media(max-width:640px){.footer .footer-info{padding-left:12px}.footer .footer-info dt{min-width:72px}.footer .footer-info dl>div{gap:7px}}
+
+/* Keep registration/fax in a separate column and constrain every text cell. */
+.footer .footer-name{margin-bottom:8px}
+.footer .footer-info dl{grid-template-columns:minmax(0,1.15fr) minmax(280px,.95fr);gap:4px 36px}
+.footer .footer-info dl>div{display:grid;grid-template-columns:80px minmax(0,1fr);gap:6px;min-width:0;align-items:baseline;line-height:1.45}
+.footer .footer-info dl>div:nth-child(2),.footer .footer-info dl>div:nth-child(5){grid-template-columns:112px minmax(0,1fr)}
+.footer .footer-info .footer-wide{grid-column:1/-1}
+.footer .footer-info dt{min-width:0;white-space:nowrap;line-height:1.45}
+.footer .footer-info dd{min-width:0;max-width:100%;overflow-wrap:anywhere;word-break:normal;line-height:1.45}
+@media(max-width:1100px){.footer .footer-info dl{grid-template-columns:1fr;gap:4px}.footer .footer-info dl>div,.footer .footer-info dl>div:nth-child(2),.footer .footer-info dl>div:nth-child(5){grid-template-columns:112px minmax(0,1fr)}}
+@media(max-width:640px){.footer .footer-info dl>div,.footer .footer-info dl>div:nth-child(2),.footer .footer-info dl>div:nth-child(5){grid-template-columns:100px minmax(0,1fr)}}
+
+/* Give the two footer information groups a little more breathing room. */
+.footer .footer-info{padding-left:24px}
+.footer .footer-info dl{grid-template-columns:minmax(0,1.2fr) minmax(280px,.85fr);column-gap:52px}
+.footer .footer-info dl>div{grid-template-columns:72px minmax(0,1fr)}
+@media(max-width:1100px){.footer .footer-info dl{grid-template-columns:1fr;column-gap:0}.footer .footer-info dl>div{grid-template-columns:112px minmax(0,1fr)}}
+@media(max-width:640px){.footer .footer-info{padding-left:12px}.footer .footer-info dl>div{grid-template-columns:100px minmax(0,1fr)}}
