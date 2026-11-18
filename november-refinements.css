@@ -367,6 +367,7 @@ body .footer::after{content:'';position:absolute;width:620px;height:620px;left:-
 @media(min-width:641px) and (max-width:1023px){.care-comparison{aspect-ratio:1.9}}
 .care-comparison .care-reading-card{display:none}
 .equipment-tile-index{display:none}
+.equipment-tile-name{overflow-wrap:normal;word-break:keep-all}
 .sub-visual-accent{font-size:1.025em}
 .unified-category .uc-cause-photo img,.unified-category .pr-check-photo img{object-fit:cover;object-position:center}
 
@@ -415,6 +416,31 @@ body .footer::before,body .footer::after,.footer .footer-brand::before{content:n
 .parking-options article>span{font-size:16px;color:#8a7965;line-height:1.8;display:block}
 .parking-call{grid-column:1/-1;display:flex;align-items:center;gap:20px;padding-top:20px;border-top:1px solid #ddcfba;font-size:17px;color:#69513b}
 .parking-call strong{font-size:22px}.parking-call>span{margin-left:auto}
+
+/* Open parking information, with a generous editorial type hierarchy. */
+.directions-parking .parking-guide{background:none;border:0;border-radius:0;padding:10px 0 0;grid-template-columns:110px minmax(0,1fr);gap:45px}
+.directions-parking .parking-mark{border:0;padding:12px 0 0;justify-content:flex-start;font-size:104px;color:#b19570}
+.directions-parking .parking-options{grid-template-columns:1fr;gap:0}
+.directions-parking .parking-options article{display:grid;grid-template-columns:160px minmax(0,1fr);gap:6px 30px;padding:25px 0 30px;border-bottom:1px solid #dbcfbe}
+.directions-parking .parking-options h3{font-size:28px;grid-row:1/3;margin:0;line-height:1.5}
+.directions-parking .parking-options p{font-size:25px;line-height:1.65;margin:0}
+.directions-parking .parking-options article>span{font-size:20px;line-height:1.8;grid-column:2}
+.directions-parking .parking-call{border:0;padding-top:26px;font-size:21px}
+.directions-parking .parking-call strong{font-size:28px}
+.transport-symbol svg{display:block;flex:none}
+.directions-links{grid-template-columns:repeat(3,minmax(0,1fr))}
+.directions-links a:nth-child(3) .visit-map-mark{background:#f1f4fa;color:#4285f4;border:1px solid #dce4f0}
+.footer .footer-name{font-size:25px}
+.footer .footer-info dt{font-size:16px;min-width:100px}
+.footer .footer-info dd{font-size:18px;line-height:1.8}
+.footer .footer-links>a,.footer .footer-links>button{font-size:17px}
+.footer .footer-info dl{gap:12px 28px}
+.care-showcase .care-comparison{aspect-ratio:2.1}
+.care-showcase .care-comparison .care-scene,.care-showcase .care-scene-soft img{object-fit:cover;object-position:center}
+.care-showcase:is([data-active-care="1"],[data-active-care="3"],[data-active-care="5"]) .care-scene,.care-showcase:is([data-active-care="1"],[data-active-care="3"],[data-active-care="5"]) .care-scene-soft img{object-position:center top}
+@media(min-width:1024px) and (min-height:650px){body.screen-scroll-home #care .care-comparison{height:clamp(300px,44vh,530px)}}
+@media(max-width:900px){.directions-parking .parking-guide{grid-template-columns:75px minmax(0,1fr);gap:25px}.directions-parking .parking-mark{font-size:76px}.directions-parking .parking-options article{grid-template-columns:120px minmax(0,1fr);gap:6px 18px}.directions-parking .parking-options h3{font-size:25px}.directions-parking .parking-options p{font-size:22px}.directions-parking .parking-options article>span{font-size:18px}.footer .footer-info dt{font-size:15px}.footer .footer-info dd{font-size:17px}}
+@media(max-width:640px){.directions-parking .parking-guide{grid-template-columns:1fr;gap:10px}.directions-parking .parking-mark{display:none}.directions-parking .parking-options article{grid-template-columns:1fr;padding:22px 0;gap:10px}.directions-parking .parking-options h3{grid-row:auto;font-size:25px}.directions-parking .parking-options article>span{grid-column:auto;font-size:18px}.directions-parking .parking-options p{font-size:22px}.directions-parking .parking-call{font-size:18px;gap:10px}.directions-parking .parking-call strong{font-size:23px}.directions-links{gap:8px}.directions-links a{font-size:13px;padding:12px 7px;gap:6px}.directions-links a>span:last-child{display:none}.directions-links .visit-map-mark{width:20px;height:20px;font-size:14px}.care-showcase .care-comparison{aspect-ratio:1.35}.footer .footer-name{font-size:23px}.footer .footer-links>a,.footer .footer-links>button{font-size:16px}}
 @media(max-width:1200px){.footer>.wrap{width:calc(100% - 64px)}.footer .footer-main{gap:48px;grid-template-columns:210px minmax(0,1fr)}.directions-transport article{padding-inline:20px}.directions-transport p{font-size:17px}}
 @media(max-width:900px){.footer>.wrap{width:calc(100% - 48px)}.footer .footer-main{grid-template-columns:160px minmax(0,1fr);gap:30px}.footer .footer-brand .brand-logo--vertical{width:160px}.footer .footer-info dl{grid-template-columns:1fr}.footer .footer-info .footer-wide{grid-column:auto}.parking-guide{grid-template-columns:100px minmax(0,1fr);gap:28px;padding:30px}.parking-mark{font-size:80px;padding-right:20px}.parking-options{grid-template-columns:1fr}.directions-transport article{padding-inline:14px}.directions-transport p{font-size:16px}}
 @media(max-width:640px){.care-comparison{aspect-ratio:1.35;border-radius:18px}.care-services{gap:12px 10px}.care-services .care-service{min-height:66px;border-radius:10px}.footer>.wrap{width:calc(100% - 36px)}.footer .footer-main{grid-template-columns:1fr;gap:26px}.footer .footer-brand .brand-logo--vertical{width:175px}.footer .footer-info{padding:0}.footer .footer-info dt{min-width:78px}.footer .footer-bottom{gap:14px}body .footer{padding-bottom:110px}.directions-transport{grid-template-columns:1fr;padding-top:20px}.directions-transport article,.directions-transport article:first-child{padding:22px 4px;border:0;border-bottom:1px solid #dfd4c5}.directions-transport p{font-size:17px}.transport-symbol{float:right;margin:0}.directions-links{gap:10px}.directions-links a{font-size:15px;padding:14px 10px;gap:8px}.directions-links .visit-map-mark{width:23px;height:23px;font-size:15px}.parking-guide{grid-template-columns:1fr;padding:26px;gap:22px}.parking-mark{flex-direction:row;justify-content:flex-start;font-size:56px;gap:20px;border:0;border-bottom:1px solid #ddcfba;padding:0 0 18px}.parking-mark span{margin:0}.parking-options h3{font-size:22px}.parking-options p{font-size:18px}.parking-call{flex-wrap:wrap;gap:10px;font-size:15px}.parking-call strong{font-size:19px}}
