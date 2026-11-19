@@ -9,9 +9,11 @@
 }
 @media(max-width:700px){
  /* Keep the desktop's central story and drifting side photographs. */
- #history.history-journey .history-memory[class]{width:16%!important;height:auto!important;aspect-ratio:3/4!important;min-width:0;border-radius:40px}
- #history.history-journey .history-memory:is(.memory-0,.memory-1,.memory-2,.memory-5){left:1%!important;right:auto!important}
- #history.history-journey .history-memory:is(.memory-3,.memory-4,.memory-6,.memory-7){right:1%!important;left:auto!important}
+ #history.history-journey .history-memory[class]{width:clamp(50px,16vw,88px)!important;height:auto!important;aspect-ratio:1/2!important;min-width:0;border-radius:48px}
+ #history.history-journey .history-memory:is(.memory-0,.memory-1,.memory-2,.memory-5){left:4%!important;right:auto!important}
+ #history.history-journey .history-memory:is(.memory-3,.memory-4,.memory-6,.memory-7){right:4%!important;left:auto!important}
+ #history.history-journey .history-memory:is(.memory-1,.memory-5){left:6%!important}
+ #history.history-journey .history-memory:is(.memory-4,.memory-7){right:6%!important}
  #history.history-journey .history-memory.memory-0{top:12svh}
  #history.history-journey .history-memory.memory-1{top:40svh}
  #history.history-journey .history-memory.memory-2{top:72svh}
@@ -21,7 +23,7 @@
  #history.history-journey .history-memory.memory-6{top:98svh}
  #history.history-journey .history-memory.memory-7{top:136svh}
  #history.history-journey .history-memory:is(.memory-0,.memory-1) img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;margin:0;transform:none}
- #history.history-journey .history-sticky-inner{padding-inline:18%}
+ #history.history-journey .history-sticky-inner{padding-inline:24%}
  #history .history-milestone-title{width:100%}
  #history .history-number-stack{width:100%;max-width:none}
  #history .history-number{font-size:clamp(66px,22vw,110px)}
