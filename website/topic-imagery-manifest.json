@@ -652,6 +652,127 @@
       "image": "assets/hero-journal-family-v1.webp",
       "aspectRatio": "8:3",
       "edit": "Distinct family of parents and two young children, centered panoramic lifestyle portrait."
+    },
+    {
+      "page": "cataract",
+      "title": "About — visual change comparison",
+      "image": "assets/about-compare-cataract-v1.webp",
+      "description": "왼쪽의 투명한 수정체와 오른쪽의 혼탁한 수정체에서 빛이 전달되는 차이를 비교한 3D 설명 이미지",
+      "scene": "Two matching side cutaway 3D eye models. LEFT: a crystal-clear natural lens and two thin parallel warm light rays converging sharply on the retina at the back. RIGHT: the same lens visibly milky translucent ivory inside the eye, rays scattering softly after passing the cloudy lens rather than sharply focusing. Cloudiness is restricted to the lens, not the cornea or vitreous. Small unobtrusive bronze focus ring around the cloudy lens.",
+      "referenceSources": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/cataracts"
+      ],
+      "style": "Gentle 3D anatomical teaching model; no embedded text or graphic tissue."
+    },
+    {
+      "page": "presbyopia",
+      "title": "About — visual change comparison",
+      "image": "assets/about-compare-presbyopia-v1.webp",
+      "description": "왼쪽의 가까운 거리 초점 조절과 오른쪽의 조절력이 줄어든 수정체 및 초점 위치를 비교한 3D 설명 이미지",
+      "scene": "Two matching side cutaway eye models viewing a near object. LEFT: a supple natural lens becomes visibly rounder/thicker for near focus, near-object diverging light rays refocus exactly on retina. RIGHT: a less flexible aging lens remains visibly flatter, and the same near-object light rays would focus BEHIND the retinal surface, illustrated by a subtle small ghost focal dot just beyond the rear globe. Do not show opacity or a cataract. Difference is lens shape and near-focus position.",
+      "referenceSources": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/presbyopia"
+      ],
+      "style": "Gentle 3D anatomical teaching model; no embedded text or graphic tissue."
+    },
+    {
+      "page": "lens",
+      "title": "About — visual change comparison",
+      "image": "assets/about-compare-lens-v1.webp",
+      "description": "자연 수정체와 인공수정체의 구조 및 눈 안의 위치를 비교한 3D 설명 이미지",
+      "scene": "Two matching side cutaway eye models. LEFT: the normal transparent biological crystalline lens in its natural position behind the iris. RIGHT: a thin clear artificial intraocular lens with two delicate curved support haptics in the same position inside the lens capsule, clearly replacing the biological lens. A very faint bronze contour isolates the artificial lens. Both optical systems show light focused on the retina. No surgical tools or incisions, no broken tissue.",
+      "referenceSources": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/cataracts/cataract-surgery"
+      ],
+      "style": "Gentle 3D anatomical teaching model; no embedded text or graphic tissue."
+    },
+    {
+      "page": "retina-amd",
+      "title": "About — visual change comparison",
+      "image": "assets/about-compare-retina-amd-v1.webp",
+      "description": "정상 황반층과 드루젠으로 변화한 황반층을 나란히 비교한 3D 설명 이미지",
+      "scene": "Two matching shallow 3D retinal layer sections, with a small complete eye silhouette behind each for orientation. LEFT: smooth healthy macular retinal layers. RIGHT: several small rounded pale gold drusen deposits UNDER the retinal pigment epithelium in the central macular area, slightly lifting the overlying layers, with subtle localized retinal thinning, gentle ivory and peach materials. A soft bronze ring highlights the central macula. Do not show detachment, blood or proliferating vessels. Make drusen-under-retina difference obvious.",
+      "referenceSources": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/age-related-macular-degeneration"
+      ],
+      "style": "Gentle 3D anatomical teaching model; no embedded text or graphic tissue."
+    },
+    {
+      "page": "retina-diabetes",
+      "title": "About — visual change comparison",
+      "image": "assets/about-compare-retina-diabetes-v1.webp",
+      "description": "정상 망막 혈관과 미세혈관의 변화 및 누출을 비교한 3D 설명 이미지",
+      "scene": "Two matching stylized realistic 3D retina surfaces with very sparse delicate vessel branching. LEFT: fine smooth normal vessels. RIGHT: a few tiny rounded microaneurysm bulges on fine vessel branches and subtle pale amber transparent fluid droplets outside these vessels indicating leakage, with a small gentle raised pale area indicating edema. No visible bleeding, red blotches, raw tissue or dense vessels. Clean explanatory material model, soft bronze rings on two affected areas.",
+      "referenceSources": [
+        "https://www.nei.nih.gov/sites/default/files/2023-02/Treating_Diabetic_Retinopathy_What_You_Should_Know.pdf"
+      ],
+      "style": "Gentle 3D anatomical teaching model; no embedded text or graphic tissue."
+    },
+    {
+      "page": "retina-detachment",
+      "title": "About — visual change comparison",
+      "image": "assets/about-compare-retina-detachment-v1.webp",
+      "description": "붙어 있는 망막층과 안쪽으로 들뜬 망막층의 차이를 비교한 3D 설명 이미지",
+      "scene": "Two matching side cutaway eye models. LEFT: a thin smooth peach retinal lining closely attached to the inside rear globe wall. RIGHT: a clearly identifiable small segment of that thin retinal lining gently peels inward away from the rear eye wall, with a clean crescent-shaped pale blue fluid space BETWEEN the lifted retina and outer wall, a tiny retinal break. The center vitreous remains clear. Use a tasteful bronze focus ring around the separated segment. No torn flesh or loose dangling tissue; a clean layered 3D teaching model.",
+      "referenceSources": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/retinal-detachment"
+      ],
+      "style": "Gentle 3D anatomical teaching model; no embedded text or graphic tissue."
+    },
+    {
+      "page": "retina-glaucoma",
+      "title": "About — visual change comparison",
+      "image": "assets/about-compare-retina-glaucoma-v1.webp",
+      "description": "정상 시신경 유두와 함몰 및 신경섬유 변화가 있는 시신경 유두를 비교한 3D 설명 이미지",
+      "scene": "Two matching clean side cutaway eye models with a magnified rear optic nerve head inset below each. LEFT: a small normal central optic disc cup with many fine orderly gold nerve fibers exiting. RIGHT: a visibly larger and deeper optic disc cup and thinner rim, fewer nerve fiber strands exiting, highlighted by subtle bronze contour. Eye and nerve materials smooth ivory and pale peach, sparse simplified fibers. Do not imply that every case has high pressure; focus on optic nerve structural change. No dense raw red vessels.",
+      "referenceSources": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma"
+      ],
+      "style": "Gentle 3D anatomical teaching model; no embedded text or graphic tissue."
+    },
+    {
+      "page": "pediatric-dream",
+      "title": "About — visual change comparison",
+      "image": "assets/about-compare-pediatric-dream-v1.webp",
+      "description": "근시의 초점과 드림렌즈 사용 시 각막 표면 및 초점 변화를 비교한 3D 설명 이미지",
+      "scene": "Two matching side-profile optical eye models focusing a distant object, with an inset of the front cornea. LEFT: a gently elongated myopic eye whose light rays focus in FRONT of the retina and a slightly more curved central corneal surface. RIGHT: the same eye length with a thin transparent rigid contact lens resting on the OUTSIDE corneal surface, a subtle flattened central corneal contour, rays now reaching focus on retina. Show a tiny tasteful curved arrow near corneal surface indicating temporary shape adjustment. No lens inside the eye, no surgery.",
+      "referenceSources": [
+        "https://www.fda.gov/medical-devices/contact-lenses/types-contact-lenses"
+      ],
+      "style": "Gentle 3D anatomical teaching model; no embedded text or graphic tissue."
+    },
+    {
+      "page": "care-dry",
+      "title": "About — visual change comparison",
+      "image": "assets/about-compare-care-dry-v1.webp",
+      "description": "고르게 이어진 눈물막과 일부가 끊긴 눈물막을 비교한 3D 설명 이미지",
+      "scene": "Two matching realistic 3D close sections through a smooth corneal surface, with small calm eye silhouettes above for context. LEFT: a continuous thin glossy pale blue transparent tear film evenly covering the corneal surface. RIGHT: tear film breaks into a few discontinuous islands leaving two small dry matte gaps on an otherwise smooth healthy cornea, with three tiny water droplets drifting upward to indicate evaporation. No red eye, ulcer, rough raw tissue or injury. Clear visual difference in tear film continuity.",
+      "referenceSources": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/dry-eye"
+      ],
+      "style": "Gentle 3D anatomical teaching model; no embedded text or graphic tissue."
+    },
+    {
+      "page": "care-oculoplastic",
+      "title": "About — visual change comparison",
+      "image": "assets/about-compare-care-oculoplastic-v1.webp",
+      "description": "정상 눈꺼풀과 윗눈꺼풀이 내려온 안검하수의 예를 비교한 3D 설명 이미지",
+      "scene": "Two matching frontal 3D realistic but soft medical-model eyes from the same person, neutral ivory skin around blue-gray irises, no full face. LEFT: normal upper eyelid position leaving the entire pupil unobstructed. RIGHT: a gently drooping upper eyelid partially covering the upper pupil, subtle bronze outline along the lowered lid margin and a small downward arrow at the upper eyelid. This is an illustrative ptosis example only, not a representation of every oculoplastic condition. No cuts, swelling, redness or surgical tools.",
+      "referenceSources": [
+        "https://www.aao.org/eye-health/diseases/what-is-ptosis"
+      ],
+      "style": "Gentle 3D anatomical teaching model; no embedded text or graphic tissue."
+    },
+    {
+      "page": "care-exam",
+      "title": "About — visual change comparison",
+      "image": "assets/about-compare-care-exam-v1.webp",
+      "description": "눈의 앞부분과 수정체 및 망막 등 눈 안쪽 검사 범위를 보여주는 3D 설명 이미지",
+      "scene": "Two matching 3D eye teaching models illustrating examination views rather than a disease. LEFT: an intact calm eye front view showing cornea, iris and natural pupil with a thin translucent diagnostic light beam. RIGHT: a matching elegant side cutaway revealing the clear lens, retina and optic nerve, three subtle bronze halo highlights mark those examination structures, thin diagnostic scan arcs around the globe. All structures healthy. Do NOT depict an invented disease or claim visible damage; show external examination versus internal examination coverage.",
+      "referenceSources": [
+        "https://www.nei.nih.gov/eye-health-information/healthy-vision/finding-eye-doctor/get-dilated-eye-exam"
+      ],
+      "style": "Gentle 3D anatomical teaching model; no embedded text or graphic tissue."
     }
   ],
   "promptTemplate": "Premium ophthalmology editorial contact sheet; precise 2 by 2 equal panels, edge-to-edge without gutters, dividers, text, labels or watermarks. Landscape 1536x1024. Every panel is a distinct standalone realistic scene. Warm ivory, natural beige, subtle bronze palette, authentic Korean patients, calm documentary photography, generous headroom. The listed scene is assigned to its corresponding panel. No readable writing or brand logos."
