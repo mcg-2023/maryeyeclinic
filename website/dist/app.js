@@ -44,7 +44,7 @@ const CARE_SERVICES=[
  ['노안','PRESBYOPIA','가까운 글씨가 흐려지는 변화, 눈 상태와 생활 거리에 맞춰 살펴봅니다.','presbyopia','presbyopia','care-presbyopia-wide-v2.webp'],
  ['백내장','CATARACT','뿌옇게 흐려지는 시야의 원인을 확인하고 진료 방향을 함께 상담합니다.','cataract','cataract','care-cataract-wide-v2.webp'],
  ['황반변성','MACULAR DEGENERATION','중심 시야의 변화를 듣고 망막 상태를 세심하게 확인합니다.','retina-amd','macular','care-amd-wide-v2.webp'],
- ['소아안과','PEDIATRIC EYE CARE','아이의 굴절 상태와 시력 발달을 살펴봅니다.','pediatric-strabismus','photo','care-pediatric-wide-v4.webp'],
+ ['소아안과','PEDIATRIC EYE CARE','아이의 굴절 상태와 시력 발달을 살펴봅니다.','pediatric-strabismus','photo','care-pediatric-wide-v5.webp'],
  ['드림렌즈','DREAM LENS','아이의 눈 상태와 생활 습관에 맞춰 렌즈 상담을 진행합니다.','pediatric-dream','photo','care-dream-wide-v2.webp'],
  ['안구건조증','DRY EYE CARE','눈의 불편함과 상태를 확인하고 검사·관리 방향을 안내합니다.','care-dry','photo','care-dry-wide-v2.webp'],
  ['안종합검진','EYE EXAMINATION','시력부터 눈 건강까지, 필요한 검사를 차근차근 안내합니다.','care-exam','photo','care-exam-wide-v2.webp']

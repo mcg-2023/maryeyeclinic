@@ -397,10 +397,10 @@
     {
       "page": "care-pediatric",
       "title": "Wide comparison / care visual",
-      "image": "assets/care-pediatric-wide-v4.webp",
+      "image": "assets/care-pediatric-wide-v5.webp",
       "scene": "Panoramic Korean mother and young child seated in a bright pediatric eye clinic, child pointing at a colorful visual fixation toy on the counter; a clinician's HAND only extends from left, no doctor head or face anywhere. Patients centered across the middle horizontal band.",
       "aspectRatio": "8:3",
-      "edit": "Mother and daughter only, no medical staff or extra hands; upper-body composition."
+      "edit": "Distant central mother/child group, full hands and toy with tabletop below, room on all sides; no CSS zoom."
     },
     {
       "page": "care-dream",
@@ -616,9 +616,9 @@
     {
       "page": "care-pediatric",
       "title": "Compact desktop care banner",
-      "image": "assets/care-pediatric-compact-v4.webp",
+      "image": "assets/care-pediatric-compact-v5.webp",
       "aspectRatio": "4.4:1",
-      "edit": "Mother and daughter only, no medical staff or extra hands; upper-body composition."
+      "edit": "Distant central mother/child group, full hands and toy with tabletop below, room on all sides; no CSS zoom."
     },
     {
       "page": "care-dream",
