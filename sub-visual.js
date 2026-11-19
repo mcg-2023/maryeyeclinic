@@ -37,7 +37,7 @@
  const titleUnits=[...item[0]].reduce((sum,char)=>sum+(/[ilj]/.test(char)?.3:/[mwMW]/.test(char)?.9:char===' '?.26:/[A-Z&]/.test(char)?.76:.56)-.055,0).toFixed(2);
  const title=`<span class="sub-visual-title-line" style="--title-units:${titleUnits}"><span class="sub-visual-accent">${item[0]}</span></span>`;
 
- const photo=key==='about-doctors'?`<div class="sub-visual-photo sub-doctors-profile"><picture><source media="(max-width:700px)" srcset="assets/doctors-three-profile-mobile-v3.webp"><img src="assets/doctors-three-profile-expanded-v2.webp" alt="주례성모안과 유지명, 이정헌, 송도윤 원장 프로필" fetchpriority="high" decoding="async"></picture></div>`:`<div class="sub-visual-photo"><img src="assets/${item[1]}" alt="${item[2]}" fetchpriority="high" decoding="async"></div>`;
+ const photo=key==='about-doctors'?`<div class="sub-visual-photo sub-doctors-profile"><picture><source media="(max-width:700px)" srcset="assets/doctors-three-profile-mobile-v4.webp"><img src="assets/doctors-three-profile-expanded-v2.webp" alt="주례성모안과 유지명, 이정헌, 송도윤 원장 프로필" fetchpriority="high" decoding="async"></picture></div>`:`<div class="sub-visual-photo"><img src="assets/${item[1]}" alt="${item[2]}" fetchpriority="high" decoding="async"></div>`;
  return `<section class="sub-visual" id="sub-visual" aria-label="${item[0]}"><div class="sub-visual-title"><h1>${title}</h1><div class="sub-visual-copy"><h2>${message[0]}</h2><p>${message[1]}</p></div></div>${photo}</section>`;
 });
 
