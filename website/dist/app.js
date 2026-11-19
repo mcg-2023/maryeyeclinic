@@ -1,6 +1,6 @@
 'use strict';
 const CONFIG={
-  channels:{kakao:'',naver:'',consult:''},
+  channels:{kakao:'https://pf.kakao.com/_xaDEsxb',naver:'https://m.place.naver.com/hospital/31723417/home?entry=pll',consult:''},
   featured:[{route:'pediatric-dream',title:'드림렌즈 알아보기',en:'DREAM LENS',image:'image10.png'},{route:'care-dry',title:'안구건조증 진료 안내',en:'DRY EYE',image:'image11.png'},{route:'care-exam',title:'안종합검진 알아보기',en:'EYE EXAMINATION',image:'image12.png'}],
   fees:[],
 };

@@ -8,6 +8,8 @@
  body .qa-launcher::after{content:'챗봇 상담';position:absolute;left:50%;bottom:0;transform:translateX(-50%);white-space:nowrap;font-size:12px;font-weight:700;line-height:20px;letter-spacing:-.03em;color:#59422e;background:#fffaf2;border:1px solid #dfcfb9;border-radius:10px;padding:0 8px;box-shadow:0 2px 7px #39291d14;pointer-events:none}
 }
 @media(max-width:700px){
+ body .quick .quick-label{font-family:Pretendard,'Malgun Gothic',sans-serif;font-size:12.83px;font-weight:400;color:#3e2f23;letter-spacing:normal}
+ body .quick .quick-top .quick-label{font-size:11px;font-weight:700;color:#71573c}
  body .quick .quick-label{display:flex;align-items:center;justify-content:center;height:18px;font:inherit;line-height:18px;text-align:center;margin:0;padding:0;white-space:nowrap;transform:none}
  body .quick>a,body .quick>button,body .quick>.back-top.quick-top{display:grid;grid-template-rows:24px 18px;align-content:start;align-items:center;justify-items:center;gap:5px;padding:8px 0 6px;min-height:58px;font-size:12.83px;line-height:18px;white-space:nowrap;-webkit-appearance:none;appearance:none}
  body .quick>.back-top.quick-top{font-size:11px;font-weight:700}
