@@ -78,7 +78,7 @@
  .unified-category .uc-cause-intro{padding:0;margin-bottom:26px;text-align:center}
  .unified-category .uc-cause-intro h3{font-size:16px;line-height:1.4;margin:16px 0 10px}
  .unified-category .uc-cause-intro>p:not(.uc-label){font-size:14px;line-height:1.6;margin:0}
- .unified-category .uc-cause-track{gap:16px;padding:0 0 16px;scroll-padding:0;scrollbar-width:none}
+ .unified-category .uc-cause-track{gap:16px;padding:0 0 16px;scroll-padding:0;scrollbar-width:none;overflow-x:auto;overflow-y:hidden;touch-action:pan-y}
  .unified-category .uc-cause-track::-webkit-scrollbar{display:none}
  .unified-category .uc-cause-card{flex:0 0 85%;padding:0;border:0;background:transparent}
  .unified-category .uc-cause-photo{width:100%;height:auto;aspect-ratio:5/3;border-radius:12px}
