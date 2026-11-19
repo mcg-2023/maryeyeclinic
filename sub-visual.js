@@ -1,4 +1,4 @@
-﻿(function(root,factory){if(typeof module!=='undefined')module.exports=factory;else root.ClinicSubVisual=factory;})(typeof window!=='undefined'?window:this,function(key){
+(function(root,factory){if(typeof module!=='undefined')module.exports=factory;else root.ClinicSubVisual=factory;})(typeof window!=='undefined'?window:this,function(key){
  const data=typeof module!=='undefined'?require('./category-data.js'):window.ClinicCategoryData;
  const info={
  'customer-center':['Customer Center','facility-reception-01.jpg','주례성모안과 접수 및 안내 공간'],
@@ -34,7 +34,8 @@
  const message=copy[key]||['눈 건강을 함께 살피는 주례성모안과','진료와 검사, 머무는 시간까지 세심하게 생각합니다.'];
  const titleUnits=[...item[0]].reduce((sum,char)=>sum+(/[ilj]/.test(char)?.3:/[mwMW]/.test(char)?.9:char===' '?.26:/[A-Z&]/.test(char)?.76:.56)-.055,0).toFixed(2);
  const title=`<span class="sub-visual-title-line" style="--title-units:${titleUnits}"><span class="sub-visual-accent">${item[0]}</span></span>`;
- const photo=key==='about-doctors'?`<div class="sub-visual-photo sub-doctors-group" role="group" aria-label="주례성모안과 세 명의 의료진">${[['yoo-clinic-logo.png','유지명 원장'],['director-clinic-logo.png','이정헌 대표원장'],['song-clinic-logo.png','송도윤 원장']].map(([src,name])=>`<div class="sub-doctor-portrait"><img src="assets/${src}" alt="${name}" fetchpriority="high" decoding="async"></div>`).join('')}</div>`:`<div class="sub-visual-photo"><img src="assets/${item[1]}" alt="${item[2]}" fetchpriority="high" decoding="async"></div>`;
+
+ const photo=key==='about-doctors'?`<div class="sub-visual-photo sub-doctors-profile"><img src="assets/doctors-three-profile-v1.webp" alt="주례성모안과 유지명, 이정헌, 송도윤 원장 프로필" fetchpriority="high" decoding="async"></div>`:`<div class="sub-visual-photo"><img src="assets/${item[1]}" alt="${item[2]}" fetchpriority="high" decoding="async"></div>`;
  return `<section class="sub-visual" id="sub-visual" aria-label="${item[0]}"><div class="sub-visual-title"><h1>${title}</h1><div class="sub-visual-copy"><h2>${message[0]}</h2><p>${message[1]}</p></div></div>${photo}</section>`;
 });
 
