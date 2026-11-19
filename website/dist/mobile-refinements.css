@@ -2,6 +2,8 @@
 @media(max-width:900px){
  body .qa-launcher .qa-launcher-say,body #header-chat-slot .qa-launcher-say{display:none!important}
  body .quick,body .quick:hover,body .quick:focus-within{animation:none!important;translate:none!important}
+ body .qa-launcher{position:relative;padding-bottom:22px!important}
+ body .qa-launcher::after{content:'챗봇 상담';position:absolute;left:50%;bottom:0;transform:translateX(-50%);white-space:nowrap;font-size:12px;font-weight:700;line-height:20px;letter-spacing:-.03em;color:#59422e;background:#fffaf2;border:1px solid #dfcfb9;border-radius:10px;padding:0 8px;box-shadow:0 2px 7px #39291d14;pointer-events:none}
 }
 @media(max-width:700px){
  body .unified-category .pr-selftest .pr-section-title h2{font-size:20px!important;line-height:1.4!important;max-width:none;width:auto}
