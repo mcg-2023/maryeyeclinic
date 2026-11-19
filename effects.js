@@ -450,7 +450,7 @@
   };
   const measure=()=>{
    frame=null;
-   const ready=!motion.matches&&window.innerHeight>0&&window.innerWidth>700;
+   const ready=!motion.matches&&window.innerHeight>0;
    stage.classList.toggle('cover-enabled',ready);
    const viewport=window.innerHeight,extra=viewport*(history.classList.contains('history-journey')?2.6:1.2);
    const historyHeight=history.offsetHeight,sheetHeight=sheet.offsetHeight;

@@ -8,26 +8,26 @@
  body .qa-launcher::after{content:'챗봇 상담';position:absolute;left:50%;bottom:0;transform:translateX(-50%);white-space:nowrap;font-size:12px;font-weight:700;line-height:20px;letter-spacing:-.03em;color:#59422e;background:#fffaf2;border:1px solid #dfcfb9;border-radius:10px;padding:0 8px;box-shadow:0 2px 7px #39291d14;pointer-events:none}
 }
 @media(max-width:700px){
- .mission-cover-stage{height:auto!important}
- .mission-cover-stage>.mission-cover-sheet{position:relative;transform:none!important;border-radius:0}
- #history.history-journey,.mission-cover-stage>#history.history-journey{position:relative;top:auto;display:flex;flex-direction:column;gap:30px;height:auto;min-height:0;padding:48px 20px;overflow:hidden}
- #history.history-journey .history-sticky-inner{position:relative;inset:auto;order:0;width:100%;height:auto;min-height:0;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;isolation:isolate}
- #history.history-journey .history-sticky-inner::before{width:270px;height:270px;opacity:.15;z-index:-1;box-shadow:none}
- #history.history-journey .history-sticky-inner::after{display:none}
- #history .history-kicker{position:static;font-size:10px;line-height:1.5;margin:0 0 18px;text-align:center}
- #history .history-milestone-title{margin:0;line-height:1}
- #history .history-number-stack{position:relative;width:auto;height:auto;overflow:visible}
- #history .history-number-since,#history.history-show-years .history-number-since{position:static;display:block;opacity:1;transform:none;translate:none;font-size:80px;line-height:1.1}
- #history .history-number-years{display:none!important}
- #history.history-journey .history-description-stack{position:relative;width:100%;height:auto;margin:22px 0 0;overflow:visible}
- #history .history-description-since,#history.history-show-years .history-description-since{position:static;display:block;opacity:1;transform:none;translate:none;font-size:19px;line-height:1.65;text-align:center;margin:0}
- #history .history-description-years,#history .history-scroll-cue{display:none!important}
- #history .history-specialists{font-size:12px;line-height:1.7;text-align:center;margin:18px 0 0}
- #history.history-journey .history-gallery{position:relative;inset:auto;order:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:min(560px,100%);height:auto;margin:0 auto;transform:none!important;translate:none!important;z-index:1}
- #history.history-journey .history-memory[class]{position:relative;inset:auto!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;display:block;width:100%!important;height:auto!important;aspect-ratio:4/3!important;margin:0;overflow:hidden;border-radius:16px;transform:none!important;translate:none!important;animation:none!important;opacity:1!important}
- #history.history-journey .history-memory[class] img{position:absolute;inset:0;width:100%;height:100%;margin:0;object-fit:cover;object-position:center;transform:none!important}
- #history.history-journey .history-memory:is(.memory-0,.memory-1){aspect-ratio:3/4!important;background:linear-gradient(145deg,#d8c5a8,#8c745d)}
- #history.history-journey .history-memory:is(.memory-0,.memory-1) img{object-fit:contain;object-position:center bottom}
+ /* Keep the desktop's central story and drifting side photographs. */
+ #history.history-journey .history-memory[class]{width:16%!important;height:auto!important;aspect-ratio:3/4!important;min-width:0;border-radius:40px}
+ #history.history-journey .history-memory:is(.memory-0,.memory-1,.memory-2,.memory-5){left:1%!important;right:auto!important}
+ #history.history-journey .history-memory:is(.memory-3,.memory-4,.memory-6,.memory-7){right:1%!important;left:auto!important}
+ #history.history-journey .history-memory.memory-0{top:12svh}
+ #history.history-journey .history-memory.memory-1{top:40svh}
+ #history.history-journey .history-memory.memory-2{top:72svh}
+ #history.history-journey .history-memory.memory-5{top:108svh}
+ #history.history-journey .history-memory.memory-3{top:20svh}
+ #history.history-journey .history-memory.memory-4{top:58svh}
+ #history.history-journey .history-memory.memory-6{top:98svh}
+ #history.history-journey .history-memory.memory-7{top:136svh}
+ #history.history-journey .history-memory:is(.memory-0,.memory-1) img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;margin:0;transform:none}
+ #history.history-journey .history-sticky-inner{padding-inline:18%}
+ #history .history-milestone-title{width:100%}
+ #history .history-number-stack{width:100%;max-width:none}
+ #history .history-number{font-size:clamp(66px,22vw,110px)}
+ #history .history-kicker{font-size:8px;letter-spacing:.05em;white-space:nowrap}
+ #history .history-description{font-size:clamp(14px,4.3vw,18px);line-height:1.65}
+ #history .history-specialists{font-size:10px;line-height:1.7;word-break:keep-all}
  body .quick .quick-label{font-family:Pretendard,'Malgun Gothic',sans-serif;font-size:12.83px;font-weight:400;color:#3e2f23;letter-spacing:normal}
  body .quick .quick-top .quick-label{font-size:11px;font-weight:700;color:#71573c}
  body .quick .quick-label{display:flex;align-items:center;justify-content:center;height:18px;font:inherit;line-height:18px;text-align:center;margin:0;padding:0;white-space:nowrap;transform:none}
