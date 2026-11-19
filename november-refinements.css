@@ -1,4 +1,4 @@
-/* Shared visual banners */
+﻿/* Shared visual banners */
 body.subpage{--sub-visual-bg:#f3eee6}
 .sub-visual{padding:95px 0 48px;min-height:820px;box-sizing:border-box}
 .sub-visual-title{width:calc(100% - 48px);max-width:1840px;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;margin-bottom:65px}
@@ -535,10 +535,17 @@ body.subpage .profile-colleague .doctor-photo.original img{position:absolute;ins
 #doctors.lifecare-ready .doctor-card .doctor-photo.colleague-photo img{height:100%;top:0}
 @media(min-width:1024px) and (min-height:650px){#doctors.lifecare-ready .doctor-card .doctor-photo.colleague-photo{position:absolute;left:8%;bottom:0;width:36%!important;max-width:480px;height:86%;aspect-ratio:auto;margin:0}}
 
-/* Preserve the panorama on large screens instead of squeezing it to viewport height. */
-@media(min-width:1024px){body.screen-scroll-home #care .care-comparison,.care-showcase .care-comparison{height:auto;max-height:none;aspect-ratio:8/3}.care-showcase .care-comparison .care-scene,.care-showcase .care-comparison .care-scene-soft img{object-fit:contain;object-position:center}}
+/* Keep the original compact frame; fit the complete image inside it. */
+@media(min-width:1024px){
+ body.screen-scroll-home #care .care-comparison{height:clamp(220px,36vh,475px);max-height:none;aspect-ratio:auto}
+ .care-showcase .care-comparison .care-scene,.care-showcase .care-comparison .care-scene-soft img{object-fit:cover;object-position:center;background:transparent}
+}
+@media(min-width:1024px) and (min-height:1000px){body.screen-scroll-home #care .care-comparison{height:clamp(300px,44vh,530px)}}
+@media(min-width:1024px) and (max-height:800px){body.screen-scroll-home #care .care-comparison{height:clamp(200px,30vh,270px)}}
 /* Song's source is an upper-body portrait, so it needs less magnification. */
 body.subpage .profile-colleague .doctor-photo.original:has(img[src*="song-clinic-logo"] ) img{height:108%;top:-28px}
 #doctors.lifecare-ready .doctor-card .doctor-photo.colleague-photo:has(img[src*="song-clinic-logo"]) img{height:85%;top:auto;bottom:0}
 #doctors.lifecare-ready .doctor-card .doctor-photo.colleague-photo:has(img[src*="song-clinic-logo"])::before{top:19%}
 .sub-visual-photo img{object-position:center}
+
+
