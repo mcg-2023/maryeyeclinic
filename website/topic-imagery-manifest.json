@@ -590,6 +590,55 @@
       "image": "assets/hero-refresh-care-exam-v1.webp",
       "aspectRatio": "8:3",
       "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+    },
+    {
+      "page": "care-presbyopia",
+      "title": "Compact desktop care banner",
+      "image": "assets/care-presbyopia-compact-v3.webp",
+      "aspectRatio": "4.4:1",
+      "edit": "Recomposed camera distance and wider environment for the original shallow frame; mobile retains its original image."
+    },
+    {
+      "page": "care-cataract",
+      "title": "Compact desktop care banner",
+      "image": "assets/care-cataract-compact-v3.webp",
+      "aspectRatio": "4.4:1",
+      "edit": "Recomposed camera distance and wider environment for the original shallow frame; mobile retains its original image."
+    },
+    {
+      "page": "care-amd",
+      "title": "Compact desktop care banner",
+      "image": "assets/care-amd-compact-v3.webp",
+      "aspectRatio": "4.4:1",
+      "edit": "Recomposed camera distance and wider environment for the original shallow frame; mobile retains its original image."
+    },
+    {
+      "page": "care-pediatric",
+      "title": "Compact desktop care banner",
+      "image": "assets/care-pediatric-compact-v3.webp",
+      "aspectRatio": "4.4:1",
+      "edit": "Recomposed camera distance and wider environment for the original shallow frame; mobile retains its original image."
+    },
+    {
+      "page": "care-dream",
+      "title": "Compact desktop care banner",
+      "image": "assets/care-dream-compact-v3.webp",
+      "aspectRatio": "4.4:1",
+      "edit": "Recomposed camera distance and wider environment for the original shallow frame; mobile retains its original image."
+    },
+    {
+      "page": "care-dry",
+      "title": "Compact desktop care banner",
+      "image": "assets/care-dry-compact-v3.webp",
+      "aspectRatio": "4.4:1",
+      "edit": "Recomposed camera distance and wider environment for the original shallow frame; mobile retains its original image."
+    },
+    {
+      "page": "care-exam",
+      "title": "Compact desktop care banner",
+      "image": "assets/care-exam-compact-v3.webp",
+      "aspectRatio": "4.4:1",
+      "edit": "Recomposed camera distance and wider environment for the original shallow frame; mobile retains its original image."
     }
   ],
   "promptTemplate": "Premium ophthalmology editorial contact sheet; precise 2 by 2 equal panels, edge-to-edge without gutters, dividers, text, labels or watermarks. Landscape 1536x1024. Every panel is a distinct standalone realistic scene. Warm ivory, natural beige, subtle bronze palette, authentic Korean patients, calm documentary photography, generous headroom. The listed scene is assigned to its corresponding panel. No readable writing or brand logos."

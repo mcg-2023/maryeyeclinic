@@ -8,6 +8,8 @@
  const scene=section.querySelector('.care-scene'),softImage=section.querySelector('.care-scene-soft img');
  const before=section.querySelector('[data-care-before]'),note=section.querySelector('.care-simulation-note');
  const copy=section.querySelector('.care-active-copy'),link=section.querySelector('.care-active-link');
+ const wide=matchMedia('(min-width:1024px)');
+ const imageFor=data=>wide.matches?data.image.replace('-wide-v2.webp','-compact-v3.webp'):data.image;
  const ready=new Map();let request=0,active=-1;
  function prepare(src){
   if(!ready.has(src)){const image=new Image();image.decoding='async';image.src=src;ready.set(src,image.decode().catch(()=>{ready.delete(src);throw new Error('Image unavailable');}));}
@@ -15,10 +17,10 @@
  }
  async function select(index){
   const ticket=++request;
-  const data=items[index].dataset,photo=data.mode==='photo';
+  const data=items[index].dataset,photo=data.mode==='photo',src=imageFor(data);
   items.forEach((item,i)=>item.setAttribute('aria-pressed',String(i===index)));
-  try{await prepare(data.image);}catch{if(ticket===request)items.forEach((item,i)=>item.setAttribute('aria-pressed',String(i===active)));return;}
-  if(ticket!==request||index===active)return;
+  try{await prepare(src);}catch{if(ticket===request)items.forEach((item,i)=>item.setAttribute('aria-pressed',String(i===active)));return;}
+  if(ticket!==request||(index===active&&scene.getAttribute('src')===src))return;
   comparison.querySelectorAll('.care-transition-snapshot').forEach(node=>node.remove());
   let snapshot;
   if(active>=0&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
@@ -31,7 +33,7 @@
   comparison.dataset.mode=data.mode;
   if(caption)caption.textContent=data.title;if(copy)copy.textContent=data.copy;if(link){link.href=data.route;link.setAttribute('aria-label',data.title+' 진료 자세히 보기');}
   if(count)count.textContent=String(index+1).padStart(2,'0')+' / '+String(items.length).padStart(2,'0');
-  scene.src=data.image;scene.alt=photo?data.title+' 진료 관련 사진':'시야 변화를 비교하기 위한 병원 공간 사진';softImage.src=data.image;
+  scene.src=src;scene.alt=photo?data.title+' 진료 관련 사진':'시야 변화를 비교하기 위한 병원 공간 사진';softImage.src=src;
   before.textContent={vision:'흐릿한 시야 예시',presbyopia:'가까운 글씨 흐림 예시',cataract:'뿌연 시야 예시',macular:'중심 시야 변화 예시'}[data.mode]||'';
   if(note)note.hidden=photo;
   section.dataset.activeCare=String(index);
@@ -46,7 +48,8 @@
   });
  });
  select(0);
- const preload=()=>items.forEach(item=>prepare(item.dataset.image).catch(()=>{}));
+ const preload=()=>items.forEach(item=>prepare(imageFor(item.dataset)).catch(()=>{}));
+ wide.addEventListener('change',()=>{preload();select(active>=0?active:0);});
  if('IntersectionObserver'in window){const warmer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){preload();warmer.disconnect();}},{rootMargin:'800px'});warmer.observe(section);}else preload();
  let visible=true;
  const sync=()=>comparison.classList.toggle('care-auto-paused',!visible||document.hidden);
