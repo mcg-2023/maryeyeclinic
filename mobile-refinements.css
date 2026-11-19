@@ -8,28 +8,6 @@
  body .qa-launcher::after{content:'챗봇 상담';position:absolute;left:50%;bottom:0;transform:translateX(-50%);white-space:nowrap;font-size:12px;font-weight:700;line-height:20px;letter-spacing:-.03em;color:#59422e;background:#fffaf2;border:1px solid #dfcfb9;border-radius:10px;padding:0 8px;box-shadow:0 2px 7px #39291d14;pointer-events:none}
 }
 @media(max-width:700px){
- /* Keep the desktop's central story and drifting side photographs. */
- #history.history-journey .history-memory[class]{width:clamp(50px,16vw,88px)!important;height:auto!important;aspect-ratio:1/2!important;min-width:0;border-radius:48px}
- #history.history-journey .history-memory:is(.memory-0,.memory-1,.memory-2,.memory-5){left:4%!important;right:auto!important}
- #history.history-journey .history-memory:is(.memory-3,.memory-4,.memory-6,.memory-7){right:4%!important;left:auto!important}
- #history.history-journey .history-memory:is(.memory-1,.memory-5){left:6%!important}
- #history.history-journey .history-memory:is(.memory-4,.memory-7){right:6%!important}
- #history.history-journey .history-memory.memory-0{top:12svh}
- #history.history-journey .history-memory.memory-1{top:40svh}
- #history.history-journey .history-memory.memory-2{top:72svh}
- #history.history-journey .history-memory.memory-5{top:108svh}
- #history.history-journey .history-memory.memory-3{top:20svh}
- #history.history-journey .history-memory.memory-4{top:58svh}
- #history.history-journey .history-memory.memory-6{top:98svh}
- #history.history-journey .history-memory.memory-7{top:136svh}
- #history.history-journey .history-memory:is(.memory-0,.memory-1) img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;margin:0;transform:none}
- #history.history-journey .history-sticky-inner{padding-inline:24%}
- #history .history-milestone-title{width:100%}
- #history .history-number-stack{width:100%;max-width:none}
- #history .history-number{font-size:clamp(66px,22vw,110px)}
- #history .history-kicker{font-size:8px;letter-spacing:.05em;white-space:nowrap}
- #history .history-description{font-size:clamp(14px,4.3vw,18px);line-height:1.65}
- #history .history-specialists{font-size:10px;line-height:1.7;word-break:keep-all}
  body .quick .quick-label{font-family:Pretendard,'Malgun Gothic',sans-serif;font-size:12.83px;font-weight:400;color:#3e2f23;letter-spacing:normal}
  body .quick .quick-top .quick-label{font-size:11px;font-weight:700;color:#71573c}
  body .quick .quick-label{display:flex;align-items:center;justify-content:center;height:18px;font:inherit;line-height:18px;text-align:center;margin:0;padding:0;white-space:nowrap;transform:none}
