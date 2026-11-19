@@ -108,13 +108,13 @@ function informationPage(){
 
 const ROUTES=['','patient-rights',...MENU.flatMap(([,items])=>items.map(([,r])=>r))];
 function renderPage(key){
- if(key==='online-consultation')return (typeof module!=='undefined'?require('./sub-visual.js')(key):window.ClinicSubVisual(key))+(typeof module!=='undefined'?require('./online-consultation.js')():window.ClinicOnlineConsultation());
- if(key==='customer-center')return (typeof module!=='undefined'?require('./sub-visual.js')(key):window.ClinicSubVisual(key))+(typeof module!=='undefined'?require('./customer-center.js')():window.ClinicCustomerCenter());
+ if(key==='online-consultation')return (typeof module!=='undefined'?require('./sub-visual.js')(key):window.ClinicSubVisual(key))+'<div class="wrap information-category-tabs">'+tabs(5,key)+'</div>'+(typeof module!=='undefined'?require('./online-consultation.js')():window.ClinicOnlineConsultation());
+ if(key==='customer-center')return (typeof module!=='undefined'?require('./sub-visual.js')(key):window.ClinicSubVisual(key))+'<div class="wrap information-category-tabs">'+tabs(5,key)+'</div>'+(typeof module!=='undefined'?require('./customer-center.js')():window.ClinicCustomerCenter());
  if(key==='')return home();
  if(key==='patient-rights')return typeof module!=='undefined'?require('./patient-rights.js')():window.ClinicPatientRights();
  if(PAGES[key])return typeof module!=='undefined'?require('./category-page.js')(key):window.ClinicCategoryPage(key);
  const visual=typeof module!=='undefined'?require('./sub-visual.js'):window.ClinicSubVisual;
- if(key==='interest')return visual(key)+informationPage().replace(/<section class="info-hero">[\s\S]*?<\/section>/,'');
+ if(key==='interest')return visual(key)+'<div class="wrap information-category-tabs">'+tabs(5,key)+'</div>'+informationPage().replace(/<section class="info-hero">[\s\S]*?<\/section>/,'');
  if(key.startsWith('about-'))return visual(key)+aboutPage(key).replace(/<section class="page-hero wrap">[\s\S]*?<\/section>/,'');
  return '<section class="section wrap"><h1>페이지를 찾을 수 없습니다.</h1><a class="button" href="index.html">홈으로</a></section>';
 }
