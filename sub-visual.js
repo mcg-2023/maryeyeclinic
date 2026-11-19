@@ -2,7 +2,7 @@
  const data=typeof module!=='undefined'?require('./category-data.js'):window.ClinicCategoryData;
  const info={
  'online-consultation':['Online Consultation','facility-reception-01.jpg','주례성모안과 상담 안내 공간'],
- 'customer-center':['Customer Center','facility-reception-01.jpg','주례성모안과 접수 및 안내 공간'],
+ 'customer-center':['Q&A','facility-reception-01.jpg','주례성모안과 접수 및 안내 공간'],
  'about-greeting':['Greetings','facility-consultation-01.jpg','주례성모안과 진료 공간'],
  'about-doctors':['Our Doctors','facility-consultation-02.jpg','주례성모안과 원내 상담 공간'],
  'about-philosophy':['Our Philosophy','facility-waiting-04.jpg','편안한 병원 공간'],
