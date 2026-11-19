@@ -560,9 +560,9 @@
     {
       "page": "pediatric-dream",
       "title": "Category panoramic hero",
-      "image": "assets/hero-refresh-pediatric-dream-v2.webp",
+      "image": "assets/hero-refresh-pediatric-dream-v3.webp",
       "aspectRatio": "8:3",
-      "edit": "Replaced flat top/bottom bands with continuous natural room background."
+      "edit": "Further natural vertical room expansion and wider camera distance, preserving student and book."
     },
     {
       "page": "pediatric-exam",
@@ -645,6 +645,13 @@
       "page": "care-oculoplastic",
       "title": "comparison image refresh",
       "image": "assets/vision-oculoplastic-riverside-v2.webp"
+    },
+    {
+      "page": "interest",
+      "title": "Eye Health Journal family hero",
+      "image": "assets/hero-journal-family-v1.webp",
+      "aspectRatio": "8:3",
+      "edit": "Distinct family of parents and two young children, centered panoramic lifestyle portrait."
     }
   ],
   "promptTemplate": "Premium ophthalmology editorial contact sheet; precise 2 by 2 equal panels, edge-to-edge without gutters, dividers, text, labels or watermarks. Landscape 1536x1024. Every panel is a distinct standalone realistic scene. Warm ivory, natural beige, subtle bronze palette, authentic Korean patients, calm documentary photography, generous headroom. The listed scene is assigned to its corresponding panel. No readable writing or brand logos."
