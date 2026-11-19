@@ -30,7 +30,7 @@ for(const key of ROUTES){
  {html=html.replace('</head>','<link rel="stylesheet" href="chatbot.css"></head>').replace('</body>',chatbotMarkup()+'</body>');}
  if(key==='interest'){html=html.replace(/<script src="information\.js[^"]*" defer><\/script>/, '<script>'+fs.readFileSync('dist/information.js','utf8')+'</script>');}
  html=html.replace('<link rel="stylesheet" href="november-refinements.css">','');
- html=html.replace('</head>','<link rel="stylesheet" href="november-refinements.css"><link rel="stylesheet" href="mobile-refinements.css"><link rel="stylesheet" href="history-mobile-layout-v2.css"></head>');
+ html=html.replace('</head>','<link rel="stylesheet" href="november-refinements.css"><link rel="stylesheet" href="mobile-refinements.css"><link rel="stylesheet" href="history-mobile-layout-v2.css"><link rel="stylesheet" href="history-collage-v3.css"></head>');
  html=html.replace(/\b(src|href)="([^"?#]+\.(?:js|css))"/g,(attribute,name,file)=>{
   if(/^(?:https?:)?\/\//.test(file))return attribute;
   const asset=path.join(__dirname,'dist',file);
