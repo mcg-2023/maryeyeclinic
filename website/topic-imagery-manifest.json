@@ -861,6 +861,13 @@
       "description": "주례성모안과 원내 검사 장비실",
       "scene": "Existing actual Jurye St. Mary clinic examination room photograph",
       "style": "Single subject; no normal-eye comparison. Full-bleed warm ivory background. Built-in image_gen, except actual clinic photograph."
+    },
+    {
+      "page": "retina-diabetes",
+      "title": "Vision comparison landscape",
+      "image": "assets/vision-diabetes-lakeside-v2.webp",
+      "generator": "Built-in image_gen",
+      "scene": "Photorealistic bright lakeside meadow, pale blue open sky, low green hills, smooth reflective lake and light beige path. Broad low-detail light areas make dark CSS spots visible. Sharp natural daylight, no people, text, blur or simulated vision defects. Landscape 16:9."
     }
   ],
   "promptTemplate": "Premium ophthalmology editorial contact sheet; precise 2 by 2 equal panels, edge-to-edge without gutters, dividers, text, labels or watermarks. Landscape 1536x1024. Every panel is a distinct standalone realistic scene. Warm ivory, natural beige, subtle bronze palette, authentic Korean patients, calm documentary photography, generous headroom. The listed scene is assigned to its corresponding panel. No readable writing or brand logos."
