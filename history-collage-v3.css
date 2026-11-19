@@ -10,6 +10,16 @@
 #history .history-memory.memory-7{--memory-width:12%;--memory-ratio:1/2;--memory-right:2%;--memory-top:168svh}
 @media(max-width:700px){
  #history.history-journey .history-gallery{display:none!important}
+ #history.history-journey .history-sticky-inner{padding:24px clamp(20px,6vw,36px)}
+ #history .history-kicker{font-size:clamp(10px,2.7vw,14px);letter-spacing:.08em;max-width:100%;top:0;margin:0 0 12px;white-space:normal}
+ #history .history-milestone-title{width:100%;margin:0}
+ #history .history-number-stack{width:100%;max-width:none;height:clamp(160px,45vw,220px)}
+ #history .history-number{font-size:clamp(112px,33vw,176px);line-height:1.16;padding-bottom:.12em}
+ #history .history-number-years>span{margin-left:10px}
+ #history .history-description-stack{width:100%;height:clamp(110px,30vw,150px);margin:16px 0 0;overflow:hidden}
+ #history .history-description{font-size:clamp(17px,4.8vw,24px);line-height:1.65;font-weight:600;white-space:normal;word-break:keep-all;overflow-wrap:break-word;margin:0}
+ #history .history-specialists{font-size:clamp(12px,3.3vw,16px);line-height:1.7;margin:12px 0 0;word-break:keep-all}
+ #history .history-scroll-cue{font-size:10px;letter-spacing:.14em;margin-top:26px}
  #history .history-memory.memory-0{--memory-width:15%;--memory-ratio:1/2.1;--memory-left:4%;--memory-top:9svh}
  #history .history-memory.memory-1{--memory-width:13%;--memory-ratio:1/2.6;--memory-left:10%;--memory-top:40svh}
  #history .history-memory.memory-2{--memory-width:20%;--memory-ratio:1/.95;--memory-left:3%;--memory-top:80svh}
