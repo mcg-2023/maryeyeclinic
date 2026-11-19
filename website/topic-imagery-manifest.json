@@ -773,6 +773,94 @@
         "https://www.nei.nih.gov/eye-health-information/healthy-vision/finding-eye-doctor/get-dilated-eye-exam"
       ],
       "style": "Gentle 3D anatomical teaching model; no embedded text or graphic tissue."
+    },
+    {
+      "page": "cataract",
+      "title": "About — single subject",
+      "image": "assets/about-single-cataract-v2.webp",
+      "description": "혼탁한 수정체에서 빛이 퍼지는 백내장 설명 이미지",
+      "scene": "One elegant side cutaway teaching model of an eye with a softly cloudy cataract lens, a thin incoming light beam diffusing gently at that cloudy lens. Only one eye.",
+      "style": "Single subject; no normal-eye comparison. Full-bleed warm ivory background. Built-in image_gen, except actual clinic photograph."
+    },
+    {
+      "page": "presbyopia",
+      "title": "About — single subject",
+      "image": "assets/about-single-presbyopia-v2.webp",
+      "description": "수정체의 조절력 감소를 보여주는 노안 설명 이미지",
+      "scene": "One elegant side cutaway teaching model of an aging eye with a less flexible crystalline lens and subtle thin optical rays indicating near focus falling behind the retinal plane. Only one eye.",
+      "style": "Single subject; no normal-eye comparison. Full-bleed warm ivory background. Built-in image_gen, except actual clinic photograph."
+    },
+    {
+      "page": "lens",
+      "title": "About — single subject",
+      "image": "assets/about-single-lens-v2.webp",
+      "description": "투명한 인공수정체의 광학부와 지지부 이미지",
+      "scene": "One premium intraocular lens implant, clear circular optic and two fine curved supporting haptics, suspended in front of a faint simplified single eye silhouette. Focus on the beautiful transparent lens device, no incision.",
+      "style": "Single subject; no normal-eye comparison. Full-bleed warm ivory background. Built-in image_gen, except actual clinic photograph."
+    },
+    {
+      "page": "retina-amd",
+      "title": "About — single subject",
+      "image": "assets/about-single-retina-amd-v2.webp",
+      "description": "황반 부위의 변화를 보여주는 부드러운 3D 설명 이미지",
+      "scene": "One gentle anatomical 3D retinal bowl model, softly elevated small amber drusen deposits localized at the central macula, thin delicate vessels. No bleeding, no wounds.",
+      "style": "Single subject; no normal-eye comparison. Full-bleed warm ivory background. Built-in image_gen, except actual clinic photograph."
+    },
+    {
+      "page": "retina-diabetes",
+      "title": "About — single subject",
+      "image": "assets/about-single-retina-diabetes-v2.webp",
+      "description": "망막 미세혈관의 변화를 보여주는 부드러운 3D 설명 이미지",
+      "scene": "One gentle anatomical 3D retinal bowl model showing delicate small vessels with a few tiny muted burgundy vascular spots and subtle localized translucent swelling. No gore or dramatic blood.",
+      "style": "Single subject; no normal-eye comparison. Full-bleed warm ivory background. Built-in image_gen, except actual clinic photograph."
+    },
+    {
+      "page": "retina-detachment",
+      "title": "About — single subject",
+      "image": "assets/about-single-retina-detachment-v2.webp",
+      "description": "망막층의 분리를 보여주는 부드러운 3D 설명 이미지",
+      "scene": "One elegant side cutaway eye teaching model showing a small smooth retinal layer lifting away from the back wall, a subtle separation pocket. No torn flesh or gore.",
+      "style": "Single subject; no normal-eye comparison. Full-bleed warm ivory background. Built-in image_gen, except actual clinic photograph."
+    },
+    {
+      "page": "retina-glaucoma",
+      "title": "About — single subject",
+      "image": "assets/about-single-retina-glaucoma-v2.webp",
+      "description": "시신경 유두의 변화를 보여주는 부드러운 3D 설명 이미지",
+      "scene": "One elegant 3D optic nerve head and retinal rim teaching model showing a gently deepened optic cup and subtly thinned nerve rim, fine golden nerve fibers. No gore.",
+      "style": "Single subject; no normal-eye comparison. Full-bleed warm ivory background. Built-in image_gen, except actual clinic photograph."
+    },
+    {
+      "page": "care-oculoplastic",
+      "title": "About — single subject",
+      "image": "assets/about-single-care-oculoplastic-v2.webp",
+      "description": "눈꺼풀 처짐을 보여주는 부드러운 설명 이미지",
+      "scene": "Elderly Korean woman eye region with mild bilateral age-related eyelid drooping, intact skin, no cutaway or exposed anatomy",
+      "style": "Single subject; no normal-eye comparison. Full-bleed warm ivory background. Built-in image_gen, except actual clinic photograph."
+    },
+    {
+      "page": "pediatric-dream",
+      "title": "About — single subject",
+      "image": "assets/about-single-pediatric-dream-v2.webp",
+      "description": "깨끗한 드림렌즈와 렌즈 보관 케이스 사진",
+      "scene": "Photorealistic premium product photograph of two small transparent rigid orthokeratology contact lenses resting beside an open ivory contact lens case on a clean warm ivory tabletop. Soft macro detail and realistic reflections, no eyes, no people.",
+      "style": "Single subject; no normal-eye comparison. Full-bleed warm ivory background. Built-in image_gen, except actual clinic photograph."
+    },
+    {
+      "page": "care-dry",
+      "title": "About — single subject",
+      "image": "assets/about-single-care-dry-v2.webp",
+      "description": "일회용 인공눈물과 점안액 용기 사진",
+      "scene": "Photorealistic premium product photograph of a few unbranded single-use artificial tear ampoules and a small unbranded white eye drop bottle on a clean warm ivory tabletop. Clear plastic subtle reflections, no eyes, no people.",
+      "style": "Single subject; no normal-eye comparison. Full-bleed warm ivory background. Built-in image_gen, except actual clinic photograph."
+    },
+    {
+      "page": "care-exam",
+      "title": "About — single subject",
+      "image": "assets/facility-examination-01.jpg",
+      "description": "주례성모안과 원내 검사 장비실",
+      "scene": "Existing actual Jurye St. Mary clinic examination room photograph",
+      "style": "Single subject; no normal-eye comparison. Full-bleed warm ivory background. Built-in image_gen, except actual clinic photograph."
     }
   ],
   "promptTemplate": "Premium ophthalmology editorial contact sheet; precise 2 by 2 equal panels, edge-to-edge without gutters, dividers, text, labels or watermarks. Landscape 1536x1024. Every panel is a distinct standalone realistic scene. Warm ivory, natural beige, subtle bronze palette, authentic Korean patients, calm documentary photography, generous headroom. The listed scene is assigned to its corresponding panel. No readable writing or brand logos."
