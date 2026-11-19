@@ -499,3 +499,38 @@ body .footer::before,body .footer::after,.footer .footer-brand::before{content:n
 @media(max-width:640px){.footer .footer-watermark{top:calc(45% + 12px)}}
 
 .directions-panels .directions-contact-panel h3,.directions-panels .directions-hours-panel h3{color:#fff}
+
+/* November 19: prepared image transitions and softer service navigation. */
+.care-showcase .care-comparison{--care-focus:50% 50%}
+.care-showcase[data-active-care="3"] .care-comparison{--care-focus:50% 80%}
+.care-showcase[data-active-care="4"] .care-comparison{--care-focus:50% 78%}
+.care-showcase[data-active-care="5"] .care-comparison{--care-focus:50% 80%}
+.care-showcase[data-active-care="6"] .care-comparison{--care-focus:50% 78%}
+.care-showcase .care-comparison .care-scene,.care-showcase .care-comparison .care-scene-soft img{object-position:var(--care-focus)}
+.care-showcase .care-comparison.care-transition-snapshot{position:absolute;inset:0;z-index:8;width:100%;height:100%!important;max-height:none;aspect-ratio:auto;pointer-events:none;margin:0;will-change:opacity}
+.care-services .care-service[aria-pressed="true"]{background:radial-gradient(ellipse at 15% 0%,#aa896044,transparent 65%),linear-gradient(125deg,#796047,#493b30);box-shadow:inset 0 1px 0 #f1d7ac55,0 5px 16px #493b3014;color:#fff8ef}
+.care-services .care-service[aria-pressed="true"]::before{opacity:1;background:linear-gradient(90deg,transparent,#e5c494,transparent);left:18%;right:18%}
+.care-services .care-service[aria-pressed="true"]::after{opacity:.6;background:linear-gradient(90deg,transparent,#ba9565,transparent);left:28%;right:28%}
+.care-services .care-service-name{transition:transform .3s ease,letter-spacing .3s ease}
+.care-services .care-service[aria-pressed="true"] .care-service-name{transform:translateY(-1px);letter-spacing:.015em}
+#history.history-journey .history-description-stack{margin-top:22px}
+/* Colleague cutouts rise above the same backdrop as the director. */
+body.subpage .profile-colleague .doctor-photo.original{position:relative;isolation:isolate;height:clamp(520px,43vw,620px);padding:0;background:none;border-radius:0;overflow:visible;clip-path:inset(-60px 0 0 0)}
+body.subpage .profile-colleague .doctor-photo.original::before{inset:0;border-radius:24px}
+body.subpage .profile-colleague .doctor-photo.original img{position:absolute;inset:auto;top:-35px;left:50%;height:150%;width:auto;max-width:none;max-height:none;object-fit:contain;object-position:center bottom;transform:translateX(-50%)}
+#doctors.lifecare-ready .doctor-card .doctor-photo.colleague-photo{height:auto;aspect-ratio:.75;position:relative;isolation:isolate;overflow:visible;background:none;clip-path:inset(-40px 0 0 0)}
+#doctors.lifecare-ready .doctor-card .doctor-photo.colleague-photo::before{content:'';position:absolute;inset:7% 0 0;z-index:-1;border-radius:22px;background:radial-gradient(ellipse at 25% 15%,#dfcfb6,transparent 65%),linear-gradient(145deg,#c3ab8e,#756556)}
+#doctors.lifecare-ready .doctor-card .doctor-photo.colleague-photo img{position:absolute;inset:auto;top:0;left:50%;height:130%;width:auto;max-width:none;max-height:none;transform:translateX(-50%);object-fit:contain}
+/* An open editorial sequence, with soft circular marks instead of boxed text. */
+.promise-detail{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 70px;position:relative;margin-top:35px}
+.promise-detail article{position:relative;display:grid;grid-template-columns:72px minmax(0,1fr);gap:6px 24px;padding:40px 0;background:none;border:0;border-radius:0;border-bottom:1px solid #b69d7b55;box-shadow:none;align-content:start}
+.promise-detail article>span{grid-row:1/3;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:linear-gradient(145deg,#e7dccd,#f7f4ef);color:#8a6b46;font-size:25px;box-shadow:inset 0 1px 0 #fff}
+.promise-detail article h3{margin:0;color:#56412f;font-size:28px;line-height:1.5}
+.promise-detail article p{margin:0;font-size:20px;line-height:1.85;color:#7c7064;word-break:keep-all}
+.unified-category[data-eye-page="cataract"] .pr-check-photo img{object-position:24% 38%}
+@media(max-width:900px){.promise-detail{gap:0 30px}.promise-detail article{grid-template-columns:52px minmax(0,1fr);gap:6px 16px}.promise-detail article>span{width:48px;height:48px;font-size:21px}.promise-detail article h3{font-size:24px}.promise-detail article p{font-size:18px}}
+@media(max-width:640px){#history.history-journey .history-description-stack{margin-top:16px}body.subpage .profile-colleague .doctor-photo.original{height:520px;width:min(100%,400px)}body.subpage .profile-colleague .doctor-photo.original img{top:-30px}.promise-detail{grid-template-columns:1fr}.promise-detail article{padding:28px 0}.care-services .care-service[aria-pressed="true"] .care-service-name{letter-spacing:0}}
+@media(prefers-reduced-motion:reduce){.care-services .care-service-name{transition:none}}
+.promise-symbol svg{width:32px;height:32px}
+#doctors.lifecare-ready .doctor-card .doctor-photo.colleague-photo img{height:100%;top:0}
+@media(min-width:1024px) and (min-height:650px){#doctors.lifecare-ready .doctor-card .doctor-photo.colleague-photo{position:absolute;left:8%;bottom:0;width:36%!important;max-width:480px;height:86%;aspect-ratio:auto;margin:0}}
