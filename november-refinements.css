@@ -534,3 +534,11 @@ body.subpage .profile-colleague .doctor-photo.original img{position:absolute;ins
 .promise-symbol svg{width:32px;height:32px}
 #doctors.lifecare-ready .doctor-card .doctor-photo.colleague-photo img{height:100%;top:0}
 @media(min-width:1024px) and (min-height:650px){#doctors.lifecare-ready .doctor-card .doctor-photo.colleague-photo{position:absolute;left:8%;bottom:0;width:36%!important;max-width:480px;height:86%;aspect-ratio:auto;margin:0}}
+
+/* Preserve the panorama on large screens instead of squeezing it to viewport height. */
+@media(min-width:1024px){body.screen-scroll-home #care .care-comparison,.care-showcase .care-comparison{height:auto;max-height:none;aspect-ratio:8/3}.care-showcase .care-comparison .care-scene,.care-showcase .care-comparison .care-scene-soft img{object-fit:contain;object-position:center}}
+/* Song's source is an upper-body portrait, so it needs less magnification. */
+body.subpage .profile-colleague .doctor-photo.original:has(img[src*="song-clinic-logo"] ) img{height:108%;top:-28px}
+#doctors.lifecare-ready .doctor-card .doctor-photo.colleague-photo:has(img[src*="song-clinic-logo"]) img{height:85%;top:auto;bottom:0}
+#doctors.lifecare-ready .doctor-card .doctor-photo.colleague-photo:has(img[src*="song-clinic-logo"])::before{top:19%}
+.sub-visual-photo img{object-position:center}
