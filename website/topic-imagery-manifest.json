@@ -145,16 +145,16 @@
     {
       "page": "retina-detachment",
       "title": "망막의 열공",
-      "image": "assets/topic-retina-detachment-cause-1-v3.webp",
+      "image": "assets/topic-retina-detachment-cause-1-v4.webp",
       "scene": "precise photorealistic educational 3D macro of curved retinal tissue with a small horseshoe retinal tear, clean muted neutral background, no blood",
-      "edit": "Gentle non-anatomical lifestyle or symbolic care photograph; no surgical or eye-detail imagery."
+      "edit": "Gentle distinct related equipment, lens or lifestyle photograph without anatomical imagery."
     },
     {
       "page": "retina-detachment",
       "title": "당김과 흉터",
-      "image": "assets/topic-retina-detachment-cause-2-v3.webp",
+      "image": "assets/topic-retina-detachment-cause-2-v4.webp",
       "scene": "precision educational 3D medical macro showing translucent vitreous fibers gently attached to retinal surface, no detached floating eye",
-      "edit": "Gentle non-anatomical lifestyle or symbolic care photograph; no surgical or eye-detail imagery."
+      "edit": "Gentle distinct related equipment, lens or lifestyle photograph without anatomical imagery."
     },
     {
       "page": "retina-detachment",
@@ -173,16 +173,16 @@
     {
       "page": "retina-glaucoma",
       "title": "안압과 방수 흐름",
-      "image": "assets/topic-retina-glaucoma-cause-1-v2.webp",
+      "image": "assets/topic-retina-glaucoma-cause-1-v3.webp",
       "scene": "clean educational medical 3D macro of eye anterior chamber with aqueous drainage angle and clear fluid, anatomically restrained no labels",
-      "edit": "Clinician entirely outside frame above shoulders: no doctor faces or heads; retain patient, equipment and scene. No blur or block censorship."
+      "edit": "Gentle distinct related equipment, lens or lifestyle photograph without anatomical imagery."
     },
     {
       "page": "retina-glaucoma",
       "title": "시신경의 민감도",
-      "image": "assets/topic-retina-glaucoma-cause-2-v2.webp",
+      "image": "assets/topic-retina-glaucoma-cause-2-v3.webp",
       "scene": "highly detailed optic nerve head as a realistic ophthalmic fundus examination photograph, muted natural retinal orange not graphic",
-      "edit": "Clinician entirely outside frame above shoulders: no doctor faces or heads; retain patient, equipment and scene. No blur or block censorship."
+      "edit": "Gentle distinct related equipment, lens or lifestyle photograph without anatomical imagery."
     },
     {
       "page": "retina-glaucoma",
@@ -236,9 +236,9 @@
     {
       "page": "pediatric-dream",
       "title": "일시적인 각막 변화",
-      "image": "assets/topic-pediatric-dream-cause-2-v2.webp",
+      "image": "assets/topic-pediatric-dream-cause-2-v3.webp",
       "scene": "realistic medical 3D macro of transparent orthokeratology contact lens on smooth corneal surface, no labels",
-      "edit": "Clinician entirely outside frame above shoulders: no doctor faces or heads; retain patient, equipment and scene. No blur or block censorship."
+      "edit": "Gentle distinct related equipment, lens or lifestyle photograph without anatomical imagery."
     },
     {
       "page": "pediatric-dream",
@@ -327,9 +327,9 @@
     {
       "page": "care-oculoplastic",
       "title": "외상·질환 등",
-      "image": "assets/topic-care-oculoplastic-cause-3-v2.webp",
+      "image": "assets/topic-care-oculoplastic-cause-3-v3.webp",
       "scene": "doctor gently examining adult patient's eyelid after minor non-graphic injury, no blood or bruising focus",
-      "edit": "Clinician entirely outside frame above shoulders: no doctor faces or heads; retain patient, equipment and scene. No blur or block censorship."
+      "edit": "Gentle distinct related equipment, lens or lifestyle photograph without anatomical imagery."
     },
     {
       "page": "care-oculoplastic",
@@ -560,16 +560,16 @@
     {
       "page": "pediatric-dream",
       "title": "Category panoramic hero",
-      "image": "assets/hero-refresh-pediatric-dream-v1.webp",
+      "image": "assets/hero-refresh-pediatric-dream-v2.webp",
       "aspectRatio": "8:3",
-      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+      "edit": "Replaced flat top/bottom bands with continuous natural room background."
     },
     {
       "page": "pediatric-exam",
       "title": "Category panoramic hero",
-      "image": "assets/hero-refresh-pediatric-exam-v1.webp",
+      "image": "assets/hero-refresh-pediatric-exam-v2.webp",
       "aspectRatio": "8:3",
-      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+      "edit": "Replaced flat top/bottom bands with continuous natural room background."
     },
     {
       "page": "care-dry",
@@ -581,16 +581,16 @@
     {
       "page": "care-oculoplastic",
       "title": "Category panoramic hero",
-      "image": "assets/hero-refresh-care-oculoplastic-v1.webp",
+      "image": "assets/hero-refresh-care-oculoplastic-v2.webp",
       "aspectRatio": "8:3",
-      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+      "edit": "Replaced flat top/bottom bands with continuous natural room background."
     },
     {
       "page": "care-exam",
       "title": "Category panoramic hero",
-      "image": "assets/hero-refresh-care-exam-v1.webp",
+      "image": "assets/hero-refresh-care-exam-v2.webp",
       "aspectRatio": "8:3",
-      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+      "edit": "Replaced flat top/bottom bands with continuous natural room background."
     },
     {
       "page": "care-presbyopia",
@@ -640,6 +640,11 @@
       "image": "assets/care-exam-compact-v3.webp",
       "aspectRatio": "4.4:1",
       "edit": "Recomposed camera distance and wider environment for the original shallow frame; mobile retains its original image."
+    },
+    {
+      "page": "care-oculoplastic",
+      "title": "comparison image refresh",
+      "image": "assets/vision-oculoplastic-riverside-v2.webp"
     }
   ],
   "promptTemplate": "Premium ophthalmology editorial contact sheet; precise 2 by 2 equal panels, edge-to-edge without gutters, dividers, text, labels or watermarks. Landscape 1536x1024. Every panel is a distinct standalone realistic scene. Warm ivory, natural beige, subtle bronze palette, authentic Korean patients, calm documentary photography, generous headroom. The listed scene is assigned to its corresponding panel. No readable writing or brand logos."
