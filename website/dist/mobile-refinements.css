@@ -6,6 +6,7 @@
  body .qa-launcher::after{content:'챗봇 상담';position:absolute;left:50%;bottom:0;transform:translateX(-50%);white-space:nowrap;font-size:12px;font-weight:700;line-height:20px;letter-spacing:-.03em;color:#59422e;background:#fffaf2;border:1px solid #dfcfb9;border-radius:10px;padding:0 8px;box-shadow:0 2px 7px #39291d14;pointer-events:none}
 }
 @media(max-width:700px){
+ body.subpage .directions-transport,body.subpage .directions-transport article,body.subpage .directions-transport article+article{border:0;box-shadow:none}
  body .unified-category .pr-selftest .pr-section-title h2{font-size:20px!important;line-height:1.4!important;max-width:none;width:auto}
  body .unified-category .pr-selftest .pr-section-title h2 br{display:none}
  body .unified-category .pr-selftest .pr-section-title>p{font-size:14px!important;line-height:1.6!important}
