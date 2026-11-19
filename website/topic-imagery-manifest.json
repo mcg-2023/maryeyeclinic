@@ -33,9 +33,9 @@
     {
       "page": "presbyopia",
       "title": "수정체 탄력 감소",
-      "image": "assets/topic-presbyopia-cause-1-v2.webp",
+      "image": "assets/topic-presbyopia-cause-1-v3.webp",
       "scene": "side view of realistic aged human crystalline lens as a clean sophisticated optical medical 3D macro, no cross section invented",
-      "edit": "Clinician entirely outside frame above shoulders: no doctor faces or heads; retain patient, equipment and scene. No blur or block censorship."
+      "edit": "Gentle non-anatomical lifestyle or symbolic care photograph; no surgical or eye-detail imagery."
     },
     {
       "page": "presbyopia",
@@ -61,9 +61,9 @@
     {
       "page": "lens",
       "title": "혼탁한 수정체 제거",
-      "image": "assets/topic-lens-cause-1-v3.webp",
+      "image": "assets/topic-lens-cause-1-v4.webp",
       "scene": "sterile transparent artificial intraocular lens next to a realistic clouded crystalline lens in a surgical instrument tray, conceptual medical still life",
-      "edit": "Replaced with a distinct, centered subject photograph on November 19."
+      "edit": "Gentle non-anatomical lifestyle or symbolic care photograph; no surgical or eye-detail imagery."
     },
     {
       "page": "lens",
@@ -145,16 +145,16 @@
     {
       "page": "retina-detachment",
       "title": "망막의 열공",
-      "image": "assets/topic-retina-detachment-cause-1-v2.webp",
+      "image": "assets/topic-retina-detachment-cause-1-v3.webp",
       "scene": "precise photorealistic educational 3D macro of curved retinal tissue with a small horseshoe retinal tear, clean muted neutral background, no blood",
-      "edit": "Clinician entirely outside frame above shoulders: no doctor faces or heads; retain patient, equipment and scene. No blur or block censorship."
+      "edit": "Gentle non-anatomical lifestyle or symbolic care photograph; no surgical or eye-detail imagery."
     },
     {
       "page": "retina-detachment",
       "title": "당김과 흉터",
-      "image": "assets/topic-retina-detachment-cause-2-v2.webp",
+      "image": "assets/topic-retina-detachment-cause-2-v3.webp",
       "scene": "precision educational 3D medical macro showing translucent vitreous fibers gently attached to retinal surface, no detached floating eye",
-      "edit": "Clinician entirely outside frame above shoulders: no doctor faces or heads; retain patient, equipment and scene. No blur or block censorship."
+      "edit": "Gentle non-anatomical lifestyle or symbolic care photograph; no surgical or eye-detail imagery."
     },
     {
       "page": "retina-detachment",
@@ -166,9 +166,9 @@
     {
       "page": "retina-detachment",
       "title": "망막박리 증상 상담",
-      "image": "assets/topic-retina-detachment-check-v2.webp",
+      "image": "assets/topic-retina-detachment-check-v3.webp",
       "scene": "Korean adult man receiving a careful dilated retinal eye examination with indirect ophthalmoscopy, calm clinical photograph",
-      "edit": "Clinician entirely outside frame above shoulders: no doctor faces or heads; retain patient, equipment and scene. No blur or block censorship."
+      "edit": "Gentle non-anatomical lifestyle or symbolic care photograph; no surgical or eye-detail imagery."
     },
     {
       "page": "retina-glaucoma",
@@ -499,6 +499,97 @@
       "title": "예약 문의 전용 사진",
       "image": "assets/booking-care-exam-v1.webp",
       "edit": "Unique category-specific image; no clinician faces."
+    },
+    {
+      "page": "cataract",
+      "title": "Category panoramic hero",
+      "image": "assets/hero-refresh-cataract-v1.webp",
+      "aspectRatio": "8:3",
+      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+    },
+    {
+      "page": "presbyopia",
+      "title": "Category panoramic hero",
+      "image": "assets/hero-refresh-presbyopia-v1.webp",
+      "aspectRatio": "8:3",
+      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+    },
+    {
+      "page": "lens",
+      "title": "Category panoramic hero",
+      "image": "assets/hero-refresh-lens-v1.webp",
+      "aspectRatio": "8:3",
+      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+    },
+    {
+      "page": "retina-amd",
+      "title": "Category panoramic hero",
+      "image": "assets/hero-refresh-retina-amd-v1.webp",
+      "aspectRatio": "8:3",
+      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+    },
+    {
+      "page": "retina-diabetes",
+      "title": "Category panoramic hero",
+      "image": "assets/hero-refresh-retina-diabetes-v1.webp",
+      "aspectRatio": "8:3",
+      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+    },
+    {
+      "page": "retina-detachment",
+      "title": "Category panoramic hero",
+      "image": "assets/hero-refresh-retina-detachment-v1.webp",
+      "aspectRatio": "8:3",
+      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+    },
+    {
+      "page": "retina-glaucoma",
+      "title": "Category panoramic hero",
+      "image": "assets/hero-refresh-retina-glaucoma-v1.webp",
+      "aspectRatio": "8:3",
+      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+    },
+    {
+      "page": "pediatric-strabismus",
+      "title": "Category panoramic hero",
+      "image": "assets/hero-refresh-pediatric-strabismus-v1.webp",
+      "aspectRatio": "8:3",
+      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+    },
+    {
+      "page": "pediatric-dream",
+      "title": "Category panoramic hero",
+      "image": "assets/hero-refresh-pediatric-dream-v1.webp",
+      "aspectRatio": "8:3",
+      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+    },
+    {
+      "page": "pediatric-exam",
+      "title": "Category panoramic hero",
+      "image": "assets/hero-refresh-pediatric-exam-v1.webp",
+      "aspectRatio": "8:3",
+      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+    },
+    {
+      "page": "care-dry",
+      "title": "Category panoramic hero",
+      "image": "assets/hero-refresh-care-dry-v1.webp",
+      "aspectRatio": "8:3",
+      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+    },
+    {
+      "page": "care-oculoplastic",
+      "title": "Category panoramic hero",
+      "image": "assets/hero-refresh-care-oculoplastic-v1.webp",
+      "aspectRatio": "8:3",
+      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
+    },
+    {
+      "page": "care-exam",
+      "title": "Category panoramic hero",
+      "image": "assets/hero-refresh-care-exam-v1.webp",
+      "aspectRatio": "8:3",
+      "edit": "Distinct non-graphic lifestyle scene composed for a full-width panoramic banner."
     }
   ],
   "promptTemplate": "Premium ophthalmology editorial contact sheet; precise 2 by 2 equal panels, edge-to-edge without gutters, dividers, text, labels or watermarks. Landscape 1536x1024. Every panel is a distinct standalone realistic scene. Warm ivory, natural beige, subtle bronze palette, authentic Korean patients, calm documentary photography, generous headroom. The listed scene is assigned to its corresponding panel. No readable writing or brand logos."
