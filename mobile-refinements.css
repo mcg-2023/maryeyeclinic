@@ -1,4 +1,6 @@
 /* oklasik p=53 measured at 393px: headings 20px, body 14px, cards 13px. */
+/* Desktop labels behave exactly like the original unwrapped text nodes. */
+@media(min-width:701px){body .quick .quick-label{display:contents;font:inherit;color:inherit;letter-spacing:inherit;margin:0;padding:0}}
 @media(max-width:900px){
  body .qa-launcher .qa-launcher-say,body #header-chat-slot .qa-launcher-say{display:none!important}
  body .quick,body .quick:hover,body .quick:focus-within{animation:none!important;translate:none!important}
