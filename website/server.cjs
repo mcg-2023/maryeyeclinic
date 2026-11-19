@@ -13,7 +13,7 @@ const server=http.createServer(async(req,res)=>{
  if(!['localhost:'+port,'127.0.0.1:'+port].includes(req.headers.host)){res.writeHead(403);res.end('Forbidden host');return;}
  let url;try{url=decodeURIComponent(new URL(req.url,'http://127.0.0.1:4173').pathname);}catch{res.writeHead(400);res.end();return;}
  if(url==='/api/chat'){chat(req,res);return;}
- if(url==='/interest.html'||url.startsWith('/admin')||url.startsWith('/api/posts')||url.startsWith('/api/statistics')||url==='/api/public/track'||url.startsWith('/media/')||url.startsWith('/articles/')){
+ if(url==='/interest.html'||url.startsWith('/admin')||url.startsWith('/api/inquiries')||url.startsWith('/api/posts')||url.startsWith('/api/statistics')||url==='/api/public/track'||url.startsWith('/media/')||url.startsWith('/articles/')){
   const chunks=[];for await(const chunk of req)chunks.push(chunk);
   const request=new Request(new URL(req.url,'http://'+req.headers.host),{method:req.method,headers:req.headers,...(['GET','HEAD'].includes(req.method)?{}:{body:Buffer.concat(chunks)})});
   const managed=await setup.fetch(request)||await (await managerReady).fetch(request);

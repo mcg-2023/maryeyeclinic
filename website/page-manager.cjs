@@ -4,6 +4,9 @@ const config=require('./page-manager.config.cjs');
 const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 async function createClinicManager(options={}){
+ const {pathToFileURL}=require('node:url');
+ const {createAdminAccess}=await import(pathToFileURL(path.join(path.dirname(require.resolve('@mcg/page-manager')),'admin-auth.js')).href);
+ const inquiryService=require('./inquiry-service.cjs').createInquiryService({filename:options.inquiryFilename,access:createAdminAccess({config}),environment:options.environment||(()=>process.env)});
  const {createPageManager,repository,postBody,postText}=await import('@mcg/page-manager');
  // Hosted (Vercel): Supabase keeps posts. Local: SQLite file under .data/.
  const hosted=Boolean(process.env.SUPABASE_URL);
@@ -46,11 +49,13 @@ async function createClinicManager(options={}){
  const template=()=>fs.readFileSync(path.join(__dirname,'dist','interest.html'),'utf8');
  const response=(html,status=200)=>new Response(html,{status,headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
  return {
-  manager,database,close:()=>database.close?.(),
+  manager,database,close:()=>{inquiryService.close();database.close?.();},
   async fetch(request){
+   const inquiry=await inquiryService.fetch(request);if(inquiry)return inquiry;
    const requested=new URL(request.url);
    const managed=await manager.fetch(request);
    if(managed){
+    if(new URL(request.url).pathname==='/admin/'&&managed.headers.get('Content-Type')?.includes('text/html')){const html=(await managed.text()).replace('</body>','<a href="/admin/inquiries/" style="position:fixed;right:24px;bottom:24px;background:#654b35;color:white;padding:14px 22px;border-radius:12px;z-index:100">비밀 상담 관리 ↗</a></body>');return new Response(html,{status:managed.status,headers:managed.headers});}
     if(new URL(request.url).pathname==='/admin/login/'&&managed.headers.get('Content-Type')?.includes('text/html')){
      const html=(await managed.text()).replace('</head>','<link rel="stylesheet" href="/admin-login.css"></head>');
      return new Response(html,{status:managed.status,headers:managed.headers});
