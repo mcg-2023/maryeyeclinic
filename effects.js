@@ -212,7 +212,7 @@
   const nav=document.createElement('div');nav.className='lifecare-tabs';nav.setAttribute('role','tablist');nav.setAttribute('aria-label','의료진 진료 분야');
   const labels=cards.map(card=>card.querySelector('h3').textContent.replace(/(대표원장|원장)$/, ' $1'));
   const tabs=cards.map((card,i)=>{
-   const button=document.createElement('button');button.type='button';button.id='doctor-tab-'+i;button.setAttribute('role','tab');button.innerHTML='<span class="eyebrow">SPECIALIST 0'+(i+1)+'</span><span>'+labels[i]+'</span>';
+   const button=document.createElement('button');button.type='button';button.id='doctor-tab-'+i;button.setAttribute('role','tab');button.innerHTML='<span class="eyebrow">SPECIALIST 0'+(i+1)+'</span><span>'+labels[i].replace(/ (대표원장|원장)$/,' <span class="lifecare-tab-role">$1</span>')+'</span>';
    card.id='doctor-panel-'+i;button.setAttribute('aria-controls',card.id);nav.appendChild(button);return button;
   });
   const bar=document.createElement('div');bar.className='lifecare-progress';bar.setAttribute('aria-hidden','true');bar.innerHTML='<span class="lifecare-fill"></span><span class="lifecare-thumb"></span>';
