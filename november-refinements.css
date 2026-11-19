@@ -569,6 +569,10 @@ body.subpage .profile-colleague .doctor-photo.original:has(img[src*="song-clinic
 body #doctors.lifecare-ready .doctor-card .doctor-photo.original:has(img[src*="-profile-v"]),body.subpage .profile-detail .doctor-photo.original:has(img[src*="-profile-v"]){overflow:hidden;clip-path:none;border-radius:24px;background:radial-gradient(ellipse at 25% 15%,#dfcfb6,transparent 68%),linear-gradient(145deg,#bda385,#75604c);mask-image:none;-webkit-mask-image:none;box-shadow:inset 0 0 0 1px #9e80532b}
 body .doctor-photo.original:has(img[src*="-profile-v"])::before{display:none}
 body #doctors.lifecare-ready .doctor-card .doctor-photo.original img[src*="-profile-v"],body.subpage .profile-detail .doctor-photo.original img[src*="-profile-v"]{position:absolute;inset:0;top:0;left:0;bottom:0;width:100%;height:100%;max-width:100%;max-height:100%;padding:0;margin:0;object-fit:contain;object-position:center bottom;transform:none}
+/* Home portraits stand alone; detailed doctor profiles keep their brand panels. */
+body #doctors.lifecare-ready .doctor-card .doctor-photo.original:has(img[src*="-profile-v"]){background:none;box-shadow:none;border:0;border-radius:0;overflow:visible}
+body #doctors.lifecare-ready .doctor-card .doctor-photo.original::before,body #doctors.lifecare-ready .doctor-card .doctor-photo.original::after{display:none}
+@media(max-width:700px){body #doctors.lifecare-ready .doctor-card .doctor-photo.original{height:auto!important;min-height:280px;aspect-ratio:.65}body #doctors.lifecare-ready .doctor-card .doctor-meta>.doctor-statement{font-size:16px!important;line-height:1.65!important}body #doctors.lifecare-ready .doctor-statement .statement-line>span{font-size:inherit;line-height:inherit}}
 body.subpage .sub-visual-photo.sub-doctors-profile{height:auto;aspect-ratio:3/1;background:#f2e4da}
 body.subpage .sub-doctors-profile img{width:100%;height:100%;object-fit:cover;object-position:center}
 .unified-category[data-eye-page="lens"] .uc-vision .ed-comparison-haze{clip-path:inset(0 calc(100% - var(--ed-split)) 0 0)}
