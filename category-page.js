@@ -14,5 +14,5 @@
  <section class="uc-issue uc-section" id="issue"><div class="uc-wrap"><div class="uc-section-heading">${mark('Issue')}<h2>${p.title}</h2></div><div class="uc-issue-text">${p.issue.map(line=>`<p>${line}</p>`).join('')}</div><div class="uc-graphics">${issueCharts(key)}</div></div></section>
  <section class="uc-causes uc-section" id="causes"><div class="uc-wrap uc-cause-layout"><div class="uc-cause-intro">${mark('Causes of')}<h2>${p.title}</h2><h3>${key==='lens'||key.includes('exam')||key==='pediatric-dream'?'함께 살펴보는 기준':'원인과 위험요인'}</h3><p>${p.causes.map(([title])=>title).join(', ')} 등을 함께 살펴봅니다.</p></div><div class="uc-cause-track" tabindex="0" aria-label="${p.title} 원인과 관련 요인 카드">${p.causes.map(([title,description,image])=>`<article class="uc-cause-card"><div class="uc-cause-photo"><img src="assets/${image}" alt="${title} 관련 이미지" loading="lazy"></div><h3>${title}</h3><p>${description}</p></article>`).join('')}</div></div></section>
  ${reservation({title:checkTitle,checks,image:p.checkImage||p.hero,alt:p.title+' 상담 안내 이미지',caption:'눈의 변화를 살피고,<br>필요한 진료를 안내합니다.'})}
- ${booking.dialog()}</article>`;
+ ${booking.dialog({image:'booking-'+key+'-v1.webp'})}</article>`;
 });

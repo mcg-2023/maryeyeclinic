@@ -20,7 +20,7 @@ dialog.ct-booking-dialog{padding:0;border:0;border-radius:26px;width:min(1060px,
 .ct-booking-dialog::backdrop{background:#29201699;backdrop-filter:blur(3px)}
 .ct-booking-card{position:relative;min-height:445px;isolation:isolate;display:flex;align-items:center}
 .ct-booking-content{width:76%;padding:52px 56px 38px;position:relative;z-index:1}
-.ct-booking-photo{position:absolute;inset:0 0 0 44%;background:linear-gradient(90deg,#5a4836,transparent 70%),linear-gradient(#5a483655,#5a483655),url('assets/cataract-life.jpg') 65% 40%/cover;z-index:0;opacity:.66}
+.ct-booking-photo{position:absolute;inset:0 0 0 44%;background:linear-gradient(90deg,#5a4836,transparent 70%),linear-gradient(#5a483655,#5a483655),var(--booking-photo) 65% 40%/cover;z-index:0;opacity:.66}
 .ct-booking-close{position:absolute;right:18px;top:15px;z-index:3;width:38px;height:38px;border:1px solid #e4d5bc66;border-radius:50%;color:#fff9ed;font-size:36.68px;line-height:1;background:#5a48364d;display:grid;place-items:center}
 .ct-booking-close:hover{background:#fff2}
 .ct-booking-content .ct-kicker{color:#d1b58b;font-size:12.65px;margin-bottom:15px}
