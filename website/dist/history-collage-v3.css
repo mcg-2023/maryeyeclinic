@@ -9,6 +9,7 @@
 #history .history-memory.memory-6{--memory-width:14%;--memory-ratio:1/1.1;--memory-right:14%;--memory-top:121svh}
 #history .history-memory.memory-7{--memory-width:12%;--memory-ratio:1/2;--memory-right:2%;--memory-top:168svh}
 @media(max-width:700px){
+ #history.history-journey .history-gallery{display:none!important}
  #history .history-memory.memory-0{--memory-width:15%;--memory-ratio:1/2.1;--memory-left:4%;--memory-top:9svh}
  #history .history-memory.memory-1{--memory-width:13%;--memory-ratio:1/2.6;--memory-left:10%;--memory-top:40svh}
  #history .history-memory.memory-2{--memory-width:20%;--memory-ratio:1/.95;--memory-left:3%;--memory-top:80svh}
