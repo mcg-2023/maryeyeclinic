@@ -221,7 +221,7 @@
   const mobile=matchMedia('(max-width:1024px)'),fill=bar.firstElementChild,thumb=bar.lastElementChild;
   function paint(progress){const value=(selected+progress)/cards.length*100;fill.style.width=value+'%';thumb.style.left=value+'%';}
   function stop(){if(frame!==null)cancelAnimationFrame(frame);frame=null;start=null;}
-  function blocked(){return hovered||document.hidden||motion.matches;}
+  function blocked(){return hovered||document.hidden||motion.matches||matchMedia('(max-width:900px)').matches;}
   function tick(time){
    frame=null;if(blocked())return;
    if(start===null)start=time;
@@ -450,7 +450,7 @@
   };
   const measure=()=>{
    frame=null;
-   const ready=!motion.matches&&window.innerHeight>0;
+   const ready=!motion.matches&&window.innerHeight>0&&window.innerWidth>900;
    stage.classList.toggle('cover-enabled',ready);
    const viewport=window.innerHeight,extra=viewport*(history.classList.contains('history-journey')?2.6:1.2);
    const historyHeight=history.offsetHeight,sheetHeight=sheet.offsetHeight;
