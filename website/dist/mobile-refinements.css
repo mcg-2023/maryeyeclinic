@@ -61,7 +61,8 @@
  .unified-category .ed-comparison-labels span{font-size:11px;padding:7px 10px}
  .unified-category .uc-comparison-note{font-size:11px;line-height:1.6;margin-top:12px}
  .unified-category .uc-issue-text{margin:24px auto 28px;text-align:left}
- .unified-category .uc-issue-text p{margin:0 0 7px}
+ .unified-category .uc-issue-text{max-width:353px;font-size:14px;line-height:1.7;text-align:center;text-wrap:balance;word-break:keep-all;overflow-wrap:break-word}
+ .unified-category .uc-issue-text p{display:inline;font-size:inherit;line-height:inherit;margin:0;text-align:inherit;word-break:inherit;overflow-wrap:inherit}
  .unified-category .uc-graphics{grid-template-columns:1fr;gap:16px}
  .unified-category .uc-stat-chart{padding:20px 12px;min-height:0;border-radius:16px;margin:0}
  .unified-category .uc-chart-heading{gap:10px;margin-bottom:20px;align-items:start}
