@@ -549,3 +549,8 @@ body.subpage .profile-colleague .doctor-photo.original:has(img[src*="song-clinic
 .sub-visual-photo img{object-position:center}
 
 
+/* Closer crops for the three requested care categories, without changing the frame. */
+.care-showcase .care-comparison .care-scene[src*="care-pediatric-compact"]{transform:scale(1.24);transform-origin:53% 0}
+.care-showcase .care-comparison .care-scene[src*="care-dream-compact"]{transform:scale(1.2);transform-origin:50% 35%}
+.care-showcase .care-comparison .care-scene[src*="care-dry-compact"]{transform:scale(1.4);transform-origin:50% 0}
+@media(max-width:1023px){.care-showcase .care-comparison .care-scene[src*="care-pediatric-wide"],.care-showcase .care-comparison .care-scene[src*="care-dream-wide"],.care-showcase .care-comparison .care-scene[src*="care-dry-wide"]{transform:scale(1.06);transform-origin:50% 30%}}
