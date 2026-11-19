@@ -1,6 +1,7 @@
 ﻿(function(root,factory){if(typeof module!=='undefined')module.exports=factory;else root.ClinicSubVisual=factory;})(typeof window!=='undefined'?window:this,function(key){
  const data=typeof module!=='undefined'?require('./category-data.js'):window.ClinicCategoryData;
  const info={
+ 'customer-center':['Customer Center','facility-reception-01.jpg','주례성모안과 접수 및 안내 공간'],
  'about-greeting':['Greetings','facility-consultation-01.jpg','주례성모안과 진료 공간'],
  'about-doctors':['Our Doctors','facility-consultation-02.jpg','주례성모안과 원내 상담 공간'],
  'about-philosophy':['Our Philosophy','facility-waiting-04.jpg','편안한 병원 공간'],
@@ -11,6 +12,7 @@
  };
  const p=data[key],item=p?[p.en,p.hero,p.title+' 진료 주제를 위한 이미지']:info[key];if(!item)return '';
  const copy={
+ 'customer-center':['궁금한 점에 귀 기울이겠습니다','진료와 내원에 관한 질문부터 자주 묻는 안내까지, 편하게 확인해 보세요.'],
   'about-doctors':['서로 다른 전문 분야, 함께하는 세심한 진료','세 명의 안과 전문의가 각자의 경험을 모아 환자분의 눈 건강을 함께 살핍니다.'],
   'about-philosophy':['눈의 이야기에 귀 기울이는 진료','작은 불편부터 치료 후의 변화까지, 내 눈에 맞는 진료의 방향을 함께 고민합니다.'],
   'about-location':['가까이에서 함께하는 당신의 눈 건강','주례역 5번 출구 앞, 엠스퀘어메디컬센터 9층에서 만나 뵙겠습니다.'],

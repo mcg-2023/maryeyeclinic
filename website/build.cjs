@@ -21,6 +21,7 @@ for(const key of ROUTES){
   if(key==='about-location')assets+='<script src="directions-page.js" defer></script>';
   if(key==='about-doctors')assets+='<script src="doctor-profiles.js" defer></script>';
   if(key==='patient-rights')assets+='<script src="patient-rights.js" defer></script>';
+  if(key==='customer-center')assets+='<link rel="stylesheet" href="customer-center.css"><script src="customer-center-ui.js" defer></script>';
   html=html.replace('</head>',assets+'<link rel="stylesheet" href="subpages.css"><link rel="stylesheet" href="requested-refinements.css"></head>');
  }
  html=html.replace(/<title>.*?<\/title>/,'<title>주례성모안과 | '+title+'</title>');

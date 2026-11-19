@@ -11,7 +11,7 @@ const MENU=[
  ['소아안과',[['사시·약시','pediatric-strabismus'],['드림렌즈','pediatric-dream'],['소아 안종합검진','pediatric-exam']]],
  ['진료과목',[['안구건조증','care-dry'],['안성형','care-oculoplastic'],['안종합검진','care-exam']]],
 ];
-MENU.push(['눈여겨볼 정보', [['눈여겨볼 정보', 'interest']]]);
+MENU.push(['눈여겨볼 정보', [['눈여겨볼 정보', 'interest'],['고객센터','customer-center']]]);
 const PROMISES=[['충분한 상담','불편한 증상과 생활 속 어려움부터 듣습니다. 궁금한 점을 충분히 이야기할 수 있도록 상담합니다.'],['정밀한 검사','눈의 상태와 증상에 필요한 검사를 선택하고, 검사 결과를 함께 살펴봅니다.'],['맞춤형 치료','눈의 상태와 생활 방식, 치료 목표를 고려해 적합한 치료 방향을 상의합니다.'],['투명한 설명','검사 결과, 치료 선택지와 예상 비용, 주의사항을 이해하기 쉬운 말로 설명합니다.'],['지속적 관리','진료 이후의 경과를 살피고, 필요한 정기검진과 관리 방법을 안내합니다.'],['협진 체계','분야별 진료가 필요한 경우 의료진이 함께 환자의 눈 상태를 살펴봅니다.']];
 const EQUIPMENT=[['루메라 700','백내장 수술현미경','lumera-700-hd.png'],['니덱 OCT','안저·시신경 검사','image20.jpg'],['콘스텔레이션 비전 시스템','안과용 유리체·망막 수술 장비','image22.jpg'],['센츄리온 비전 시스템','초음파 백내장 수술 장비','image21.jpg']];
 const SPACES=[['대기 공간','image23.png','넓은 대기 공간에서 편안하게 진료를 기다리실 수 있습니다.'],['접수','image24.png','진료 접수와 내원 안내를 도와드립니다.'],['검사실','image25.png','눈 상태를 살피는 검사 공간입니다.'],['진료실','facility-treatment-01-v2.webp','검사 결과를 확인하고 진료 방향을 상담합니다.']];
@@ -108,6 +108,7 @@ function informationPage(){
 
 const ROUTES=['','patient-rights',...MENU.flatMap(([,items])=>items.map(([,r])=>r))];
 function renderPage(key){
+ if(key==='customer-center')return (typeof module!=='undefined'?require('./sub-visual.js')(key):window.ClinicSubVisual(key))+(typeof module!=='undefined'?require('./customer-center.js')():window.ClinicCustomerCenter());
  if(key==='')return home();
  if(key==='patient-rights')return typeof module!=='undefined'?require('./patient-rights.js')():window.ClinicPatientRights();
  if(PAGES[key])return typeof module!=='undefined'?require('./category-page.js')(key):window.ClinicCategoryPage(key);
@@ -144,7 +145,7 @@ if(typeof document!=='undefined'){
  dialog.addEventListener('click',e=>{if(e.target===dialog){const b=dialog.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)dialog.close();}});
  document.addEventListener('click',async e=>{
   const b=e.target.closest('button');if(!b)return;
-  if(b.dataset.channel){const key=b.dataset.channel,url=CONFIG.channels[key];if(url){const parsed=new URL(url);if(parsed.protocol==='https:')window.open(parsed.href,'_blank','noopener,noreferrer');}else showDialog({kakao:'카카오톡 상담',naver:'네이버 예약',consult:'온라인 상담'}[key],'<p>현재 온라인 연결을 준비 중입니다.<br>진료와 내원 문의는 전화로 안내해 드립니다.</p><a class="button solid" href="tel:0513251919">051-325-1919 전화 문의</a>');}
+  if(b.dataset.channel){const key=b.dataset.channel;if(key==='consult'){location.href='customer-center.html#write-question';return;}const url=CONFIG.channels[key];if(url){const parsed=new URL(url);if(parsed.protocol==='https:')window.open(parsed.href,'_blank','noopener,noreferrer');}else showDialog({kakao:'카카오톡 상담',naver:'네이버 예약',consult:'온라인 상담'}[key],'<p>현재 온라인 연결을 준비 중입니다.<br>진료와 내원 문의는 전화로 안내해 드립니다.</p><a class="button solid" href="tel:0513251919">051-325-1919 전화 문의</a>');}
   if(b.dataset.modal==='fees')showDialog('비급여 안내',CONFIG.fees.length?'<div class="fee-list">'+CONFIG.fees.map(f=>'<p>'+esc(f.name)+' · '+esc(f.price)+'</p>').join('')+'</div>':'<p>비급여 항목과 비용은 병원 확인 후 안내됩니다.</p><p>진료와 검사에 따른 비용은 전화로 문의해 주세요.</p><a class="button" href="tel:0513251919">비용 문의</a>');
   if(b.dataset.modal==='privacy')showDialog('개인정보처리방침','<h3>예약문의</h3><p>예약문의는 병원 전화로 연결하며, 홈페이지에서 성함·연락처·증상 선택 내용을 수집하거나 저장하지 않습니다.</p><h3>병원 안내</h3><p>메인 화면의 챗봇은 입력한 질문을 병원 안내 답변에 사용합니다. 이 홈페이지는 대화를 저장하지 않습니다. 이름·연락처·진료 기록 등 개인정보를 입력하지 마세요. 생성형 답변 기능이 설정된 경우 질문과 관련 안내 자료가 OpenAI API로 전달될 수 있습니다.</p><h3>외부 서비스 이용</h3><p>지도·상담·예약 서비스로 이동하는 경우 해당 서비스의 개인정보처리방침을 확인해 주세요.</p><h3>문의</h3><p>개인정보 관련 문의: 주례성모안과의원<br>051-325-1919 · maryeye1919@naver.com</p><p class="note">병원 운영 정책이 확정되면 상세 방침을 안내합니다.</p>');
   if(b.hasAttribute('data-copy-address')){try{await navigator.clipboard.writeText('부산 사상구 가야대로 276 엠스퀘어메디컬센터 9층');b.textContent='주소를 복사했습니다';setTimeout(()=>b.textContent='주소 복사',2200);}catch{showDialog('주소','<p>부산 사상구 가야대로 276<br>엠스퀘어메디컬센터 9층</p><p>주소를 선택하여 복사해 주세요.</p>');}}
