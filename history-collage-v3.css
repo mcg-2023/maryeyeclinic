@@ -1,0 +1,20 @@
+/* Staggered capsules stay outside the central reading area. */
+#history.history-journey .history-memory[class]{width:var(--memory-width)!important;max-width:26svh;height:auto!important;aspect-ratio:var(--memory-ratio)!important;left:var(--memory-left,auto)!important;right:var(--memory-right,auto)!important;top:var(--memory-top)!important;border-radius:999px}
+#history .history-memory.memory-0{--memory-width:13%;--memory-ratio:1/2;--memory-left:4%;--memory-top:8svh}
+#history .history-memory.memory-1{--memory-width:10%;--memory-ratio:1/1.75;--memory-left:17%;--memory-top:48svh}
+#history .history-memory.memory-2{--memory-width:17%;--memory-ratio:1/1.2;--memory-left:3%;--memory-top:103svh}
+#history .history-memory.memory-3{--memory-width:12%;--memory-ratio:1/1.8;--memory-right:15%;--memory-top:12svh}
+#history .history-memory.memory-4{--memory-width:10%;--memory-ratio:1/2.4;--memory-right:3%;--memory-top:67svh}
+#history .history-memory.memory-5{--memory-width:11%;--memory-ratio:1/1.6;--memory-left:16%;--memory-top:146svh}
+#history .history-memory.memory-6{--memory-width:14%;--memory-ratio:1/1.1;--memory-right:14%;--memory-top:121svh}
+#history .history-memory.memory-7{--memory-width:12%;--memory-ratio:1/2;--memory-right:2%;--memory-top:168svh}
+@media(max-width:700px){
+ #history .history-memory.memory-0{--memory-width:15%;--memory-ratio:1/2.1;--memory-left:4%;--memory-top:9svh}
+ #history .history-memory.memory-1{--memory-width:13%;--memory-ratio:1/2.6;--memory-left:10%;--memory-top:40svh}
+ #history .history-memory.memory-2{--memory-width:20%;--memory-ratio:1/.95;--memory-left:3%;--memory-top:80svh}
+ #history .history-memory.memory-3{--memory-width:17%;--memory-ratio:1/1.8;--memory-right:5%;--memory-top:20svh}
+ #history .history-memory.memory-4{--memory-width:14%;--memory-ratio:1/2.3;--memory-right:2%;--memory-top:58svh}
+ #history .history-memory.memory-5{--memory-width:16%;--memory-ratio:1/1.5;--memory-left:8%;--memory-top:110svh}
+ #history .history-memory.memory-6{--memory-width:15%;--memory-ratio:1/1.2;--memory-right:9%;--memory-top:100svh}
+ #history .history-memory.memory-7{--memory-width:19%;--memory-ratio:1/1.65;--memory-right:4%;--memory-top:132svh}
+}
