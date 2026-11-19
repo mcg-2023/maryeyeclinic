@@ -1,4 +1,4 @@
-﻿[
+[
     {
         "images":  [
                        {
@@ -74,21 +74,21 @@
     {
         "images":  [
                        {
-                           "src":  "assets/facility-consultation-01.jpg",
+                           "src":  "assets/facility-treatment-01-v2.webp",
                            "alt":  "진료실 사진 1"
                        },
                        {
-                           "src":  "assets/facility-consultation-02.jpg",
+                           "src":  "assets/facility-treatment-02-v2.webp",
                            "alt":  "진료실 사진 2"
                        },
                        {
-                           "src":  "assets/facility-consultation-03.jpg",
+                           "src":  "assets/facility-treatment-03-v2.webp",
                            "alt":  "진료실 사진 3"
                        }
                    ],
         "title":  "진료실",
         "description":  "검사 결과를 확인하고 진료 방향을 상담하는 공간입니다.",
         "id":  "consultation",
-        "cover":  "image26.png"
+        "cover":  "facility-treatment-01-v2.webp"
     }
 ]
