@@ -11,7 +11,3 @@
  .header #mega h2,body.subpage .header #mega h2{font-size:clamp(12px,.95vw,17px)}
  .header #mega .menu-links>a,body.subpage .header #mega .menu-links>a{font-size:clamp(12px,.95vw,17px);min-height:60px;white-space:normal;word-break:keep-all}
 }
-.oculoplastic-topics{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}
-.oculoplastic-topics a{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;padding:16px 22px;border:1px solid #cbbba4;border-radius:12px;color:#594633;background:#faf7f1;font-size:18px}
-.oculoplastic-topics a[aria-current="page"]{background:linear-gradient(120deg,#806849,#574333);color:#fff;border-color:#806849}
-@media(max-width:700px){.oculoplastic-topics{gap:12px}.oculoplastic-topics a{flex:1;font-size:14px;padding:14px 16px;gap:12px}}
