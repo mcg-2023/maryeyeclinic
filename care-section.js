@@ -9,7 +9,8 @@
  const before=section.querySelector('[data-care-before]'),note=section.querySelector('.care-simulation-note');
  const copy=section.querySelector('.care-active-copy'),link=section.querySelector('.care-active-link');
  const wide=matchMedia('(min-width:1024px)');
- const imageFor=data=>!wide.matches&&data.image.includes('care-pediatric-')?'assets/care-pediatric-mobile-v6.webp':wide.matches?data.image.replace('-wide-v2.webp','-compact-v3.webp').replace('-wide-v5.webp','-compact-v5.webp'):data.image;
+ const photoWide=matchMedia('(min-width:701px)');
+ const imageFor=data=>data.desktopImage?(photoWide.matches?data.desktopImage:data.image):!wide.matches&&data.image.includes('care-pediatric-')?'assets/care-pediatric-mobile-v6.webp':wide.matches?data.image.replace('-wide-v2.webp','-compact-v3.webp').replace('-wide-v5.webp','-compact-v5.webp'):data.image;
  const ready=new Map();let request=0,active=-1;
  function prepare(src){
   if(!ready.has(src)){const image=new Image();image.decoding='async';image.src=src;ready.set(src,image.decode().catch(()=>{ready.delete(src);throw new Error('Image unavailable');}));}
@@ -50,6 +51,7 @@
  select(0);
  const preload=()=>items.forEach(item=>prepare(imageFor(item.dataset)).catch(()=>{}));
  wide.addEventListener('change',()=>{preload();select(active>=0?active:0);});
+ photoWide.addEventListener('change',()=>{if(items[active]?.dataset.desktopImage){preload();select(active);}});
  if('IntersectionObserver'in window){const warmer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){preload();warmer.disconnect();}},{rootMargin:'800px'});warmer.observe(section);}else preload();
  let visible=true;
  const sync=()=>comparison.classList.toggle('care-auto-paused',!visible||document.hidden);
