@@ -1,0 +1,17 @@
+/* Clinic review: comparisons run from the untreated state to clearer vision. */
+.unified-category[data-eye-page="pediatric-dream"] .uc-vision .ed-comparison-haze{clip-path:inset(0 calc(100% - var(--ed-split)) 0 0)}
+.unified-category[data-eye-page="retina-amd"] .uc-vision .uc-effect-overlay{background:radial-gradient(ellipse 47% 68% at 50% 50%,#151310 0%,#1a1713fa 38%,#29231be8 58%,#332b1d99 78%,transparent 100%)}
+.unified-category[data-eye-page="retina-diabetes"] .uc-vision[data-effect="spots"] .uc-effect-overlay{background:radial-gradient(ellipse 29% 42% at 50% 50%,#17110efa 0%,#211710eb 40%,#302217a6 72%,transparent 100%),radial-gradient(ellipse 15% 21% at 27% 28%,#251811e0 0%,#30211899 50%,transparent 100%),radial-gradient(ellipse 15% 20% at 73% 66%,#1c1712eb 0%,#302217a6 50%,transparent 100%),radial-gradient(ellipse 9% 14% at 40% 76%,#1e1711d9 0%,transparent 100%)}
+.unified-category .uc-graphics:empty{display:none}
+@media(min-width:901px){
+ .header #nav{grid-template-columns:repeat(7,minmax(0,1fr))}
+ .header #nav>a{font-size:clamp(13px,1vw,17px);padding-inline:2px}
+ .header #mega:not([hidden]),body.subpage .header #mega:not([hidden]){grid-template-columns:repeat(7,minmax(0,1fr))!important}
+ .header #mega>.menu-group,body.subpage .header #mega>.menu-group{padding-inline:2px}
+ .header #mega h2,body.subpage .header #mega h2{font-size:clamp(12px,.95vw,17px)}
+ .header #mega .menu-links>a,body.subpage .header #mega .menu-links>a{font-size:clamp(12px,.95vw,17px);min-height:60px;white-space:normal;word-break:keep-all}
+}
+.oculoplastic-topics{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}
+.oculoplastic-topics a{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;padding:16px 22px;border:1px solid #cbbba4;border-radius:12px;color:#594633;background:#faf7f1;font-size:18px}
+.oculoplastic-topics a[aria-current="page"]{background:linear-gradient(120deg,#806849,#574333);color:#fff;border-color:#806849}
+@media(max-width:700px){.oculoplastic-topics{gap:12px}.oculoplastic-topics a{flex:1;font-size:14px;padding:14px 16px;gap:12px}}

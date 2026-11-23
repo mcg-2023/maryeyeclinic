@@ -1,5 +1,17 @@
 (function(root,factory){if(typeof module!=='undefined')module.exports=factory;else root.ClinicIssueCharts=factory;})(typeof window!=='undefined'?window:this,function(key){
- const nhis='https://www.kiri.or.kr/PDF/weeklytrend/20241223/trend20241223_3.pdf';
+ if(key==='cataract'){
+  const periods=[
+   {year:'2013–2020',label:'확장 전 누적',value:1014,approximate:true},
+   {year:'2021',value:600},
+   {year:'2022',value:417},
+   {year:'2023',value:304},
+   {year:'2024',value:431},
+   {year:'2025',value:366},
+   {year:'2026',label:'집계 중',value:367,ongoing:true}
+  ];
+  const description=periods.map(p=>`${p.year}년 ${p.label||'연간'} ${p.approximate?'약 ':''}${p.value.toLocaleString('ko-KR')}건${p.ongoing?' (제공 자료 기준 진행 중 집계)':''}`).join(', ');
+  return `<figure class="clinic-surgery-chart" aria-labelledby="clinic-cataract-chart-title"><figcaption class="clinic-surgery-heading"><div><p>JURYE ST. MARY’S EYE CLINIC</p><h3 id="clinic-cataract-chart-title">주례성모안과 백내장 수술 건수</h3></div><span>단위: 건</span></figcaption><div class="clinic-surgery-graph" role="img" aria-label="${description}" aria-describedby="clinic-cataract-chart-note"><div class="clinic-surgery-scale" aria-hidden="true"><span>1,200</span><span>600</span><span>0</span></div><div class="clinic-surgery-columns" aria-hidden="true">${periods.map(p=>`<div class="clinic-surgery-column${p.approximate?' is-cumulative':''}${p.ongoing?' is-ongoing':''}"><div class="clinic-surgery-bar-area"><div class="clinic-surgery-bar" style="--surgery-bar-height:${p.value/1200*100}%"><b>${p.approximate?'<small>약</small>':''}<strong>${p.value.toLocaleString('ko-KR')}${p.ongoing?'~':''}</strong></b></div></div><div class="clinic-surgery-label"><span>${p.year}</span><small>${p.label||'연간'}</small></div></div>`).join('')}</div></div><p class="clinic-surgery-note" id="clinic-cataract-chart-note">2013–2020년은 확장 전 여러 해의 누적 수술 건수로, 약 1,014건입니다.<br>2021–2025년은 각 연도의 수술 건수이며, 2026년은 제공 자료 기준 진행 중 집계로 연간 확정 수치가 아닙니다.</p></figure>`;
+ }
  const kca='https://www.kca.go.kr/smartconsumer/sub.do?menukey=7714&mode=view&no=1003202044';
  const amd='https://pmc.ncbi.nlm.nih.gov/articles/PMC12235191/';
  const detachment='https://pmc.ncbi.nlm.nih.gov/articles/PMC8627102/';
@@ -13,7 +25,6 @@
  const chart=(title,unit,values,sourceName,source,note,max)=>({title,unit,values,sourceName,source,note,max});
  const screening=[chart('소아 검진에서 확인된 굴절 이상','%',[['2002년',1.10],['2011년',0.42]],'한국실명예방재단 검진자료 연구',children,'서울 3–6세 가정 시력검진 결과입니다. 전국 유병률과는 다릅니다.',1.2),chart('소아 검진에서 확인된 약시','%',[['2002년',0.25],['2011년',0.06]],'한국실명예방재단 검진자료 연구',children,'같은 검진사업에서 확인된 비율입니다. 연도별 검진 결과의 비교입니다.',.3)];
  const charts={
- cataract:[chart('주요수술 건수 비교 · 2023년','건',[['백내장',637879],['일반 척추',206785],['치핵',151899],['제왕절개',147121],['담낭절제',96975]],'국민건강보험공단 · 2023 주요수술 통계연보',nhis,'2024년 12월 발표된 공단 원문 통계입니다. 수술 건수이며 환자 수가 아닙니다.',800000),chart('연도별 백내장 수술 건수','건',[['2019년',689919],['2020년',702621],['2021년',781220],['2022년',735693],['2023년',637879]],'국민건강보험공단 · 2023 주요수술 통계연보',nhis,'연도에 따라 증감합니다. 특정 연령대만의 수술 건수를 뜻하지 않습니다.',800000)],
  presbyopia:[chart('세계 노안 인구 추정 · 2015년','백만 명',[['노안 전체',1800],['교정 부족에 따른 근거리 시각장애',826]],'Fricke 등 · Ophthalmology 2018',presbyopia,'세계 추정치입니다. 근거리 시각장애 인구는 노안 전체에 포함되는 일부입니다.',2000),chart('세계 인구의 노안 추정 비율 · 2015년','%',[['노안',25],['그 외',75]],'Fricke 등 · Ophthalmology 2018',presbyopia,'연구의 노안 유병률 추정치 25%를 시각화했습니다. 한국 통계가 아닙니다.',100)],
  lens:[chart('백내장 수술 경험자의 렌즈 인식','명',[['급여 단초점',187],['비급여 다초점',109],['잘 모름',104],['무응답',10]],'한국소비자원 · 2021년 조사',kca,'수술 경험자 410명 응답입니다. 제품별 효과나 현재 렌즈 사용 비율을 뜻하지 않습니다.',200),chart('인공수정체의 급여 여부 인식','명',[['모르고 있었음',204],['그 외 응답',206]],'한국소비자원 · 2021년 조사',kca,'410명 중 급여·비급여 대상을 모르고 있었다는 응답과 나머지 응답을 비교했습니다.',250)],
  'retina-amd':[chart('습성 황반변성 연령표준화 유병률','1만 명당',[['2013년',10.7],['2022년',22.5]],'국민건강보험 자료 분석 · JKMS 2025',amd,'40세 이상 대상, 같은 기준으로 연령표준화한 연간 유병률입니다.',30),chart('습성 황반변성 조유병률','1만 명당',[['2013년',10.9],['2022년',29.2]],'국민건강보험 자료 분석 · JKMS 2025',amd,'40세 이상 대상 조유병률입니다. 연령표준화 수치와 구분해 보세요.',35)],

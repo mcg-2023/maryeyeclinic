@@ -16,7 +16,7 @@ for(const key of ROUTES){
  let html=template.replace(/<main id="main" tabindex="-1">[\s\S]*?<\/main>/,'<main id="main" tabindex="-1">'+renderPage(key)+'</main>');
  if(key){
   html=html.replace('<body>','<body class="subpage">');
-  let assets='<script src="category-data.js" defer></script><script src="sub-visual.js" defer></script>';
+  let assets='<script src="oculoplastic-data.js" defer></script><script src="category-data.js" defer></script><script src="sub-visual.js" defer></script>';
   if(PAGES[key])assets+='<link rel="stylesheet" href="cataract-booking.css"><link rel="stylesheet" href="eye-detail.css"><link rel="stylesheet" href="eye-reservation.css"><script src="cataract-booking.js" defer></script><script src="eye-reservation.js" defer></script><script src="issue-charts.js" defer></script><script src="category-page.js" defer></script><script src="eye-detail-effects.js" defer></script><script src="category-interactions.js" defer></script>';
   if(key==='about-location')assets+='<script src="directions-page.js" defer></script>';
   if(key==='about-doctors')assets+='<script src="doctor-profiles.js" defer></script>';
@@ -30,7 +30,7 @@ for(const key of ROUTES){
  {html=html.replace('</head>','<link rel="stylesheet" href="chatbot.css"></head>').replace('</body>',chatbotMarkup()+'</body>');}
  if(key==='interest'){html=html.replace(/<script src="information\.js[^"]*" defer><\/script>/, '<script>'+fs.readFileSync('dist/information.js','utf8')+'</script>');}
  html=html.replace('<link rel="stylesheet" href="november-refinements.css">','');
- html=html.replace('</head>','<link rel="stylesheet" href="november-refinements.css"><link rel="stylesheet" href="mobile-refinements.css"><link rel="stylesheet" href="history-mobile-layout-v2.css"><link rel="stylesheet" href="history-collage-v3.css"><link rel="stylesheet" href="final-review.css"></head>');
+ html=html.replace('</head>','<link rel="stylesheet" href="november-refinements.css"><link rel="stylesheet" href="mobile-refinements.css"><link rel="stylesheet" href="history-mobile-layout-v2.css"><link rel="stylesheet" href="history-collage-v3.css"><link rel="stylesheet" href="final-review.css"><link rel="stylesheet" href="clinic-chart.css"><link rel="stylesheet" href="november-pdf-revisions.css"></head>');
  html=html.replace(/\b(src|href)="([^"?#]+\.(?:js|css))"/g,(attribute,name,file)=>{
   if(/^(?:https?:)?\/\//.test(file))return attribute;
   const asset=path.join(__dirname,'dist',file);

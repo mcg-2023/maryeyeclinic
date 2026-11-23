@@ -1,0 +1,47 @@
+/* Clinic-supplied cataract records: one plot, with cumulative and ongoing periods identified. */
+.unified-category .clinic-surgery-chart{grid-column:1/-1;min-width:0;margin:0;padding:24px 28px 8px;color:#493b30}
+.clinic-surgery-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:36px;text-align:left}
+.clinic-surgery-heading p{font-size:12px;line-height:1.5;letter-spacing:.12em;color:#7c6a57;margin:0 0 10px}
+.clinic-surgery-heading h3{font-size:clamp(24px,2.3vw,34px);font-weight:600;line-height:1.45;margin:0;color:#493b30;word-break:keep-all;text-wrap:balance}
+.clinic-surgery-heading>span{flex:none;font-size:13px;color:#7c6a57;white-space:nowrap}
+.clinic-surgery-graph{display:grid;grid-template-columns:42px minmax(0,1fr);gap:18px;min-width:0}
+.clinic-surgery-scale{height:320px;display:flex;flex-direction:column;justify-content:space-between;align-items:end;font-size:12px;line-height:1;color:#7c6a57}
+.clinic-surgery-scale span:first-child{transform:translateY(-50%)}
+.clinic-surgery-scale span:last-child{transform:translateY(50%)}
+.clinic-surgery-columns{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:clamp(10px,2.4vw,38px);min-width:0}
+.clinic-surgery-column{min-width:0;text-align:center}
+.clinic-surgery-bar-area{height:320px;display:flex;align-items:end;justify-content:center;border-bottom:2px solid #bcad95;background:linear-gradient(to top,transparent calc(50% - 1px),#bcad9533 calc(50% - 1px),#bcad9533 50%,transparent 50%,transparent calc(100% - 1px),#bcad9533 calc(100% - 1px));position:relative}
+.clinic-surgery-bar{position:relative;width:min(76px,76%);height:var(--surgery-bar-height);background:linear-gradient(180deg,#b6a181,#e2d5be);border-radius:8px 8px 0 0}
+.clinic-surgery-bar b{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;font-size:clamp(14px,1.4vw,19px);line-height:1.25;color:#66513c;white-space:nowrap}
+.clinic-surgery-bar b strong{font:inherit;font-weight:600}
+.clinic-surgery-bar b small{font-size:12px;font-weight:400}
+.clinic-surgery-column.is-cumulative .clinic-surgery-bar{background:linear-gradient(180deg,#a3947c,#d9ccb3)}
+.clinic-surgery-column.is-ongoing .clinic-surgery-bar{background:linear-gradient(180deg,#8e6f4d,#c8ad85)}
+.clinic-surgery-label{padding-top:16px;font-size:clamp(12px,1.2vw,17px);line-height:1.4;color:#493b30}
+.clinic-surgery-label>span{display:block;white-space:nowrap;font-variant-numeric:tabular-nums}
+.clinic-surgery-label small{display:block;margin-top:5px;color:#7c6a57;font-size:12px;line-height:1.4;word-break:keep-all}
+.clinic-surgery-note{margin:28px 0 0;font-size:14px;line-height:1.8;color:#7c6a57;word-break:keep-all}
+@media(max-width:700px){
+ .unified-category .clinic-surgery-chart{padding:10px 0 0}
+ .clinic-surgery-heading{gap:12px;align-items:start;margin-bottom:28px}
+ .clinic-surgery-heading p{font-size:9px;letter-spacing:.07em;margin-bottom:8px}
+ .clinic-surgery-heading h3{font-size:20px;line-height:1.4}
+ .clinic-surgery-heading>span{font-size:10px;padding-top:2px}
+ .clinic-surgery-graph{grid-template-columns:27px minmax(0,1fr);gap:6px}
+ .clinic-surgery-scale{height:230px;font-size:9px}
+ .clinic-surgery-columns{gap:5px}
+ .clinic-surgery-bar-area{height:230px}
+ .clinic-surgery-bar{width:72%;border-radius:5px 5px 0 0}
+ .clinic-surgery-bar b{bottom:calc(100% + 7px);font-size:11px}
+ .clinic-surgery-bar b small{font-size:9px}
+ .clinic-surgery-label{font-size:11px;padding-top:12px;letter-spacing:-.035em}
+ .clinic-surgery-label small{font-size:9px;margin-top:5px;line-height:1.45;letter-spacing:0}
+ .clinic-surgery-column.is-cumulative .clinic-surgery-label>span{white-space:normal;overflow-wrap:normal;word-break:normal}
+ .clinic-surgery-note{font-size:11px;line-height:1.7;margin-top:22px}
+}
+@media(max-width:360px){
+ .clinic-surgery-heading h3{font-size:18px}
+ .clinic-surgery-columns{gap:3px}
+ .clinic-surgery-bar b{font-size:10px}
+ .clinic-surgery-label{font-size:10px}
+}
