@@ -1,0 +1,32 @@
+{
+  "tool": "built-in image_gen",
+  "prompts": {
+    "dry": "Use case: photorealistic-natural. Asset type: extra-wide Korean ophthalmology clinic website service photo, no text. Create a premium realistic photograph of a Korean woman aged about 35 working at a laptop in a bright softly sunlit warm ivory office. She is gently touching the skin at the outer corner of one closed eye with her fingertip and has a subtle believable expression of dry-eye discomfort and tiredness. She is NOT smiling, NOT resting with arms behind her head, not rubbing hard, no red gory eye. A laptop edge on the desk establishes screen use. Cream blouse, neutral pale beige and ivory palette with a warm brown desk accent, modern clean room, natural photography. Camera is a medium-close chest-up view, eyes and hand are clearly visible. Frame a very wide panoramic 3:1 composition: woman near horizontal center, all of her head, hair, chin, shoulder and hand fully inside the central 60% of canvas and central 65% of its height. Generous neutral background above, below and both sides makes responsive wide cropping possible. No lower body, no table legs. No doctor, no other person, no logos, no text, no typography, no inset circles, no watermark. This is a generic illustrative stock-style photograph, not an identifiable real patient.",
+    "exam": "Use case: photorealistic-natural. Asset type: extra-wide Korean ophthalmology clinic website service photo, no text. Create a premium realistic photograph of an adult Korean woman having a routine automated refraction eye examination at a clean white auto-refractor machine. Her chin is resting correctly on the chin rest, forehead against the forehead support, and one eye is aligned with the diagnostic aperture, with a natural attentive expression. Three-quarter side camera angle makes her face and the machine relationship clear. A technician may be implied off camera but NO doctor or technician face, no other visible person. Bright modern clean ophthalmology examination room, warm ivory and soft beige tones, subtle medical-white equipment and brown cabinetry accent. Realistic proportions and professional clinical setup, no surgery, no blood, no anatomical cutaways. Medium close chest-up image. Frame as a very wide panoramic 3:1 composition, positioning the woman's head and the machine's essential eye-level components near the horizontal center, fully within the central 60% of width and central 65% of image height. Generous uncluttered background above, below and sides enables responsive wide cropping. Do not cut off her head, forehead, chin or the essential chin-rest setup. No lower body, no table legs, no logos or readable text or typography or watermarks. Generic illustrative stock photograph, not real clinical outcome evidence."
+  },
+  "sourcePaths": {
+    "dry": "C:/Users/USER/.codex/generated_images/01a1c8da-fd80-7542-8052-0ae68e05b991/exec-d35ce4d3-1891-465a-aaf1-88080b5878dc.png",
+    "exam": "C:/Users/USER/.codex/generated_images/01a1c8da-fd80-7542-8052-0ae68e05b991/exec-f9ef6e1c-04f2-4dbb-91be-9293e74791fb.png"
+  },
+  "assets": [
+    "website/dist/assets/care-dry-service-banner-v1.webp",
+    "website/dist/assets/care-dry-service-mobile-v1.webp",
+    "website/dist/assets/care-exam-service-banner-v1.webp",
+    "website/dist/assets/care-exam-service-mobile-v1.webp"
+  ],
+  "note": "Generic illustrative AI-created service photographs, not actual clinic patient images or surgical results. Desktop uses built-in image_gen background expansion with a smaller centered subject for wide responsive crops; mobile uses a centered crop of the initial portrait. Other five services unchanged.",
+  "desktopEdits": {
+    "dry": {
+      "file": "C:\\Users\\USER\\.codex\\generated_images\\01a1c8da-fd80-7542-8052-0ae68e05b991\\exec-d35ce4d3-1891-465a-aaf1-88080b5878dc.png",
+      "prompt": "Edit target is this generated dry-eye service photograph. Zoom OUT significantly by outpainting a wider and taller view of the SAME room; keep final panorama 3:1. Scale the entire original composition down to about 55 percent, centered vertically and horizontally, then naturally extend the office above, below, left and right. The SAME woman's complete head, hair, hand near eye, and laptop top must fit wholly inside the central 40 percent of output width and central 52 percent of output height, with lots of empty ivory wall above and to both sides. Preserve her identity, gentle discomfort gesture, hairstyle, blouse and proportions. This will be cropped vertically to a very shallow website banner, so face and touching hand MUST be small and centered, not filling the image height. Soft warm ivory office, natural wood cabinet and desk, no lower body, no table legs, no text, no logo, no additional people. Photorealistic. Avoid duplicated or stretched plants, repeated strips, mirrors or visible edit seams."
+    },
+    "exam": {
+      "file": "C:\\Users\\USER\\.codex\\generated_images\\01a1c8da-fd80-7542-8052-0ae68e05b991\\exec-f9ef6e1c-04f2-4dbb-91be-9293e74791fb.png",
+      "prompt": "Edit target is this generated auto-refractor service photograph. Zoom OUT significantly by outpainting a wider and taller view of the SAME examination room; keep final panorama 3:1. Scale the entire original composition down to about 55 percent, centered vertically and horizontally, then naturally extend the clinic above, below, left and right. The SAME patient's full head, eye, forehead rest, chin rest and essential top of the machine must fit wholly inside the central 45 percent of output width and central 52 percent of output height, with lots of empty clean ivory background above and both sides. Keep her face, hairstyle, natural expression, clothes and eye examination alignment accurate. This will be cropped vertically to a very shallow website banner, so face and essential examination setup MUST be small and centered, not filling the image height. Warm ivory and wood cabinetry with medical white equipment; no visible doctor or other person, no lower body or table legs, no text, logos or watermark. Photorealistic. No duplicated/stretched equipment, no mirror reflections or edit seams."
+    }
+  },
+  "desktopSourcePaths": {
+    "dry": "C:/Users/USER/.codex/generated_images/01a1c8da-fd80-7542-8052-0ae68e05b991/exec-0ca96e49-d900-4834-8f3b-3c3f7ba47358.png",
+    "exam": "C:/Users/USER/.codex/generated_images/01a1c8da-fd80-7542-8052-0ae68e05b991/exec-daf350ab-8ba7-4179-93e8-0097759833d8.png"
+  }
+}
