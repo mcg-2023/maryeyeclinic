@@ -9,7 +9,8 @@ const MENU=[
  ['노안·백내장',[['백내장','cataract'],['노안','presbyopia'],['인공수정체','lens']]],
  ['망막·녹내장',[['황반변성','retina-amd'],['당뇨망막병증','retina-diabetes'],['망막박리','retina-detachment'],['녹내장','retina-glaucoma']]],
  ['소아안과',[['사시·약시','pediatric-strabismus'],['드림렌즈','pediatric-dream'],['소아 안종합검진','pediatric-exam']]],
- ['진료과목',[['안구건조증','care-dry'],['안성형','care-oculoplastic'],['안종합검진','care-exam']]],
+ ['안성형',[['안검하수','care-ptosis'],['안검내반','care-entropion']]],
+ ['진료과목',[['안구건조증','care-dry'],['안종합검진','care-exam']]],
 ];
 MENU.push(['눈여겨볼 정보', [['눈여겨볼 정보', 'interest'],['Q&A','customer-center'],['온라인 상담','online-consultation']]]);
 const PROMISES=[['충분한 상담','불편한 증상과 생활 속 어려움부터 듣습니다. 궁금한 점을 충분히 이야기할 수 있도록 상담합니다.'],['정밀한 검사','눈의 상태와 증상에 필요한 검사를 선택하고, 검사 결과를 함께 살펴봅니다.'],['맞춤형 치료','눈의 상태와 생활 방식, 치료 목표를 고려해 적합한 치료 방향을 상의합니다.'],['투명한 설명','검사 결과, 치료 선택지와 예상 비용, 주의사항을 이해하기 쉬운 말로 설명합니다.'],['지속적 관리','진료 이후의 경과를 살피고, 필요한 정기검진과 관리 방법을 안내합니다.'],['협진 체계','분야별 진료가 필요한 경우 의료진이 함께 환자의 눈 상태를 살펴봅니다.']];
@@ -32,6 +33,12 @@ const PAGES={
  'care-exam':{title:'안종합검진',group:4,en:'EYE EXAMINATION',headline:'잘 보이는 눈도,<br>건강한지 살펴봅니다.',lead:'증상과 연령, 가족력에 맞춰 필요한 눈 검사를 상담합니다.',image:'image11.png',definition:'안종합검진은 시력과 굴절 상태뿐 아니라 수정체, 망막, 시신경 등 눈의 건강을 확인하는 검사입니다. 모든 검사를 일괄 시행하기보다 눈 상태와 필요에 맞춰 선택합니다.',tests:['시력·굴절검사','안압검사','세극등검사','안저검사','시신경 상태 확인','필요한 추가 정밀검사'],exams:[['문진과 기본검사','증상과 병력, 가족력 및 시력·굴절 상태를 확인합니다.'],['눈 건강 확인','눈 상태에 따라 필요한 정밀검사를 선택합니다.']],treatments:[['검사 결과 상담','현재 눈 상태와 필요한 관리 방향을 설명합니다.'],['정기검진 계획','연령, 위험요인과 검사 결과에 따라 검사 간격을 안내합니다.']],faq:[['방문 전에 무엇을 준비하면 좋나요?','사용 중인 안경과 복용약 정보, 이전 검사 자료가 있다면 가져오세요. 검사 준비사항은 방문 전 전화로 확인하실 수 있습니다.']]}
 };
 const link=r=>r? r+'.html':'index.html';
+
+Object.assign(PAGES,{
+ 'care-ptosis':{title:'안검하수',group:4,en:'PTOSIS',image:'hero-refresh-care-oculoplastic-v2.webp',definition:'윗눈꺼풀의 처짐과 눈을 뜨는 힘, 시야에 미치는 영향을 함께 확인합니다.',symptoms:['윗눈꺼풀 처짐','위쪽 시야 가림','눈을 뜰 때의 불편']},
+ 'care-entropion':{title:'안검내반',group:4,en:'ENTROPION',image:'facility-consultation-01.jpg',definition:'안쪽으로 말리는 눈꺼풀과 눈을 자극하는 속눈썹, 눈 표면의 상태를 확인합니다.',symptoms:['속눈썹 자극','이물감과 눈물','반복되는 충혈']}
+});
+Object.entries(PAGES).forEach(([route,p])=>{const group=MENU.findIndex(([,items])=>items.some(([,key])=>key===route));if(group>=0)p.group=group;});
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const img=(file,alt,extra='')=>{const tag='<img src="assets/'+file+'" alt="'+esc(alt)+'" loading="lazy" '+extra+'>';return ['image7.png','image18.png'].includes(file)?'<span class="photo-crop">'+tag+'</span>':tag;};
 const head=(en,title,aside='')=>'<div class="section-head"><div><p class="eyebrow">'+en+'</p><h2>'+title+'</h2></div>'+aside+'</div>';
@@ -101,19 +108,19 @@ function aboutPage(key){
 }
 
 function informationPage(){
- const posts=Object.entries(PAGES).map(([route,p],i)=>({id:i+1,route,image:p.image,title:p.title+' 알아보기',category:MENU[p.group][0],summary:p.definition,search:[p.title,p.definition,p.lead,...(p.symptoms||[]),...(p.tests||[])].join(' ')}));
+ const posts=Object.entries(PAGES).filter(([route])=>MENU.some(([,items])=>items.some(([,key])=>key===route))).map(([route,p],i)=>({id:i+1,route,image:p.image,title:p.title+' 알아보기',category:MENU[p.group][0],summary:p.definition,search:[p.title,p.definition,p.lead,...(p.symptoms||[]),...(p.tests||[])].join(' ')}));
  return '<section class="info-hero"><div class="wrap"><p class="eyebrow">EYE HEALTH JOURNAL</p><h1>눈여겨볼 정보</h1><p>알아두면 좋은 눈 이야기,<br>건강한 일상을 위해 차근차근 전합니다.</p><span class="info-hero-mark" aria-hidden="true">eye.</span></div></section><section class="info-board wrap" aria-label="눈 건강 정보 게시판"><div class="info-heading"><div><p class="eyebrow">A CLOSER LOOK</p><h2>내 눈을 위한 작은 관심</h2><p>궁금했던 눈 건강 정보를 만나보세요.</p></div><form id="info-search" role="search" action="interest.html" method="get"><label class="sr-only" for="info-query">게시글 검색</label><input id="info-query" name="q" type="search" placeholder="궁금한 정보를 검색해 보세요" maxlength="100"><button type="submit" aria-label="검색">검색 ↗</button></form></div><div class="info-filters" aria-label="정보 분류">'+['전체',...new Set(posts.map(p=>p.category))].map((c,i)=>'<button type="button" data-info-category="'+esc(c)+'" aria-pressed="'+(!i)+'">'+esc(c)+'</button>').join('')+'</div><div id="info-results"><p class="info-count" role="status">전체 <strong>'+posts.length+'</strong>건</p><div class="info-list">'+posts.map(p=>'<article class="info-row" data-info-post data-category="'+esc(p.category)+'" data-search="'+esc(p.search)+'"><a class="info-thumbnail" href="'+link(p.route)+'" tabindex="-1" aria-hidden="true"><img src="assets/'+esc(p.image)+'" alt="'+esc(p.title)+'" loading="lazy"><span class="info-thumbnail-shade"></span><span class="info-thumbnail-copy"><span class="info-thumbnail-kicker">EYE HEALTH · '+String(p.id).padStart(2,'0')+'</span><strong>'+esc(p.title.replace(' 알아보기',''))+'</strong><span class="info-thumbnail-caption">내 눈을 위한<br>건강 이야기</span></span><span class="info-thumbnail-brand">주례성모안과</span></a><div><span class="info-category">'+esc(p.category)+'</span><h3><a href="'+link(p.route)+'" data-info-detail="'+p.id+'">'+esc(p.title)+'</a></h3><p>'+esc(p.summary)+'</p></div><a class="info-arrow" href="'+link(p.route)+'" aria-label="'+esc(p.title)+' 자세히 보기">↗</a></article>').join('')+'</div><p class="info-empty" hidden>검색 결과가 없습니다. 다른 검색어를 입력해 주세요.</p></div><nav class="info-pagination" aria-label="게시판 페이지"></nav><p class="info-footnote">주례성모안과의 눈 건강 안내를 모았습니다. 자세한 내용은 각 진료 안내에서 확인하실 수 있습니다.</p></section>';
 }
 
-const ROUTES=['','patient-rights',...MENU.flatMap(([,items])=>items.map(([,r])=>r))];
+const ROUTES=['','patient-rights',...MENU.flatMap(([,items])=>items.map(([,r])=>r)),'care-oculoplastic'];
 function renderPage(key){
- if(key==='online-consultation')return (typeof module!=='undefined'?require('./sub-visual.js')(key):window.ClinicSubVisual(key))+'<div class="wrap information-category-tabs">'+tabs(5,key)+'</div>'+(typeof module!=='undefined'?require('./online-consultation.js')():window.ClinicOnlineConsultation());
- if(key==='customer-center')return (typeof module!=='undefined'?require('./sub-visual.js')(key):window.ClinicSubVisual(key))+'<div class="wrap information-category-tabs">'+tabs(5,key)+'</div>'+(typeof module!=='undefined'?require('./customer-center.js')():window.ClinicCustomerCenter());
+ if(key==='online-consultation')return (typeof module!=='undefined'?require('./sub-visual.js')(key):window.ClinicSubVisual(key))+'<div class="wrap information-category-tabs">'+tabs(MENU.length-1,key)+'</div>'+(typeof module!=='undefined'?require('./online-consultation.js')():window.ClinicOnlineConsultation());
+ if(key==='customer-center')return (typeof module!=='undefined'?require('./sub-visual.js')(key):window.ClinicSubVisual(key))+'<div class="wrap information-category-tabs">'+tabs(MENU.length-1,key)+'</div>'+(typeof module!=='undefined'?require('./customer-center.js')():window.ClinicCustomerCenter());
  if(key==='')return home();
  if(key==='patient-rights')return typeof module!=='undefined'?require('./patient-rights.js')():window.ClinicPatientRights();
  if(PAGES[key])return typeof module!=='undefined'?require('./category-page.js')(key):window.ClinicCategoryPage(key);
  const visual=typeof module!=='undefined'?require('./sub-visual.js'):window.ClinicSubVisual;
- if(key==='interest')return visual(key)+'<div class="wrap information-category-tabs">'+tabs(5,key)+'</div>'+informationPage().replace(/<section class="info-hero">[\s\S]*?<\/section>/,'');
+ if(key==='interest')return visual(key)+'<div class="wrap information-category-tabs">'+tabs(MENU.length-1,key)+'</div>'+informationPage().replace(/<section class="info-hero">[\s\S]*?<\/section>/,'');
  if(key.startsWith('about-'))return visual(key)+aboutPage(key).replace(/<section class="page-hero wrap">[\s\S]*?<\/section>/,'');
  return '<section class="section wrap"><h1>페이지를 찾을 수 없습니다.</h1><a class="button" href="index.html">홈으로</a></section>';
 }
