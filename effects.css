@@ -767,7 +767,7 @@ html.lenis,html.lenis body{scroll-behavior:auto!important}
  .screen-scroll-home #doctors.wrap.lifecare-ready{padding-block:20px;min-height:0}
 }
 
-/* Let the continuous scroll controller handle desktop movement without CSS smoothing. */
+/* Use the browser scroll animator alone for desktop screen transitions. */
 @media(min-width:1024px) and (min-height:650px){
  html:has(.screen-scroll-home){scroll-behavior:auto!important}
  .screen-scroll-home .header{backdrop-filter:none;-webkit-backdrop-filter:none}
