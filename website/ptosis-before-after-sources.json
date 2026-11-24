@@ -1,0 +1,17 @@
+{
+  "source": "User-provided BEFORE/AFTER reference image attached on 2026-11-24",
+  "sourceDimensions": [3674, 1324],
+  "processing": "Original photographs extracted as PNG without retouching, reshaping, color correction or AI generation.",
+  "assets": [
+    {
+      "file": "dist/assets/ptosis-before-v1.png",
+      "label": "BEFORE",
+      "crop": {"x": 122, "y": 553, "width": 1574, "height": 633}
+    },
+    {
+      "file": "dist/assets/ptosis-after-v1.png",
+      "label": "AFTER",
+      "crop": {"x": 2015, "y": 553, "width": 1574, "height": 633}
+    }
+  ]
+}
