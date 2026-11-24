@@ -28,8 +28,11 @@
   photo.replaceChildren();status.textContent='';modal.style.width='';modal.style.height='';title.textContent=trigger.querySelector('span,h3')?.textContent||'병원 공간 사진';loading.hidden=false;loading.textContent='사진을 불러오는 중입니다.';
   document.documentElement.classList.add('facility-gallery-open');modal.showModal();close.focus();const token=++revision;
   try{
-   if(!groupsPromise)groupsPromise=fetch('facility-galleries.json').then(response=>{if(!response.ok)throw Error('gallery data');return response.json();});
-   const groups=await groupsPromise;if(!modal.open||token!==revision)return;group=groups[category];if(!group)throw Error('missing category');
+   if(!groupsPromise)groupsPromise=fetch('facility-galleries.json',{cache:'no-cache'}).then(response=>{if(!response.ok)throw Error('gallery data');return response.json();});
+   const groups=await groupsPromise;if(!modal.open||token!==revision)return;group=groups[category];if(!group?.images.length)throw Error('missing category');
+   const single=group.images.length===1;
+   modal.querySelectorAll('.facility-modal-arrow').forEach(button=>{button.hidden=single;});
+   play.hidden=single;playing=!single;paintPlay();
    title.textContent=group.title+' 사진';
    show(0);
   }catch{groupsPromise=null;loading.textContent='사진을 불러오지 못했습니다. 잠시 후 다시 열어 주세요.';playing=false;paintPlay();}
