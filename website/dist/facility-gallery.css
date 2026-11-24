@@ -92,3 +92,18 @@ body.screen-scroll-home #space .space-grid img[src*="facility-recovery-"]{object
  #space .space-grid .space-gallery-photo{aspect-ratio:16/10;border-radius:16px}
  #space .space-grid .space-gallery-card>span{font-size:18px;margin-top:10px}
 }
+
+/* Fit the restored desktop chapter scroll; shrink the two photo rows on short screens. */
+@media(min-width:1024px) and (min-height:650px){
+ body.screen-scroll-home #space.section.white{height:calc(100svh - 100px);min-height:0;padding-block:24px}
+ body.screen-scroll-home #space.section.white>.wrap{--space-gallery-width:min(1600px,calc(100vw - 96px));height:100%;min-height:0;display:flex;flex-direction:column;justify-content:center}
+ body.screen-scroll-home #space .section-head{flex:none;margin-bottom:20px}
+ /* Two 16:11 photo rows plus captions, capped by the available screen height. */
+ body.screen-scroll-home #space .space-grid{flex:1;min-height:0;max-height:calc((var(--space-gallery-width) - 72px) * .34375 + 100px);grid-template-rows:repeat(2,minmax(0,1fr));row-gap:18px}
+ body.screen-scroll-home #space .space-gallery-card{min-height:0}
+ body.screen-scroll-home #space .space-gallery-photo{flex:1;min-height:0;aspect-ratio:auto}
+ body.screen-scroll-home #space .space-grid .space-gallery-card>span{flex:none;height:34px;min-height:34px;margin-top:10px;padding:0}
+}
+@media(min-width:1024px) and (max-width:1799px) and (min-height:650px){
+ body.screen-scroll-home #space.section.white>.wrap{--space-gallery-width:calc(100vw - 156px)}
+}
