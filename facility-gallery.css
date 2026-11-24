@@ -58,4 +58,37 @@ dialog.facility-modal{position:fixed;padding:0;border:0;border-radius:14px;width
 .facility-modal .facility-modal-close{right:14px;top:14px}
 .facility-modal .facility-modal-play{right:14px;bottom:14px;font-size:18.7px}
 .facility-modal .facility-modal-close:hover,.facility-modal .facility-modal-play:hover{background:#201710dd}
+.facility-modal button[hidden]{display:none!important}
 @media(max-width:700px){dialog.facility-modal{border-radius:10px}.facility-modal .facility-modal-close{right:10px;top:10px}.facility-modal .facility-modal-play{right:10px;bottom:10px}}
+
+/* Eight clinic spaces: a calm gallery with consistent, uncrowded photo frames. */
+body.screen-scroll-home #space.section.white{height:auto;min-height:calc(100svh - 100px);padding-block:clamp(36px,5vh,64px)}
+body.screen-scroll-home #space.section.white>.wrap{height:auto;display:block}
+body.screen-scroll-home #space .section-head{margin-bottom:28px}
+body.screen-scroll-home #space .section-head h2 br{display:none}
+body.screen-scroll-home #space .space-grid{display:grid;flex:none;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto;gap:24px}
+#space .space-grid .space-gallery-card{display:flex;flex-direction:column;min-width:0;min-height:0;border-radius:0;overflow:visible}
+#space .space-grid .space-gallery-photo{position:relative;flex:none;width:100%;aspect-ratio:16/11;border-radius:18px;background:#f3eee6;overflow:hidden}
+body.screen-scroll-home #space .space-grid img{position:absolute;inset:0;flex:none;width:100%;height:100%;min-height:0;object-fit:cover;object-position:center;border-radius:0}
+body.screen-scroll-home #space .space-grid img[src*="facility-recovery-"]{object-position:50% 68%}
+#space .space-grid .space-gallery-card>span{flex:none;height:auto;min-height:0;margin-top:12px;padding:0;font-size:clamp(18px,1.25vw,22px);line-height:1.5;font-weight:500;color:#4c3a29}
+#space .space-grid .space-gallery-card>span::after{content:none}
+#space .space-photo-pending{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;background:radial-gradient(ellipse at 30% 20%,#fcfaf6,#e9e0d3);color:#786653}
+#space .space-photo-pending svg{width:52px;height:52px;fill:none;stroke:#a28b6c;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+#space .space-photo-pending p{font-size:14px;letter-spacing:.04em}
+@media(min-width:1024px) and (max-width:1799px){
+ body.screen-scroll-home #space.section.white>.wrap{width:calc(100% - 156px);margin-left:48px;margin-right:108px}
+}
+@media(max-width:1023px){
+ body.screen-scroll-home #space.section.white{min-height:0;padding-block:64px}
+ body.screen-scroll-home #space .space-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 22px}
+}
+@media(max-width:600px){
+ body.screen-scroll-home #space.section.white{padding-block:52px}
+ body.screen-scroll-home #space .section-head{margin-bottom:24px}
+ body.screen-scroll-home #space .section-head h2{font-size:29px;line-height:1.4}
+ body.screen-scroll-home #space .section-head h2 br{display:block}
+ body.screen-scroll-home #space .space-grid{grid-template-columns:minmax(0,1fr);gap:26px}
+ #space .space-grid .space-gallery-photo{aspect-ratio:16/10;border-radius:16px}
+ #space .space-grid .space-gallery-card>span{font-size:18px;margin-top:10px}
+}
