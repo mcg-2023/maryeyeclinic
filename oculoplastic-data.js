@@ -1,7 +1,6 @@
 (function(root,factory){if(typeof module!=='undefined')module.exports=factory();else root.ClinicOculoplasticData=factory();})(typeof window!=='undefined'?window:this,function(){
  // Clinical copy reviewed against AAO patient education and the sources below.
- // Existing images are explanatory illustrations/photos, never clinical before/after evidence.
- // Real surgical before/after photographs must be supplied separately by the clinic.
+ // Overview/cause images explain each topic. The ptosis comparison uses the supplied photographs.
  return {
   'care-ptosis':{
    title:'안검하수',en:'Ptosis',
@@ -9,6 +8,11 @@
    aboutImage:'about-single-care-oculoplastic-v2.webp',aboutComparison:false,
    aboutImageAlt:'윗눈꺼풀의 처짐을 설명하기 위한 이미지',
    visionComparison:false,
+   beforeAfter:{
+    title:'안검하수 교정 전·후',
+    before:'ptosis-before-v1.png',
+    after:'ptosis-after-v1.png'
+   },
    bookingImage:'booking-care-oculoplastic-v1.webp',
    highlight:'윗눈꺼풀이 내려와 눈을 충분히 뜨기 어려운 상태입니다.',
    about:[
