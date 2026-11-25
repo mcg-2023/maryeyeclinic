@@ -547,6 +547,7 @@ body.subpage .profile-colleague .doctor-photo.original:has(img[src*="song-clinic
 #doctors.lifecare-ready .doctor-card .doctor-photo.colleague-photo:has(img[src*="song-clinic-logo"]) img{height:85%;top:auto;bottom:0}
 #doctors.lifecare-ready .doctor-card .doctor-photo.colleague-photo:has(img[src*="song-clinic-logo"])::before{top:19%}
 .sub-visual-photo img{object-position:center}
+body.subpage .sub-visual-photo img[src$="hero-care-dry-discomfort-v2.webp"]{object-position:center top}
 
 
 /* Closer crops for the three requested care categories, without changing the frame. */

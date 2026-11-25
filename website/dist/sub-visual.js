@@ -11,7 +11,7 @@
  'about-location':['Visit Us','facility-reception-04-blurred-v1.webp','병원 접수 공간'],
  interest:['Eye Health Journal','hero-journal-family-v1.webp','어린아이와 부모가 함께하는 가족의 일상']
  };
- const p=data[key],item=p?[p.en,p.hero,p.title+' 진료 주제를 위한 이미지']:info[key];if(!item)return '';
+ const p=data[key],item=p?[p.en,p.hero,p.heroAlt||p.title+' 진료 주제를 위한 이미지']:info[key];if(!item)return '';
  const copy={
  'online-consultation':['진료 전 궁금한 점을 남겨주세요','상담 내용은 비밀글로 보호되며, 관리자 확인 후 답변드립니다.'],
  'customer-center':['궁금한 점에 귀 기울이겠습니다','진료와 내원에 관한 질문부터 자주 묻는 안내까지, 편하게 확인해 보세요.'],
