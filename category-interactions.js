@@ -1,5 +1,6 @@
 (()=>{
  const reduced=matchMedia('(prefers-reduced-motion:reduce)');
+ const mobile=matchMedia('(max-width:1023px), (hover:none) and (pointer:coarse)');
  const mobileHighlights=matchMedia('(max-width:700px)');
  const highlights=[...document.querySelectorAll('.uc-highlight')];
  let highlightFrame;
@@ -52,12 +53,13 @@
    const count=positions().length;
    showCard((current+direction+count)%count);
   }
-  function schedule(){clearTimeout(timer);if(paused||reduced.matches||!visible||hovering||focused||drag||document.hidden)return;timer=setTimeout(()=>{move(1);schedule();},4800);}
+  function schedule(){clearTimeout(timer);if(mobile.matches||paused||reduced.matches||!visible||hovering||focused||drag||document.hidden)return;timer=setTimeout(()=>{move(1);schedule();},4800);}
   track.addEventListener('dragstart',event=>event.preventDefault());
   track.addEventListener('pointerdown',event=>{
    if(event.button!==0||!event.isPrimary)return;
    if(event.target.closest('a,button,input,select,textarea'))return;
    suppressClick=false;
+   if(mobile.matches&&event.pointerType==='touch')return;
    track.scrollTo({left:track.scrollLeft,behavior:'instant'});
    drag={pointerId:event.pointerId,startX:event.clientX,startY:event.clientY,startScroll:track.scrollLeft,startIndex:nearestIndex(track.scrollLeft),distance:0,moved:false};
    clearTimeout(timer);
@@ -104,6 +106,15 @@
   section.addEventListener('focusin',()=>{focused=true;schedule();});section.addEventListener('focusout',()=>{setTimeout(()=>{focused=section.contains(document.activeElement);schedule();},0);});
   section.addEventListener('pointerdown',()=>clearTimeout(timer));section.addEventListener('pointerup',schedule);section.addEventListener('pointercancel',schedule);
   document.addEventListener('visibilitychange',schedule);reduced.addEventListener('change',()=>{paused=reduced.matches;paint();schedule();});
+  mobile.addEventListener('change',()=>{
+   if(drag){
+    const pointerId=drag.pointerId;drag=null;suppressClick=false;
+    track.classList.remove('is-dragging');
+    if(track.hasPointerCapture(pointerId))track.releasePointerCapture(pointerId);
+   }
+   if(mobile.matches)track.scrollTo({left:track.scrollLeft,behavior:'instant'});
+   schedule();
+  });
   if('IntersectionObserver'in window)new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;schedule();},{threshold:.15}).observe(section);else{visible=true;schedule();}
   paint();
  });
