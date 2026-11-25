@@ -1,0 +1,39 @@
+{
+  "mode": "Reuse of built-in image_gen wall repair plus exact official SVG symbol compositing; symbol-only revision",
+  "editTarget": "dist/assets/clinic-interior.jpg",
+  "symbolReference": "dist/assets/favicon.svg",
+  "reusedWallRepair": "C:/Users/USER/.codex/generated_images/01a1c8da-fd80-7542-8052-0ae68e05b991/exec-6a12b10a-6afd-4d93-be19-dc7e926706e6.png",
+  "reusedToolPrompt": "Use case: precise-object-edit. Asset type: localized real clinic wall photograph repair, to receive exact existing brand artwork in a separate compositing step. Input image 1 is the 1000 by 500 pixel crop to edit. Remove ONLY the old wall-mounted sign: all three round bronze emblems and all Korean lettering, including their cast shadows. Restore the continuous light beige travertine/plaster wall underneath. Keep the exact camera view, same 2:1 framing, warm ambient illumination, beige wall color, fine horizontal stone veins and irregular textured plaster relief. Retain the stone veins that pass behind the removed sign with natural continuous paths. The small white lamp sliver at the extreme bottom edge must be unchanged. No new logo, text, lettering, symbols, people, decor, panel, smooth patch, rectangle, blur, or glossy finish. It must look like the same real wall photographed with the sign removed.",
+  "revisionInstruction": "Restore the original Korean wall lettering exactly. Remove only the three old round emblems and replace them with the current official clinic symbol. Do not add English text or alter any lettering, portraits or layout.",
+  "sourceDimensions": [
+    4032,
+    3024
+  ],
+  "crop": {
+    "x": 450,
+    "y": 1040,
+    "width": 1000,
+    "height": 500
+  },
+  "repairRegion": {
+    "left": 103,
+    "top": 141,
+    "right": 347,
+    "bottom": 271,
+    "feather": 8
+  },
+  "symbolPlacement": {
+    "x": 230,
+    "y": 162,
+    "width": 103,
+    "height": 84,
+    "skewY": 0.012,
+    "skewX": -0.025
+  },
+  "originalKoreanLettering": {
+    "preserved": true,
+    "localXStart": 349
+  },
+  "output": "dist/assets/clinic-interior-symbol-only-v2.webp",
+  "scope": "Main doctor-card backgrounds only"
+}
