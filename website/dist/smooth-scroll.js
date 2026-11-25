@@ -2,18 +2,12 @@
  'use strict';
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const desktop=matchMedia('(min-width:1024px) and (min-height:650px)');
- const nativeScroll=matchMedia('(max-width:1023px), (hover:none) and (pointer:coarse)');
  const main=document.querySelector('main'),home=!!document.querySelector('.hero');
  let instance=null,lockedUntil=0,lastWheel=0,wheelTotal=0,transitionFrame=null;
  if(home)document.body.classList.add('screen-scroll-home');
  function setup(){
   instance?.destroy();instance=null;
-  if(nativeScroll.matches){
-   cancelCover();
-   if(transitionFrame!==null)cancelAnimationFrame(transitionFrame);
-   transitionFrame=null;lockedUntil=0;lastWheel=0;wheelTotal=0;
-  }
-  if(nativeScroll.matches||reduced.matches||(home&&desktop.matches)||typeof window.Lenis!=='function')return;
+  if(reduced.matches||(home&&desktop.matches)||typeof window.Lenis!=='function')return;
   instance=new Lenis({autoRaf:true,lerp:.11,smoothWheel:true,syncTouch:false,anchors:{offset:-100},prevent:node=>node.tagName==='DIALOG'||node.closest?.('dialog,[data-lenis-prevent],.content-tablist,.equipment-track')});
  }
  function panels(){return [...main.children].flatMap(el=>el.classList.contains('mission-cover-stage')?[...el.querySelectorAll('#history,#promise')]:el.tagName==='SECTION'?[el]:[]).concat(document.querySelector('footer')||[]);}
@@ -50,7 +44,7 @@
  window.addEventListener('pointerdown',cancelCover,{passive:true});
  window.addEventListener('keydown',cancelCover);
  window.addEventListener('wheel',event=>{
-  if(nativeScroll.matches||!home||!desktop.matches||event.ctrlKey||Math.abs(event.deltaX)>Math.abs(event.deltaY)||event.target.closest('dialog,#mega,[data-lenis-prevent]'))return;
+  if(!home||!desktop.matches||event.ctrlKey||Math.abs(event.deltaX)>Math.abs(event.deltaY)||event.target.closest('dialog,#mega,[data-lenis-prevent]'))return;
   // Finish the incoming chapter transition before handing control to the cover.
   if(transitionFrame!==null){event.preventDefault();event.stopImmediatePropagation();return;}
   const cover=document.querySelector('.mission-cover-stage.cover-enabled');
@@ -119,7 +113,7 @@
   wheelTotal=0;
   const target=list[index+direction];if(target)go(target);
  },{passive:false,capture:true});
- setup();reduced.addEventListener('change',setup);desktop.addEventListener('change',setup);nativeScroll.addEventListener('change',setup);
+ setup();reduced.addEventListener('change',setup);desktop.addEventListener('change',setup);
  window.addEventListener('pagehide',()=>{cancelCover();instance?.destroy();instance=null;if(transitionFrame!==null)cancelAnimationFrame(transitionFrame);});
  window.addEventListener('pageshow',event=>{if(event.persisted)setup();});
 })();
