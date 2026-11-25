@@ -1,0 +1,8 @@
+/* A small, frozen outgoing frame; only its opacity changes. */
+@media(max-width:700px){
+ .care-comparison>.care-mobile-transition{position:absolute;inset:0;z-index:8;overflow:hidden;border-radius:inherit;pointer-events:none;user-select:none;contain:paint;will-change:opacity}
+ .care-mobile-transition-image,.care-mobile-transition-soft,.care-mobile-transition-shade{position:absolute;inset:0;width:100%;height:100%;max-width:none;pointer-events:none}
+ .care-mobile-transition-image{display:block;object-fit:cover}
+ .care-mobile-transition-divider{position:absolute;top:0;bottom:0;width:1px;background:#fff}
+ .care-comparison>.care-comparison-labels{z-index:9}
+}
