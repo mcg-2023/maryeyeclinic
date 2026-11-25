@@ -1,0 +1,72 @@
+{
+  "asset": "dist/assets/facility-reception-04-blurred-v1.webp",
+  "source": "dist/assets/facility-reception-04.jpg",
+  "useCase": "precise-object-edit",
+  "intent": "Obscure all visible faces in the Visit Us subpage hero while preserving the original clinic photo elsewhere.",
+  "mode": "Built-in image_gen preview for the requested face-obscuring effect, followed by deterministic Gaussian blur compositing of original source pixels only; no generated image pixels are used in the published asset.",
+  "previewOnlyGeneratedImage": "C:/Users/USER/.codex/generated_images/01a1c8da-fd80-7542-8052-0ae68e05b991/exec-5800465c-03b7-4d31-b67f-d66569284cca.png",
+  "previewDisposition": "Not published because generated preview altered surrounding objects and text. Final photograph uses only original photograph pixels and Gaussian-filtered copies of those pixels.",
+  "previewPrompt": "Use case: precise-object-edit, photographic privacy face blur. Input image is a 700x365 pixel crop of a real clinic reception photograph. Apply strong Gaussian/defocus privacy blur ONLY to four face/head regions. At the original 700x365 crop coordinates these are: left staff member oval centered (98,72) with radii (42,50); middle partially occluded staff member's visible head/forehead centered (246,71) with radii (39,35); right staff member's profile face centered (461,133) with radii (49,59); small printed woman's face on the purple brochure centered (601,284) with radii (28,35). The faces should be visibly blurred enough that eyes, nose and mouth cannot be distinguished. Keep their original colors and silhouettes, just blur, without changing or inventing any face. Use softly feathered oval blur boundaries. Keep the exact image composition, camera position, bodies, hair outside each region, clothing, desks, monitors, sanitizer, stone wall, lettering, all objects and photo lighting unchanged. Do not blur the entire photo, remove people, replace people, redraw faces, add objects, add mosaic grids, or use solid patches. This is localized blur of an existing photograph only.",
+  "dimensions": {
+    "width": 1920,
+    "height": 1440
+  },
+  "regions": [
+    {
+      "id": "left-staff",
+      "cx": 878,
+      "cy": 847,
+      "rx": 44,
+      "ry": 52,
+      "gaussianBlurPx": 14
+    },
+    {
+      "id": "middle-staff",
+      "cx": 1026,
+      "cy": 846,
+      "rx": 40,
+      "ry": 35,
+      "gaussianBlurPx": 12
+    },
+    {
+      "id": "right-staff",
+      "cx": 1241,
+      "cy": 908,
+      "rx": 52,
+      "ry": 64,
+      "gaussianBlurPx": 16
+    },
+    {
+      "id": "printed-brochure-model",
+      "cx": 1381,
+      "cy": 1059,
+      "rx": 29,
+      "ry": 36,
+      "gaussianBlurPx": 10
+    }
+  ],
+  "mask": "Elliptical mask: fully opaque inside normalized radius 0.8; smoothstep feather from 0.8 to 1; zero outside radius 1.",
+  "encoding": "Lossless WebP from the edited 1920x1440 PNG master, with unchanged aspect ratio and no global colour or geometry changes.",
+  "consumersChanged": [
+    "dist/sub-visual.js: about-location hero mapping only"
+  ],
+  "preserved": [
+    "Original facility-reception-04.jpg file and its facility-galleries.json gallery reference",
+    "Every source pixel outside the four elliptical face masks",
+    "Original clinic wall sign, text, brochures, equipment, furniture and reflections",
+    "Original blue narrow brochure, with no generated face additions"
+  ],
+  "qa": {
+    "outsideMaskChangedPixels": 0,
+    "changedPixels": 24459,
+    "allFourFacesUnrecognizableAtNativeResolution": true,
+    "losslessWebpPixelMatchToPngMaster": true,
+    "blueBrochureChangedPixels": 0,
+    "regionChangedPixels": [
+      6956,
+      4239,
+      10084,
+      3180
+    ]
+  }
+}

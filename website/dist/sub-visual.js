@@ -8,7 +8,7 @@
  'about-philosophy':['Our Philosophy','facility-waiting-04.jpg','편안한 병원 공간'],
  'about-history':['Our History','history-waiting-lounge.jpg','주례성모안과 공간'],
  'about-facilities':['Our Facilities','facility-waiting-02.jpg','병원 대기 공간'],
- 'about-location':['Visit Us','facility-reception-04.jpg','병원 접수 공간'],
+ 'about-location':['Visit Us','facility-reception-04-blurred-v1.webp','병원 접수 공간'],
  interest:['Eye Health Journal','hero-journal-family-v1.webp','어린아이와 부모가 함께하는 가족의 일상']
  };
  const p=data[key],item=p?[p.en,p.hero,p.title+' 진료 주제를 위한 이미지']:info[key];if(!item)return '';
