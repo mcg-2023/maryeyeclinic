@@ -1,6 +1,7 @@
 (() => {
  'use strict';
  const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
+ const mobileMotion=matchMedia('(max-width:1023px), (hover:none) and (pointer:coarse)');
  const easing='cubic-bezier(0.22, 1, 0.36, 1)';
  const cleanups=[];
  function animate(el,frames,options={}){
@@ -221,7 +222,7 @@
   const mobile=matchMedia('(max-width:1024px)'),fill=bar.firstElementChild,thumb=bar.lastElementChild;
   function paint(progress){const value=(selected+progress)/cards.length*100;fill.style.width=value+'%';thumb.style.left=value+'%';}
   function stop(){if(frame!==null)cancelAnimationFrame(frame);frame=null;start=null;}
-  function blocked(){return hovered||document.hidden||motion.matches;}
+  function blocked(){return hovered||document.hidden||motion.matches||mobileMotion.matches;}
   function tick(time){
    frame=null;if(blocked())return;
    if(start===null)start=time;
@@ -237,7 +238,7 @@
    tabs.forEach((tab,i)=>{tab.setAttribute('aria-selected',String(i===selected));tab.tabIndex=i===selected?0:-1;});
    track.setAttribute('aria-labelledby',tabs[selected].id);track.setAttribute('role','tabpanel');
    root.dataset.activeDoctor=String(selected);nav.style.setProperty('--active-tab',String(selected));paint(0);
-   if(doctorInView)lastAnimation=animate(cards[selected],[{opacity:0},{opacity:1}],{duration:1100,easing:'cubic-bezier(.25,.1,.25,1)'});
+   if(doctorInView)lastAnimation=animate(cards[selected],[{opacity:0},{opacity:1}],{duration:mobileMotion.matches?320:1100,easing:'cubic-bezier(.25,.1,.25,1)'});
    if(focus)tabs[selected].focus({preventScroll:true});resume();
   }
   tabs.forEach((tab,i)=>{
@@ -250,6 +251,7 @@
   track.addEventListener('mouseenter',()=>{hovered=true;resume();});track.addEventListener('mouseleave',()=>{hovered=false;resume();});
   document.addEventListener('visibilitychange',resume);
   motion.addEventListener?.('change',()=>{lastAnimation?.cancel();resume();});
+  mobileMotion.addEventListener('change',()=>{lastAnimation?.cancel();root.classList.toggle('doctor-entry-pending',!mobileMotion.matches&&!doctorInView);resume();});
   const finePointer=matchMedia('(hover:hover) and (pointer:fine)');
   let lightFrame=null,lightPoint=null;
   track.addEventListener('pointermove',event=>{
@@ -272,9 +274,10 @@
   motion.addEventListener?.('change',clearLight);
   cleanups.push(clearLight);
   addSwipe(track,dir=>select(selected+dir));
-  root.classList.add('doctor-entry-pending');
+  root.classList.toggle('doctor-entry-pending',!mobileMotion.matches);
   const entryObserver=new IntersectionObserver(entries=>{
    entries.forEach(entry=>{
+    if(mobileMotion.matches){doctorInView=entry.isIntersecting;root.classList.remove('doctor-entry-pending');return;}
     if(entry.isIntersecting&&entry.intersectionRect.height>=Math.min(entry.boundingClientRect.height,window.innerHeight-100)*.7&&!doctorInView){
      doctorInView=true;
      root.classList.remove('doctor-entry-pending');
@@ -320,7 +323,7 @@
   function reveal(el){el.classList.remove('reveal-pending');el.classList.add('is-revealed');observer?.unobserve(el);}
   function finish(){targets.forEach(reveal);observer?.disconnect();clearTimeout(idle);clearTimeout(safety);}
   try{
-   observer=new IntersectionObserver(entries=>{receivedCallbacks=true;entries.forEach(entry=>{if(entry.isIntersecting||entry.boundingClientRect.top<0)reveal(entry.target);});},{threshold:0.15,rootMargin:'0px 0px -80px 0px'});
+   observer=new IntersectionObserver(entries=>{receivedCallbacks=true;entries.forEach(entry=>{if(entry.isIntersecting||entry.boundingClientRect.top<0)reveal(entry.target);});},{threshold:mobileMotion.matches ? .04 : .15,rootMargin:`0px 0px -${mobileMotion.matches?18:80}px 0px`});
    targets.forEach((el,i)=>{
     const rect=el.getBoundingClientRect();
     if(rect.top<window.innerHeight-80){reveal(el);return;}
@@ -372,7 +375,7 @@
  }
  function initDoctorDetailMotion(){
   const profile=document.querySelector('.profile-detail');
-  if(!profile||motion.matches||typeof IntersectionObserver==='undefined')return;
+  if(!profile||mobileMotion.matches||motion.matches||typeof IntersectionObserver==='undefined')return;
   let observer=null,animation=null,inView=false;
   function show(){
    if(inView)return;inView=true;animation?.cancel();
@@ -437,9 +440,12 @@
    const journey=history.classList.contains('history-journey')?viewport*1.4:0;
    const progress=Math.max(0,Math.min(1,(distance-viewport*.25-journey)/(viewport*1.95)));
    if(journey){
-    const tour=ready?Math.min(1,distance/journey):0;
-    history.style.setProperty('--history-drift',(-tour*viewport*1.2).toFixed(2)+'px');
-    history.classList.toggle('history-show-years',tour>=.5||!ready);
+    if(mobileMotion.matches)history.style.removeProperty('--history-drift');
+    else{
+     const tour=ready?Math.min(1,distance/journey):0;
+     history.style.setProperty('--history-drift',(-tour*viewport*1.2).toFixed(2)+'px');
+     history.classList.toggle('history-show-years',tour>=.5||!ready);
+    }
    }
    const offset=ready?Math.max(0,Math.min(extra,distance-progress*viewport)):0;
    const top=start+historyHeight-window.scrollY+offset;
@@ -450,7 +456,7 @@
   };
   const measure=()=>{
    frame=null;
-   const ready=!motion.matches&&window.innerHeight>0;
+   const ready=!mobileMotion.matches&&!motion.matches&&window.innerHeight>0;
    stage.classList.toggle('cover-enabled',ready);
    const viewport=window.innerHeight,extra=viewport*(history.classList.contains('history-journey')?2.6:1.2);
    const historyHeight=history.offsetHeight,sheetHeight=sheet.offsetHeight;
@@ -467,13 +473,14 @@
   window.addEventListener('resize',schedule,{passive:true});
   window.addEventListener('load',schedule);
   motion.addEventListener?.('change',schedule);
+  mobileMotion.addEventListener('change',schedule);
   const resizeObserver=typeof ResizeObserver==='function'?new ResizeObserver(schedule):null;
   resizeObserver?.observe(history);resizeObserver?.observe(sheet);
   document.fonts?.ready.then(schedule);measure();
   cleanups.push(()=>{
    window.removeEventListener('scroll',update);window.removeEventListener('mission-scroll-tick',update);
    window.removeEventListener('resize',schedule);window.removeEventListener('load',schedule);
-   resizeObserver?.disconnect();motion.removeEventListener?.('change',schedule);
+   resizeObserver?.disconnect();motion.removeEventListener?.('change',schedule);mobileMotion.removeEventListener('change',schedule);
    if(frame!==null)cancelAnimationFrame(frame);
    stage.before(history,...following);stage.remove();mission.classList.remove('mission-copy-visible');
   });
