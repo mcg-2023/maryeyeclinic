@@ -1,0 +1,27 @@
+{
+  "mode": "Built-in image_gen precise-object-edit; generated metal material composited only over the symbol",
+  "source": "dist/assets/clinic-interior.jpg",
+  "baseSymbol": "dist/assets/clinic-interior-symbol-only-v2.webp",
+  "referenceSymbol": "dist/assets/favicon.svg",
+  "generatedMaterial": "C:/Users/USER/.codex/generated_images/01a1c8da-fd80-7542-8052-0ae68e05b991/exec-94c50c1e-16ed-4e92-956f-d00c61d438af.png",
+  "toolPrompt": "Use case: precise-object-edit / photorealistic product mockup. Input image 1 is the edit target: a real clinic wall photograph with a small newly inserted eye-shaped symbol to the left of the existing Korean metal sign. Input image 2 is the exact official symbol shape reference, not an additional object. Change ONLY the material and surface rendering of that small eye-shaped symbol in image 1. The current symbol is too rounded, matte, puffy and plastic-looking. Make it look like a real thin flat-cut bronze metal sign fabricated in exactly the SAME material as the adjacent existing Korean letters. Study the adjacent Korean letters: flat dark reflective bronze faces, very narrow warm gold bevel highlights, crisp dark thin side edges and short contact shadows on the textured wall. Give the symbol the same dark bronze reflections and contrast, a flat planar front face with only a tiny 0.3–0.5px edge bevel, and just 1–2px physical relief at the original image scale. The light is from above-left; only a tiny sharp right/down contact shadow, no broad diffuse shadow or glowing halo. Match the photographic exposure, slight surface irregularity and wall perspective of the real lettering. Preserve the exact eye symbol outline, overlapping circular apertures, size and position; do not round the strokes into tubes or emboss a pillowy circular badge. Keep all Korean lettering exactly unchanged in font, color, stroke, spacing and position. Keep the complete wall texture, horizontal veins, illumination, camera angle, framing and small lamp sliver unchanged. Do not add any English text, slogan, background plate, plaque, new logo, decoration or person. The result should look like the symbol and Korean letters were installed together as one original real metal wall sign, not a digital overlay.",
+  "crop": {
+    "x": 450,
+    "y": 1040,
+    "width": 1000,
+    "height": 500
+  },
+  "symbolMaterialPatch": {
+    "left": 213,
+    "top": 145,
+    "right": 347,
+    "bottom": 266,
+    "feather": 7
+  },
+  "unchanged": "Original Korean letters, wall outside the symbol area, portraits and layout; no English lettering added.",
+  "output": "dist/assets/clinic-interior-symbol-metal-v3.webp",
+  "dimensions": [
+    4032,
+    3024
+  ]
+}

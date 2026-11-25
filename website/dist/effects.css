@@ -405,7 +405,7 @@ h3{font-size:33.81px}
 /* Warm interior composition with a grounded, unmasked portrait. */
 #doctors.lifecare-ready .doctor-card,
 #doctors.lifecare-ready .doctor-card.light-active{
- background-image:linear-gradient(90deg,rgba(67,49,35,.44) 0%,rgba(67,49,35,.52) 32%,rgba(53,39,29,.76) 62%,rgba(46,34,25,.88) 100%),url('assets/clinic-interior-symbol-only-v2.webp');
+ background-image:linear-gradient(90deg,rgba(67,49,35,.44) 0%,rgba(67,49,35,.52) 32%,rgba(53,39,29,.76) 62%,rgba(46,34,25,.88) 100%),url('assets/clinic-interior-symbol-metal-v3.webp');
  background-size:cover;
  background-position:center,65% 60%;
  padding-bottom:0;
@@ -427,7 +427,7 @@ h3{font-size:33.81px}
  #doctors.lifecare-ready .doctor-card,
  #doctors.lifecare-ready .doctor-card.light-active{
   grid-template-columns:1fr;padding:26px 24px 0;gap:22px;
-  background-image:linear-gradient(to bottom,#433123a6,#2e2219e6),url('assets/clinic-interior-symbol-only-v2.webp');
+  background-image:linear-gradient(to bottom,#433123a6,#2e2219e6),url('assets/clinic-interior-symbol-metal-v3.webp');
   background-position:center,65% center;
   background-size:cover;
  }
@@ -438,14 +438,14 @@ h3{font-size:33.81px}
 #doctors.lifecare-ready .doctor-card,
 #doctors.lifecare-ready .doctor-card.light-active{
  background-position:center,left 58%;
- background-image:linear-gradient(90deg,#43312322 0%,#43312344 30%,#35271dc2 60%,#2e2219eb 100%),url('assets/clinic-interior-symbol-only-v2.webp');
+ background-image:linear-gradient(90deg,#43312322 0%,#43312344 30%,#35271dc2 60%,#2e2219eb 100%),url('assets/clinic-interior-symbol-metal-v3.webp');
 }
 #doctors.lifecare-ready .doctor-card .doctor-photo.original{justify-self:end}
 @media(max-width:640px){
  #doctors.lifecare-ready .doctor-card,
  #doctors.lifecare-ready .doctor-card.light-active{
   background-position:center,24% center;
-  background-image:linear-gradient(to bottom,#43312370,#2e2219db),url('assets/clinic-interior-symbol-only-v2.webp');
+  background-image:linear-gradient(to bottom,#43312370,#2e2219db),url('assets/clinic-interior-symbol-metal-v3.webp');
  }
  #doctors.lifecare-ready .doctor-card .doctor-photo.original{justify-self:center}
 }
@@ -453,7 +453,7 @@ h3{font-size:33.81px}
 /* Balance portrait lighting and protect text contrast over the interior. */
 #doctors.lifecare-ready .doctor-card,
 #doctors.lifecare-ready .doctor-card.light-active{
- background-image:linear-gradient(90deg,rgba(57,41,28,.22) 0%,rgba(57,41,28,.35) 28%,rgba(42,30,22,.82) 48%,rgba(36,26,19,.97) 65%,#241a13 100%),url('assets/clinic-interior-symbol-only-v2.webp');
+ background-image:linear-gradient(90deg,rgba(57,41,28,.22) 0%,rgba(57,41,28,.35) 28%,rgba(42,30,22,.82) 48%,rgba(36,26,19,.97) 65%,#241a13 100%),url('assets/clinic-interior-symbol-metal-v3.webp');
 }
 #doctors.lifecare-ready .doctor-card .doctor-photo.original{width:min(100%,430px);justify-self:center;position:relative}
 #doctors.lifecare-ready .doctor-card .doctor-photo.original img{filter:sepia(.1) saturate(.9) brightness(.91) contrast(.97) drop-shadow(8px 4px 16px #1d140b2a)}
@@ -472,7 +472,7 @@ h3{font-size:33.81px}
 @media(max-width:640px){
  #doctors.lifecare-ready .doctor-card,
  #doctors.lifecare-ready .doctor-card.light-active{
-  background-image:linear-gradient(to bottom,#241a13ed 0%,#241a13e0 53%,#39291c85 78%,#39291c66 100%),url('assets/clinic-interior-symbol-only-v2.webp');
+  background-image:linear-gradient(to bottom,#241a13ed 0%,#241a13e0 53%,#39291c85 78%,#39291c66 100%),url('assets/clinic-interior-symbol-metal-v3.webp');
  }
  #doctors.lifecare-ready .doctor-card .doctor-photo.original{width:min(100%,310px)}
  #doctors.lifecare-ready .doctor-meta .role{font-size:16.32px}
