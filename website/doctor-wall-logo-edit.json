@@ -1,0 +1,35 @@
+{
+  "mode": "Built-in image_gen edit for old sign removal; exact official artwork composited with matching bronze material",
+  "toolPrompt": "Use case: precise-object-edit. Asset type: localized real clinic wall photograph repair, to receive exact existing brand artwork in a separate compositing step. Input image 1 is the 1000 by 500 pixel crop to edit. Remove ONLY the old wall-mounted sign: all three round bronze emblems and all Korean lettering, including their cast shadows. Restore the continuous light beige travertine/plaster wall underneath. Keep the exact camera view, same 2:1 framing, warm ambient illumination, beige wall color, fine horizontal stone veins and irregular textured plaster relief. Retain the stone veins that pass behind the removed sign with natural continuous paths. The small white lamp sliver at the extreme bottom edge must be unchanged. No new logo, text, lettering, symbols, people, decor, panel, smooth patch, rectangle, blur, or glossy finish. It must look like the same real wall photographed with the sign removed.",
+  "editTarget": "dist/assets/clinic-interior.jpg",
+  "logoReference": "dist/assets/logo-horizontal.png",
+  "generatedRepair": "C:/Users/USER/.codex/generated_images/01a1c8da-fd80-7542-8052-0ae68e05b991/exec-6a12b10a-6afd-4d93-be19-dc7e926706e6.png",
+  "editPrompt": "Use case: precise-object-edit\nAsset type: localized real clinic wall photograph repair, to receive the exact existing brand artwork in a separate compositing step.\nInput image: the attached 1000 by 500 pixel crop is the edit target.\nPrimary request: remove ONLY the old wall-mounted sign: the three round bronze emblems and all Korean lettering, including their cast shadows. Restore the continuous light beige travertine/plaster wall underneath them.\nConstraints: Keep the exact camera view, 1000:500 framing, warm ambient illumination, beige wall color, fine horizontal stone veins, irregular textured plaster relief, and all unchanged pixels as closely as possible. Retain the stone veins that pass behind the sign with natural, continuous paths. The small white lamp sliver at the extreme bottom edge must be unchanged. No new logo, text, lettering, symbols, people, decor, panels, smooth patches, white rectangles, artificial blur or glossy finish. The result should look like the same real wall photographed with the old sign removed.",
+  "sourceDimensions": [
+    4032,
+    3024
+  ],
+  "crop": {
+    "x": 450,
+    "y": 1040,
+    "width": 1000,
+    "height": 500
+  },
+  "repairRegion": {
+    "left": 76,
+    "top": 125,
+    "right": 856,
+    "bottom": 325,
+    "feather": 25
+  },
+  "logoPlacement": {
+    "x": 125,
+    "y": 152,
+    "width": 650,
+    "height": 119,
+    "skewY": 0.012,
+    "skewX": -0.025
+  },
+  "output": "dist/assets/clinic-interior-current-logo-v1.webp",
+  "scope": "Main page doctor-card background only; three doctor portraits and the shared original interior photo remain unchanged."
+}
