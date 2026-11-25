@@ -1,5 +1,34 @@
 (()=>{
  const reduced=matchMedia('(prefers-reduced-motion:reduce)');
+ const mobileHighlights=matchMedia('(max-width:700px)');
+ const highlights=[...document.querySelectorAll('.uc-highlight')];
+ let highlightFrame;
+ function fitHighlights(){
+  highlights.forEach(highlight=>{
+   highlight.style.removeProperty('--uc-highlight-size');
+   if(!mobileHighlights.matches)return;
+   const style=getComputedStyle(highlight);
+   const available=highlight.parentElement.clientWidth-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight)-2;
+   const range=document.createRange();
+   range.selectNodeContents(highlight);
+   const textWidth=range.getBoundingClientRect().width;
+   if(textWidth>available&&available>0){
+    const size=Math.floor(parseFloat(style.fontSize)*available/textWidth*100)/100;
+    highlight.style.setProperty('--uc-highlight-size',`${size}px`);
+   }
+  });
+ }
+ function scheduleHighlights(){
+  cancelAnimationFrame(highlightFrame);
+  highlightFrame=requestAnimationFrame(fitHighlights);
+ }
+ if(highlights.length){
+  scheduleHighlights();
+  addEventListener('resize',scheduleHighlights,{passive:true});
+  addEventListener('pageshow',scheduleHighlights);
+  mobileHighlights.addEventListener('change',scheduleHighlights);
+  if(document.fonts)document.fonts.ready.then(scheduleHighlights);
+ }
  document.querySelectorAll('.uc-cause-layout').forEach(section=>{
   const track=section.querySelector('.uc-cause-track'),toggle=section.querySelector('[data-cause-autoplay]');
   const cards=[...track.querySelectorAll('.uc-cause-card')];
